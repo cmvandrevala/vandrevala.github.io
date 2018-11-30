@@ -136,9 +136,8 @@
 
 <p>Generally speaking the tests that we wrote looked pretty good to me after a year - except one.  I looked at the acceptance tests and noticed that the way to have the AI create a new move is:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ai_move = game.computer_player.decide_move(game.board.return_entire_board)
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ai_move = game.computer_player.decide_move(game.board.return_entire_board)
+</code></pre></div></div>
 
 <p>This stement looked long and ugly compared to the rest of the code. Something had to be done!</p>
 

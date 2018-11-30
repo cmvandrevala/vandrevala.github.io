@@ -159,17 +159,17 @@ U \left [ | \psi \rangle | 0 \rangle \right ] &= | \psi \rangle | \psi \rangle\\
 
 <p>The implications of this theorem are far reaching in the world of quantum information theory. Since we cannot clone an arbitrary quantum state, the fan-out and fan-in operations are forbidden (i.e. you cannot split a wire into two or more pieces). This changes how we must think of many of the algorithms in quantum information theory. For example, classical error correction is largely based on fan-in and fan-out techniqes. Additionally, since measuring a qubit collapses it into a well-defined state, it is much harder to commit man-in-the-middle attacks. This is because there is no way to stealthily measure a qubit that is being sent between two parties.</p>
 
-<h3 id="the-no-teleportation-theorem">The No-Teleportation Theorem</h3>
+<p>###The No-Teleportation Theorem</p>
 
 <p>This is one of those theorems that seems really mundane until you stop to consider its consequences. The no-teleportation theorem states that you cannot determine an arbitrary quantum state by one measurement alone. Instead, you can only get an approximate idea of the quantum state by taking many measurements and calculating the probability of recovering each eigenstate. Anybody who has taken introductory quantum mechanics should not be too surprised by this result. But the big idea here is that the information carried in a single qubit cannot be converted to classical bits. It would take an infinite number of classical bits to carry the exact state of an arbitrary qubit. Do note that it is easy to go the other way though; you can always convert classical bits to qubits.</p>
 
-<h3 id="the-no-hiding-theorem">The No-Hiding Theorem</h3>
+<p>###The No-Hiding Theorem</p>
 
 <p>The no-hiding theorem states that if information is lost in a quantum system due to the interactions with its environment (a process called bleaching), then the information has simply moved from our system to its environment. This implies a couple of things. First, the information in our quantum system has not disappeared or been “deleted”. Instead, it has just moved from one place to another. Secondly, the information cannot be hidden in the correlations between a system and its environment. A <a href="http://phys.org/news/2011-03-quantum-no-hiding-theorem-experimentally.html#jCp">recent study</a> has demonstrated this experimentally.</p>
 
 <p>Why is this useful? Let’s consider an example in cryptography. You can hide a classical string of bits by encrypting it using the <a href="http://www.cryptomuseum.com/crypto/vernam.htm">Vernam cipher</a>. If the one time pad that you use is truly random, then the encoded bit string and the one time pad contain absolutely no information about the original bit string when you consider them separately. Instead, the information about the original bit string is stored in the correlations between the cipher and the key (i.e. you need both the encoded message and the pad to recover the original bit string). However, we do not have this advantage in quantum information theory. No matter how hard we try, the one time pad and the encoded bit string will both contain some amount of information about the original bit string. Thus, we need to rethink our strategy for cryptography.</p>
 
-<h3 id="next-week">Next Week</h3>
+<p>###Next Week</p>
 
 <p>Next week we will continue our discussion by looking at three more no-go theorems in quantum information theory. See you then!</p>
 

@@ -116,15 +116,15 @@
     <span class="difficulty hard"></span>
 
     <div class="body">
-      <h3 id="introduction">Introduction</h3>
+      <p>###Introduction</p>
 
 <p>This week, I am going to discuss two final no-go theorems in quantum information theory. In order to understand these theorems, we require a little bit more math than we have seen in the previous posts. Don’t worry, I will introduce math concepts as we need them.</p>
 
-<h3 id="the-no-broadcast-theorem">The No-Broadcast Theorem</h3>
+<p>###The No-Broadcast Theorem</p>
 
 <p>The first of the two theorems that we are going to discuss is the no-broadcast theorem. It is a slightly weaker form of the no-cloning theorem that states that it is impossible to broadcast a quantum state. However, the term "broadcast" has a very specific definition in this theorem. Let’s take a look.</p>
 
-<h4 id="the-tensor-product">The Tensor Product</h4>
+<p>####The Tensor Product</p>
 
 <p>Recall that the state of a quantum particle is represented as a vector in a complex <a href="http://mathworld.wolfram.com/VectorSpace.html">vector space</a>. For example, the state of a single spin particle is:</p>
 
@@ -269,7 +269,7 @@ cy & cz & dy & dz
 
 <p>Thus, we have a nice (albeit verbose) notation for describing quantum states and operators. Just a quick thing to note - not all unitary operators are formed using tensor products. For example, the <a href="http://en.wikipedia.org/wiki/Controlled_NOT_gate">CNOT gate</a> in quantum computing cannot be written as a tensor product of two <script type="math/tex">2 \times 2</script> unitary operators. We call these entangling operators because they create <a href="http://en.wikipedia.org/wiki/Quantum_entanglement">entangled quantum states</a> (i.e. quantum states that cannot be written as a tensor product).</p>
 
-<h4 id="the-density-matrix">The Density Matrix</h4>
+<p>####The Density Matrix</p>
 
 <p>In an intermediate or advanced quantum mechanics class, you might run into the density matrix representation of a quantum system. The density matrix representation for our spin state is given by <script type="math/tex">\rho</script>:</p>
 
@@ -395,7 +395,7 @@ cy & cz & dy & dz
 
 <p>We have only scratched the surface on the discussion of density matrices. Right now, I will say that the density matrix formalism is most useful for deriving the no-broadcasting theorem and leave a further discussion of density matrices for another day.</p>
 
-<h4 id="the-partial-trace">The Partial Trace</h4>
+<p>####The Partial Trace</p>
 
 <p>The last bit of math that we have to define in order to derive the no-broadcast theorem is the partial trace. Suppose I have a density matrix <script type="math/tex">\rho^{AB}</script> that is composed of states from a composite <a href="http://mathworld.wolfram.com/HilbertSpace.html">Hilbert space</a> <script type="math/tex">H_A \otimes H_B</script>.</p>
 
@@ -415,7 +415,7 @@ Tr_B \left ( \rho^{AB} \right ) \equiv \sum_i \left ( I_1 \otimes \langle e_i | 
 
 <p>Obviously, we have only touched on the definition of the partial trace in this post. We can take some time to explore it more fully in future posts.</p>
 
-<h4 id="the-theorem">The Theorem</h4>
+<p>####The Theorem</p>
 
 <p>Now that we have set up all of the formalism, the actual proof of the no-broadcast theorem is very straightforward. Suppose I have a composite quantum state <script type="math/tex">\Psi</script> made up of two individual quantum states <script type="math/tex">\psi_A</script> and <script type="math/tex">\psi_B</script>:</p>
 
@@ -433,13 +433,13 @@ Tr_A \left ( \rho^{AB} \right ) = Tr_B \left ( \rho^{AB} \right ) = \rho
 
 <p>The math seems to work out pretty well, but what does this theorem physically mean? Well, the reduced density matrix that we obtain after taking the partial trace is still a regular old density matrix. We can still manipulate it in all of the usual ways as described above. However, if we look closely at the reduced density matrix, we see that it is almost identical to the density matrix of the full system except that one of the states is not included in the tensor product. Thus, it is the density matrix of the system assuming that we leave a certain state undisturbed.</p>
 
-<h3 id="the-no-programming-theorem">The No-Programming Theorem</h3>
+<p>###The No-Programming Theorem</p>
 
 <p>Let’s finish our discussion of the no-go theorems of quantum information theory by discussing the no-programming theorem. In classical computing, there is a type of computing architecture called a <a href="http://en.wikipedia.org/wiki/Stored-program_computer">stored program architecture</a>. Here, the input data and the computer programs are both stored in memory. A few examples of this architecture are the <a href="http://en.wikipedia.org/wiki/Von_Neumann_architecture">Von Neumann architecture</a> and the <a href="http://en.wikipedia.org/wiki/Harvard_architecture">Harvard architecture</a>. What is special about this architecture is that you can dynamically create and run new programs in memory.</p>
 
 <p>In quantum computing, we cannot create a programmable computer using the stored program architecture. The reason is very simple; a program in a quantum computer is just a unitary matrix acting on all of the input qubits. Distinct programs come from distinct unitary operators. We note that distinct unitary operators are orthogonal. Thus, we cannot create a unitary operator (a program) that can write another unitary operator (another program).</p>
 
-<h3 id="conclusions">Conclusions</h3>
+<p>###Conclusions</p>
 
 <p>It took a few weeks, but we finally made it through some of the major no-go theorems of quantum information theory. Remember, quantum information theory is a very young field of science, so this list of theorems may grow substantially as time goes on. For now though, it gives us a good idea of some of the restrictions that we face when designing quantum circuits.</p>
 

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  <meta charset="utf-8">
+  <title>Maximum Range of a Projectile</title>
+  
+    <meta name="description" content="I derive an expression for the horizontal distance traveled by a projectile as a function of angle. I then compare the distance traveled by a projectile launched on a flat surface versus one launched off of a cliff.">
+  
+
+  <meta name="author" content="Cyrus Vandrevala">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-touch-icon-180x180.png">
+  <link rel="icon" sizes="16x16" type="image/png" href="/assets/ico/favicon-16x16.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/assets/ico/favicon-32x32.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="/assets/ico/favicon-96x96.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="/assets/ico/favicon-192x192.png">
+  <link rel="icon" sizes="194x194" type="image/png" href="/assets/ico/favicon-194x194.png">
+  <link rel="manifest" href="/assets/ico/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#d415a1">
+  <meta name="msapplication-TileImage" content="/assets/ico/mstile-144x144.png">
+  <meta name="theme-color" content="#d415a1"
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/reset.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-61768963-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+</head>
+
+  <body>
+  <div class="content">
+
+    <header>
+      <div class="container">
+        <h2 class="desktop">
+          <a href="/"><span></span>cupcake physics</a>
+        </h2>
+
+        <h2 class="mobile">
+          <a href="/"><span></span></a>
+        </h2>
+
+        <span class="hot-dog-menu"></span>
+
+        <nav>
+          <ul>
+			  <li><input id="search_input" data-toggle="dropdown" type="text" class="form-control" placeholder="Search Posts" autocomplete="off" onkeyup="checkTextField();" /></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+    <section>
+     <article class="post">
+  <div class="container">
+
+    <span class="post-date">
+      
+      April
+      25th,
+      
+      2015
+    </span>
+
+    <h2>Maximum Range of a Projectile </h2>
+
+	
+	  
+		  <span class="topic classical-mechanics"></span>
+	    
+	
+    <span class="difficulty easy"></span>
+
+    <div class="body">
+      <h3 id="introduction">Introduction</h3>
+
+<p>Source Code: <a href="https://github.com/CupcakePhysics/projectile_range/releases/tag/v1.0.0">https://github.com/CupcakePhysics/projectile_range/releases/tag/v1.0.0</a></p>
+
+<p>In introductory mechanics courses, we learn that we need to launch a projectile at an angle of <script type="math/tex">45^\circ</script> for maximum range. However, this derivation only works when we are studying the kinematics of a projectile on flat ground. What would happen if we launched the projectile off of a cliff? Does the maximum range still correspond to <script type="math/tex">45^\circ</script>? Does it depend on the height of the cliff?</p>
+
+<h3 id="range-on-flat-surface">Range on Flat Surface</h3>
+
+<p>Let’s review the derivation of the maximum range of a projectile (neglecting air resistance). Consider the setup shown below.</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-04-25/parabola_flat.png" alt="Parabolic Motion" /></p>
+</div>
+
+<p>We launch a projectile with an initial speed <script type="math/tex">v</script> at an angle <script type="math/tex">\theta</script> with respect to the horizontal axis. It makes a parabolic arc through the air due to the acceleration due to gravity (<script type="math/tex">g</script>) and then lands some distance <script type="math/tex">x_f</script> away. I will use the <a href="http://www.physicsclassroom.com/class/1DKin/Lesson-6/Kinematic-Equations">kinematics equations</a> to analyze this problem.</p>
+
+<p>First, we can solve for the time of flight by analyzing motion in the vertical (y) direction.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+y_f &= y_i + v_{iy} t + \frac{1}{2} a_y t^2\\[0.1cm]
+0 &= 0 + v sin\theta t - \frac{1}{2} g t^2
+\end{align} %]]></script>
+
+<p>Solving for the time <script type="math/tex">t</script> yields:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+v sin\theta t &= \frac{1}{2} g t^2\\[0.1cm]
+v sin\theta &= \frac{1}{2} g t\\[0.1cm]
+\frac{2 v sin\theta}{g} &= t\\[0.1cm]
+\end{align} %]]></script>
+
+<p>Next, we can analyze the motion along the horizontal (x) direction.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+x_f &= x_i + v_{ix} t + \frac{1}{2} a_x t^2\\[0.1cm]
+x_f &= 0 + v cos\theta t + 0\\[0.1cm]
+x_f &= v cos\theta t
+\end{align} %]]></script>
+
+<p>Substituting the expression for <script type="math/tex">t</script> into the expression for <script type="math/tex">x_f</script> yields:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+x_f &= v cos\theta t\\[0.1cm]
+x_f &= \frac{2 v^2 cos\theta sin\theta}{g}\\[0.1cm]
+\end{align} %]]></script>
+
+<p>If we want to find the maximum range of the projectile, we take the derivative of <script type="math/tex">x_f</script> with respect to <script type="math/tex">\theta</script> and set it equal to zero:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\frac{d x_f}{d\theta} &= \frac{2 v^2}{g} \frac{d}{d\theta} \left [ cos\theta sin\theta \right ]\\[0.1cm]
+&= \frac{2 v^2}{g} \left [ cos^2 \theta - sin^2\theta \right ]\\[0.1cm]
+&= \frac{2 v^2}{g} cos\left ( 2\theta \right )
+\end{align} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+0 &= \frac{2 v^2}{g} cos\left ( 2\theta \right )\\[0.1cm]
+0 &= cos\left ( 2\theta \right )\\[0.1cm]
+\theta &= 45^\circ
+\end{align} %]]></script>
+
+<p>As we expect, the maximum range of the projectile occurs when <script type="math/tex">\theta = 45^\circ</script>.</p>
+
+<h3 id="range-off-cliff">Range Off Cliff</h3>
+
+<p>Now suppose that instead of a flat surface we launch the projectile off of a cliff as shown below.</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-04-25/parabola_step.png" alt="Parabolic Motion With Step" /></p>
+</div>
+
+<p>Everything is the same as before, except now, the starting position is (0,h) rather than (0,0). At what angle do we see a maximum?</p>
+
+<p>We can start our analysis just like before. First, we will analyze the motion along the vertical (y) direction. This time, the initial y position <script type="math/tex">y_i</script> does not equal zero.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+y_f &= y_i + v_{iy} t + \frac{1}{2} a_y t^2\\[0.1cm]
+0 &= h + v sin\theta t - \frac{1}{2} g t^2\\[0.1cm]
+0 &= g t^2 - 2v sin\theta t - 2h\\[0.1cm]
+\end{align} %]]></script>
+
+<p>Solving for t using the quadratic formula yields:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+t &= \frac{2vsin\theta \pm \sqrt{4v^2 sin^2\theta - 4g(-2h)}}{2g}\\[0.1cm]
+&= \frac{2vsin\theta \pm \sqrt{4v^2 sin^2\theta + 8gh}}{2g}\\[0.1cm]
+&= \frac{vsin\theta}{g} \pm \frac{\sqrt{v^2 sin^2\theta + 2gh}}{g}\\[0.1cm]
+\end{align} %]]></script>
+
+<p>We note that the minus solution will give us a negative time. This is not a physically real solution, so we will only focus on the positive one.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+t = \frac{vsin\theta}{g} + \frac{\sqrt{v^2 sin^2\theta + 2gh}}{g}
+\end{equation}</script>
+
+<p>Now, once again we can analyze the motion in the horizontal (x) direction. Solving for <script type="math/tex">x_f</script> yields:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+x_f &= x_i + v_{ix} t + \frac{1}{2} a_x t^2\\[0.1cm]
+x_f &= 0 + v cos\theta t + 0\\[0.1cm]
+x_f &= v cos\theta t
+\end{align} %]]></script>
+
+<p>Substituting in the expression for <script type="math/tex">t</script> into the expression for <script type="math/tex">x_f</script> yields:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+x_f &= v cos\theta t\\[0.1cm]
+&= v cos\theta \left [ \frac{vsin\theta}{g} + \frac{\sqrt{v^2 sin^2\theta + 2gh}}{g} \right ]\\[0.1cm]
+&= \frac{v^2 cos\theta sin\theta}{g} + \frac{v cos\theta \sqrt{v^2 sin^2\theta + 2gh}}{g}\\[0.1cm]
+\end{align} %]]></script>
+
+<p>That looks a lot more complicated than the expression we got in the case of flat ground…</p>
+
+<p>We could proceed as we did above, taking the derivative and setting it equal to zero. However, I really wouldn’t recommend it. The derivative itself is messy, but doable:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\frac{d x_f}{d\theta} &= \frac{v^2}{g}\frac{d}{d\theta}\left [ cos\theta sin\theta \right ] + \frac{v}{g} \frac{d}{d\theta} \left [ cos\theta \sqrt{v^2 sin^2\theta + 2gh} \right ]\\[0.1cm]
+&= \frac{v^2}{g} \left [ cos^2\theta - sin^2\theta \right ] + \frac{v}{g} \left [ cos\theta \left (v^2 sin^2\theta + 2gh\right )^{-1/2} \left ( 2 v^2 sin\theta cos\theta \right ) - sin\theta \sqrt{v^2 sin^2\theta + 2gh} \right ]\\[0.1cm]
+&= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta}{\sqrt{v^2 sin^2\theta + 2gh}} - \frac{ sin\theta \left (v^2 sin^2\theta + 2gh \right )}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
+&= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta}{\sqrt{v^2 sin^2\theta + 2gh}} - \frac{ v^2 sin^3\theta + 2gh sin\theta}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
+&= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta - v^2 sin^3\theta + 2gh sin\theta}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
+&= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v sin\theta}{g} \left [ \frac{ 2 v^2 cos^2\theta - v^2 sin^2\theta + 2gh}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
+\end{align} %]]></script>
+
+<p>But solving the final equation for <script type="math/tex">\theta</script> is a nightmare:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+0 = \frac{v^2}{g} cos \left (2\theta \right) + \frac{v sin\theta}{g} \left [ \frac{ 2 v^2 cos^2\theta - v^2 sin^2\theta + 2gh}{\sqrt{v^2 sin^2\theta + 2gh}} \right ] \hspace{7mm} :(
+\end{equation}</script>
+
+<p>Don’t believe me? Here is the <a href="https://www.wolframalpha.com/input/?i=Solve+0+%3D+v*cos%282*Theta%29+%2B+sin%28Theta%29*%282*v^2*cos%28Theta%29^2+-+v^2*sin%28Theta%29^2+%2B+2*g*h%29%2Fsqrt%28v^2*sin%28Theta%29^2+%2B+2*g*h%29+for+Theta">solution in Wolfram Alpha</a>. If you have a Wolfram account, feel free to run the problem with more computing time and see what you get!</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-04-25/wolfram.png" alt="Wolfram Alpha Output" /></p>
+</div>
+
+<p>Oh god, kill it with fire…</p>
+
+<p>Instead of struggling with the analytical solution, maybe we can look at this problem numerically. I have written a <a href="https://github.com/CupcakePhysics/projectile_range/releases/tag/v1.0.0">little Matlab script</a> that plots the range of the projectile as a function of angle. You can customize the starting height of the projectile in the parameters at the top of the script. Feel free to play around with it.</p>
+
+<p>An example output is shown below. Here, I have plotted heights of:</p>
+
+<ul>
+  <li>h1 = 0 m</li>
+  <li>h2 = 2 m</li>
+  <li>h3 = 4 m</li>
+  <li>h4 = 6 m</li>
+  <li>h5 = 8 m.</li>
+</ul>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-04-25/matlab.png" alt="Matlab Plot" /></p>
+</div>
+
+<p>Notice that the distance traveled is negative when the angle is greater than <script type="math/tex">\pi/2</script> radians. This is because we are effectively launching the projectile “backwards”. In any case, we see that as the height increases, the maximum range increases as well. Additionally, as the height increases, the maximum range occurs at smaller and smaller angles.</p>
+
+<p>Thus, we finally get to our result. If we are on a flat surface, the angle of maximum range is <script type="math/tex">45^\circ</script>. However, as we increase the initial height (h) of the projectile, we need to throw it at a shallower angle in order to get maximum distance (less than <script type="math/tex">45^\circ</script>).</p>
+
+    </div>
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES * * */
+	  var disqus_shortname = 'cupcakephysicsblog';
+
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+
+</article>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    </section>
+
+    <div class="social-media">
+      <div class="container">
+        <ul>
+          <li><a class="button primary" href="/categories.html">Categories</a></li>
+          <li><a class="button secondary" href="/tags.html">Tags</a></li>
+          <li><a class="button tertiary" href="/about.html">About</a></li>
+          <li><a class="social-icon facebook" href="https://www.facebook.com/pages/Cupcake-Physics/1555786914693563" target="_blank"></a></li>
+          <li><a class="social-icon twitter" href="https://twitter.com/cupcakephysics" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><a href="/">Cupcake Physics</a> by Cyrus Vandrevala | All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="preloader">
+    <img src="/assets/images/icons/facebook-hover.png" />
+    <img src="/assets/images/icons/twitter-hover.png" />
+  </div>
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+  <script type="text/javascript" src="/assets/js/searchbar.js"></script>
+
+</body>
+
+</html>

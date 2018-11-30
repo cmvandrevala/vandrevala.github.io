@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  <meta charset="utf-8">
+  <title>The Heisenberg Equation (Part 3)</title>
+  
+    <meta name="description" content="I finish my analysis of the quantum harmonic oscillator using the Heisenberg equation. This week, I focus on the famous creation and annihilation operators.">
+  
+
+  <meta name="author" content="Cyrus Vandrevala">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-touch-icon-180x180.png">
+  <link rel="icon" sizes="16x16" type="image/png" href="/assets/ico/favicon-16x16.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/assets/ico/favicon-32x32.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="/assets/ico/favicon-96x96.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="/assets/ico/favicon-192x192.png">
+  <link rel="icon" sizes="194x194" type="image/png" href="/assets/ico/favicon-194x194.png">
+  <link rel="manifest" href="/assets/ico/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#d415a1">
+  <meta name="msapplication-TileImage" content="/assets/ico/mstile-144x144.png">
+  <meta name="theme-color" content="#d415a1"
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/reset.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-61768963-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+</head>
+
+  <body>
+  <div class="content">
+
+    <header>
+      <div class="container">
+        <h2 class="desktop">
+          <a href="/"><span></span>cupcake physics</a>
+        </h2>
+
+        <h2 class="mobile">
+          <a href="/"><span></span></a>
+        </h2>
+
+        <span class="hot-dog-menu"></span>
+
+        <nav>
+          <ul>
+			  <li><input id="search_input" data-toggle="dropdown" type="text" class="form-control" placeholder="Search Posts" autocomplete="off" onkeyup="checkTextField();" /></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+    <section>
+     <article class="post">
+  <div class="container">
+
+    <span class="post-date">
+      
+      August
+      30th,
+      
+      2015
+    </span>
+
+    <h2>The Heisenberg Equation (Part 3) </h2>
+
+	
+	  
+		  <span class="topic quantum-mechanics"></span>
+		
+	
+    <span class="difficulty medium"></span>
+
+    <div class="body">
+      <h3 id="a-bit-of-review">A Bit of Review</h3>
+
+<p><a href="http://blog.cupcakephysics.com/quantum%20mechanics/2015/08/23/the-heisenberg-equation-part-2.html">Last week</a> I derived the expectation values of position and momentum of the quantum harmonic oscillator using the Heisenberg equation. First, I outlined how operators and wavefunctions evolve in time in the Schrodinger and Heisenberg pictures of quantum mechanics:</p>
+
+<p><br /></p>
+
+<center>
+	<table>
+		<tr>
+			<td style="font-weight: bold;">Property</td>
+			<td style="font-weight: bold;">Schrodinger Picture</td>
+			<td style="font-weight: bold;">Heisenberg Picture</td>
+		</tr>
+		<tr>
+			<td>Operator</td>
+			<td>Time Independent</td>
+			<td>Time Dependent</td>
+		</tr>
+		<tr>
+			<td>Wavefunction</td>
+			<td>Time Dependent</td>
+			<td>Time Independent</td>
+		</tr>
+	</table>
+</center>
+
+<p><br /></p>
+
+<p>Then, I calculated that the time-dependent expectation values for position and momentum.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\langle \hat{x}_H \rangle = \langle \psi | \hat{x}_H | \psi \rangle = \langle \hat{x} \rangle cos(\omega t) + \frac{\langle \hat{p} \rangle}{m\omega} sin(\omega t)
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\langle \hat{p}_H \rangle = \langle \psi | \hat{p}_H | \psi \rangle = \langle \hat{p} \rangle cos(\omega t) - m\omega \langle \hat{x} \rangle sin(\omega t)
+\end{equation}</script>
+
+<p>The expressions above state that the time-evolution of the expectation values of position and momentum depend on the initial expectation values of position and momentum as well as sinusoidal functions of time. This leads to two scenarios. First, suppose that the quantum harmonic oscillator starts off in some arbitrary state <script type="math/tex">\psi</script>. That means <script type="math/tex">\langle \hat{x} \rangle</script> and <script type="math/tex">\langle \hat{p} \rangle</script> are not necessarily zero. Thus, the expectation values of position and momentum oscillate as a function of time. On the other hand, suppose that the quantum harmonic oscillator is in an energy eigenstate. That means <script type="math/tex">\langle \hat{x} \rangle</script> and <script type="math/tex">\langle \hat{p} \rangle</script> are equal to zero. Thus, as we expect, the expectation values of position and momentum are zero at all points in time.</p>
+
+<p>This week I am going to solve exactly the same problem as last week. However, instead of writing everything in terms of position and momentum, I am going to write everything in terms of the <a href="https://en.wikipedia.org/wiki/Creation_and_annihilation_operators">creation and annihilation operators</a> (<script type="math/tex">\hat{a}</script> and <script type="math/tex">\hat{a}^\dagger</script>).</p>
+
+<p>Cue the sunglasses cupcake one more time…</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-08-30/sunglasses.png" alt="Bring it On" /></p>
+</div>
+
+<h3 id="my-notation">My Notation</h3>
+
+<p>The notation is exactly the same as last week. Any operator with an H subscript is an operator in the Heisenberg picture with time dependence. Any operator with no subscript is one in the Schrodinger picture with no time-dependence. The relationship between these operators is:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{Q}_H = \hat{U}^\dagger \hat{Q} \hat{U}
+\end{equation}</script>
+
+<p>Where <script type="math/tex">\hat{U}</script> is a unitary operator that describes the time evolution of the quantum system.</p>
+
+<h3 id="the-creation-and-annihilation-operators">The Creation and Annihilation Operators</h3>
+
+<p>When analyzing the quantum harmonic oscillator, we often try to avoid using the position and momentum operators explicitly. This is because the eigenstates of the Hamiltonian are not position or momentum eigenstates - they are energy eigenstates. Thus, it makes sense to recast position and momentum operators in terms of energy operators. Usually, the way this is done is by defining the creation and annihilation operators:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{a}^\dagger = \frac{1}{\sqrt{2\hbar m \omega}} \left ( m\omega \hat{x} - i\hat{p} \right )
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{a} = \frac{1}{\sqrt{2\hbar m \omega}} \left ( m\omega \hat{x} + i\hat{p} \right )
+\end{equation}</script>
+
+<p>There are a huge number of resources out on the internet that describe how these operators affect energy eigenstates (usually indexed by n). I will assume that you are familiar with the properties of <script type="math/tex">\hat{a}</script>, <script type="math/tex">\hat{a}^\dagger</script>, and <script type="math/tex">n</script>. If not, take some time to do a quick review before continuing on.</p>
+
+<p>I will quickly prove that we can rewrite the Hamiltonian in terms of these two operators. Multiplying them together yields:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\hat{a}^\dagger \hat{a} &= \left [ \frac{1}{\sqrt{2\hbar m \omega}} \left ( m\omega \hat{x} - i\hat{p} \right ) \right ] \left [ \frac{1}{\sqrt{2\hbar m \omega}} \left ( m\omega \hat{x} + i\hat{p} \right ) \right ]\\[0.1cm]
+&= \frac{1}{2\hbar m \omega} \left ( m^2\omega^2 \hat{x} \hat{x} - im\omega \hat{p} \hat{x} + im\omega \hat{x} \hat{p} + \hat{p} \hat{p} \right )\\[0.1cm]
+&= \frac{1}{2\hbar m \omega} \left ( m^2\omega^2 \hat{x}^2 + im\omega \left [ \hat{x}, \hat{p} \right ] + \hat{p}^2 \right )\\[0.1cm]
+&= \frac{1}{2\hbar m \omega} \left [ m^2\omega^2 \hat{x}^2 + im\omega \left ( i\hbar \right ) + \hat{p}^2 \right ]\\[0.1cm]
+&= \frac{1}{2\hbar m \omega} \left [ m^2\omega^2 \hat{x}^2 - m \hbar \omega + \hat{p}^2 \right ]\\[0.1cm]
+&= \frac{\hat{p}^2}{2\hbar m \omega} + \frac{1}{2\hbar} m\omega \hat{x}^2 - \frac{1}{2}
+\end{align} %]]></script>
+
+<p>Adding <script type="math/tex">1/2</script> to the expression above yields:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{a}^\dagger \hat{a} + \frac{1}{2} = \frac{\hat{p}^2}{2\hbar m \omega} + \frac{1}{2\hbar} m\omega \hat{x}^2
+\end{equation}</script>
+
+<p>Finally, multiplying each side by <script type="math/tex">\hbar \omega</script> gives the Hamiltonian.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{H} = \hbar \omega \left ( \hat{a}^\dagger \hat{a} + \frac{1}{2} \right ) = \frac{\hat{p}^2}{2m} + \frac{1}{2} m \omega^2 \hat{x}^2
+\end{equation}</script>
+
+<p>Thus, we can write the Hamiltonian in a position-momentum representation or an energy representation. We know from previous weeks that we can use the Heisenberg equation to recast the Hamiltonian from the Schrodinger to the Heisenberg picture. Let’s see what happens when we plug the creation and annihilation operators into that equation.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{d\hat{a}_H}{dt} = \frac{i}{\hbar} \left [\hat{H}, \hat{a}_H \right ] + \left ( \frac{d\hat{a}}{dt} \right )_H
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{d\hat{a}^\dagger_H}{dt} = \frac{i}{\hbar} \left [\hat{H}, \hat{a}^\dagger_H \right ] + \left ( \frac{d\hat{a}^\dagger}{dt} \right )_H
+\end{equation}</script>
+
+<p>The operators <script type="math/tex">\hat{a}</script> and <script type="math/tex">\hat{a}^\dagger</script> are not functions of time. Thus, we can solve for <script type="math/tex">\hat{a}</script> first:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\frac{d\hat{a}_H}{dt} &= \frac{i}{\hbar} \left [\hat{H}, \hat{a}_H \right ]\\[0.1cm]
+&= \frac{i}{\hbar} \left [\hat{H}, \hat{U}^\dagger \hat{a} \hat{U} \right ]\\[0.1cm]
+&= \frac{i}{\hbar} \hat{U}^\dagger \left [\hat{H},  \hat{a}  \right ] \hat{U}\\[0.1cm]
+&= \frac{i}{\hbar} \hat{U}^\dagger \left ( -\hbar \omega \hat{a}  \right ) \hat{U}\\[0.1cm]
+&= - i\omega \hat{U}^\dagger \hat{a} \hat{U}\\[0.1cm]
+&= - i\omega \hat{a}_H
+\end{align} %]]></script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{d\hat{a}_H}{dt} + i\omega \hat{a}_H = 0
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{a}_H(t) = \hat{a}_H(0) e^{ -i\omega t} = \hat{a} e^{ -i\omega t}
+\end{equation}</script>
+
+<p>And we can solve for <script type="math/tex">\hat{a}^\dagger</script> second:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\frac{d\hat{a}^\dagger_H}{dt} &= \frac{i}{\hbar} \left [\hat{H}, \hat{a}^\dagger_H \right ]\\[0.1cm]
+&= \frac{i}{\hbar} \left [\hat{H}, \hat{U}^\dagger \hat{a}^\dagger \hat{U} \right ]\\[0.1cm]
+&= \frac{i}{\hbar} \hat{U}^\dagger \left [\hat{H},  \hat{a}^\dagger  \right ] \hat{U}\\[0.1cm]
+&= \frac{i}{\hbar} \hat{U}^\dagger \left ( \hbar \omega \hat{a}^\dagger  \right ) \hat{U}\\[0.1cm]
+&= i\omega \hat{U}^\dagger \hat{a}^\dagger \hat{U}\\[0.1cm]
+&= i\omega \hat{a}^\dagger_H\\[0.1cm]
+\end{align} %]]></script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{d\hat{a}^\dagger_H}{dt} - i\omega \hat{a}^\dagger_H = 0
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{a}^\dagger_H(t) = \hat{a}^\dagger_H(0) e^{ i\omega t} = \hat{a}^\dagger e^{ i\omega t}
+\end{equation}</script>
+
+<p>We have recovered nice expressions for <script type="math/tex">\hat{a}</script> and <script type="math/tex">\hat{a}^\dagger</script>. Let’s put them to use.</p>
+
+<h3 id="coming-full-circle">Coming Full Circle</h3>
+
+<p>Now that we have the creation and annihilation operators in the Heisenberg picture, let’s once again find the position and momentum expectation values of the quantum harmonic oscillator, in a slightly different way.</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-08-30/word.png" alt="Word" /></p>
+</div>
+
+<p>Suppose I have some arbitrary quantum state that is a linear superposition of energy eigenstates (each <script type="math/tex">b_n</script> is a constant):</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+| \psi \rangle = b_0 \psi_0 + b_1 \psi_1 + b_2 \psi_2 + ... = \sum_{n=0}^N b_n \psi_n = \sum_{n=0}^N b_n | n \rangle
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\langle \psi | = b_0^* \psi^*_0 + b_1^* \psi_1^* + b_2^* \psi_2^* + ... = \sum_{n=0}^N b_n^* \psi_n^* = \sum_{n=0}^N b_n^* \langle n |
+\end{equation}</script>
+
+<p>I want to calculate the expectation values of position and momentum as a function of time; however, this time I will put everything in terms of <script type="math/tex">\hat{a}</script> and <script type="math/tex">\hat{a}^\dagger</script>. First, I will rewrite <script type="math/tex">\hat{x}</script> and <script type="math/tex">\hat{p}</script> in terms of <script type="math/tex">\hat{a}</script> and <script type="math/tex">\hat{a}^\dagger</script>. Taking the definition of the creation and annihilation operators from above and rearranging terms gives:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{x}_H = \sqrt{\frac{\hbar}{2m\omega}} \left ( \hat{a}^\dagger_H + \hat{a}_H \right )
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\hat{p}_H = i\sqrt{\frac{m \hbar\omega}{2}} \left ( \hat{a}^\dagger_H - \hat{a}_H \right )
+\end{equation}</script>
+
+<p>The expectation value of position is:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\langle \hat{x}_H \rangle &= \langle \psi | \hat{x}_H | \psi \rangle\\[0.1cm]
+&= \sum_{n=0}^N \sum_{m=0}^M \langle n | b_n^* \hat{x}_H b_m | m \rangle\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \langle n |  \left ( \hat{a}^\dagger_H + \hat{a}_H \right ) | m \rangle\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \langle n |  \left ( e^{i\omega t} \hat{a}^\dagger |m\rangle + e^{-i\omega t} \hat{a} |m\rangle \right )\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \langle n |  \left ( e^{i\omega t} \sqrt{m+1} |m+1\rangle + e^{-i\omega t} \sqrt{m} |m-1\rangle \right )\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \left ( e^{i\omega t} \sqrt{m+1} \langle n |m+1\rangle + e^{-i\omega t} \sqrt{m} \langle n |m-1\rangle \right )\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \left ( e^{i\omega t} \sqrt{m+1} \delta_{n,m+1} + e^{-i\omega t} \sqrt{m} \delta_{n,m-1} \right )\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \sum_{m=0}^M \left [ b_{m+1}^* b_m e^{i\omega t} \sqrt{m+1} + b_{m-1}^* b_m e^{-i\omega t} \sqrt{m} \right ]
+\end{align} %]]></script>
+
+<p>And the expectation value of momentum is:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\langle \hat{p}_H \rangle &= \langle \psi | \hat{p}_H | \psi \rangle\\[0.1cm]
+&= \sum_{n=0}^N \sum_{m=0}^M \langle n | b_n^* \hat{p}_H b_m | m \rangle\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \langle n |  \left ( \hat{a}^\dagger_H - \hat{a}_H \right ) | m \rangle\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \langle n |  \left ( e^{i\omega t} \hat{a}^\dagger |m\rangle - e^{-i\omega t} \hat{a} |m\rangle \right )\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \langle n |  \left ( e^{i\omega t} \sqrt{m+1} |m+1\rangle - e^{-i\omega t} \sqrt{m} |m-1\rangle \right )\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \left ( e^{i\omega t} \sqrt{m+1} \langle n |m+1\rangle - e^{-i\omega t} \sqrt{m} \langle n |m-1\rangle \right )\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \sum_{n=0}^N \sum_{m=0}^M b_n^* b_m \left ( e^{i\omega t} \sqrt{m+1} \delta_{n,m+1} - e^{-i\omega t} \sqrt{m} \delta_{n,m-1} \right )\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \sum_{m=0}^M \left [ b_{m+1}^* b_m e^{i\omega t} \sqrt{m+1} - b_{m-1}^* b_m e^{-i\omega t} \sqrt{m} \right ]
+\end{align} %]]></script>
+
+<p>And there we have it! Victory!</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-08-30/question.png" alt="What the Heck?" /></p>
+</div>
+
+<p>Ok, at this point, you might be thinking what the heck is going on. How are the answers above anything like what we derived last week? They look very different, but they are actually one and the same. Let’s look at a quick example. Suppose I start with the superposition state:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+| \psi \rangle = \frac{1}{\sqrt{2}} \left ( |0\rangle + |1\rangle \right )
+\end{equation}</script>
+
+<p>Let’s calculate the expectation values of position and momentum using the weird formulae above:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\langle \hat{x}_H \rangle &= \sqrt{\frac{\hbar}{2m\omega}} \sum_{m=0}^1 \left [ b_{m+1}^* b_m e^{i\omega t} \sqrt{m+1} + b_{m-1}^* b_m e^{-i\omega t} \sqrt{m} \right ]\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \left \{ \left [ b_{1}^* b_0 e^{i\omega t} \sqrt{1} + b_{-1}^* b_0 e^{-i\omega t} \sqrt{0} \right ] + \left [ b_{2}^* b_1 e^{i\omega t} \sqrt{2} + b_{0}^* b_1 e^{-i\omega t} \sqrt{1} \right ] \right \}\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \left [ b_{1}^* b_0 e^{i\omega t} + b_{0}^* b_1 e^{-i\omega t} \right ]\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \left [ \left ( \frac{1}{\sqrt{2}} \right )^2 e^{i\omega t} + \left ( \frac{1}{\sqrt{2}} \right )^2 e^{-i\omega t} \right ]\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} \frac{1}{2} \left [ e^{i\omega t} + e^{-i\omega t} \right ]\\[0.1cm]
+&= \sqrt{\frac{\hbar}{2m\omega}} cos(\omega t)\\[0.1cm]
+\end{align} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\langle \hat{p}_H \rangle &= i\sqrt{\frac{m\hbar\omega}{2}} \sum_{m=0}^1 \left [ b_{m+1}^* b_m e^{i\omega t} \sqrt{m+1} - b_{m-1}^* b_m e^{-i\omega t} \sqrt{m} \right ]\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \left \{ \left [ b_{1}^* b_0 e^{i\omega t} \sqrt{1} - b_{-1}^* b_0 e^{-i\omega t} \sqrt{0} \right ] + \left [ b_{2}^* b_1 e^{i\omega t} \sqrt{2} - b_{0}^* b_1 e^{-i\omega t} \sqrt{1} \right ] \right \}\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \left [ b_{1}^* b_0 e^{i\omega t} - b_{0}^* b_1 e^{-i\omega t} \right ]\\[0.1cm]
+&= i\sqrt{\frac{m\hbar\omega}{2}} \left [ \left ( \frac{1}{\sqrt{2}} \right )^2 e^{i\omega t} - \left ( \frac{1}{\sqrt{2}} \right )^2 e^{-i\omega t} \right ]\\[0.1cm]
+&= \sqrt{\frac{m\hbar\omega}{2}} \frac{i}{2} \left [ e^{i\omega t} - e^{-i\omega t} \right ]\\[0.1cm]
+&= - \sqrt{\frac{m\hbar\omega}{2}} sin(\omega t)
+\end{align} %]]></script>
+
+<p>If you take the final equations from last week and use the initial conditions <script type="math/tex">\langle \hat{x} \rangle = \sqrt{\hbar/2m\omega}</script> and <script type="math/tex">\langle \hat{p} \rangle = 0</script>, you get the same answer as above! Thus, the superposition state above is equivalent to a random state with an initial expected momentum of zero and an initial expected position of <script type="math/tex">\sqrt{\hbar/2m\omega}</script>.</p>
+
+<h3 id="final-thoughts">Final Thoughts</h3>
+
+<p>Wow, this has been an intense arc. The big take-home message is that there is more than one way to visualize quantum mechanics. The Heisenberg picture of quantum mechanics gives the same answers as the Schrodinger picture - it is a matter of preference as to which one you would use for a given problem.</p>
+
+<p>See you next week!</p>
+
+    </div>
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES * * */
+	  var disqus_shortname = 'cupcakephysicsblog';
+
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+
+</article>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    </section>
+
+    <div class="social-media">
+      <div class="container">
+        <ul>
+          <li><a class="button primary" href="/categories.html">Categories</a></li>
+          <li><a class="button secondary" href="/tags.html">Tags</a></li>
+          <li><a class="button tertiary" href="/about.html">About</a></li>
+          <li><a class="social-icon facebook" href="https://www.facebook.com/pages/Cupcake-Physics/1555786914693563" target="_blank"></a></li>
+          <li><a class="social-icon twitter" href="https://twitter.com/cupcakephysics" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><a href="/">Cupcake Physics</a> by Cyrus Vandrevala | All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="preloader">
+    <img src="/assets/images/icons/facebook-hover.png" />
+    <img src="/assets/images/icons/twitter-hover.png" />
+  </div>
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+  <script type="text/javascript" src="/assets/js/searchbar.js"></script>
+
+</body>
+
+</html>

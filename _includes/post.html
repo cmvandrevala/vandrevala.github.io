@@ -1,0 +1,67 @@
+<article class="post">
+  <div class="container">
+
+    <span class="post-date">
+      {% assign d = page.date | date: "%d" | plus:'0' %}
+      {{ page.date | date: "%B" }}
+      {% case d %}
+        {% when 1 or 21 or 31 %}{{ d }}st,
+        {% when 2 or 22 %}{{ d }}nd,
+        {% when 3 or 23 %}{{ d }}rd,
+        {% else %}{{ d }}th,
+      {% endcase %}
+      {{ page.date | date: "%Y" }}
+    </span>
+
+    <h2>{{ page.title }} {% if page.tagline %}{{page.tagline}}{% endif %}</h2>
+
+	{% for category in page.category %}
+	  {% case category %}
+	    {% when 'Classical Mechanics' %}
+		  <span class="topic classical-mechanics"></span>
+	    {% when 'Computational Physics' %}
+		  <span class="topic computational-physics"></span>
+	    {% when 'Cupcake Physics' %}
+		  <span class="topic cupcake-physics"></span>
+	    {% when 'Electromagnetism' %}
+          <span class="topic electromagnetism"></span>
+		{% when 'Optics' %}
+		  <span class="topic optics"></span>
+		{% when 'Math Methods' %}
+		  <span class="topic math-methods"></span>
+		{% when 'Quantum Field Theory' %}
+		  <span class="topic quantum-field-theory"></span>
+		{% when 'Quantum Mechanics' %}
+		  <span class="topic quantum-mechanics"></span>
+		{% when 'Thermodynamics and Statistical Physics' %}
+          <span class="topic thermodynamics"></span>
+		{% when 'Relativity' %}
+		  <span class="topic relativity"></span>
+		{% else %}
+	  {% endcase %}
+	{% endfor %}
+    <span class="difficulty {{page.difficulty}}"></span>
+
+    <div class="body">
+      {{ content }}
+    </div>
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES * * */
+	  var disqus_shortname = 'cupcakephysicsblog';
+
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+
+</article>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>

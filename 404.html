@@ -1,0 +1,37 @@
+---
+layout: page
+---
+
+<style>
+	pre {
+		background: none;
+		border: none;
+		color: #d415a1;
+	}
+	.cupcake {
+		float: left;
+		margin: 0px 30px 0px 0px;
+	}
+	.group:before, .group:after {
+		content: "";
+		display: table;
+	}
+	.group:after {
+		clear: both;
+	}
+	.group {
+		zoom: 1;
+	}
+	.cupcake-text {
+		font-size: 1.84rem;
+	}
+</style>
+
+<pre>
+	<div class="group">
+	<img class="cupcake" src="{{ site.url }}/assets/images/404_cupcake.png">
+	<h1>Whoops!</h1>
+	<p class="cupcake-text">That wasn't supposed to happen...</p>
+	<p class="cupcake-text">You can return to the <a href="http://blog.cupcakephysics.com">homepage</a> or hit the back button.</p>
+</div>
+</pre>

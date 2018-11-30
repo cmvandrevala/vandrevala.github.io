@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  <meta charset="utf-8">
+  <title>The Fourier Transform of the Coulomb Potential</title>
+  
+    <meta name="description" content="I demonstrate how to take the Fourier transform of the Coulomb potential. The trick is to not use the Coulomb potential at all - instead, use the Yukawa potential.">
+  
+
+  <meta name="author" content="Cyrus Vandrevala">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-touch-icon-180x180.png">
+  <link rel="icon" sizes="16x16" type="image/png" href="/assets/ico/favicon-16x16.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/assets/ico/favicon-32x32.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="/assets/ico/favicon-96x96.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="/assets/ico/favicon-192x192.png">
+  <link rel="icon" sizes="194x194" type="image/png" href="/assets/ico/favicon-194x194.png">
+  <link rel="manifest" href="/assets/ico/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#d415a1">
+  <meta name="msapplication-TileImage" content="/assets/ico/mstile-144x144.png">
+  <meta name="theme-color" content="#d415a1"
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/reset.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-61768963-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+</head>
+
+  <body>
+  <div class="content">
+
+    <header>
+      <div class="container">
+        <h2 class="desktop">
+          <a href="/"><span></span>cupcake physics</a>
+        </h2>
+
+        <h2 class="mobile">
+          <a href="/"><span></span></a>
+        </h2>
+
+        <span class="hot-dog-menu"></span>
+
+        <nav>
+          <ul>
+			  <li><input id="search_input" data-toggle="dropdown" type="text" class="form-control" placeholder="Search Posts" autocomplete="off" onkeyup="checkTextField();" /></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+    <section>
+     <article class="post">
+  <div class="container">
+
+    <span class="post-date">
+      
+      October
+      4th,
+      
+      2014
+    </span>
+
+    <h2>The Fourier Transform of the Coulomb Potential </h2>
+
+	
+	  
+          <span class="topic electromagnetism"></span>
+		
+	
+	  
+		  <span class="topic math-methods"></span>
+		
+	
+    <span class="difficulty hard"></span>
+
+    <div class="body">
+      <h3 id="introduction">Introduction</h3>
+
+<p>Suppose we have an infinitely large crystal that is made up of evenly spaced nuclei, each with some charge +q.  From solid state physics, we know that the wavefunction of an electron in this periodic lattice will take the form of a <a href="http://en.wikipedia.org/wiki/Bloch_wave">Bloch wave</a>.  However, determining the exact expression for the wavefunction might be tricky if we only utilize the elementary techniques that we learn in introductory quantum mechanics.</p>
+
+<p>In solid state physics, we often find it convenient to analyze particles in terms of their reciprocal space (also called the momentum space or “k-space”). This is different than analyzing particles in their real space (or position space).  For example, if I were to analyze an electron in real space, I would probably describe a wavefunction that is a function of position (x, y, z).  On the other hand, if I were to analyze that same wavefunction in the reciprocal space, I would express the wavefunction of the electron in terms of its momentum rather than its specific position (<script type="math/tex">k_x</script>, <script type="math/tex">k_y</script>, <script type="math/tex">k_z</script>).  The reciprocal space is related to the real space by the Fourier transform.  Thus, if we want to analyze the wavefunction of an electron in a periodic potential, it is useful to first convert the expression for potential to reciprocal space, analyze the system there, and then, if need be, convert it back to real space.</p>
+
+<p>The potential energy between a single charged nucleus and an electron is the Coulomb potential (we will ignore the negative sign for now):</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+V(r) = \frac{q^2}{r}
+\end{equation}</script>
+
+<p>Computing the Fourier transform of the Coulomb potential is actually rather troublesome because of the <script type="math/tex">1/r</script> term in the expression.  If we try to take the Fourier transform of the Coulomb potential directly, the integral would diverge and we would get a nonsensical answer.</p>
+
+<h3 id="derivation">Derivation</h3>
+
+<p>Let’s approach this problem in a different way.  Consider the Yukawa potential:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+V_\lambda(r) = \frac{q^2 e^{-\lambda r}}{r}
+\end{equation}</script>
+
+<p>We can take the Fourier transform of this expression using polar coordinates (the z-axis points along the direction of <script type="math/tex">\vec{k}</script>).  Then:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\mathcal{F}[V_\lambda(r)] &= \int \frac{q^2 e^{-\lambda r}}{r} e^{-i\vec{k} \cdot \vec{r}} d^3\vec{r} \\[0.1cm]
+&= \int_0^{2\pi} \int_0^\pi \int_0^\infty \frac{q^2 e^{-\lambda r}}{r} e^{-ikr cos\theta} r^2 sin\theta dr d\theta d\phi \\[0.1cm]
+\end{align} %]]></script>
+
+<p>The Yukawa potential does not depend on <script type="math/tex">\phi</script>.  Thus:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\mathcal{F}[V_\lambda(r)] = 2\pi q^2 \int_0^\pi \int_0^\infty re^{-\lambda r} e^{-ikr cos\theta} sin\theta dr d\theta \\[0.1cm]
+\end{equation}</script>
+
+<p>Let <script type="math/tex">u = cos\theta</script> and <script type="math/tex">du = -(sin\theta) d\theta</script>.  Then the integral over <script type="math/tex">\theta</script> becomes:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\mathcal{F}[V_\lambda(r)] &= -2\pi q^2 \int_1^{-1} \int_0^\infty re^{-\lambda r} e^{-ikru} dr du \\[0.1cm]
+&= 2\pi q^2 \int_{-1}^{1} \int_0^\infty re^{-\lambda r} e^{-ikru} dr du \\[0.1cm]
+&= 2\pi q^2 \int_0^\infty re^{-\lambda r} \left [ -\frac{1}{ikr} e^{-ikru} \right ]_{-1}^1 dr \\[0.1cm]
+&= 2\pi q^2 \int_0^\infty re^{-\lambda r} \left [ -\frac{1}{ikr} e^{-ikr} + \frac{1}{ikr} e^{ikr} \right ] dr \\[0.1cm]
+\end{align} %]]></script>
+
+<p>Now, we can focus on the integral over <script type="math/tex">r</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\mathcal{F}[V_\lambda(r)] &= \frac{2\pi q^2}{ik} \int_0^\infty e^{-\lambda r} \left [ -e^{-ikr} + e^{ikr} \right ] dr \\[0.1cm]
+&= \frac{2\pi q^2}{ik} \int_0^\infty \left [ -e^{-(ik+\lambda)r} + e^{(ik-\lambda)r} \right ] dr \\[0.1cm]
+&= \frac{2\pi q^2}{ik} \left [ \frac{e^{-(ik+\lambda)r}}{ik + \lambda} + \frac{e^{(ik-\lambda)r}}{ik - \lambda} \right ]_0^\infty \\[0.1cm]
+&= \frac{2\pi q^2}{ik} \left [ \frac{e^{-(ik+\lambda)r}}{\lambda + ik} - \frac{e^{(ik-\lambda)r}}{\lambda - ik} \right ]_0^\infty \\[0.1cm]
+
+&= \frac{2\pi q^2}{ik} \left [ \frac{(\lambda - ik)e^{-(ik+\lambda)r}}{k^2 + \lambda^2} - \frac{(\lambda + ik)e^{(ik-\lambda)r}}{k^2 + \lambda^2} \right ]_0^\infty \\[0.1cm]
+&= \frac{2\pi q^2}{ik} \left [ \frac{(\lambda - ik)e^{-(ik+\lambda)r} - (\lambda + ik)e^{(ik-\lambda)r}}{k^2 + \lambda^2} \right ]_0^\infty \\[0.1cm]
+&= \frac{2\pi q^2}{ik} \left [ \frac{\lambda e^{-(ik+\lambda)r} - ik e^{-(ik+\lambda)r} - \lambda e^{(ik-\lambda)r} - ik e^{(ik-\lambda)r}}{k^2 + \lambda^2} \right ]_0^\infty \\[0.1cm]
+&= \frac{2\pi q^2}{ik} \left [ \frac{-\lambda + ik + \lambda + ik}{k^2 + \lambda^2} \right ] \\[0.1cm]
+&= \frac{2\pi q^2}{ik} \left [ \frac{2ik}{k^2 + \lambda^2} \right ] \\[0.1cm]
+&= \frac{4\pi q^2}{k^2 + \lambda^2} \\[0.1cm]
+\end{align} %]]></script>
+
+<p>In order to transform the Yukawa potential back into the Coulomb potential, we need to make the exponential term disappear.  If <script type="math/tex">\lambda \rightarrow 0</script> we recover the expression for the Coulomb potential.  The Fourier transform of the Coulomb potential is then:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\mathcal{F}[V(r)] = \frac{4\pi q^2}{k^2} \\[0.1cm]
+\end{equation}</script>
+
+    </div>
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES * * */
+	  var disqus_shortname = 'cupcakephysicsblog';
+
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+
+</article>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    </section>
+
+    <div class="social-media">
+      <div class="container">
+        <ul>
+          <li><a class="button primary" href="/categories.html">Categories</a></li>
+          <li><a class="button secondary" href="/tags.html">Tags</a></li>
+          <li><a class="button tertiary" href="/about.html">About</a></li>
+          <li><a class="social-icon facebook" href="https://www.facebook.com/pages/Cupcake-Physics/1555786914693563" target="_blank"></a></li>
+          <li><a class="social-icon twitter" href="https://twitter.com/cupcakephysics" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><a href="/">Cupcake Physics</a> by Cyrus Vandrevala | All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="preloader">
+    <img src="/assets/images/icons/facebook-hover.png" />
+    <img src="/assets/images/icons/twitter-hover.png" />
+  </div>
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+  <script type="text/javascript" src="/assets/js/searchbar.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<body>
+  <div class="content">
+
+    <header>
+      <div class="container">
+        <h2 class="desktop">
+          <a href="{{ site.BASE_PATH }}/"><span></span>cupcake physics</a>
+        </h2>
+
+        <h2 class="mobile">
+          <a href="{{ site.BASE_PATH }}/"><span></span></a>
+        </h2>
+
+        <span class="hot-dog-menu"></span>
+
+        <nav>
+          <ul>
+			  <li><input id="search_input" data-toggle="dropdown" type="text" class="form-control" placeholder="Search Posts" autocomplete="off" onkeyup="checkTextField();" /></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+    <section>
+     {{ content }}
+    </section>
+
+    <div class="social-media">
+      <div class="container">
+        <ul>
+          <li><a class="button primary" href="{{ site.BASE_PATH }}/{{ site.categories_path }}">Categories</a></li>
+          <li><a class="button secondary" href="{{ site.BASE_PATH }}/{{ site.tags_path }}">Tags</a></li>
+          <li><a class="button tertiary" href="{{ site.BASE_PATH }}/about.html">About</a></li>
+          <li><a class="social-icon facebook" href="https://www.facebook.com/pages/Cupcake-Physics/1555786914693563" target="_blank"></a></li>
+          <li><a class="social-icon twitter" href="https://twitter.com/cupcakephysics" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><a href="{{ site.BASE_PATH }}/">Cupcake Physics</a> by Cyrus Vandrevala | All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="preloader">
+    <img src="{{ site.BASE_PATH }}/assets/images/icons/facebook-hover.png" />
+    <img src="{{ site.BASE_PATH }}/assets/images/icons/twitter-hover.png" />
+  </div>
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="{{ site.BASE_PATH }}/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="{{ site.BASE_PATH }}/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="{{ site.BASE_PATH }}/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+  <script type="text/javascript" src="{{ site.BASE_PATH }}/assets/js/searchbar.js"></script>
+
+</body>

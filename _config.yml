@@ -1,0 +1,32 @@
+paginate: 10
+paginate_path: "page:num"
+exclude: ["README.md"]
+highlighter: 'rouge'
+markdown: kramdown
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      title: Cupcake Physics Blog
+
+description: My Homepage
+author:
+  name: Cyrus Vandrevala
+  email: cyrus.vandrevala@cupcakephysics.com
+  github: cmvandrevala
+  twitter: cmvandrevala
+  linkedin: cyrus-vandrevala/99/b49/53
+  bio:
+  email_md5:
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+
+BASE_PATH:

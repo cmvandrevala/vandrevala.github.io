@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  <meta charset="utf-8">
+  <title>Falling Rope on a Scale</title>
+  
+    <meta name="description" content="I derive the force exerted by a falling rope on a scale. There are many variations of this problem involving chains, sand, string, etc.">
+  
+
+  <meta name="author" content="Cyrus Vandrevala">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-touch-icon-180x180.png">
+  <link rel="icon" sizes="16x16" type="image/png" href="/assets/ico/favicon-16x16.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/assets/ico/favicon-32x32.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="/assets/ico/favicon-96x96.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="/assets/ico/favicon-192x192.png">
+  <link rel="icon" sizes="194x194" type="image/png" href="/assets/ico/favicon-194x194.png">
+  <link rel="manifest" href="/assets/ico/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#d415a1">
+  <meta name="msapplication-TileImage" content="/assets/ico/mstile-144x144.png">
+  <meta name="theme-color" content="#d415a1"
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/reset.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-61768963-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+</head>
+
+  <body>
+  <div class="content">
+
+    <header>
+      <div class="container">
+        <h2 class="desktop">
+          <a href="/"><span></span>cupcake physics</a>
+        </h2>
+
+        <h2 class="mobile">
+          <a href="/"><span></span></a>
+        </h2>
+
+        <span class="hot-dog-menu"></span>
+
+        <nav>
+          <ul>
+			  <li><input id="search_input" data-toggle="dropdown" type="text" class="form-control" placeholder="Search Posts" autocomplete="off" onkeyup="checkTextField();" /></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+    <section>
+     <article class="post">
+  <div class="container">
+
+    <span class="post-date">
+      
+      May
+      3rd,
+        
+      2015
+    </span>
+
+    <h2>Falling Rope on a Scale </h2>
+
+	
+	  
+		  <span class="topic classical-mechanics"></span>
+	    
+	
+    <span class="difficulty medium"></span>
+
+    <div class="body">
+      <h3 id="introduction">Introduction</h3>
+
+<p>I have recently been reading the <a href="http://matterandinteractions.org/">Matter and Interactions</a> textbook for my research. Chabay and Sherwood really try to develop a few basic physics relationships that can be used repeatedly rather than listing equations. It is interesting how introductory material, seen in a different way, can change the way that you solve problems.</p>
+
+<p>Today, I want to go over a problem that I found challenging in intermediate mechanics because I was thinking in terms of specific equations rather than broad ideas. What is the weight of a falling rope measured on a scale? There are many variations of the falling rope problem involving falling sand in an hourglass, falling chains, and other falling liquids. No matter what the description, the core concepts remain the same.</p>
+
+<p>The mindeset that you have when you tackle this problem makes a huge difference. One “traditional” way of solving this problem is to break the chain up into little pieces, find their tiny contributions to the force, and integrate over all of them. This works just fine, but it isn’t too elegant. Instead, when you think broadly in terms of momentum and energy, the problem turns out to be pretty straightforward.</p>
+
+<h3 id="the-problem-statement">The Problem Statement</h3>
+
+<p>A flexible rope with a length <script type="math/tex">L</script> and total mass <script type="math/tex">M</script> hangs vertically just above a scale. The rope is released at time <script type="math/tex">t = 0</script>. What is the reading on the scale as a function of time?</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-05-03/setup.png" alt="Force vs. Time" /></p>
+</div>
+
+<h3 id="the-solution">The Solution</h3>
+
+<p>The force of the rope on the scale is equal and opposite to the force of the scale on the rope. Thus, rather than analyzing the scale, let’s analyze the rope. We will define the height of the top of the rope as it falls as <script type="math/tex">h</script> and the mass density of the rope as <script type="math/tex">\lambda = M/L</script>. Everything will be measured along the <script type="math/tex">z</script>-direction.</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-05-03/fallen_rope.png" alt="Force vs. Time" /></p>
+</div>
+
+<p>The total force on the entire piece of rope is equal to the force of the scale upwards minus the force of gravity downwards:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\vec{F}_{tot} &= F_{scale} \hat{z} - Mg \hat{z} \\[0.1cm]
+&= F_{scale} \hat{z} - \lambda L g \hat{z}
+\end{align} %]]></script>
+
+<p>We know that the total force on the rope is equal to the change in momentum of the rope with respect to time (Newton’s Second Law). The total momentum of the rope at any given height <script type="math/tex">h</script> is just the mass of the remaining section of the falling rope (<script type="math/tex">\lambda h</script>) times the speed of the falling rope (<script type="math/tex">dh/dt</script>).</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\vec{p} &= m \vec{v}\\[0.1cm]
+&= \lambda h \frac{dh}{dt} \hat{z}
+\end{align} %]]></script>
+
+<p>Note that <script type="math/tex">\vec{p}</script> is negative becuase <script type="math/tex">dh/dt</script> is negative.</p>
+
+<p>Let’s plug the expression for momentum into Newton’s Second Law and turn the crank. We will use dot notation (<script type="math/tex">\dot{h} \equiv dh/dt</script>) just to keep the equations clean-looking:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\vec{F}_{tot} = \frac{d\vec{p}}{dt}
+\end{equation}</script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+F_{scale} - \lambda L g &= \frac{d}{dt} \left ( \lambda h \dot{h} \right )\\[0.1cm]
+&= \lambda \dot{h}^2 + \lambda h \ddot{h}\\[0.1cm]
+\end{align} %]]></script>
+
+<p>We can solve for the speed of the rope (<script type="math/tex">\dot{h}</script>) by considering energy conservation. All of the potential energy of the rope is turning into kinetic energy when the top of the rope falls from its initial height (L) to some height (h). For a section of rope with height <script type="math/tex">h</script> and mass <script type="math/tex">m</script>:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+K = \frac{1}{2} m \dot{h}^2
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+U = m g \left ( L - h \right )
+\end{equation}</script>
+
+<p>Setting them equal yields:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+K &= U\\[0.1cm]
+\frac{1}{2} m \dot{h}^2 &= m g \left ( L - h \right )\\[0.1cm]
+\dot{h} &= \sqrt{2 g \left ( L - h \right ) }
+\end{align} %]]></script>
+
+<p>Then, we can continue simplifying the expression for force:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+F_{scale} - \lambda L g &= \lambda \dot{h}^2 + \lambda h \ddot{h}\\[0.1cm]
+&= \lambda \left [ 2g \left ( L - h \right ) \right ] + \lambda h \ddot{h}\\[0.1cm]
+&= 2g\lambda L - 2g\lambda h + \lambda h \ddot{h}
+\end{align} %]]></script>
+
+<p>The acceleration of the top of the rope (<script type="math/tex">\ddot{h}</script> is just the acceleration due to gravity. Remember, we are dealing with vectors, so <script type="math/tex">\ddot{h} = -g</script>.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+F_{scale} - \lambda L g &= 2g\lambda L - 2g\lambda h - \lambda h g\\[0.1cm]
+&= 2g\lambda L - 3 \lambda h g
+\end{align} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+F_{scale} &= g\lambda L + 2g\lambda L - 3 \lambda h g\\[0.1cm]
+&= 3g\lambda L - 3 g \lambda h\\[0.1cm]
+&= 3g\lambda \left ( L - h \right )
+\end{align} %]]></script>
+
+<p>We have reached an important intermediate step. We now have the force measured by the scale as a function of rope height <script type="math/tex">h</script>. Remember, this equation is only valid while the rope is falling. After it comes to rest on the scale, the scale will simply read the weight of the rope (<script type="math/tex">Mg</script>).</p>
+
+<p>We can now solve for the force read by the scale as a function of time. At some time <script type="math/tex">t</script>, the top of the rope has fallen an amount <script type="math/tex">gt^2/2</script> (from the kinematics of a falling particle). Thus, the height (<script type="math/tex">h</script>) of the rope is equal to:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+h = L - \frac{1}{2} g t^2
+\end{equation}</script>
+
+<p>Plugging the height into the expression for force gives:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+F_{scale} &= 3 \lambda g \left [ L - h \right ]\\[0.1cm]
+&= 3 \lambda g \left [ L - \left ( L - \frac{1}{2} g t^2 \right ) \right ]\\[0.1cm]
+&= \frac{3}{2} \lambda g^2 t^2\\[0.1cm]
+\end{align} %]]></script>
+
+<p>While the rope is falling, the weight on the scale will increase proportional to <script type="math/tex">t^2</script>. Then, when the rope stops falling, the weight will suddenly drop down to <script type="math/tex">Mg</script>. I have plotted the force read by the scale as a function of time for a rope that is one meter long and weighs one kilogram. The red dots represent the weight read by the scale as a function of time. The green line is drawn at <script type="math/tex">3Mg</script> for reference.</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-05-03/scale_graph.png" alt="Force vs. Time" /></p>
+</div>
+
+<h3 id="conclusions">Conclusions</h3>
+
+<p>Interestingly, when the last bit of the chain hits the scale, the scale reads <script type="math/tex">3Mg</script> rather than just <script type="math/tex">Mg</script>. This is because we have to take the momentum of the falling chain into account as well as its weight.</p>
+
+<p>Dr. Alex Dzierba performed an example of this experiment in his class (see <a href="http://www.dzre.com/alex/hp221_f03/notes/chain.pdf">his writeup of the data</a>). Notice that the chain is generally proportional to <script type="math/tex">t^2</script> with a few bumps along the way. The bumps in the graph come from the fact that a real chain is not perfectly uniform.</p>
+
+    </div>
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES * * */
+	  var disqus_shortname = 'cupcakephysicsblog';
+
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+
+</article>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    </section>
+
+    <div class="social-media">
+      <div class="container">
+        <ul>
+          <li><a class="button primary" href="/categories.html">Categories</a></li>
+          <li><a class="button secondary" href="/tags.html">Tags</a></li>
+          <li><a class="button tertiary" href="/about.html">About</a></li>
+          <li><a class="social-icon facebook" href="https://www.facebook.com/pages/Cupcake-Physics/1555786914693563" target="_blank"></a></li>
+          <li><a class="social-icon twitter" href="https://twitter.com/cupcakephysics" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><a href="/">Cupcake Physics</a> by Cyrus Vandrevala | All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="preloader">
+    <img src="/assets/images/icons/facebook-hover.png" />
+    <img src="/assets/images/icons/twitter-hover.png" />
+  </div>
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+  <script type="text/javascript" src="/assets/js/searchbar.js"></script>
+
+</body>
+
+</html>

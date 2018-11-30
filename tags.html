@@ -1,0 +1,60 @@
+---
+layout: page
+title: Tags
+header: Posts By Tag
+group: navigation
+---
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tag_words = site_tags | split:',' | sort %}
+
+<div class="category-contents">
+  {% for category in site.tags %}
+    <h2>Posts in <span class="category">{{ category[0] | capitalize }}</span></h2>
+    {% assign pages_list = category[1] %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if group == null or group == node.group %}
+
+          <article class="home">
+            <a href="{{ site.BASE_PATH }}{{node.url}}">
+              <span class="post-date">
+                {% assign d = node.date | date: "%d" | plus:'0' %}
+                {{ node.date | date: "%B" }}
+                {% case d %}
+                {% when 1 or 21 or 31 %}{{ d }}st,
+                {% when 2 or 22 %}{{ d }}nd,
+                {% when 3 or 23 %}{{ d }}rd,
+                {% else %}{{ d }}th,
+                {% endcase %}
+                {{ node.date | date: "%Y" }}
+              </span>
+
+              <h4>
+                {{ node.title }}
+              </h4>
+
+              <p>
+                {% if node.fullview %}
+                {{ node.content }}
+                {% else %}
+                {% if node.shortinfo %}
+                {{ node.shortinfo }}
+                {% elsif node.description %}
+                {{ node.description }}
+                {% else %}
+                {{ node.excerpt }}
+                {% endif %}
+                {% endif %}
+              </p>
+            </a>
+          </article>
+
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    {% assign pages_list = nil %}
+  {% endfor %}
+</div>
+
+

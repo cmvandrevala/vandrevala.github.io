@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  <meta charset="utf-8">
+  <title>Zooming in on the Magnifying Glass</title>
+  
+    <meta name="description" content="I go through some of the properties of the simple magnifier (i.e. a magnifying glass) and derive its angular magnification.">
+  
+
+  <meta name="author" content="Cyrus Vandrevala">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-touch-icon-180x180.png">
+  <link rel="icon" sizes="16x16" type="image/png" href="/assets/ico/favicon-16x16.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/assets/ico/favicon-32x32.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="/assets/ico/favicon-96x96.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="/assets/ico/favicon-192x192.png">
+  <link rel="icon" sizes="194x194" type="image/png" href="/assets/ico/favicon-194x194.png">
+  <link rel="manifest" href="/assets/ico/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#d415a1">
+  <meta name="msapplication-TileImage" content="/assets/ico/mstile-144x144.png">
+  <meta name="theme-color" content="#d415a1"
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/reset.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-61768963-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+</head>
+
+  <body>
+  <div class="content">
+
+    <header>
+      <div class="container">
+        <h2 class="desktop">
+          <a href="/"><span></span>cupcake physics</a>
+        </h2>
+
+        <h2 class="mobile">
+          <a href="/"><span></span></a>
+        </h2>
+
+        <span class="hot-dog-menu"></span>
+
+        <nav>
+          <ul>
+			  <li><input id="search_input" data-toggle="dropdown" type="text" class="form-control" placeholder="Search Posts" autocomplete="off" onkeyup="checkTextField();" /></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+    <section>
+     <article class="post">
+  <div class="container">
+
+    <span class="post-date">
+      
+      May
+      25th,
+      
+      2015
+    </span>
+
+    <h2>Zooming in on the Magnifying Glass </h2>
+
+	
+	  
+		  <span class="topic optics"></span>
+		
+	
+    <span class="difficulty easy"></span>
+
+    <div class="body">
+      <h3 id="introduction">Introduction</h3>
+
+<p>You have probably played around with a magnifying glass at some point in your life. You can zoom in on small objects, focus light to a point, and make hilarious faces. Many introductory physics classes analyze the simple magnifier (i.e. the magnifying lens), but a lot of the details of the derivation are glossed over. This leads to equations that seem to magically come out of thin air.</p>
+
+<p>Let’s take a close look at the simple magnifier and your eyeball.</p>
+
+<h3 id="the-near-point">The Near Point</h3>
+
+<p>Your <a href="http://en.wikipedia.org/wiki/Eye">eye</a> is an amazing organ that detects light rays and converts their pattern to electro-chemical impulses. An in-depth summary of the mechanisms of the eye would take weeks to cover. Right now, we are simply interested in the <a href="http://en.wikipedia.org/wiki/Optical_resolution">optical resolution</a> of your eyeball.</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-05-25/eyeball.png" alt="Eyeball Diagrams" /></p>
+</div>
+
+<p>Consider the diagram above. When an object is far away from your eye, you can see it very clearly (even though it appears small). As it moves closer and closer to your eye, it seems to get bigger and bigger - it’s angular magnification is increasing. It is easy to distinguish little details on the object as it approaches your eyeball. However, there comes a point past which the object looks blurry and unfocused; we call this the near point of your eye. For a relaxed eyeball, this point is about 25 cm away.</p>
+
+<p>The angular magnification of the eyeball system is defined as:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+m = \frac{\theta}{\theta_o}
+\end{equation}</script>
+
+<p>where <script type="math/tex">\theta</script> and <script type="math/tex">\theta_o</script> are shown in the diagram above. We use the near-point of the eye as the baseline for angular magnification. Thus, as the object gets closer to your eyeball, its angular magnification increases (making it look bigger). Once the object passes the near point of your eye, you cannot focus on it properly. Thus, there is an upper limit to the angular magnification of your eye.</p>
+
+<h3 id="linear-magnification">Linear Magnification</h3>
+
+<p>This is where the magnifying glass comes in. Let’s analyze the simple magnifier (i.e. a single converging lens) in the diagram below. Notice that we put the lens between the object and your eyeball. Additionally, the object distance is smaller than the focal length. Although you may not realize this, you naturally find this position when you focus on an object with a magnifying glass.</p>
+
+<div style="text-align:center">
+  <p><img src="/assets/images/2015-05-25/lens.png" alt="Lens Diagram" /></p>
+</div>
+
+<p>We will say that the focal length of the lens is equal to <script type="math/tex">f</script> and the object distance is equal to <script type="math/tex">s_o</script>. We can solve for the image distance (<script type="math/tex">s_i</script>):</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{1}{f} = \frac{1}{s_o} + \frac{1}{s_i}
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{1}{s_i} = \frac{1}{f} - \frac{1}{s_o} = \frac{s_o - f}{s_o f}
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+s_i = \frac{s_o f}{s_o - f}
+\end{equation}</script>
+
+<p>We can use the expression for image distance to find the linear magnification. Remember that the linear magnification is the negative ratio between image and object distance.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+M &= -\frac{s_i}{s_o}\\[0.1cm]
+&= -\frac{\frac{s_o f}{s_o - f}}{s_o}\\[0.1cm]
+&= \frac{f}{f - s_o}
+\end{align} %]]></script>
+
+<p>Notice that the magnitude of the linear magnification is always greater than one because <script type="math/tex">f</script> is positive and <script type="math/tex">f \ge s_o > 0</script>.</p>
+
+<h3 id="angular-magnification">Angular Magnification</h3>
+
+<p>Now that we have an expression for the linear magnification, we can use it to derive the expression for angular magnification. Recall from above that the angular magnification is simply the ratio of the angles <script type="math/tex">\theta</script> and <script type="math/tex">\theta_o</script>:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+m = \frac{\theta}{\theta_o}
+\end{equation}</script>
+
+<p>We are going to use the <a href="http://en.wikipedia.org/wiki/Small-angle_approximation">small angle approximation</a> to solve for <script type="math/tex">\theta</script> and <script type="math/tex">\theta_o</script> which states that for small angles:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+tan\theta \approx \theta
+\end{equation}</script>
+
+<p>It is straightforward to find the angle <script type="math/tex">\theta_o</script>. Remember, by definition <script type="math/tex">\theta_o</script> describes the object when it is placed at the near point. If the object has a height <script type="math/tex">h</script>:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+tan\theta_o = \frac{h}{25 cm} \approx \theta_o
+\end{equation}</script>
+
+<p>Solving for <script type="math/tex">\theta</script> is a bit trickier. We know that the image distance, and thus the angle <script type="math/tex">\theta</script>, changes as a function of object distance and focal length. The final expression for <script type="math/tex">\theta</script> could be rather complicated, depending on the properties of the eye and the lens. Instead of dealing with the complicated math, let’s focus on the case when the eye is completely relaxed and the image is located infinitely far away. This occurs when the object distance <script type="math/tex">s_o</script> is equal to the focal length <script type="math/tex">f</script> of the lens.</p>
+
+<p>On first glance, this might seem like a problem - the linear magnification is infinitely large:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+M = \frac{f}{f - s_o} = \frac{f}{f - f} = \frac{f}{0} = \infty
+\end{equation}</script>
+
+<p>However, the angle <script type="math/tex">\theta</script> is finite:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+tan\theta = \frac{h}{f} \approx \theta
+\end{equation}</script>
+
+<p>Now, we can solve for the angular magnification:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+m &= \frac{\theta}{\theta_o}\\[0.1cm]
+&= \left ( \frac{h}{f} \right ) \left ( \frac{25 cm}{h} \right )\\[0.1cm]
+&= \frac{25 cm}{f}
+\end{align} %]]></script>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>It’s a bit weird, isn’t it? We solve for the angular magnification of the simple magnifier by projecting the image to infinite distance. But as weird as it sounds, your relaxed eye is good at resolving images that are very far away. Now of course, we use infinity just to make the math easier - it is an idealistic approximation. However, even though it is an approximation, it still yields a very accurate result.</p>
+
+
+    </div>
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES * * */
+	  var disqus_shortname = 'cupcakephysicsblog';
+
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+
+</article>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    </section>
+
+    <div class="social-media">
+      <div class="container">
+        <ul>
+          <li><a class="button primary" href="/categories.html">Categories</a></li>
+          <li><a class="button secondary" href="/tags.html">Tags</a></li>
+          <li><a class="button tertiary" href="/about.html">About</a></li>
+          <li><a class="social-icon facebook" href="https://www.facebook.com/pages/Cupcake-Physics/1555786914693563" target="_blank"></a></li>
+          <li><a class="social-icon twitter" href="https://twitter.com/cupcakephysics" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><a href="/">Cupcake Physics</a> by Cyrus Vandrevala | All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="preloader">
+    <img src="/assets/images/icons/facebook-hover.png" />
+    <img src="/assets/images/icons/twitter-hover.png" />
+  </div>
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+  <script type="text/javascript" src="/assets/js/searchbar.js"></script>
+
+</body>
+
+</html>

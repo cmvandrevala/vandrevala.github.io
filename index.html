@@ -1,0 +1,163 @@
+---
+layout: page
+tagline: Because physics is pretty sweet
+---
+
+{% for post in paginator.posts %}
+
+<article class="home">
+  <div>
+	{% for category in post.category %}
+	  {% case category %}
+	    {% when 'Classical Mechanics' %}
+		  <span class="topic classical-mechanics"></span>
+	    {% when 'Computational Physics' %}
+		  <span class="topic computational-physics"></span>
+	    {% when 'Cupcake Physics' %}
+		  <span class="topic cupcake-physics"></span>
+	    {% when 'Electromagnetism' %}
+          <span class="topic electromagnetism"></span>
+		{% when 'Optics' %}
+		  <span class="topic optics"></span>
+		{% when 'Math Methods' %}
+		  <span class="topic math-methods"></span>
+		{% when 'Quantum Field Theory' %}
+		  <span class="topic quantum-field-theory"></span>
+		{% when 'Quantum Mechanics' %}
+		  <span class="topic quantum-mechanics"></span>
+		{% when 'Thermodynamics and Statistical Physics' %}
+          <span class="topic thermodynamics"></span>
+		{% when 'Relativity' %}
+		  <span class="topic relativity"></span>
+		{% else %}
+	  {% endcase %}
+	{% endfor %}
+    <span class="difficulty {{post.difficulty}}"></span>
+  </div>
+
+  {% case post.category.first %}
+    {% when 'Classical Mechanics' %}
+	  <a href="{{ site.BASE_PATH }}{{ post.url }}" class="classical-mechanics">
+    {% when 'Computational Physics' %}
+	  <a href="{{ site.BASE_PATH }}{{ post.url }}" class="computational-physics">
+    {% when 'Cupcake Physics' %}
+	  <a href="{{ site.BASE_PATH }}{{ post.url }}" class="cupcake-physics">
+    {% when 'Electromagnetism' %}
+      <a href="{{ site.BASE_PATH }}{{ post.url }}" class="electromagnetism">
+	{% when 'Optics' %}
+	  <a href="{{ site.BASE_PATH }}{{ post.url }}" class="optics">
+	{% when 'Math Methods' %}
+	  <a href="{{ site.BASE_PATH }}{{ post.url }}" class="math-methods">
+	{% when 'Quantum Field Theory' %}
+	  <a href="{{ site.BASE_PATH }}{{ post.url }}" class="quantum-field-theory">
+	{% when 'Quantum Mechanics' %}
+	  <a href="{{ site.BASE_PATH }}{{ post.url }}" class="quantum-mechanics">
+	{% when 'Thermodynamics and Statistical Physics' %}
+      <a href="{{ site.BASE_PATH }}{{ post.url }}" class="thermodynamics">
+	{% when 'Relativity' %}
+	  <a href="{{ site.BASE_PATH }}{{ post.url }}" class="relativity">
+	{% else %}
+  {% endcase %}
+
+	<span class="post-date">
+      {% assign d = post.date | date: "%d" | plus:'0' %}
+      {{ post.date | date: "%B" }}
+      {% case d %}
+      {% when 1 or 21 or 31 %}{{ d }}st,
+      {% when 2 or 22 %}{{ d }}nd,
+      {% when 3 or 23 %}{{ d }}rd,
+      {% else %}{{ d }}th,
+      {% endcase %}
+      {{ post.date | date: "%Y" }}
+    </span>
+
+    <h4>
+      {{ post.title }}
+    </h4>
+
+    <p>
+      {% if post.description %}
+      {{ post.description }}
+      {% else %}
+      {{ post.excerpt }}
+      {% endif %}
+    </p>
+  </a>
+</article>
+{% endfor %}
+
+<ul class="pagination">
+
+  {% if paginator.previous_page %}
+  <li class="previous">
+    {% if paginator.previous_page == 1 %}
+    <a href="{{ site.BASE_PATH }}/" class="button primary">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-first.png" />
+    </a>
+    {% else %}
+    <a href="{{ site.BASE_PATH }}/" class="button primary">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-first.png" />
+    </a>
+    {% endif %}
+  </li>
+  {% else %}
+  <li class="previous">
+    <a class="button disabled">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-first.png" />
+    </a>
+  </li>
+  {% endif %}
+
+  {% if paginator.previous_page %}
+  <li class="previous">
+    {% if paginator.previous_page == 1 %}
+    <a href="{{ site.BASE_PATH }}/" class="button primary">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-previous.png" />
+    </a>
+    {% else %}
+    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}" class="button primary">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-previous.png" />
+    </a>
+    {% endif %}
+  </li>
+  {% else %}
+  <li class="previous">
+    <a class="button disabled">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-previous.png" />
+    </a>
+  </li>
+  {% endif %}
+
+  <li>
+    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  </li>
+
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ site.BASE_PATH }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}" class="button primary">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-next.png" />
+    </a>
+  </li>
+  {% else %}
+  <li class="next">
+    <a class="button disabled">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-next.png" />
+    </a>
+  </li>
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ site.BASE_PATH }}/page{{ paginator.total_pages }}" class="button primary">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-last.png" />
+    </a>
+  </li>
+  {% else %}
+  <li class="next">
+    <a class="button disabled">
+      <img src="{{ site.BASE_PATH }}/assets/images/icons/arrow-last.png" />
+    </a>
+  </li>
+  {% endif %}
+
+</ul>

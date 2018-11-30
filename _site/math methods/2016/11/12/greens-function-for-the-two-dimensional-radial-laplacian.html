@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  <meta charset="utf-8">
+  <title>Green's Function for the Two-Dimensional, Radial Laplacian</title>
+  
+    <meta name="description" content="I derive an expression for the Green's function of the two-dimensional, radial Laplacian. Anybody who read my blog post that covered the derivation of the Green's function of the three-dimensional radial Laplacian should notice a large number of similarities between the two derivations.">
+  
+
+  <meta name="author" content="Cyrus Vandrevala">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-touch-icon-180x180.png">
+  <link rel="icon" sizes="16x16" type="image/png" href="/assets/ico/favicon-16x16.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/assets/ico/favicon-32x32.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="/assets/ico/favicon-96x96.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="/assets/ico/favicon-192x192.png">
+  <link rel="icon" sizes="194x194" type="image/png" href="/assets/ico/favicon-194x194.png">
+  <link rel="manifest" href="/assets/ico/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#d415a1">
+  <meta name="msapplication-TileImage" content="/assets/ico/mstile-144x144.png">
+  <meta name="theme-color" content="#d415a1"
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/reset.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-61768963-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+</head>
+
+  <body>
+  <div class="content">
+
+    <header>
+      <div class="container">
+        <h2 class="desktop">
+          <a href="/"><span></span>cupcake physics</a>
+        </h2>
+
+        <h2 class="mobile">
+          <a href="/"><span></span></a>
+        </h2>
+
+        <span class="hot-dog-menu"></span>
+
+        <nav>
+          <ul>
+			  <li><input id="search_input" data-toggle="dropdown" type="text" class="form-control" placeholder="Search Posts" autocomplete="off" onkeyup="checkTextField();" /></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+    <section>
+     <article class="post">
+  <div class="container">
+
+    <span class="post-date">
+      
+      November
+      12th,
+      
+      2016
+    </span>
+
+    <h2>Green's Function for the Two-Dimensional, Radial Laplacian </h2>
+
+	
+	  
+		  <span class="topic math-methods"></span>
+		
+	
+    <span class="difficulty hard"></span>
+
+    <div class="body">
+      <h3 id="introduction">Introduction</h3>
+
+<p>In a <a href="http://blog.cupcakephysics.com/math%20methods/2016/11/01/greens-function-for-the-three-dimensional-radial-laplacian.html">previous blog post</a> I derived the Green’s function for the three-dimensional, radial Laplacian in spherical coordinates. That post showed how the actual derivation of the Green’s function was relatively straightforward, but the verification of the answer was much more involved. At the end of the post, I commented on how many textbooks simplify the expression for the Green’s function, ignoring the limiting behavior around the origin (<script type="math/tex">r = 0</script>).</p>
+
+<p>I decided to follow up that post with a similar derivation for the two-dimensional, radial Laplacian. The derivations are almost identical - in fact, throughout this post, I will refer to the spherical Laplacian in a few places. You might want to read over the previous blog post before tackling this one.</p>
+
+<h3 id="derivation-of-the-greens-function">Derivation of the Green’s Function</h3>
+
+<p>Consider Poisson’s equation in <a href="http://mathworld.wolfram.com/PolarCoordinates.html">polar coordinates</a>.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\nabla^2 \psi = f
+\end{equation}</script>
+
+<p>We can expand the Laplacian in terms of the <script type="math/tex">(r,\theta)</script> coordinate system. I looked up the full Laplacian on <a href="http://mathworld.wolfram.com/Laplacian.html">Wolfram Mathworld</a> (i.e. cylindrical coordinates without the z-component).</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{1}{r} \frac{\partial}{\partial r} \left ( r \frac{\partial \psi}{\partial r} \right ) + \frac{1}{r^2} \frac{\partial^2 \psi}{\partial \theta^2} = f
+\end{equation}</script>
+
+<p>Some textbooks write the equation in a slightly different form; they expand the derivatives with respect to <script type="math/tex">r</script>, yielding:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{\partial^2 \psi}{\partial r^2} + \frac{1}{r} \frac{\partial \psi}{\partial r} + \frac{1}{r^2} \frac{\partial^2 \psi}{\partial \theta^2} = f
+\end{equation}</script>
+
+<p>In this derivation, I am going to keep the original form of the Laplacian because it will make it easier to use integration by parts. We are only interested in the radial Green’s function here, so we can immediately simplify the expression to include only radial terms.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{1}{r} \frac{\partial}{\partial r} \left ( r \frac{\partial \psi}{\partial r} \right ) = f
+\end{equation}</script>
+
+<p>We are looking for a Green’s function <script type="math/tex">G</script> that satisfies:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\nabla^2 G = \frac{1}{r} \frac{d}{dr} \left ( r \frac{dG}{dr} \right ) = \delta(r)
+\end{equation}</script>
+
+<p>Let’s point something out right off the bat. In the previous blog post, I set the Green’s function equal to <script type="math/tex">4\pi \delta(r)</script> wheras here, I set it equal to <script type="math/tex">\delta(r)</script> without the constant. Why is that?</p>
+
+<p>It’s because physicists love to mix all sorts of conventions and confuse people :P</p>
+
+<p>Traditionally, mathematicians use <script type="math/tex">\delta(r)</script> in all cases. However, it is convenient to use <script type="math/tex">4\pi\delta(r)</script> for the derivation of the three-dimensional Green’s function for the Laplacian in spherical coordinates for a number of reasons. The final ouput is simple (no constants aside from a negative sign), the constant describes the solid angle of a sphere, and the answer aligns with <a href="http://physics.stackexchange.com/questions/1673/coulomb-force-in-si-and-cgs">CGS units in electromagnetism</a>. However, I have not come across any sources where the 2D Green’s function is set to <script type="math/tex">2\pi\delta(r)</script>. Thus, sticking with tradition, I will use <script type="math/tex">\delta(r)</script>.</p>
+
+<p>If this change of notation rubs you the wrong way, you can go back to my previous blog post and re-derive the Green’s function using <script type="math/tex">\delta(r)</script> without the constant of <script type="math/tex">4\pi</script>. Your answer will (unsurprisingly) be <script type="math/tex">G = -1/(4\pi r)</script> rather than <script type="math/tex">G = -1/r</script>.</p>
+
+<p>Let’s integrate both sides of the expression above with respect to <script type="math/tex">r</script>. This will eliminate the Dirac delta function in the expression.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\int \frac{1}{r} \frac{d}{dr} \left ( r \frac{dG}{dr} \right ) dr = \int \delta(r) dr
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\int \frac{1}{r} \frac{d}{dr} \left ( r \frac{dG}{dr} \right ) dr = 1
+\end{equation}</script>
+
+<p>Whenever we see derivatives within an integral, there is a chance that the integral might be simplified by integration by parts. It turns out that integration by parts works splendidly in this case.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+u = \frac{1}{r} \Rightarrow du = -\frac{1}{r^2} dr
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+dv = \frac{d}{dr} \left [ r \frac{dG}{dr} \right ] dr \Rightarrow v = r \frac{dG}{dr}
+\end{equation}</script>
+
+<p>The expression becomes:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\left ( \frac{1}{r} \right ) \left ( r \frac{dG}{dr} \right ) - \int \left ( r \frac{dG}{dr} \right ) \left ( -\frac{1}{r^2} dr \right ) = 1
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{dG}{dr} + \int \frac{1}{r} \frac{dG}{dr} dr = 1
+\end{equation}</script>
+
+<p>Similar to the radial Laplacian in spherical coordinates, we can use integration by parts a second time to simplify the integral in the expression above.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+u = \frac{1}{r} \Rightarrow du = -\frac{1}{r^2} dr
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+dv = \frac{dG}{dr} dr \Rightarrow v = G
+\end{equation}</script>
+
+<p>We expand the expression using integration by parts once again.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{dG}{dr} + \left [ \left (\frac{1}{r} \right ) \left ( G \right ) - \int G \left ( -\frac{1}{r^2} dr\right ) \right ] = 1
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{dG}{dr} + \frac{G}{r} + \int \frac{G}{r^2} dr = 1
+\end{equation}</script>
+
+<p>It is generally preferable to work with differential equations rather than integral equations. Thus, on each side of the expression above, we can take the derivative with respect to <script type="math/tex">r</script>; this will eliminate the integral in the expression. Remember that <script type="math/tex">G</script> is a function of <script type="math/tex">r</script>, so we have to use the quotient rule on the <script type="math/tex">G/r</script> term.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{d^2 G}{dr^2} + \left ( \frac{1}{r} \frac{dG}{dr} - \frac{G}{r^2} \right ) + \frac{G}{r^2} = 0
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{d^2 G}{dr^2} + \frac{1}{r} \frac{dG}{dr} = 0
+\end{equation}</script>
+
+<p>Similar to the case of the radial, spherical Laplacian, we have simplified the expression for <script type="math/tex">G</script> into a straightforward, differential equation. I am going to guess and check the solution <script type="math/tex">G = A ln \vert r \vert + B</script> where <script type="math/tex">A</script> and <script type="math/tex">B</script> are some constants.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\frac{d^2 G}{dr^2} + \frac{1}{r}\frac{dG}{dr} &=\\
+\frac{d^2}{dr^2} \left [ A ln \vert r \vert + B \right ] + \frac{1}{r}\frac{d}{dr} \left [ A ln \vert r \vert + B \right ] &=\\
+-\frac{A}{r^2} + \frac{1}{r} \left ( \frac{A}{r} \right ) &=\\
+-\frac{A}{r^2} + \frac{A}{r^2} &= 0
+\end{align} %]]></script>
+
+<p>Thus, we see that the solution <script type="math/tex">G = A ln \vert r \vert + B</script> solves the differential equation. Notice how <script type="math/tex">B</script> is simply an additive constant in the expression. We usually set this constant equal to zero in order to obtain the fundamental solution of the differential equation. Thus, we will use the function <script type="math/tex">G = A ln \vert r \vert</script> for the remainder of this post.</p>
+
+<h3 id="checking-the-solution">Checking the Solution</h3>
+
+<p>Like the derivation in the previous blog post, we need to check that our solution makes sense. And like the previous blog post, we run into a small problem.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\nabla^2 G &= \frac{1}{r} \frac{d}{dr} \left [ r \frac{d}{dr} \left ( A ln \vert r \vert \right ) \right ]\\
+&= \frac{1}{r} \frac{d}{dr} \left [ r \left ( \frac{A}{r} \right ) \right ]\\
+&= \frac{1}{r} \frac{d}{dr} \left [ A \right ]\\
+&= 0
+\end{align} %]]></script>
+
+<p>Zero is not our expected output - we were expecting a Dirac delta function. The reason that we are not getting the expected output is that the domain of the solution does not include the origin <script type="math/tex">r = 0</script> (we divided by <script type="math/tex">r</script> throughout the derivation). We need to analyze the solution in the limiting case of <script type="math/tex">r \rightarrow 0</script>. The strategy is identical to the previous blog post.</p>
+
+<p>Define a function <script type="math/tex">\Phi_\epsilon</script> where:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\Phi_\epsilon = A ln \vert r + \epsilon \vert
+\end{equation}</script>
+
+<p>As <script type="math/tex">\epsilon</script> approaches zero, <script type="math/tex">\Phi_\epsilon</script> approaches the Green’s function <script type="math/tex">G</script>. Let’s plug the expression <script type="math/tex">\Phi_\epsilon</script> into the Laplacian and simplify.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\nabla^2 \Phi_\epsilon &= \frac{1}{r} \frac{d}{dr} \left [ r \frac{d}{dr} \left ( A ln \vert r + \epsilon \vert \right ) \right ]\\
+&= \frac{1}{r} \frac{d}{dr} \left [ r \left ( \frac{A}{r+\epsilon} \right ) \right ]\\
+&= \frac{1}{r} \frac{d}{dr} \left [ \frac{A r}{r+\epsilon} \right ]\\
+&= \frac{1}{r} \left [ \frac{A}{r+\epsilon} - \frac{Ar}{(r+\epsilon)^2}\right ]\\
+&= \frac{1}{r} \left [ \frac{A(r + \epsilon)}{(r+\epsilon)^2} - \frac{Ar}{(r+\epsilon)^2}\right ]\\
+&= \frac{1}{r} \left [ \frac{Ar + A\epsilon - Ar}{(r+\epsilon)^2} \right ]\\
+&= \frac{1}{r} \left [ \frac{A\epsilon}{(r+\epsilon)^2} \right ]\\
+&= \frac{A\epsilon}{r(r+\epsilon)^2}
+\end{align} %]]></script>
+
+<p>Remember that by the definition of a Green’s function, the Laplacian of <script type="math/tex">G</script> (or more correctly, the Laplacian of the limiting case of <script type="math/tex">\Phi_\epsilon</script>), will yield <script type="math/tex">\delta(r)</script>. If that is true, I should be able to integrate <script type="math/tex">\nabla^2 \Phi_\epsilon</script> over all space and get one. Let’s try doing just that:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\int \nabla^2 \Phi_\epsilon dA &= \int_0^R \int_0^{2\pi} \frac{A\epsilon}{r(r+\epsilon)^2} r dr d\theta\\
+&= 2\pi \int_0^R \frac{A\epsilon}{r(r+\epsilon)^2} r dr\\
+&= 2\pi A\epsilon \int_0^R \frac{1}{(r+\epsilon)^2} dr\\
+&= 2\pi A\epsilon \left [ - \frac{1}{r+\epsilon} \right ]_0^R\\
+&= - 2\pi A\epsilon \left [ \frac{1}{R+\epsilon} - \frac{1}{\epsilon} \right ]\\
+&= - 2\pi A\epsilon \left [ -\frac{R}{\epsilon(R+\epsilon)} \right ]\\
+&=  \frac{2\pi A\epsilon R}{\epsilon(R+\epsilon)}\\
+&=  \frac{2\pi A R}{R+\epsilon}
+\end{align} %]]></script>
+
+<p>If we are going to integrate over all space, we need to take the limit of this expression as <script type="math/tex">R \rightarrow \infty</script>. Once again, we turn to L’Hopital’s rule.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\lim_{R \rightarrow \infty} \int \nabla^2 \Phi_\epsilon dA &= \lim_{R \rightarrow \infty} \frac{2\pi A R}{R+\epsilon}\\
+&= \lim_{R \rightarrow \infty} 2\pi A\\
+&= 2 \pi A
+\end{align} %]]></script>
+
+<p>When <script type="math/tex">A = 1/(2\pi)</script>, the Laplacian of <script type="math/tex">\Phi_\epsilon</script> satisfies the condition that the integral must equal one. Finally, let’s verify that the Laplacian of <script type="math/tex">\Phi_\epsilon</script> is actually a Dirac delta function. We will define one final function, <script type="math/tex">f_\epsilon(r)</script>:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+f_\epsilon (r) = \frac{1}{2 \pi A} \nabla^2 \Phi_\epsilon (r) = \frac{1}{2\pi A} \frac{A\epsilon}{r(r+\epsilon)^2} = \frac{1}{2\pi} \frac{\epsilon}{r(r+\epsilon)^2}
+\end{equation}</script>
+
+<p>What is the value of this function in the limit of <script type="math/tex">\epsilon \rightarrow 0</script>? If <script type="math/tex">r</script> is non-zero, the limit is very simple:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\lim_{\epsilon \rightarrow 0} f_\epsilon (r) = \lim_{\epsilon \rightarrow 0} \frac{1}{2\pi} \frac{0}{r^3} = 0
+\end{equation}</script>
+
+<p>However, if <script type="math/tex">r</script> is equal to zero, we need to use L’Hopital’s rule to simplify the expression.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\lim_{\epsilon \rightarrow 0} f_\epsilon (r) = \lim_{\epsilon \rightarrow 0} \frac{1}{2\pi} \frac{1}{2r(r+\epsilon)} = \frac{1}{2\pi} \frac{1}{2r(r)} = \frac{1}{ 4 \pi r^2}
+\end{equation}</script>
+
+<p>This becomes infinitely large when <script type="math/tex">r = 0</script>.</p>
+
+<h3 id="the-final-solution">The Final Solution</h3>
+
+<p>We can now tie everything together in a similar method as the previous post. In the limit of <script type="math/tex">\epsilon \rightarrow 0</script>, the function <script type="math/tex">f_\epsilon(r)</script> is infinitely large at the origin and zero everywhere else. Thus, <script type="math/tex">f_\epsilon(r)</script> is a Dirac delta function <script type="math/tex">\delta(r)</script>.</p>
+
+<p>The function <script type="math/tex">f_\epsilon(r)</script> is equal to the Laplacian of <script type="math/tex">\Phi_\epsilon</script> (remember that the constant <script type="math/tex">(2 \pi A)^{-1}</script> is equal to one since <script type="math/tex">A=(2\pi)^{-1}</script>). This means that in the limit as <script type="math/tex">\epsilon \rightarrow 0</script>, the function <script type="math/tex">\nabla^2\Phi_\epsilon</script> is equal to a Dirac delta function.</p>
+
+<p>Finally, the limiting case of <script type="math/tex">\Phi_\epsilon</script> as <script type="math/tex">\epsilon \rightarrow 0</script> is equal to the Green’s function <script type="math/tex">G = A ln \vert r \vert = (2\pi)^{-1} ln \vert r \vert</script>. Thus, the Laplacian of the Green’s function is a Dirac delta function. Just what we needed.</p>
+
+<p>Until next time!</p>
+
+    </div>
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES * * */
+	  var disqus_shortname = 'cupcakephysicsblog';
+
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+
+</article>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    </section>
+
+    <div class="social-media">
+      <div class="container">
+        <ul>
+          <li><a class="button primary" href="/categories.html">Categories</a></li>
+          <li><a class="button secondary" href="/tags.html">Tags</a></li>
+          <li><a class="button tertiary" href="/about.html">About</a></li>
+          <li><a class="social-icon facebook" href="https://www.facebook.com/pages/Cupcake-Physics/1555786914693563" target="_blank"></a></li>
+          <li><a class="social-icon twitter" href="https://twitter.com/cupcakephysics" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><a href="/">Cupcake Physics</a> by Cyrus Vandrevala | All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="preloader">
+    <img src="/assets/images/icons/facebook-hover.png" />
+    <img src="/assets/images/icons/twitter-hover.png" />
+  </div>
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+  <script type="text/javascript" src="/assets/js/searchbar.js"></script>
+
+</body>
+
+</html>

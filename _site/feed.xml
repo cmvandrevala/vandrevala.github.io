@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title></title>
+		<description>My Homepage</description>
+		<link>/</link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>The Tech Stack</title>
+				<description>&lt;h3 id=&quot;tech-stack&quot;&gt;Tech Stack&lt;/h3&gt;
+
+&lt;p&gt;Over the past few weeks, I have been working hard to develop the groundwork for the Cupcake Physics site. Although I have had experience developing web apps in the past, this is the first time that I have coordinated all of the parts of a full stack app at one time; I have to think about everything from developing the app to managing deployment to monitoring the status of the servers (and much more). It has been challenging to learn about all of the details of managing an application, and I am sure I will learn plenty more in the future!&lt;/p&gt;
+
+&lt;p&gt;I want to write a blog post that outlines some of the progress that I have made in the past few weeks. I have experimented with a variety of technologies and written a number of toy applications in preparation for my actual project. This is a good time to reflect on some of my experiences. At the very least, this post will help me organize some of my thoughts for future development. Ideally, this reflection might help other developers in their own work. Instead of talking about every detail of my experimentation, I will dive into three different technologies in order to make sure that this post does not become a novel!&lt;/p&gt;
+
+&lt;h3 id=&quot;the-frontend---elm&quot;&gt;The Frontend - Elm&lt;/h3&gt;
+
+&lt;p&gt;I have experience coding the backends of a variety of applications at my current job and during my research. These apps range from legacy enterprise systems to more modern APIs and use a variety of languages - Java, PHP, Ruby, etc. I am generally comfortable with backend development and enjoy the challenge of implementing business logic in an elegant way.&lt;/p&gt;
+
+&lt;p&gt;However, frontend development has frustrated me in the past. Although I do have a fair amount of experience in this area, I have found the act of writing code for the frontend quite tedious. Javascript libraries and frameworks do help make the experience better, but I feel like I can never trust that browsers will do what I want them to do. No matter how many tests I write or no matter how simple I make my functions, I do not have a high degree of confidence in the code that is shipped out to the user’s browser. There is too much variability in everything from the version of the browser to the device on which the page is viewed.&lt;/p&gt;
+
+&lt;p&gt;I heard about the &lt;a href=&quot;http://elm-lang.org/&quot;&gt;Elm language&lt;/a&gt; from a co-worker and grew quite curious about it. It is frontend development as I have never experienced - I have never used a statically typed, functional langage (let alone one on the frontend!). After a few tutorials, I fell in love with the language. After writing some well-tested Elm code, I am confident that it does what I expect it to do. As an added bonus, Elm is remarkably similar to Elixir (see below), so the frontend and backend feel very similar - even though they are written in two different languages.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-backend---elixirphoenix&quot;&gt;The Backend - Elixir/Phoenix&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://rubyonrails.org/&quot;&gt;Ruby on Rails&lt;/a&gt; was my original choice for the backend of Cupcake Physics. I have enjoyed working with the framework in the past due to the fact that I can develop code very quickly and iterate efficiently. However, I have found issue with some aspects of the framework (e.g. it has a tendency to produce monolithic apps, it couples data persistence very tightly to your business logic, etc.). Since the functional style of programming drew me to the Elm language, I decided to try something new for the backend as well.&lt;/p&gt;
+
+&lt;p&gt;I had some experience writing Elixir apps before coming into this project. My experience with Elixir and Rails made the Phoenix framework seem very natural to me. Phoenix addresses many of the concerns that I had about the Rails framework, and it uses powerful elements of the Elixir language (like pattern matching) to create very simple and readable code.&lt;/p&gt;
+
+&lt;h3 id=&quot;infrastructure---ansible&quot;&gt;Infrastructure - Ansible&lt;/h3&gt;
+
+&lt;p&gt;A few weeks ago, I had little experience with the operations side of running an app. Thus, a large amount of my time was spent learning how to run and monitor an app. I tried out a few different technologies during the past few weeks such as Chef and Puppet. However, I found that &lt;a href=&quot;https://www.ansible.com/&quot;&gt;Ansible&lt;/a&gt; to have the right mixture of ease of use and power for IT automation. I especially like the fact that Ansible uses simple Yaml files rather than a domain speicific language to specify and run tasks.&lt;/p&gt;
+
+&lt;h3 id=&quot;final-thoughts&quot;&gt;Final Thoughts&lt;/h3&gt;
+
+&lt;p&gt;These past few weeks have been a great learning experience for me. I know I will definitely have to keep learning about these technologies (and others) as I build this app.&lt;/p&gt;
+
+&lt;p&gt;Until next time!&lt;/p&gt;
+</description>
+				<pubDate>Tue, 05 Sep 2017 00:00:00 -0500</pubDate>
+				<link>/cupcake%20physics/2017/09/05/the-tech-stack.html</link>
+				<guid isPermaLink="true">/cupcake%20physics/2017/09/05/the-tech-stack.html</guid>
+			</item>
+		
+			<item>
+				<title>Restructuring the Site</title>
+				<description>&lt;h3 id=&quot;my-plans&quot;&gt;My Plans&lt;/h3&gt;
+
+&lt;p&gt;These past few months have been a whirlwind as I finished up my thesis and ramped up at my new job. All the while I have been eager for the day when I can return to regular updates on this site. The silver lining to this story is that the time off gave me a chance to brainstorm some new ideas for Cupcake Physics and its future directions.&lt;/p&gt;
+
+&lt;p&gt;Up until now, I have been writing blog posts that outline a proof or solution to a specific problem. These posts are certainly useful, but I want really dive into physics education; my goal is to provide students and informal learners some tools that they can use to grasp difficult concepts in all levels of physics. Over the next few months, you will see a few changes on this site.&lt;/p&gt;
+
+&lt;p&gt;I will separate the physics lessons from site updates. The lessons will be moved to a new webpage and given better organization and search capabilities. I also want to improve the lessons with a healthy dose of interactive Javascript so that learners can play with some simple models rather than just read text on the page.&lt;/p&gt;
+
+&lt;p&gt;Stay tuned for more updates!&lt;/p&gt;
+</description>
+				<pubDate>Mon, 17 Jul 2017 00:00:00 -0500</pubDate>
+				<link>/cupcake%20physics/2017/07/17/restructuring-the-site.html</link>
+				<guid isPermaLink="true">/cupcake%20physics/2017/07/17/restructuring-the-site.html</guid>
+			</item>
+		
+			<item>
+				<title>Green's Function for the Two-Dimensional, Radial Laplacian</title>
+				<description>&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;In a &lt;a href=&quot;http://blog.cupcakephysics.com/math%20methods/2016/11/01/greens-function-for-the-three-dimensional-radial-laplacian.html&quot;&gt;previous blog post&lt;/a&gt; I derived the Green’s function for the three-dimensional, radial Laplacian in spherical coordinates. That post showed how the actual derivation of the Green’s function was relatively straightforward, but the verification of the answer was much more involved. At the end of the post, I commented on how many textbooks simplify the expression for the Green’s function, ignoring the limiting behavior around the origin (&lt;script type=&quot;math/tex&quot;&gt;r = 0&lt;/script&gt;).&lt;/p&gt;
+
+&lt;p&gt;I decided to follow up that post with a similar derivation for the two-dimensional, radial Laplacian. The derivations are almost identical - in fact, throughout this post, I will refer to the spherical Laplacian in a few places. You might want to read over the previous blog post before tackling this one.&lt;/p&gt;
+
+&lt;h3 id=&quot;derivation-of-the-greens-function&quot;&gt;Derivation of the Green’s Function&lt;/h3&gt;
+
+&lt;p&gt;Consider Poisson’s equation in &lt;a href=&quot;http://mathworld.wolfram.com/PolarCoordinates.html&quot;&gt;polar coordinates&lt;/a&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 \psi = f
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We can expand the Laplacian in terms of the &lt;script type=&quot;math/tex&quot;&gt;(r,\theta)&lt;/script&gt; coordinate system. I looked up the full Laplacian on &lt;a href=&quot;http://mathworld.wolfram.com/Laplacian.html&quot;&gt;Wolfram Mathworld&lt;/a&gt; (i.e. cylindrical coordinates without the z-component).&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{1}{r} \frac{\partial}{\partial r} \left ( r \frac{\partial \psi}{\partial r} \right ) + \frac{1}{r^2} \frac{\partial^2 \psi}{\partial \theta^2} = f
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Some textbooks write the equation in a slightly different form; they expand the derivatives with respect to &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;, yielding:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{\partial^2 \psi}{\partial r^2} + \frac{1}{r} \frac{\partial \psi}{\partial r} + \frac{1}{r^2} \frac{\partial^2 \psi}{\partial \theta^2} = f
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;In this derivation, I am going to keep the original form of the Laplacian because it will make it easier to use integration by parts. We are only interested in the radial Green’s function here, so we can immediately simplify the expression to include only radial terms.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{1}{r} \frac{\partial}{\partial r} \left ( r \frac{\partial \psi}{\partial r} \right ) = f
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We are looking for a Green’s function &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; that satisfies:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 G = \frac{1}{r} \frac{d}{dr} \left ( r \frac{dG}{dr} \right ) = \delta(r)
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Let’s point something out right off the bat. In the previous blog post, I set the Green’s function equal to &lt;script type=&quot;math/tex&quot;&gt;4\pi \delta(r)&lt;/script&gt; wheras here, I set it equal to &lt;script type=&quot;math/tex&quot;&gt;\delta(r)&lt;/script&gt; without the constant. Why is that?&lt;/p&gt;
+
+&lt;p&gt;It’s because physicists love to mix all sorts of conventions and confuse people :P&lt;/p&gt;
+
+&lt;p&gt;Traditionally, mathematicians use &lt;script type=&quot;math/tex&quot;&gt;\delta(r)&lt;/script&gt; in all cases. However, it is convenient to use &lt;script type=&quot;math/tex&quot;&gt;4\pi\delta(r)&lt;/script&gt; for the derivation of the three-dimensional Green’s function for the Laplacian in spherical coordinates for a number of reasons. The final ouput is simple (no constants aside from a negative sign), the constant describes the solid angle of a sphere, and the answer aligns with &lt;a href=&quot;http://physics.stackexchange.com/questions/1673/coulomb-force-in-si-and-cgs&quot;&gt;CGS units in electromagnetism&lt;/a&gt;. However, I have not come across any sources where the 2D Green’s function is set to &lt;script type=&quot;math/tex&quot;&gt;2\pi\delta(r)&lt;/script&gt;. Thus, sticking with tradition, I will use &lt;script type=&quot;math/tex&quot;&gt;\delta(r)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;If this change of notation rubs you the wrong way, you can go back to my previous blog post and re-derive the Green’s function using &lt;script type=&quot;math/tex&quot;&gt;\delta(r)&lt;/script&gt; without the constant of &lt;script type=&quot;math/tex&quot;&gt;4\pi&lt;/script&gt;. Your answer will (unsurprisingly) be &lt;script type=&quot;math/tex&quot;&gt;G = -1/(4\pi r)&lt;/script&gt; rather than &lt;script type=&quot;math/tex&quot;&gt;G = -1/r&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let’s integrate both sides of the expression above with respect to &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;. This will eliminate the Dirac delta function in the expression.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\int \frac{1}{r} \frac{d}{dr} \left ( r \frac{dG}{dr} \right ) dr = \int \delta(r) dr
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\int \frac{1}{r} \frac{d}{dr} \left ( r \frac{dG}{dr} \right ) dr = 1
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Whenever we see derivatives within an integral, there is a chance that the integral might be simplified by integration by parts. It turns out that integration by parts works splendidly in this case.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+u = \frac{1}{r} \Rightarrow du = -\frac{1}{r^2} dr
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+dv = \frac{d}{dr} \left [ r \frac{dG}{dr} \right ] dr \Rightarrow v = r \frac{dG}{dr}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;The expression becomes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\left ( \frac{1}{r} \right ) \left ( r \frac{dG}{dr} \right ) - \int \left ( r \frac{dG}{dr} \right ) \left ( -\frac{1}{r^2} dr \right ) = 1
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{dG}{dr} + \int \frac{1}{r} \frac{dG}{dr} dr = 1
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Similar to the radial Laplacian in spherical coordinates, we can use integration by parts a second time to simplify the integral in the expression above.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+u = \frac{1}{r} \Rightarrow du = -\frac{1}{r^2} dr
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+dv = \frac{dG}{dr} dr \Rightarrow v = G
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We expand the expression using integration by parts once again.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{dG}{dr} + \left [ \left (\frac{1}{r} \right ) \left ( G \right ) - \int G \left ( -\frac{1}{r^2} dr\right ) \right ] = 1
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{dG}{dr} + \frac{G}{r} + \int \frac{G}{r^2} dr = 1
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;It is generally preferable to work with differential equations rather than integral equations. Thus, on each side of the expression above, we can take the derivative with respect to &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;; this will eliminate the integral in the expression. Remember that &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; is a function of &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;, so we have to use the quotient rule on the &lt;script type=&quot;math/tex&quot;&gt;G/r&lt;/script&gt; term.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{d^2 G}{dr^2} + \left ( \frac{1}{r} \frac{dG}{dr} - \frac{G}{r^2} \right ) + \frac{G}{r^2} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{d^2 G}{dr^2} + \frac{1}{r} \frac{dG}{dr} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Similar to the case of the radial, spherical Laplacian, we have simplified the expression for &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; into a straightforward, differential equation. I am going to guess and check the solution &lt;script type=&quot;math/tex&quot;&gt;G = A ln \vert r \vert + B&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are some constants.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\frac{d^2 G}{dr^2} + \frac{1}{r}\frac{dG}{dr} &amp;=\\
+\frac{d^2}{dr^2} \left [ A ln \vert r \vert + B \right ] + \frac{1}{r}\frac{d}{dr} \left [ A ln \vert r \vert + B \right ] &amp;=\\
+-\frac{A}{r^2} + \frac{1}{r} \left ( \frac{A}{r} \right ) &amp;=\\
+-\frac{A}{r^2} + \frac{A}{r^2} &amp;= 0
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Thus, we see that the solution &lt;script type=&quot;math/tex&quot;&gt;G = A ln \vert r \vert + B&lt;/script&gt; solves the differential equation. Notice how &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; is simply an additive constant in the expression. We usually set this constant equal to zero in order to obtain the fundamental solution of the differential equation. Thus, we will use the function &lt;script type=&quot;math/tex&quot;&gt;G = A ln \vert r \vert&lt;/script&gt; for the remainder of this post.&lt;/p&gt;
+
+&lt;h3 id=&quot;checking-the-solution&quot;&gt;Checking the Solution&lt;/h3&gt;
+
+&lt;p&gt;Like the derivation in the previous blog post, we need to check that our solution makes sense. And like the previous blog post, we run into a small problem.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\nabla^2 G &amp;= \frac{1}{r} \frac{d}{dr} \left [ r \frac{d}{dr} \left ( A ln \vert r \vert \right ) \right ]\\
+&amp;= \frac{1}{r} \frac{d}{dr} \left [ r \left ( \frac{A}{r} \right ) \right ]\\
+&amp;= \frac{1}{r} \frac{d}{dr} \left [ A \right ]\\
+&amp;= 0
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Zero is not our expected output - we were expecting a Dirac delta function. The reason that we are not getting the expected output is that the domain of the solution does not include the origin &lt;script type=&quot;math/tex&quot;&gt;r = 0&lt;/script&gt; (we divided by &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; throughout the derivation). We need to analyze the solution in the limiting case of &lt;script type=&quot;math/tex&quot;&gt;r \rightarrow 0&lt;/script&gt;. The strategy is identical to the previous blog post.&lt;/p&gt;
+
+&lt;p&gt;Define a function &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; where:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\Phi_\epsilon = A ln \vert r + \epsilon \vert
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;As &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; approaches zero, &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; approaches the Green’s function &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;. Let’s plug the expression &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; into the Laplacian and simplify.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\nabla^2 \Phi_\epsilon &amp;= \frac{1}{r} \frac{d}{dr} \left [ r \frac{d}{dr} \left ( A ln \vert r + \epsilon \vert \right ) \right ]\\
+&amp;= \frac{1}{r} \frac{d}{dr} \left [ r \left ( \frac{A}{r+\epsilon} \right ) \right ]\\
+&amp;= \frac{1}{r} \frac{d}{dr} \left [ \frac{A r}{r+\epsilon} \right ]\\
+&amp;= \frac{1}{r} \left [ \frac{A}{r+\epsilon} - \frac{Ar}{(r+\epsilon)^2}\right ]\\
+&amp;= \frac{1}{r} \left [ \frac{A(r + \epsilon)}{(r+\epsilon)^2} - \frac{Ar}{(r+\epsilon)^2}\right ]\\
+&amp;= \frac{1}{r} \left [ \frac{Ar + A\epsilon - Ar}{(r+\epsilon)^2} \right ]\\
+&amp;= \frac{1}{r} \left [ \frac{A\epsilon}{(r+\epsilon)^2} \right ]\\
+&amp;= \frac{A\epsilon}{r(r+\epsilon)^2}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Remember that by the definition of a Green’s function, the Laplacian of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; (or more correctly, the Laplacian of the limiting case of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt;), will yield &lt;script type=&quot;math/tex&quot;&gt;\delta(r)&lt;/script&gt;. If that is true, I should be able to integrate &lt;script type=&quot;math/tex&quot;&gt;\nabla^2 \Phi_\epsilon&lt;/script&gt; over all space and get one. Let’s try doing just that:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\int \nabla^2 \Phi_\epsilon dA &amp;= \int_0^R \int_0^{2\pi} \frac{A\epsilon}{r(r+\epsilon)^2} r dr d\theta\\
+&amp;= 2\pi \int_0^R \frac{A\epsilon}{r(r+\epsilon)^2} r dr\\
+&amp;= 2\pi A\epsilon \int_0^R \frac{1}{(r+\epsilon)^2} dr\\
+&amp;= 2\pi A\epsilon \left [ - \frac{1}{r+\epsilon} \right ]_0^R\\
+&amp;= - 2\pi A\epsilon \left [ \frac{1}{R+\epsilon} - \frac{1}{\epsilon} \right ]\\
+&amp;= - 2\pi A\epsilon \left [ -\frac{R}{\epsilon(R+\epsilon)} \right ]\\
+&amp;=  \frac{2\pi A\epsilon R}{\epsilon(R+\epsilon)}\\
+&amp;=  \frac{2\pi A R}{R+\epsilon}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;If we are going to integrate over all space, we need to take the limit of this expression as &lt;script type=&quot;math/tex&quot;&gt;R \rightarrow \infty&lt;/script&gt;. Once again, we turn to L’Hopital’s rule.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\lim_{R \rightarrow \infty} \int \nabla^2 \Phi_\epsilon dA &amp;= \lim_{R \rightarrow \infty} \frac{2\pi A R}{R+\epsilon}\\
+&amp;= \lim_{R \rightarrow \infty} 2\pi A\\
+&amp;= 2 \pi A
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;When &lt;script type=&quot;math/tex&quot;&gt;A = 1/(2\pi)&lt;/script&gt;, the Laplacian of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; satisfies the condition that the integral must equal one. Finally, let’s verify that the Laplacian of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; is actually a Dirac delta function. We will define one final function, &lt;script type=&quot;math/tex&quot;&gt;f_\epsilon(r)&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+f_\epsilon (r) = \frac{1}{2 \pi A} \nabla^2 \Phi_\epsilon (r) = \frac{1}{2\pi A} \frac{A\epsilon}{r(r+\epsilon)^2} = \frac{1}{2\pi} \frac{\epsilon}{r(r+\epsilon)^2}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;What is the value of this function in the limit of &lt;script type=&quot;math/tex&quot;&gt;\epsilon \rightarrow 0&lt;/script&gt;? If &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; is non-zero, the limit is very simple:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\lim_{\epsilon \rightarrow 0} f_\epsilon (r) = \lim_{\epsilon \rightarrow 0} \frac{1}{2\pi} \frac{0}{r^3} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;However, if &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; is equal to zero, we need to use L’Hopital’s rule to simplify the expression.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\lim_{\epsilon \rightarrow 0} f_\epsilon (r) = \lim_{\epsilon \rightarrow 0} \frac{1}{2\pi} \frac{1}{2r(r+\epsilon)} = \frac{1}{2\pi} \frac{1}{2r(r)} = \frac{1}{ 4 \pi r^2}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;This becomes infinitely large when &lt;script type=&quot;math/tex&quot;&gt;r = 0&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-final-solution&quot;&gt;The Final Solution&lt;/h3&gt;
+
+&lt;p&gt;We can now tie everything together in a similar method as the previous post. In the limit of &lt;script type=&quot;math/tex&quot;&gt;\epsilon \rightarrow 0&lt;/script&gt;, the function &lt;script type=&quot;math/tex&quot;&gt;f_\epsilon(r)&lt;/script&gt; is infinitely large at the origin and zero everywhere else. Thus, &lt;script type=&quot;math/tex&quot;&gt;f_\epsilon(r)&lt;/script&gt; is a Dirac delta function &lt;script type=&quot;math/tex&quot;&gt;\delta(r)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;The function &lt;script type=&quot;math/tex&quot;&gt;f_\epsilon(r)&lt;/script&gt; is equal to the Laplacian of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; (remember that the constant &lt;script type=&quot;math/tex&quot;&gt;(2 \pi A)^{-1}&lt;/script&gt; is equal to one since &lt;script type=&quot;math/tex&quot;&gt;A=(2\pi)^{-1}&lt;/script&gt;). This means that in the limit as &lt;script type=&quot;math/tex&quot;&gt;\epsilon \rightarrow 0&lt;/script&gt;, the function &lt;script type=&quot;math/tex&quot;&gt;\nabla^2\Phi_\epsilon&lt;/script&gt; is equal to a Dirac delta function.&lt;/p&gt;
+
+&lt;p&gt;Finally, the limiting case of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; as &lt;script type=&quot;math/tex&quot;&gt;\epsilon \rightarrow 0&lt;/script&gt; is equal to the Green’s function &lt;script type=&quot;math/tex&quot;&gt;G = A ln \vert r \vert = (2\pi)^{-1} ln \vert r \vert&lt;/script&gt;. Thus, the Laplacian of the Green’s function is a Dirac delta function. Just what we needed.&lt;/p&gt;
+
+&lt;p&gt;Until next time!&lt;/p&gt;
+</description>
+				<pubDate>Sat, 12 Nov 2016 00:00:00 -0600</pubDate>
+				<link>/math%20methods/2016/11/12/greens-function-for-the-two-dimensional-radial-laplacian.html</link>
+				<guid isPermaLink="true">/math%20methods/2016/11/12/greens-function-for-the-two-dimensional-radial-laplacian.html</guid>
+			</item>
+		
+			<item>
+				<title>Green's Function for the Three-Dimensional, Radial Laplacian</title>
+				<description>&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;The Laplace operator or Laplacian (&lt;script type=&quot;math/tex&quot;&gt;\nabla^2&lt;/script&gt;) appears in a variety of differential equations that describe physical phenomena; topics include gravitational potential, diffusion, electromagnetic fields, quantum mechanics, and many others. All students of physics come across Poisson’s equation since it is one of the simplest, inhomogeneous differential equations involving the Laplacian.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 \psi = f
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;In the expression above, &lt;script type=&quot;math/tex&quot;&gt;\nabla^2&lt;/script&gt; is the Laplacian, &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is a known function, and &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt; is a function that we must solve for. Techniques like &lt;a href=&quot;http://mathworld.wolfram.com/SeparationofVariables.html&quot;&gt;separation of variables&lt;/a&gt; are commonly used to solve for &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; when &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is separable, but solving for &lt;script type=&quot;math/tex&quot;&gt;\psi&lt;/script&gt; can become very complicated in more sophisticated cases.&lt;/p&gt;
+
+&lt;p&gt;Green’s functions are a staple in upper-level physics because they can be used to simplify or solve more complicated expressions (like when &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is not separable). In this post, we will derive the Green’s function for the three-dimensional Laplacian in spherical coordinates.&lt;/p&gt;
+
+&lt;h3 id=&quot;derivation-of-the-greens-function&quot;&gt;Derivation of the Green’s Function&lt;/h3&gt;
+
+&lt;p&gt;Consider Poisson’s equation in spherical coordinates.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 \psi = f
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We can expand the Laplacian in terms of the &lt;script type=&quot;math/tex&quot;&gt;(r,\theta,\phi)&lt;/script&gt; coordinate system. I looked up the full Laplacian on &lt;a href=&quot;http://mathworld.wolfram.com/Laplacian.html&quot;&gt;Wolfram Mathworld&lt;/a&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\left [ \frac{1}{r^2} \frac{\partial}{\partial r} \left ( r^2 \frac{\partial \psi}{\partial r} \right ) + \frac{1}{r^2 sin^2 \phi} \frac{\partial^2 \psi}{\partial \theta^2} + \frac{1}{r^2 sin\phi} \frac{\partial}{\partial \phi} \left ( sin\phi \frac{\partial \psi}{\partial \phi} \right ) \right ] = f
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Since we are only interested in the radial Green’s function, we can immediately simplify the expression above to include only radial terms. Anything with a &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;\phi&lt;/script&gt; gets canceled:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{1}{r^2} \frac{\partial}{\partial r} \left ( r^2 \frac{\partial \psi}{\partial r} \right ) = f
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We want to find the Green’s function for the Laplace operator. In other words, we are looking for a function &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; that satisfies:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 G = 4\pi \delta(r)
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Using the expression for the Laplacian from above, we get:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{1}{r^2} \frac{d}{dr} \left ( r^2 \frac{dG}{dr} \right ) = 4\pi \delta(r)
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Since the right-hand side of the equation contains a Dirac delta function, it seems natural to integrate both sides with respect to &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;. The expression becomes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\int \frac{1}{r^2} \frac{d}{dr} \left ( r^2 \frac{dG}{dr} \right ) dr = \int 4\pi \delta(r) dr
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\int \frac{1}{r^2} \frac{d}{dr} \left ( r^2 \frac{dG}{dr} \right ) dr = 4\pi
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;The derivatives within the integral suggest that this expression might be simplified by integration by parts. Let’s give it a shot:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+u = \frac{1}{r^2} \Rightarrow du = -\frac{2}{r^3} dr
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+dv = \frac{d}{dr} \left [ r^2 \frac{dG}{dr} \right ] dr \Rightarrow v = r^2 \frac{dG}{dr}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Thus, the expression becomes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\left ( \frac{1}{r^2} \right ) \left ( r^2 \frac{dG}{dr} \right ) - \int \left ( r^2 \frac{dG}{dr} \right ) \left ( -\frac{2}{r^3} dr \right ) = 4\pi
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{dG}{dr} + 2 \int \frac{1}{r} \frac{dG}{dr} dr = 4\pi
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;This integral looks a little simpler, but we can do better! We can use integration by parts a second time to simplify it even further.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+u = \frac{1}{r} \Rightarrow du = -\frac{1}{r^2} dr
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+dv = \frac{dG}{dr} dr \Rightarrow v = G
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We expand the expression once again.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{dG}{dr} + 2 \left [ \left (\frac{1}{r} \right ) \left ( G \right ) - \int G \left ( -\frac{1}{r^2} dr\right ) \right ] = 4\pi
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{dG}{dr} + 2 \left [ \frac{G}{r} + \int \frac{G}{r^2} dr \right ] = 4\pi
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{dG}{dr} + \frac{2G}{r} + 2 \int \frac{G}{r^2} dr = 4\pi
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Dealing with derivatives is usually easier than dealing with integral equations. Thus, we should take the derivative with respect to &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; on each side in order to eliminate the integral. Note that &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; is a function of &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;, so we have to use the quotient rule on the &lt;script type=&quot;math/tex&quot;&gt;2G/r&lt;/script&gt; term. This causes a couple of terms to cancel out nicely.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{d^2 G}{dr^2} + \left ( \frac{2}{r} \frac{dG}{dr} - \frac{2G}{r^2} \right ) + \frac{2G}{r^2} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{d^2 G}{dr^2} + \frac{2}{r} \frac{dG}{dr} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Hooray! We turned Poisson’s equation for &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; into a slightly less difficult to solve differential equation for &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;!&lt;/p&gt;
+
+&lt;h3 id=&quot;solving-the-second-differential-equation&quot;&gt;Solving the Second Differential Equation&lt;/h3&gt;
+
+&lt;p&gt;You can solve this new differential equation in a number of ways. I am going to use a tried and true method of analysis - guess and check! I am going to guess a solution of &lt;script type=&quot;math/tex&quot;&gt;G = A/r&lt;/script&gt; since that seems to fit pretty well. The variable A is some constant.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\frac{d^2 G}{dr^2} + \frac{2}{r}\frac{dG}{dr} &amp;=\\
+\frac{d^2}{dr^2} \left [ \frac{A}{r} \right ] + \frac{2}{r}\frac{d}{dr} \left [ \frac{A}{r} \right ] &amp;=\\
+\frac{2A}{r^3} + \frac{2}{r} \left ( -\frac{A}{r^2} \right ) &amp;=\\
+\frac{2A}{r^3} - \frac{2A}{r^3} &amp;= 0
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Thus, we see that &lt;script type=&quot;math/tex&quot;&gt;G = A/r&lt;/script&gt; is the solution for our differential equation above. Or is it…?&lt;/p&gt;
+
+&lt;p&gt;Update (November 12, 2016): Technically, the solution of this differential equation is &lt;script type=&quot;math/tex&quot;&gt;G = A/r + B&lt;/script&gt; where both &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; are constants. However, we usually set &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; equal to zero in order to obtain the so-called fundamental solution. The fundamental solution ignores scaling by a constant and instead looks at the properties of how &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; changes with &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;checking-the-solution&quot;&gt;Checking the Solution&lt;/h3&gt;
+
+&lt;p&gt;We have a bit of a problem. Suppose I plug &lt;script type=&quot;math/tex&quot;&gt;G = A/r&lt;/script&gt; back into the Laplacian. Let’s see what happens:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\nabla^2 G &amp;= \frac{1}{r^2} \frac{d}{dr} \left [ r^2 \frac{d}{dr} \left ( \frac{A}{r} \right ) \right ]\\
+&amp;= \frac{1}{r^2} \frac{d}{dr} \left [ r^2 \left ( -\frac{A}{r^2} \right ) \right ]\\
+&amp;= \frac{1}{r^2} \frac{d}{dr} \left [ -A \right ]\\
+&amp;= 0
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Technically speaking, that is not our expected output. We were expecting a Dirac delta function and instead got zero. So what gives?&lt;/p&gt;
+
+&lt;p&gt;Remember, we divided by &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; throughout the derivation, so the domain of the solution cannot include the origin &lt;script type=&quot;math/tex&quot;&gt;r = 0&lt;/script&gt;. We can, however, analyze the solution in the limiting case. Suppose we define a function &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; where:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\Phi_\epsilon = \frac{A}{r + \epsilon}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;As &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; approaches zero, &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; approaches the Green’s function &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt;. Let’s plug the expression &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; into the Laplacian and turn the crank.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\nabla^2 \Phi_\epsilon &amp;= \frac{1}{r^2} \frac{d}{dr} \left [ r^2 \frac{d}{dr} \left ( \frac{A}{r + \epsilon} \right ) \right ]\\
+&amp;= \frac{1}{r^2} \frac{d}{dr} \left [ r^2 \left ( -\frac{A}{(r+\epsilon)^2} \right ) \right ]\\
+&amp;= \frac{1}{r^2} \frac{d}{dr} \left [ -\frac{A r^2}{(r+\epsilon)^2} \right ]\\
+&amp;= \frac{1}{r^2} \left [ -\frac{2A\epsilon r}{(r+\epsilon)^3} \right ]\\
+&amp;= -\frac{2A\epsilon}{r(r+\epsilon)^3}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Ok, we are getting some expression with &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt;’s and &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt;’s. What does it mean?&lt;/p&gt;
+
+&lt;p&gt;Remember, I claimed that the Laplacian of &lt;script type=&quot;math/tex&quot;&gt;G&lt;/script&gt; (or more correctly, the Laplacian of the limiting case of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt;), will yield &lt;script type=&quot;math/tex&quot;&gt;4 \pi \delta(r)&lt;/script&gt;. If that is true, I should be able to integrate &lt;script type=&quot;math/tex&quot;&gt;\nabla^2 \Phi_\epsilon&lt;/script&gt; over all space and get &lt;script type=&quot;math/tex&quot;&gt;4\pi&lt;/script&gt;. Let’s try doing just that:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\int \nabla^2 \Phi_\epsilon dV &amp;= - \int_0^R \int_0^{2\pi} \int_0^\pi \frac{2A\epsilon}{r(r+\epsilon)^3} r^2 sin\theta dr d\theta d\phi\\
+&amp;= - 4\pi \int_0^R \frac{2A\epsilon r}{(r+\epsilon)^3} dr\\
+&amp;= - 4\pi A \left [ \frac{r(2\epsilon + r)}{(r+\epsilon)^2} \right ]_0^R\\
+&amp;= - 4\pi A \left [ \frac{R(2\epsilon + R)}{(R + \epsilon)^2} \right ]\\
+&amp;= - 4\pi A \left [ \frac{R^2 + 2\epsilon R}{R^2 + 2\epsilon R + \epsilon^2} \right ]\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;If we are going to integrate over all space, we need to take the limit of this expression as &lt;script type=&quot;math/tex&quot;&gt;R \rightarrow \infty&lt;/script&gt;. This is a job for L’Hopital’s rule!&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\lim_{R \rightarrow \infty} \int \nabla^2 \Phi_\epsilon dV &amp;= \lim_{R \rightarrow \infty} - 4\pi A \left [ \frac{R^2 + 2\epsilon R}{R^2 + 2\epsilon R + \epsilon^2} \right ]\\
+&amp;= \lim_{R \rightarrow \infty} - 4\pi A \left [ \frac{2R + 2\epsilon}{2R + 2\epsilon} \right ] = - 4\pi A
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;It seems that when &lt;script type=&quot;math/tex&quot;&gt;A = -1&lt;/script&gt;, the Laplacian of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; satisfies our conditions. Let’s define one last function &lt;script type=&quot;math/tex&quot;&gt;f_\epsilon(r)&lt;/script&gt; to simplify the expression. I promise we are in the home stretch!&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+f_\epsilon (r) = \frac{1}{4 \pi A} \nabla^2 \Phi_\epsilon (r) = -\frac{1}{4\pi} \nabla^2 \Phi_\epsilon (r) = \frac{\epsilon}{2\pi r (r+\epsilon)^3}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We should take a good, long look at this equation in the limit of &lt;script type=&quot;math/tex&quot;&gt;\epsilon \rightarrow 0&lt;/script&gt;. If &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; is non-zero, the limit is very simple:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\lim_{\epsilon \rightarrow 0} f_\epsilon (r) = \lim_{\epsilon \rightarrow 0} \frac{\epsilon}{2\pi r (r+\epsilon)^3} = \frac{0}{2\pi r (r)^3} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;If &lt;script type=&quot;math/tex&quot;&gt;r&lt;/script&gt; is equal to zero, we need to use L’Hopital’s rule to simplify the expression.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\lim_{\epsilon \rightarrow 0} f_\epsilon (r) = \lim_{\epsilon \rightarrow 0} \frac{\epsilon}{2\pi r (r+\epsilon)^3} = \lim_{\epsilon \rightarrow 0} \frac{1}{6 \pi r(r + \epsilon)^2} = \frac{1}{6 \pi r^3}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;This becomes infinitely large when &lt;script type=&quot;math/tex&quot;&gt;r = 0&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;putting-it-all-together&quot;&gt;Putting It All Together&lt;/h3&gt;
+
+&lt;p&gt;Let’s tie everything together. In the limiting case of &lt;script type=&quot;math/tex&quot;&gt;\epsilon \rightarrow 0&lt;/script&gt;, the function &lt;script type=&quot;math/tex&quot;&gt;f_\epsilon(r)&lt;/script&gt; is infinitely large at the origin and zero everywhere else. This means that &lt;script type=&quot;math/tex&quot;&gt;f_\epsilon(r)&lt;/script&gt; is a Dirac delta function &lt;script type=&quot;math/tex&quot;&gt;\delta(r)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;The function &lt;script type=&quot;math/tex&quot;&gt;f_\epsilon(r)&lt;/script&gt; is equal to the Laplacian of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt;, multiplied by a constant. Thus, in the limit as &lt;script type=&quot;math/tex&quot;&gt;\epsilon \rightarrow 0&lt;/script&gt;, the function &lt;script type=&quot;math/tex&quot;&gt;\nabla^2\Phi_\epsilon&lt;/script&gt; is equal to a Dirac delta function (times a constant).&lt;/p&gt;
+
+&lt;p&gt;But remember that the limiting case of &lt;script type=&quot;math/tex&quot;&gt;\Phi_\epsilon&lt;/script&gt; as &lt;script type=&quot;math/tex&quot;&gt;\epsilon \rightarrow 0&lt;/script&gt; is equivalent to the Green’s function &lt;script type=&quot;math/tex&quot;&gt;G = A/r = -1/r&lt;/script&gt;. Thus, the Laplacian of the Green’s function is a Dirac delta function times the constant &lt;script type=&quot;math/tex&quot;&gt;4\pi&lt;/script&gt;. This is exactly what we set out to prove in the first place! Woot!&lt;/p&gt;
+
+&lt;p&gt;One final thought. You often see the following expression written out in textbooks:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 \left ( \frac{1}{r} \right ) = -4\pi \delta(r)
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Technically, this is not entirely correct because &lt;script type=&quot;math/tex&quot;&gt;1/r&lt;/script&gt; is undefined at the origin. It should really be written as the following.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\lim_{\epsilon \rightarrow 0} \left [ \nabla^2 \left ( \frac{1}{r + \epsilon} \right ) \right ] = -4\pi \delta(r)
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;This comes directly from the analysis above.&lt;/p&gt;
+
+&lt;p&gt;Until next time!&lt;/p&gt;
+</description>
+				<pubDate>Tue, 01 Nov 2016 00:00:00 -0500</pubDate>
+				<link>/math%20methods/2016/11/01/greens-function-for-the-three-dimensional-radial-laplacian.html</link>
+				<guid isPermaLink="true">/math%20methods/2016/11/01/greens-function-for-the-three-dimensional-radial-laplacian.html</guid>
+			</item>
+		
+			<item>
+				<title>Short Break</title>
+				<description>&lt;h3 id=&quot;a-short-break&quot;&gt;A Short Break&lt;/h3&gt;
+
+&lt;p&gt;I am finishing up my Ph.D. in physics over the next few months, so I am going to have to take a small break from blogging in order to analyze my data and write my thesis. You might have already noticed that I haven’t written a new post in awhile.&lt;/p&gt;
+
+&lt;p&gt;Don’t despair! Cupcake Physics is still going to be active on social media. And the Cupcake Physics blog will be back in full force this September, followed shortly by the main Cupcake Physics site! Until then, please feel free to peruse any existing content on the blog.&lt;/p&gt;
+</description>
+				<pubDate>Wed, 16 Mar 2016 00:00:00 -0500</pubDate>
+				<link>/cupcake%20physics/2016/03/16/short-break.html</link>
+				<guid isPermaLink="true">/cupcake%20physics/2016/03/16/short-break.html</guid>
+			</item>
+		
+			<item>
+				<title>Plasma Oscillations</title>
+				<description>&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;You have probably heard that free electrons within a conductor are able to move about the crystal. This makes it possible for conductors to carry currents and thermal energy very efficiently. There are plenty of examples of this in real life. Electrical wires are made out of copper, not wood. The heat sink in your computer is made out of aluminum or copper, not plastic.&lt;/p&gt;
+
+&lt;p&gt;Chemists often use the term &lt;a href=&quot;https://en.wikipedia.org/wiki/Metallic_bonding&quot;&gt;metallic bond&lt;/a&gt; to describe how shared electrons between metallic nuclei can hold metallic atoms together. Physicists use the terms electron liquid or electron gas to describe the free electrons in a metal. An electron liquid includes all of the &lt;a href=&quot;https://en.wikipedia.org/wiki/Coulomb%27s_law&quot;&gt;Coulomb interactions&lt;/a&gt; between the electrons while an electron gas (also called a free electron gas or a free Fermi gas) does not include these interactions. For now, we are going to focus on the free electron gas - the electrons do not interact with each other and the positive nuceli in the background are assumed to create a nearly uniform potential.&lt;/p&gt;
+
+&lt;p&gt;If we were to apply an external electric field to a uniform conductor, the electrons should feel a force in the appropriate direction. If we were to apply an oscillating external electric field to a uniform conductor, the electrons will wiggle with the electric field. These plasma oscillations (sometimes called Langmuir waves after their discoverer, Irving Langmuir) have some very interesting properties.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-equation-of-motion&quot;&gt;The Equation of Motion&lt;/h3&gt;
+
+&lt;p&gt;Suppose I want to analyze the motion of an electron in an &lt;a href=&quot;https://en.wikipedia.org/wiki/Isotropy&quot;&gt;isotropic&lt;/a&gt; conductor under an external, oscillating, electric field. We will use the free Fermi gas approximation, so a random electron is only affected by:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Any damping forces it feels while moving around in the crystal (approximated as linear damping).&lt;/li&gt;
+  &lt;li&gt;Any binding forces it feels to atoms in the crystal (approximated as a restoring force like that of a spring).&lt;/li&gt;
+  &lt;li&gt;The external electric field that we apply to the conductor (no approximation necessary).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;\vec{r}(t)&lt;/script&gt; denote the position of our electron as a function of time and &lt;script type=&quot;math/tex&quot;&gt;\vec{E}(t)&lt;/script&gt; denote the external electric field as a function of time. We can use Newton’s second law to determine the equation of motion for the electron in the conductor.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\sum \vec{F}(t) = m\vec{a}(t)
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+-m\Gamma \vec{v}(t) - m\Omega^2 \vec{r}(t) + e \vec{E}(t) = m\vec{a}(t)
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+-m\Gamma \frac{d \vec{r}(t)}{dt} - m\Omega^2 \vec{r}(t) + e \vec{E}(t) = m\frac{d^2 \vec{r}(t)}{dt^2}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+m\frac{d^2 \vec{r}(t)}{dt^2} + m\Gamma \frac{d \vec{r}(t)}{dt} + m\Omega^2 \vec{r}(t) = e \vec{E}(t)
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;In the equations above, the electron has mass m and charge e. It is bound to a given atom with a spring-like force with spring constant &lt;script type=&quot;math/tex&quot;&gt;m\Omega^2&lt;/script&gt;. As it moves through the crystal, it feels a retarding frictional force with coefficient &lt;script type=&quot;math/tex&quot;&gt;m\Gamma&lt;/script&gt;. These approximations may not seem like they would lead to correct answers, but they are surprisingly accurate!&lt;/p&gt;
+
+&lt;p&gt;We have already mentioned that the electrons within a conductor are free to move about the crystal. Thus, &lt;script type=&quot;math/tex&quot;&gt;\Omega \rightarrow 0&lt;/script&gt;, and we can recast the equation above in terms of the electron velocity.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+m\frac{d^2 \vec{r}(t)}{dt^2} + m\Gamma \frac{d \vec{r}(t)}{dt} = e \vec{E}(t)
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{d^2 \vec{r}(t)}{dt^2} + \Gamma \frac{d \vec{r}(t)}{dt} = \frac{e}{m} \vec{E}(t)
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{d \vec{v}(t)}{dt} + \Gamma \vec{v}(t) = \frac{e}{m} \vec{E}(t)
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We know that the electron is going to oscillate as a function of time due to the external electric field. Suppose the electric field is given by &lt;script type=&quot;math/tex&quot;&gt;\vec{E}(t) = \vec{E}e^{-i\omega t}&lt;/script&gt;. Then, the velocity of the electron is given by &lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t) = \vec{v} e^{-i\omega t}&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;\vec{v}&lt;/script&gt; is some velocity vector and &lt;script type=&quot;math/tex&quot;&gt;\omega&lt;/script&gt; is the frequency of our oscillating electric field. In other words, we are solving this differential equation by guessing the solution for &lt;script type=&quot;math/tex&quot;&gt;\vec{v}(t)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\frac{d}{dt} \left [ \vec{v} e^{-i\omega t} \right ] + \Gamma \vec{v}e^{-i\omega t} = \frac{e}{m} \vec{E} e^{-i\omega t}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{v} \frac{d}{dt} e^{-i\omega t} + \Gamma \vec{v}e^{-i\omega t} = \frac{e}{m} \vec{E} e^{-i\omega t}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+-i\omega \vec{v} e^{-i\omega t} + \Gamma \vec{v}e^{-i\omega t} = \frac{e}{m} \vec{E} e^{-i\omega t}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+-i\omega \vec{v} + \Gamma \vec{v} = \frac{e}{m} \vec{E}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Solving for &lt;script type=&quot;math/tex&quot;&gt;\vec{v}&lt;/script&gt; gives:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\left ( -i\omega + \Gamma \right ) \vec{v} = \frac{e}{m} \vec{E}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{v} = \frac{e \vec{E}}{m \left ( -i\omega + \Gamma \right )}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;What is this answer telling us? Notice how the direction of &lt;script type=&quot;math/tex&quot;&gt;\vec{v}&lt;/script&gt; depends only on the direction of &lt;script type=&quot;math/tex&quot;&gt;\vec{E}&lt;/script&gt;. Our electron oscillations line up with the polarization of the external electric field (as we might guess). Let’s use this result to calculate the conductivity of the metal.&lt;/p&gt;
+
+&lt;h3 id=&quot;conductivity&quot;&gt;Conductivity&lt;/h3&gt;
+
+&lt;p&gt;Ohm’s law defines the electrical conductivity of a system as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{J}(t) = \sigma \vec{E}(t)
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\vec{J}(t)&lt;/script&gt; is the time-dependent current density, &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; is the conductivity, and &lt;script type=&quot;math/tex&quot;&gt;\vec{E}(t)&lt;/script&gt; is the time-dependent electric field acting on the system. With a few steps of algebra, you can turn this expression back into good old &lt;script type=&quot;math/tex&quot;&gt;V=IR&lt;/script&gt; (that will be another post though).&lt;/p&gt;
+
+&lt;p&gt;Since we are dealing with an angular frequency &lt;script type=&quot;math/tex&quot;&gt;\omega&lt;/script&gt;, it might be easier to analyze Ohm’s law in the frequency domain rather than the time domain. Just like we did above, let &lt;script type=&quot;math/tex&quot;&gt;\vec{E}(t) = \vec{E}e^{-i\omega t}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\vec{J}(t) = \vec{J}e^{-i\omega t}&lt;/script&gt;. Taking the &lt;a href=&quot;http://www.wolframalpha.com/input/?i=fourier+transform+exp%28-i*w*t%29&quot;&gt;Fourier transform of each side&lt;/a&gt; yields:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+F[\vec{J}(t)] = \sqrt{2\pi} \vec{J}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+F[\vec{E}(t)] = \sqrt{2\pi} \vec{E}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{J} = \sigma \vec{E}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We can express &lt;script type=&quot;math/tex&quot;&gt;\vec{J}&lt;/script&gt; in terms of the velocity and the carrier density of the material (n):&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{J} = ne\vec{v}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Substituting the expression for &lt;script type=&quot;math/tex&quot;&gt;\vec{v}&lt;/script&gt; from the previous section yields:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{J} = \frac{ne^2 \vec{E}}{m \left ( -i\omega + \Gamma \right )} =  \sigma \vec{E}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\sigma = \frac{ne^2}{m} \frac{1}{ \left ( -i\omega + \Gamma \right )}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;If we let &lt;script type=&quot;math/tex&quot;&gt;\Gamma \equiv 1/\tau&lt;/script&gt; (where &lt;script type=&quot;math/tex&quot;&gt;\tau&lt;/script&gt; is the mean free time of the electron), the expression becomes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\sigma = \frac{ne^2 \tau}{m} \frac{1}{ \left (1 - i\omega\tau \right )} = \frac{ne^2 \tau}{m} \left ( \frac{1 + i\omega \tau}{1 + \omega^2 \tau^2} \right )
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;The conductivity can now be used to solve for the &lt;a href=&quot;https://en.wikipedia.org/wiki/Permittivity#Lossy_medium&quot;&gt;complex permittivity&lt;/a&gt; of the system.&lt;/p&gt;
+
+&lt;h3 id=&quot;complex-permittivity&quot;&gt;Complex Permittivity&lt;/h3&gt;
+
+&lt;p&gt;We can find the complex permittivity of the conductor (in Gaussian units) according to:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\epsilon = \epsilon_r + \frac{4\pi i\sigma}{\omega}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\epsilon_r&lt;/script&gt; is the relative permittivity of the specific conductor within which the oscillations are taking place. Remember, we are using &lt;script type=&quot;math/tex&quot;&gt;exp(-i \omega t)&lt;/script&gt; as the oscillating term, so the complex permittivity has a plus sign rather than a minus sign.&lt;/p&gt;
+
+&lt;p&gt;Notice the imaginary number (i) in the expression for complex permittivity. The imaginary part of &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; contributes to the real part of &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; (an imaginary number multiplied by an imaginary number is real) while the real part of &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; contributes to the imaginary part of &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; (a real number multiplied by an imagninary number is imaginary). In other words, the real part of &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; contributes to the loss in the system while the imaginary part of &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; contributes to the permittivity of the system.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\epsilon &amp;= \epsilon_r + \frac{4\pi i n e^2 \tau}{m \omega} \left ( \frac{1 + i\omega\tau}{1 + \omega^2\tau^2 } \right )\\
+&amp;= \epsilon_r + \frac{4\pi i n e^2 \tau}{m \omega} \frac{1}{1 + \omega^2\tau^2 } + \frac{4\pi i n e^2 \tau}{m \omega} \frac{i\omega \tau}{1 + \omega^2\tau^2 }\\
+&amp;= \epsilon_r + \frac{4\pi i n e^2 \tau}{m \omega} \frac{1}{1 + \omega^2\tau^2 } - \frac{4\pi n e^2 \tau}{m \omega} \frac{\omega \tau}{1 + \omega^2\tau^2 }\\
+&amp;= \epsilon_r + \frac{4\pi i n e^2 \tau}{m \omega \left ( 1 + \omega^2\tau^2 \right ) } - \frac{4\pi n e^2 \tau^2}{m \left ( 1 + \omega^2\tau^2 \right ) }
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;In the limit of &lt;script type=&quot;math/tex&quot;&gt;\omega\tau \gg 1&lt;/script&gt;, the expression becomes:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\epsilon &amp;\approx \epsilon_r + \frac{4\pi i n e^2 \tau}{m \omega \left ( \omega^2\tau^2 \right ) } - \frac{4\pi n e^2 \tau^2}{m \left ( \omega^2\tau^2 \right ) }\\
+&amp;= \epsilon_r + \frac{4\pi i n e^2}{m \omega^3 \tau } - \frac{4\pi n e^2}{m \omega^2 }\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;We technically have an expression for the complex permittivity of the system. However, physicists usually make one more simplification. Let’s look at the real part of the permittivity in the limit of &lt;script type=&quot;math/tex&quot;&gt;\omega\tau \gg 1&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+Re[\epsilon] \approx \epsilon_r \left [ 1 - \frac{4\pi ne^2}{m \omega^2 \epsilon_r} \right ] = \epsilon_r \left [ 1 - \frac{\omega_p^2}{\omega^2} \right ]
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\omega_p = [4\pi n e^2/m\epsilon_r]^{1/2}&lt;/script&gt; is the plasma frequency of the system. You can think of the plasma frequency as the resonant frequency of electrons in the metal for small oscillations.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusions&quot;&gt;Conclusions&lt;/h3&gt;
+
+&lt;p&gt;We learned that an oscillating electric field incident on a conductor causes the electrons to oscillate at the same frequency. The electrons in a conductor have a resonant frequency, just like the driven mass-spring oscillator. We call it the plasma frequency of the conductor.&lt;/p&gt;
+
+&lt;p&gt;The formula for plasma frequency is a little bit strange though. If the incident frequency of light is greater than the plasma frequency, we see that the index of refraction of the metal will be less than one since &lt;script type=&quot;math/tex&quot;&gt;n = \sqrt{\epsilon}&lt;/script&gt;. On first glance, this seems to violate the laws of special relativity (light in the metal is traveling faster than light in a vacuum because v = c/n). We will cover that in a future post.&lt;/p&gt;
+</description>
+				<pubDate>Mon, 18 Jan 2016 00:00:00 -0600</pubDate>
+				<link>/electromagnetism/2016/01/18/plasma-oscillations.html</link>
+				<guid isPermaLink="true">/electromagnetism/2016/01/18/plasma-oscillations.html</guid>
+			</item>
+		
+			<item>
+				<title>An Electromagnetic Wave in a Conductor (Part 2)</title>
+				<description>&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.cupcakephysics.com/electromagnetism/2016/01/03/an-electromagnetic-wave-in-a-conductor-part-1.html&quot;&gt;Last week&lt;/a&gt; we used Maxwell’s equations to derive an expression for the wavevector of an electromagnetic wave within a conductor. We found that the wavevector turns out to be a complex number given by:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\widetilde{k} = \omega \sqrt{ \mu \epsilon - \frac{i \mu \sigma}{\omega} } = \frac{\widetilde{n} \omega}{c}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;where&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\widetilde{n} = c \sqrt{ \mu \epsilon - \frac{i \mu \sigma}{\omega} }
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Of course, you can solve for the &lt;a href=&quot;http://www.wolframalpha.com/input/?i=Real%5B+sqrt%28A+%2B+B*i%29+%5D&quot;&gt;real&lt;/a&gt; and &lt;a href=&quot;http://www.wolframalpha.com/input/?i=Imaginary%5B+sqrt%28A+%2B+B*i%29+%5D&quot;&gt;imaginary&lt;/a&gt; parts of &lt;script type=&quot;math/tex&quot;&gt;\widetilde{n}&lt;/script&gt; or &lt;script type=&quot;math/tex&quot;&gt;\widetilde{k}&lt;/script&gt; using a little bit of algebra. However, that doesn’t tell us what complex values actually mean. For that, we will simply look back to the formula for a plane wave of light.&lt;/p&gt;
+
+&lt;h3 id=&quot;the-plane-wave&quot;&gt;The Plane Wave&lt;/h3&gt;
+
+&lt;p&gt;The electric field of a plane wave of light propagating in some material has the form:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{E}(\vec{r}) = \vec{E}_o e^{i(\vec{k} \cdot \vec{r} + \omega t)} = \vec{E}_o e^{i\vec{k} \cdot \vec{r}} e^{i\omega t}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;In this plane wave the wavevector, refractive index, speed of light, and frequency of the light wave are all related by a &lt;a href=&quot;https://en.wikipedia.org/wiki/Dispersion_relation&quot;&gt;dispersion relationship&lt;/a&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+ck = n\omega \Rightarrow k = \frac{n\omega}{c}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We will assume that the propagation of light is along the z-direction, meaning that the plane wave expression reduces down to:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{E}(z) = \vec{E}_o e^{ikz} e^{i\omega t}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Additionally, we will ignore the &lt;script type=&quot;math/tex&quot;&gt;\omega t&lt;/script&gt; term for the time being, just so we can get a sense of the shape of the wave without worrying about the oscillations of the wave.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{E}(z) = \vec{E}_o e^{ikz}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;If k is a real number, then the expression above has the form of a regular, old, oscillating wave. However, if the wavevector is complex, something interesting happens. Let &lt;script type=&quot;math/tex&quot;&gt;\widetilde{k}&lt;/script&gt; be complex and &lt;script type=&quot;math/tex&quot;&gt;k_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;k_2&lt;/script&gt; be real numbers:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\widetilde{k} = k_1 + ik_2
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Then:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\vec{E}(z) &amp;= \vec{E}_o e^{i\widetilde{k}z}\\
+&amp;= \vec{E}_o e^{i(k_1 + ik_2)z}\\
+&amp;= \vec{E}_o e^{ik_1z + i^2k_2z}\\
+&amp;= \vec{E}_o e^{ik_1z - k_2z}\\
+&amp;= \vec{E}_o e^{ik_1z} e^{-k_2z}\\
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The real part of &lt;script type=&quot;math/tex&quot;&gt;\widetilde{k}&lt;/script&gt; (and by extension &lt;script type=&quot;math/tex&quot;&gt;\widetilde{n}&lt;/script&gt;) determines the wavevector of the light in the material. The imaginary part of &lt;script type=&quot;math/tex&quot;&gt;\widetilde{k}&lt;/script&gt; (and by extension &lt;script type=&quot;math/tex&quot;&gt;\widetilde{n}&lt;/script&gt;) is seen in a negative exponential term. This means that the electric field decays - the light wave can only penetrate part of the way into the conductor. This is called the skin depth of the wave in the conductor.&lt;/p&gt;
+
+&lt;p&gt;You can use the interactive plot below to see how changing &lt;script type=&quot;math/tex&quot;&gt;k_1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;k_2&lt;/script&gt; will affect the magnitude of the electromagnetic wave as a function of z-position. The blue curve represents the real part of the electric field while the red curve represents the imaginary part. The initial magnitude of the electric field has been scaled to one, just to provide a consistent starting point for the analysis.&lt;/p&gt;
+
+&lt;div style=&quot;text-align:center&quot;&gt;
+  &lt;div id=&quot;skin_depth&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;center&gt;
+&lt;table style=&quot;table-layout: fixed; width: 560px&quot;&gt;
+	&lt;tr&gt;
+		&lt;td&gt;\(k_1\)&lt;/td&gt;
+		&lt;td&gt;&lt;input type=&quot;range&quot; id=&quot;kOneSlider&quot; min=&quot;0&quot; max=&quot;80&quot; step=&quot;1&quot; value=&quot;40&quot; oninput=&quot;updateGraph();&quot; onchange=&quot;updateGraph();&quot; /&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span id=&quot;kOneReadout&quot;&gt;40.0&lt;/span&gt; \(m^{-1}\)&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;\(k_2\)&lt;/td&gt;
+		&lt;td&gt;&lt;input type=&quot;range&quot; id=&quot;kTwoSlider&quot; min=&quot;0&quot; max=&quot;10&quot; step=&quot;0.1&quot; value=&quot;0&quot; oninput=&quot;updateGraph();&quot; onchange=&quot;updateGraph();&quot; /&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;span id=&quot;kTwoReadout&quot;&gt;0.0&lt;/span&gt; \(m^{-1}\)&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td colspan=&quot;3&quot;&gt;The real part of the electric field is in &lt;font color=&quot;blue&quot;&gt;BLUE&lt;/font&gt; while the imaginary part of the electric field is in &lt;font color=&quot;red&quot;&gt;RED&lt;/font&gt;.&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/center&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;/assets/js/2016-01-10/skin_depth.js&quot;&gt;&lt;/script&gt;
+
+</description>
+				<pubDate>Sun, 10 Jan 2016 00:00:00 -0600</pubDate>
+				<link>/electromagnetism/2016/01/10/an-electromagnetic-wave-in-a-conductor-part-2.html</link>
+				<guid isPermaLink="true">/electromagnetism/2016/01/10/an-electromagnetic-wave-in-a-conductor-part-2.html</guid>
+			</item>
+		
+			<item>
+				<title>An Electromagnetic Wave in a Conductor (Part 1)</title>
+				<description>&lt;h3 id=&quot;introduction&quot;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;One of the most important conclusions that comes from Maxwell’s equations is that electric and magnetic fields can propagate as waves. However, this is only half the story - the propagation of light in a vacuum is very different from the propagation of light in a dielectric which is very different from the propagation of light in a conductor. Let’s take a moment to analyze the propagation of light in a conductor.&lt;/p&gt;
+
+&lt;h3 id=&quot;maxwells-equations&quot;&gt;Maxwell’s Equations&lt;/h3&gt;
+
+&lt;p&gt;We will start off with Maxwell’s equations in an &lt;a href=&quot;https://en.wikipedia.org/wiki/Isotropy&quot;&gt;isotropic&lt;/a&gt; medium with permittivity &lt;script type=&quot;math/tex&quot;&gt;\epsilon&lt;/script&gt; and permeability &lt;script type=&quot;math/tex&quot;&gt;\mu&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \cdot \vec{E} = \frac{\rho}{\epsilon}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \cdot \vec{B} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \times \vec{E} = -\frac{d\vec{B}}{dt}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \times \vec{B} = \mu \vec{J} + \mu \epsilon \frac{d\vec{E}}{dt}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Light is an electromagnetic wave, meaning that it can be modeled as a pair of oscillating electric and magnetic fields. The magnitude of the electric field is much larger than the magnitude of the magnetic field, so we will ignore the magnetic field for now.&lt;/p&gt;
+
+&lt;p&gt;The electric field won’t do much to a dielectric or vacuum since there are no free charges to move around. However, the free charges in a metal can move around in response to the electric field, changing the properties of the propagation of light. We are going to assume that the current density (&lt;script type=&quot;math/tex&quot;&gt;\vec{J}&lt;/script&gt;) only depends on the electric field from the propagating wave (&lt;script type=&quot;math/tex&quot;&gt;\vec{E}&lt;/script&gt;) and the conductivity of the metal (&lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt;). The simplest form of this relationship is &lt;script type=&quot;math/tex&quot;&gt;\vec{J} = \sigma \vec{E}&lt;/script&gt;. Additionally, we know that excess charge within a conductor is equal to zero. Thus, Maxwell’s equations become:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \cdot \vec{E} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \cdot \vec{B} = 0
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \times \vec{E} = -\frac{d\vec{B}}{dt}
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \times \vec{B} = \mu \sigma \vec{E} + \mu \epsilon \frac{d\vec{E}}{dt}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Let’s focus on the third equation in the group above (the curl of electric field). We can take the curl of each side of that equation and use a &lt;a href=&quot;https://en.wikipedia.org/wiki/Vector_calculus_identities&quot;&gt;vector calculus identity&lt;/a&gt; to simplify.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \times \left ( \nabla \times \vec{E} \right ) = \nabla \times \left ( -\frac{d\vec{B}}{dt} \right )
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla \left ( \nabla \cdot \vec{E} \right ) - \nabla^2 \vec{E} = - \frac{d}{dt} \left ( \nabla \times \vec{B} \right )
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We can now use Maxwell’s equations for the curl of &lt;script type=&quot;math/tex&quot;&gt;\vec{B}&lt;/script&gt; and the divergence of &lt;script type=&quot;math/tex&quot;&gt;\vec{E}&lt;/script&gt; to simplify this expression further.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+0 - \nabla^2 \vec{E} = - \frac{d}{dt} \left ( \mu \sigma \vec{E} + \mu \epsilon \frac{d\vec{E}}{dt} \right )
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+- \nabla^2 \vec{E} = - \frac{d}{dt} \left ( \mu \sigma \vec{E} + \mu \epsilon \frac{d\vec{E}}{dt} \right )
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 \vec{E} = \mu \sigma \frac{d \vec{E}}{dt} + \mu \epsilon \frac{d^2 \vec{E}}{dt^2}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;The electric field in an electromagnetic wave oscillates with some frequency &lt;script type=&quot;math/tex&quot;&gt;\omega&lt;/script&gt; and has some wavevector &lt;script type=&quot;math/tex&quot;&gt;\vec{k}&lt;/script&gt;. Thus, let’s assume that our electric field has the form &lt;script type=&quot;math/tex&quot;&gt;\vec{E} = \vec{E}_o exp[i(\vec{k}\cdot \vec{r} + \omega t)]&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;\vec{E}_o&lt;/script&gt; is the polarization of the electromagnetic wave and &lt;script type=&quot;math/tex&quot;&gt;\vec{r}&lt;/script&gt; is a position within the conducting material. Plugging that expression into the equation above yields:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 \left [ \vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)} \right ] = \mu \sigma \frac{d}{dt}\left [ \vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)} \right ] + \mu \epsilon \frac{d^2}{dt^2}\left [ \vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)} \right ]
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\nabla^2 \left [ \vec{E}_o e^{i\vec{k}\cdot\vec{r}}e^{i\omega t} \right ] = \mu \sigma \frac{d}{dt}\left [ \vec{E}_o e^{i\vec{k}\cdot\vec{r}}e^{i\omega t} \right ] + \mu \epsilon \frac{d^2}{dt^2}\left [ \vec{E}_o e^{i\vec{k}\cdot\vec{r}}e^{i\omega t} \right ]
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{E}_o e^{i\omega t} \nabla^2 \left [ e^{i\vec{k}\cdot\vec{r}} \right ] = \mu \sigma \vec{E}_o e^{i\vec{k}\cdot\vec{r}} \frac{d}{dt}\left [ e^{i \omega t} \right ] + \mu \epsilon \vec{E}_o e^{i\vec{k}\cdot \vec{r}} \frac{d^2}{dt^2}\left [ e^{i\omega t} \right ]
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;We can expand &lt;script type=&quot;math/tex&quot;&gt;\vec{k}\cdot\vec{r}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\nabla^2&lt;/script&gt; in order to solve for the Laplacian on the left side of the equation.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\vec{E}_o e^{i\omega t} \nabla^2 \left [ e^{i\vec{k}\cdot\vec{r}} \right ] &amp;= \vec{E}_o e^{i\omega t} \left [ \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right ] \left [ e^{i(k_xx+k_yy+k_zz)} \right ]\\
+&amp;= \vec{E}_o e^{i\omega t} \left [ \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right ] \left [ e^{ik_xx} e^{ik_yy} e^{ik_zz} \right ]\\
+&amp;= \vec{E}_o e^{i\omega t} \left [ \frac{\partial^2}{\partial x^2} \left ( e^{ik_xx} e^{ik_yy} e^{ik_zz} \right ) + \frac{\partial^2}{\partial y^2} \left ( e^{ik_xx} e^{ik_yy} e^{ik_zz} \right ) + \frac{\partial^2}{\partial z^2} \left ( e^{ik_xx} e^{ik_yy} e^{ik_zz} \right ) \right ]\\
+&amp;= \vec{E}_o e^{i\omega t} \left [ e^{ik_yy} e^{ik_zz} \frac{\partial^2}{\partial x^2} \left ( e^{ik_xx} \right ) + e^{ik_xx}e^{ik_zz} \frac{\partial^2}{\partial y^2} \left ( e^{ik_yy} \right ) + e^{ik_xx} e^{ik_yy} \frac{\partial^2}{\partial z^2} \left ( e^{ik_zz} \right ) \right ]\\
+&amp;= \vec{E}_o e^{i\omega t} \left [ -k_x^2 e^{ik_xx} e^{ik_yy} e^{ik_zz} - k_y^2 e^{ik_xx}e^{ik_yy} e^{ik_zz} - k_z^2 e^{ik_xx} e^{ik_yy} e^{ik_zz} \right ]\\
+&amp;= - \vec{E}_o e^{i\omega t} \left [ k_x^2 + k_y^2 + k_z^2 \right ] e^{ik_xx} e^{ik_yy} e^{ik_zz}\\
+&amp;= - k^2 \vec{E}_o e^{i\omega t} e^{i(k_xx+k_yy+k_zz)}\\
+&amp;= - k^2 \vec{E}_o e^{i\omega t} e^{i\vec{k}\cdot\vec{r}}\\
+&amp;= - k^2 \vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;We can use this result to find the relationship between k and &lt;script type=&quot;math/tex&quot;&gt;\omega&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\vec{E}_o e^{i\omega t} \nabla^2 \left [ e^{i\vec{k}\cdot\vec{r}} \right ] = \mu \sigma \vec{E}_o e^{i\vec{k}\cdot\vec{r}} \frac{d}{dt}\left [ e^{i \omega t} \right ] + \mu \epsilon \vec{E}_o e^{i\vec{k}\cdot \vec{r}} \frac{d^2}{dt^2}\left [ e^{i\omega t} \right ]
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+- k^2 \vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)} = \mu \sigma \vec{E}_o e^{i\vec{k}\cdot\vec{r}} \left [ i\omega e^{i \omega t} \right ] + \mu \epsilon \vec{E}_o e^{i\vec{k}\cdot \vec{r}} \left [ -\omega^2 e^{i\omega t} \right ]
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+- k^2 \vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)} = i\omega \mu \sigma \vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)} - \omega^2 \mu \epsilon \vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Dividing through by &lt;script type=&quot;math/tex&quot;&gt;\vec{E}_o e^{i(\vec{k}\cdot\vec{r}+\omega t)}&lt;/script&gt; yields:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+- k^2 = i\omega \mu \sigma - \omega^2 \mu \epsilon
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+k^2 = \omega^2 \mu \epsilon - i\omega \mu \sigma
+\end{equation}&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+k = \sqrt{ \omega^2 \mu \epsilon - i\omega \mu \sigma }
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Oftentimes, this relationship is written as:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\widetilde{k} = \omega \sqrt{ \mu \epsilon - \frac{i \mu \sigma}{\omega} } = \frac{\widetilde{n} \omega}{c}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;where &lt;script type=&quot;math/tex&quot;&gt;\widetilde{k}&lt;/script&gt; is a complex wavevector and &lt;script type=&quot;math/tex&quot;&gt;\widetilde{n}&lt;/script&gt; is a complex refractive index.&lt;/p&gt;
+
+&lt;h3 id=&quot;same-problem-different-convention&quot;&gt;Same Problem, Different Convention&lt;/h3&gt;
+
+&lt;p&gt;I have often seen theorists use the convention &lt;script type=&quot;math/tex&quot;&gt;\vec{E} = \vec{E}_o exp[i(\vec{k}\cdot \vec{r} - \omega t)]&lt;/script&gt; when describing the oscillations of the electric field. Really, this is the same problem as above - the only difference is that the &lt;script type=&quot;math/tex&quot;&gt;i\omega\mu\sigma&lt;/script&gt; term will pick up an extra negative sign and you will get:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{equation}
+\widetilde{k} = \omega \sqrt{ \mu \epsilon + \frac{i \mu \sigma}{\omega} } = \frac{\widetilde{n} \omega}{c}
+\end{equation}&lt;/script&gt;
+
+&lt;p&gt;Try going through it yourself if you feel like you need some practice :)&lt;/p&gt;
+
+&lt;h3 id=&quot;what-exactly-does-this-mean&quot;&gt;What Exactly Does This Mean?&lt;/h3&gt;
+
+&lt;p&gt;Next week, we will discuss what a complex index of refraction actually means. It might seem complicated, but really, it has a simple interpretation. Until next week!&lt;/p&gt;
+</description>
+				<pubDate>Sun, 03 Jan 2016 00:00:00 -0600</pubDate>
+				<link>/electromagnetism/2016/01/03/an-electromagnetic-wave-in-a-conductor-part-1.html</link>
+				<guid isPermaLink="true">/electromagnetism/2016/01/03/an-electromagnetic-wave-in-a-conductor-part-1.html</guid>
+			</item>
+		
+			<item>
+				<title>About Section</title>
+				<description>&lt;h3 id=&quot;about-section&quot;&gt;About Section&lt;/h3&gt;
+
+&lt;p&gt;The site now has an about section with some general information. You can access it &lt;a href=&quot;http://blog.cupcakephysics.com/about.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 03 Dec 2015 00:00:00 -0600</pubDate>
+				<link>/cupcake%20physics/2015/12/03/about-section.html</link>
+				<guid isPermaLink="true">/cupcake%20physics/2015/12/03/about-section.html</guid>
+			</item>
+		
+			<item>
+				<title>The Electric Field Due to a Line of Charge (Part 2)</title>
+				<description>&lt;h3 id=&quot;the-line-segment&quot;&gt;The Line Segment&lt;/h3&gt;
+
+&lt;center&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Fsh3nmrfwXU&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;In a &lt;a href=&quot;http://blog.cupcakephysics.com/electromagnetism/2015/11/15/the-electric-field-due-to-a-line-of-charge.html&quot;&gt;previous post&lt;/a&gt; we derived a general expression for the electric field around a finite line of charge. I take this general expression and look at a few special cases in the video above.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 22 Nov 2015 00:00:00 -0600</pubDate>
+				<link>/electromagnetism/2015/11/22/the-electric-field-due-to-a-line-of-charge-part-2.html</link>
+				<guid isPermaLink="true">/electromagnetism/2015/11/22/the-electric-field-due-to-a-line-of-charge-part-2.html</guid>
+			</item>
+		
+	</channel>
+</rss>

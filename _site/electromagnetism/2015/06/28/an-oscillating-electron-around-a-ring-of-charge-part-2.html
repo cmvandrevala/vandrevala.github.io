@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+  <meta charset="utf-8">
+  <title>An Oscillating Electron Around a Ring of Charge (Part 2)</title>
+  
+    <meta name="description" content="I derive the expression for the Abraham-Lorentz force (i.e. the self-force) and set up the differential equation for the oscillatory motion of a radiating electron near a charged ring.">
+  
+
+  <meta name="author" content="Cyrus Vandrevala">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/ico/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/ico/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/ico/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/ico/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/ico/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/ico/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/ico/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/ico/apple-touch-icon-180x180.png">
+  <link rel="icon" sizes="16x16" type="image/png" href="/assets/ico/favicon-16x16.png">
+  <link rel="icon" sizes="32x32" type="image/png" href="/assets/ico/favicon-32x32.png">
+  <link rel="icon" sizes="96x96" type="image/png" href="/assets/ico/favicon-96x96.png">
+  <link rel="icon" sizes="192x192" type="image/png" href="/assets/ico/favicon-192x192.png">
+  <link rel="icon" sizes="194x194" type="image/png" href="/assets/ico/favicon-194x194.png">
+  <link rel="manifest" href="/assets/ico/manifest.json">
+
+  <meta name="msapplication-TileColor" content="#d415a1">
+  <meta name="msapplication-TileImage" content="/assets/ico/mstile-144x144.png">
+  <meta name="theme-color" content="#d415a1"
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/reset.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-61768963-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+</head>
+
+  <body>
+  <div class="content">
+
+    <header>
+      <div class="container">
+        <h2 class="desktop">
+          <a href="/"><span></span>cupcake physics</a>
+        </h2>
+
+        <h2 class="mobile">
+          <a href="/"><span></span></a>
+        </h2>
+
+        <span class="hot-dog-menu"></span>
+
+        <nav>
+          <ul>
+			  <li><input id="search_input" data-toggle="dropdown" type="text" class="form-control" placeholder="Search Posts" autocomplete="off" onkeyup="checkTextField();" /></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+	<ul id="search_results" class="dropdown-menu" role="menu"></ul>
+
+    <section>
+     <article class="post">
+  <div class="container">
+
+    <span class="post-date">
+      
+      June
+      28th,
+      
+      2015
+    </span>
+
+    <h2>An Oscillating Electron Around a Ring of Charge (Part 2) </h2>
+
+	
+	  
+          <span class="topic electromagnetism"></span>
+		
+	
+    <span class="difficulty hard"></span>
+
+    <div class="body">
+      <h3 id="introduction">Introduction</h3>
+
+<p><a href="http://blog.cupcakephysics.com/electromagnetism/2015/06/21/an-oscillating-electron-around-a-ring-of-charge-part-1.html">Last week</a> we studied the motion of an electron (mass <script type="math/tex">m</script> and charge <script type="math/tex">e</script>) as it oscillates about the center of a ring with charge <script type="math/tex">Q</script> and radius <script type="math/tex">R</script>. We found that the path of the electron is a simple sinusoidal wave with a constant angular frequency:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+z(t) = Asin \left (\sqrt{\frac{k Qe }{mR^3}} t \right ) + Bcos \left (\sqrt{\frac{k Qe }{mR^3}} t \right )
+\end{equation}</script>
+
+<p>However, this isn’t the full story. We learned in an <a href="http://blog.cupcakephysics.com/electromagnetism/2014/11/23/thomsons-derivation-of-the-larmor-formula.html">earlier blog post</a> that an accelerating charged particle radiates according to the <a href="https://en.wikipedia.org/wiki/Larmor_formula">Larmor formula</a>. Thus, we need to expand this solution to include the effect of the recoil force on the accelerating electron due to the emission of electromagnetic radiation. This force has many names - the radiation reaction force, the self force, and the Abraham-Lorentz force.</p>
+
+<h3 id="the-abraham-lorentz-force">The Abraham-Lorentz Force</h3>
+
+<p>Let’s start our derivation of the Abraham-Lorentz force by writing the expression that we derived for the Larmor formula (again, see my <a href="http://blog.cupcakephysics.com/electromagnetism/2014/11/23/thomsons-derivation-of-the-larmor-formula.html">earlier post</a>).</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+P = \frac{e^2 a^2}{6 \pi \epsilon_o c^3}
+\end{equation}</script>
+
+<p>We know that the work done on the electron by its radiation force is defined to be the negative integral of power with respect to time:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+-\int P dt = -\int \frac{e^2 a^2}{6 \pi \epsilon_o c^3} dt
+\end{equation}</script>
+
+<p>Let’s integrate this expression over one period (starting at <script type="math/tex">t_0</script> and ending at <script type="math/tex">t_1</script>).</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+-\int_{t_0}^{t_1} P dt &= -\int_{t_0}^{t_1} \frac{e^2 a^2}{6 \pi \epsilon_o c^3} dt\\[0.1cm]
+&= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1}  a^2 dt\\[0.1cm]
+&= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \left ( \frac{d\vec{v}}{dt} \right ) \cdot \left ( \frac{d\vec{v}}{dt} \right ) dt
+\end{align} %]]></script>
+
+<p>We can solve this expression further by using <a href="http://tutorial.math.lamar.edu/Classes/CalcII/IntegrationByParts.aspx">integration by parts</a>. Let <script type="math/tex">u = dv/dt</script> and <script type="math/tex">dy = (dv/dt) dt</script>. Then:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\int u dy = uy - \int y du
+\end{equation}</script>
+
+<p>We can rewrite our integral as:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+-\int_{t_0}^{t_1} P dt &= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \left ( \frac{d\vec{v}}{dt} \right ) \cdot \left ( \frac{d\vec{v}}{dt} \right ) dt\\[0.1cm]
+&= - \frac{e^2}{6 \pi \epsilon_o c^3} \left [ \left ( \frac{d\vec{v}}{dt} \right ) \cdot \vec{v} \right ]_{t_0}^{t_1} + \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d^2 \vec{v}}{dt^2} dt
+\end{align} %]]></script>
+
+<p>This integral is over one period of motion. Thus, the first term in the expression above is zero because the velocity of the electron (<script type="math/tex">\vec{v}</script>) and the acceleration of the electron (<script type="math/tex">d\vec{v}/dt</script>) are the same at times <script type="math/tex">t_0</script> and <script type="math/tex">t_1</script>.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+-\int_{t_0}^{t_1} P dt = \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d^2 \vec{v}}{dt^2} dt
+\end{equation}</script>
+
+<p>We note that the second derivative of velocity is just the first derivative of acceleration.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+-\int_{t_0}^{t_1} P dt = \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d\vec{a}}{dt} dt
+\end{equation}</script>
+
+<p>At this point, let’s look at work through a different lens. Instead of writing the integral for work using power and time, we can write an equivalent integral using force, velocity, and time. We will define this force to be our Abraham-Lorentz force.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+-\int P dt = \int \vec{F}_{AL} \cdot \vec{v} dt
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+-\int_{t_0}^{t_1} P dt = \int_{t_0}^{t_1} \vec{F}_{AL} \cdot \vec{v} dt = \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d\vec{a}}{dt} dt
+\end{equation}</script>
+
+<p>Thus, the expression for the Abraham-Lorentz force falls right out of the integral:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\vec{F}_{AL} = \frac{e^2}{6 \pi \epsilon_o c^3} \frac{d\vec{a}}{dt}
+\end{equation}</script>
+
+<p>This force is really quite strange. It is one of the few times that we see the use of jerk in physics (the third derivative of position).</p>
+
+<h3 id="oscillatory-motion-with-radiation">Oscillatory Motion With Radiation</h3>
+
+<p>In our analysis last week, we said that the net force on the electron was simply the electric force due to the charged ring. Now, our analysis is a bit more sophisticated - the net force <script type="math/tex">\vec{F}_{net}</script> is the sum of the electric force <script type="math/tex">\vec{F}_E</script> and the Abraham-Lorentz force <script type="math/tex">\vec{F}_{AL}</script>.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\vec{F}_{net} = \vec{F}_E + \vec{F}_{AL}
+\end{equation}</script>
+
+<p>We can plug in the appropriate expressions for each of the forces. Like last week, I will use dot notation to keep everything nice and neat.</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+m \ddot{z} = - \frac{kQez}{\left [ z^2 + R^2 \right ]^{3/2}} + \frac{e^2}{6 \pi \epsilon_o c^3} \dddot{z}
+\end{equation}</script>
+
+<p>Moving everything to one side and simplifying the first coefficient yields:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{e^2}{6 \pi \epsilon_o c^3} \dddot{z} - m \ddot{z} - \frac{kQe z}{\left [ z^2 + R^2 \right ]^{3/2}} = 0
+\end{equation}</script>
+
+<script type="math/tex; mode=display">\begin{equation}
+\dddot{z} - \left ( \frac{6 m \pi \epsilon_o c^3}{e^2} \right ) \ddot{z} - \left ( \frac{6 kQ \pi \epsilon_o c^3}{e} \right ) \left ( \frac{z}{\left [ z^2 + R^2 \right ]^{3/2}} \right ) = 0
+\end{equation}</script>
+
+<p>This new differential equation takes the self-force of the electron into account. Notice how it is not just a simple oscillatory problem anymore!</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>In physics, we are used to seeing second order differential equations with constant coefficients. These equation pop up in a variety of places like the mass-spring oscillator, the driven RLC circuit, and the Schrodinger equation. However, not everything is a simple second order differential equation; this might be the first time that you see the jerk of a particle come into play.</p>
+
+<p>Next week we will wrap up our discussion of this problem by analyzing this differential equation. We need to add one more piece to this equation in order to get a reasonable answer.</p>
+
+    </div>
+
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	  /* * * CONFIGURATION VARIABLES * * */
+	  var disqus_shortname = 'cupcakephysicsblog';
+
+	  /* * * DON'T EDIT BELOW THIS LINE * * */
+	  (function() {
+	      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+
+</article>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+    </section>
+
+    <div class="social-media">
+      <div class="container">
+        <ul>
+          <li><a class="button primary" href="/categories.html">Categories</a></li>
+          <li><a class="button secondary" href="/tags.html">Tags</a></li>
+          <li><a class="button tertiary" href="/about.html">About</a></li>
+          <li><a class="social-icon facebook" href="https://www.facebook.com/pages/Cupcake-Physics/1555786914693563" target="_blank"></a></li>
+          <li><a class="social-icon twitter" href="https://twitter.com/cupcakephysics" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p><a href="/">Cupcake Physics</a> by Cyrus Vandrevala | All Rights Reserved</p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div class="preloader">
+    <img src="/assets/images/icons/facebook-hover.png" />
+    <img src="/assets/images/icons/twitter-hover.png" />
+  </div>
+
+  <!-- Load Javascript Libraries, Fall Back on Local Versions -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    if (!window.jQuery) { document.write('<script src="/assets/resources/jquery/jquery.min.js"><\/script>'); console.log("Using local version of jQuery"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+    if (!window.MathJax) { document.write('<script src="/assets/resources/mathjax/MathJax.js"><\/script>'); console.log("Using local version of MathJax"); }
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js"></script>
+  <script>
+    if (!window.d3) { document.write('<script src="/assets/resources/d3/d3.min.js"><\/script>'); console.log("Using local version of D3"); }
+  </script>
+
+  <script type="text/javascript" src="/assets/js/searchbar.js"></script>
+
+</body>
+
+</html>

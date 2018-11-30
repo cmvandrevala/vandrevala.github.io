@@ -7,7 +7,7 @@ This repo contains the blog for Cupcake Physics. It is hosted on [GitHub Pages](
 Clone the site using:
 
 ```
-git clone git@github.com:CupcakePhysics/CupcakePhysics.github.io.git
+git clone git@github.com:vandrevala/vandrevala.github.io.git
 ```
 
 The following command will build the website and put the files in the `_site` directory.

@@ -1,6 +1,6 @@
 # Cupcake Physics Blog
 
-This repo contains the blog for Cupcake Physics. It is hosted on [GitHub Pages](https://pages.github.com/) via [Jekyll](https://jekyllrb.com/).
+This repo contains the blog for Cupcake Physics. It is hosted on [GitHub Pages](https://pages.github.com/) via [Jekyll](https://jekyllrb.com/). You can access the site via `blog.cupcakephysics.com`.
 
 ## Development
 

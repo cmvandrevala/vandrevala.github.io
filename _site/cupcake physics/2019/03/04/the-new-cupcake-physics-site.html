@@ -4,9 +4,9 @@
   <head>
 
   <meta charset="utf-8">
-  <title>Optical Levitation of a Cylinder</title>
+  <title>The New Cupcake Physics Site</title>
   
-    <meta name="description" content="I derive the maximum mass of a cylinder that can be levitated by a laser beam of a certain power.">
+    <meta name="description" content="It has been awhile since I have written a blog post. I want to revitalize this blog with new updates and announce the new Cupcake Physics site.">
   
 
   <meta name="author" content="Cyrus Vandrevala">
@@ -100,101 +100,29 @@
 
     <span class="post-date">
       
-      April
-      18th,
+      March
+      4th,
       
-      2015
+      2019
     </span>
 
-    <h2>Optical Levitation of a Cylinder </h2>
+    <h2>The New Cupcake Physics Site </h2>
 
 	
 	  
-		  <span class="topic classical-mechanics"></span>
+		  <span class="topic cupcake-physics"></span>
 	    
 	
-	  
-		  <span class="topic optics"></span>
-		
-	
-    <span class="difficulty easy"></span>
+    <span class="difficulty "></span>
 
     <div class="body">
-      <h3 id="introduction">Introduction</h3>
+      <h3 id="it-has-been-awhile">It Has Been Awhile!</h3>
 
-<p>Last week in our introductory electricity and magnetism class, we calculated the properties of a cylinder with mass <script type="math/tex">m</script> that levitates due to the balance between an upward radiation force and a downward gravitational force. This effect, called <a href="http://en.wikipedia.org/wiki/Optical_levitation">optical levitation</a>, was studied in depth by Arthur Ashkin of Bell Laboratories. Our simple model of uniform, cylindrical laser beams and uniform, cylindrical masses left out a lot of the subtleties of Ashkin’s work. However, it did give us a sense of how powerful laser light could be. In this post I want to review that simple calculation of the mass that we did in class.</p>
+<p>Hello again everyone - it has been awhile since my last post. Over the past couple of years, I have been working on Cupcake Physics in my spare time. Cupcake Physics is a website that aims to help students practice physics concepts using customizable quizzes and focused feedback. At this point in time I think the site is ready for an initial release. The important infrastructure is in place and there is a small amount of content that has been developed for the site. However, development is by no means over! I hope to keep evolving the site with new content and features that help students learn physics.</p>
 
-<h3 id="the-set-up">The Set Up</h3>
+<p>Starting today, I will try to write blog posts more consistently and give updates on the new content and features that are being developed for Cupcake Physics. I aim to write one post every two weeks - hopefully announcing it publicly will help keep me motivated! My goal is to create a website that is an excellent resource for those who want to learn physics, but need a different method of instruction than a traditional textbook or lectures.</p>
 
-<div style="text-align:center">
-  <p><img src="/assets/images/2015-04-18/cylinder_in_laser.png" alt="Cylinder in Laser Beam" />
-<img src="/assets/images/2015-04-18/cylinder_fbd.png" alt="Free Body Diagram of Cylinder" /></p>
-</div>
-
-<p>A laser beam with power <script type="math/tex">P</script> is modeled as a cylinder with diameter <script type="math/tex">D</script>. The beam is directed upward (in the <script type="math/tex">+\hat{z}</script> direction) onto one circular face of a cylindrical mass with diameter <script type="math/tex">d</script>, height <script type="math/tex">H</script>, and mass <script type="math/tex">m</script>.</p>
-
-<h3 id="the-calculation">The Calculation</h3>
-
-<p>As we noted above, the cylinder levitates due to the balance between the upward radiation force and the downward gravitational force. Thus, the upward force from the laser must be equal to the downward force from gravity.</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-&\sum \vec{F} = 0\\[0.1cm]
-&\vec{F}_{radiation} + \vec{F}_g = 0\\[0.1cm]
-&F_{radiation} (+\hat{z}) + F_g (-\hat{z}) = 0
-\end{align} %]]></script>
-
-<script type="math/tex; mode=display">\begin{equation}
-F_{radiation} = F_g
-\end{equation}</script>
-
-<p>We know from mechanics that the gravitational force on a massive object is <script type="math/tex">F_g = mg</script>.</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-F_{radiation} = mg
-\end{equation}</script>
-
-<p>We also know that a light wave exerts a radiation pressure on the surface that it strikes. Thus, we can define the total force from the laser as the radiation pressure from the laser multiplied by the area of one face of the cylinder.</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-P_{radiation} \left [ \pi \left ( \frac{d}{2} \right )^2 \right ] = mg
-\end{equation}</script>
-
-<p>We know that we can relate the radiation pressure to the intensity (<script type="math/tex">I</script>) of the laser beam; we have to be careful though. If the laser beam is completely absorbed by the face of the cylinder, the pressure is:</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-P_{radiation} = \frac{I}{c}
-\end{equation}</script>
-
-<p>On the other hand, if the laser beam is completely reflected by the face of the cylinder, the pressure is:</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-P_{radiation} = \frac{2I}{c}
-\end{equation}</script>
-
-<p>Let us assume that the laser beam is perfectly reflected at the face of the cylinder in this case.</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-\frac{2I}{c} \left [ \pi \left ( \frac{d}{2} \right )^2 \right ] = mg
-\end{equation}</script>
-
-<p>Finally, we can convert intensity to power. Remember, intensity is just power per unit area. In this case, we are using the area of the laser beam:</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-I = \frac{P}{A_{laser}} = \frac{P}{\pi \left ( \frac{D}{2} \right )^2}
-\end{equation}</script>
-
-<p>Substituting the expression for intensity into the expression for power and solving for the mass yields:</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-\frac{2P}{c \pi \left ( \frac{D}{2} \right )^2} \left [ \pi \left ( \frac{d}{2} \right )^2 \right ] = mg
-\end{equation}</script>
-
-<script type="math/tex; mode=display">\begin{equation}
-m = \frac{2Pd^2}{cg D^2}
-\end{equation}</script>
-
-<p>We know from this result that the mass of the cylinder must be very small due to the <script type="math/tex">cg</script> term in the denominator. Thus, optical levitation really only works for objects that have a mass of fractions of a gram.</p>
+<p>Your feedback is always appreciated. Please visit <a href="https://cupcakephysics.com">Cupcake Physics</a> to try the site out. Please send any suggestions for features or content to cyrus.vandrevala@cupcakephysics.com.</p>
 
     </div>
 

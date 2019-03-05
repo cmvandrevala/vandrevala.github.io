@@ -127,7 +127,7 @@
 <p>Suppose a zipper in a heat bath (temperature <script type="math/tex">T</script>) has <script type="math/tex">N</script> links. Each link can either be closed with energy 0 or open with energy <script type="math/tex">\epsilon</script>. However, the zipper can only unzip from one end. Thus, link number <script type="math/tex">s</script> can only open if all links before it are also open (<script type="math/tex">1, 2, \cdots, s - 1</script>). Shown below is the zipper diagram in Kittel’s paper.</p>
 
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/kittel_zipper_diagram.png" alt="Kittel Zipper Diagram" /></p>
+  <p><img src="/assets/images/2015-09-20/kittel_zipper_diagram.png" alt="Kittel Zipper Diagram" /></p>
 </div>
 
 <p>I am going to make a couple of assumptions here, just to simplify the analysis of the problem (similar to Kittel):</p>
@@ -144,13 +144,13 @@
 <p>The diagrams below show some possible examples of open links in different orientations. The orientation of the link does not change the energy stored in the link, so these setups all have the same total energy.</p>
 
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/zipper_configs_1.png" alt="Kittel Zipper Diagram 1" /></p>
+  <p><img src="/assets/images/2015-09-20/zipper_configs_1.png" alt="Kittel Zipper Diagram 1" /></p>
 </div>
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/zipper_configs_2.png" alt="Kittel Zipper Diagram 2" /></p>
+  <p><img src="/assets/images/2015-09-20/zipper_configs_2.png" alt="Kittel Zipper Diagram 2" /></p>
 </div>
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/zipper_configs_3.png" alt="Kittel Zipper Diagram 3" /></p>
+  <p><img src="/assets/images/2015-09-20/zipper_configs_3.png" alt="Kittel Zipper Diagram 3" /></p>
 </div>
 
 <p>If I were to do this problem in a traditional statistical mechanics class, then <script type="math/tex">G</script> would be equal to one. However, if <script type="math/tex">G</script> is not equal to one, we see an interesting effect.</p>
@@ -196,7 +196,7 @@ Z = \frac{1 - x^N}{1 - x}
 \end{equation}</script>
 
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/not_every_day.png" alt="It's Not Every Day..." /></p>
+  <p><img src="/assets/images/2015-09-20/not_every_day.png" alt="It's Not Every Day..." /></p>
 </div>
 
 <h3 id="average-number-of-open-links">Average Number of Open Links</h3>
@@ -250,21 +250,21 @@ Z = \frac{1 - x^N}{1 - x}
 <p>The final expression above is the usual stopping point in most statistical mechanics classes. However, we are going to take it a step further. Take a look at the denominators in the expression above. Something interesting is happening in the liminting case when <script type="math/tex">x</script> approaches one. In the figures below, I plot the value of <script type="math/tex">\langle s \rangle</script> as a function of <script type="math/tex">x</script> at different values of <script type="math/tex">N</script>. Notice that I center each graph around <script type="math/tex">x = 1</script>.</p>
 
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/N50.png" alt="N = 50" /></p>
+  <p><img src="/assets/images/2015-09-20/N50.png" alt="N = 50" /></p>
 </div>
 
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/N100.png" alt="N = 100" /></p>
+  <p><img src="/assets/images/2015-09-20/N100.png" alt="N = 100" /></p>
 </div>
 
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/N1000.png" alt="N = 1000" /></p>
+  <p><img src="/assets/images/2015-09-20/N1000.png" alt="N = 1000" /></p>
 </div>
 
 <p>It looks like the expression has a discontinuity centered at <script type="math/tex">x=1</script> when <script type="math/tex">N\rightarrow\infty</script>. This discontinuity corresponds to a phase change - the phase of relatively few links being open changes to the phase of almost all links being open.</p>
 
 <div style="text-align:center">
-  <p><img src="http://localhost:4000/assets/images/2015-09-20/wait.png" alt="Wait a Minute" /></p>
+  <p><img src="/assets/images/2015-09-20/wait.png" alt="Wait a Minute" /></p>
 </div>
 
 <p>Not quite little cupcake. It is true that <script type="math/tex">exp(-\beta\epsilon)</script> can never equal one, so we will never see a phase transition in the traditional solution to the zipper problem where <script type="math/tex">G=1</script>. However, the expression <script type="math/tex">x = Gexp(-\beta \epsilon)</script> can equal one if G is large enough.</p>

@@ -1,6 +1,20 @@
 [
     
     {
+      "title"      : "The New Cupcake Physics Site",
+	  "tags"       : "Cupcake Physics News",
+	  "category"   : "Cupcake Physics",
+	  "difficulty" : "",
+      "href"     : "/cupcake%20physics/2019/03/04/the-new-cupcake-physics-site.html",
+      "date"     : {
+         "day"   : "04",
+         "month" : "March",
+         "year"  : "2019"
+      }
+    }
+    ,
+    
+    {
       "title"      : "The Tech Stack",
 	  "tags"       : "AnsibleCupcake Physics NewsElixirElmPhoenix",
 	  "category"   : "Cupcake Physics",

@@ -7,6 +7,21 @@
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>The New Cupcake Physics Site</title>
+				<description>&lt;h3 id=&quot;it-has-been-awhile&quot;&gt;It Has Been Awhile!&lt;/h3&gt;
+
+&lt;p&gt;Hello again everyone - it has been awhile since my last post. Over the past couple of years, I have been working on Cupcake Physics in my spare time. Cupcake Physics is a website that aims to help students practice physics concepts using customizable quizzes and focused feedback. At this point in time I think the site is ready for an initial release. The important infrastructure is in place and there is a small amount of content that has been developed for the site. However, development is by no means over! I hope to keep evolving the site with new content and features that help students learn physics.&lt;/p&gt;
+
+&lt;p&gt;Starting today, I will try to write blog posts more consistently and give updates on the new content and features that are being developed for Cupcake Physics. I aim to write one post every two weeks - hopefully announcing it publicly will help keep me motivated! My goal is to create a website that is an excellent resource for those who want to learn physics, but need a different method of instruction than a traditional textbook or lectures.&lt;/p&gt;
+
+&lt;p&gt;Your feedback is always appreciated. Please visit &lt;a href=&quot;https://cupcakephysics.com&quot;&gt;Cupcake Physics&lt;/a&gt; to try the site out. Please send any suggestions for features or content to cyrus.vandrevala@cupcakephysics.com.&lt;/p&gt;
+</description>
+				<pubDate>Mon, 04 Mar 2019 00:00:00 -0600</pubDate>
+				<link>/cupcake%20physics/2019/03/04/the-new-cupcake-physics-site.html</link>
+				<guid isPermaLink="true">/cupcake%20physics/2019/03/04/the-new-cupcake-physics-site.html</guid>
+			</item>
+		
+			<item>
 				<title>The Tech Stack</title>
 				<description>&lt;h3 id=&quot;tech-stack&quot;&gt;Tech Stack&lt;/h3&gt;
 
@@ -951,20 +966,6 @@ k = \sqrt{ \omega^2 \mu \epsilon - i\omega \mu \sigma }
 				<pubDate>Thu, 03 Dec 2015 00:00:00 -0600</pubDate>
 				<link>/cupcake%20physics/2015/12/03/about-section.html</link>
 				<guid isPermaLink="true">/cupcake%20physics/2015/12/03/about-section.html</guid>
-			</item>
-		
-			<item>
-				<title>The Electric Field Due to a Line of Charge (Part 2)</title>
-				<description>&lt;h3 id=&quot;the-line-segment&quot;&gt;The Line Segment&lt;/h3&gt;
-
-&lt;center&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Fsh3nmrfwXU&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;&lt;/center&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;In a &lt;a href=&quot;http://blog.cupcakephysics.com/electromagnetism/2015/11/15/the-electric-field-due-to-a-line-of-charge.html&quot;&gt;previous post&lt;/a&gt; we derived a general expression for the electric field around a finite line of charge. I take this general expression and look at a few special cases in the video above.&lt;/p&gt;
-</description>
-				<pubDate>Sun, 22 Nov 2015 00:00:00 -0600</pubDate>
-				<link>/electromagnetism/2015/11/22/the-electric-field-due-to-a-line-of-charge-part-2.html</link>
-				<guid isPermaLink="true">/electromagnetism/2015/11/22/the-electric-field-due-to-a-line-of-charge-part-2.html</guid>
 			</item>
 		
 	</channel>

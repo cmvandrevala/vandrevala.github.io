@@ -1,6 +1,20 @@
 [
     
     {
+      "title"      : "Learner Centered, Performance Based",
+	  "tags"       : "Cupcake Physics News",
+	  "category"   : "Cupcake Physics",
+	  "difficulty" : "",
+      "href"     : "/cupcake%20physics/2019/03/20/learner-centered-performance-based.html",
+      "date"     : {
+         "day"   : "20",
+         "month" : "March",
+         "year"  : "2019"
+      }
+    }
+    ,
+    
+    {
       "title"      : "The New Cupcake Physics Site",
 	  "tags"       : "Cupcake Physics News",
 	  "category"   : "Cupcake Physics",

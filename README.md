@@ -13,13 +13,13 @@ git clone git@github.com:vandrevala/vandrevala.github.io.git
 The following command will build the website and put the files in the `_site` directory.
 
 ```
-jekyll build
+bundle exec jekyll build
 ```
 
 Alternatively, the following command will start a server that will hot-reload any changes that you make to the project:
 
 ```
-jekyll serve
+bundle exec jekyll serve
 ```
 
 This server will be available on `localhost:4000`.

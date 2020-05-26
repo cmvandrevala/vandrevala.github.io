@@ -108,12 +108,12 @@ $$
 \begin{equation}
 \hat{K} = -\frac{\hbar^2}{2m\ell^2}
 \begin{bmatrix}
-2 & -1 & 0 & \dots & \dots & 0\\[0.1cm]
--1 & 2 & -1 & \dots & \dots & 0\\[0.1cm]
-0 & -1 & 2 & \dots & \dots & 0\\[0.1cm]
+-2 & 1 & 0 & \dots & \dots & 0\\[0.1cm]
+1 & -2 & 1 & \dots & \dots & 0\\[0.1cm]
+0 & 1 & -2 & \dots & \dots & 0\\[0.1cm]
 \vdots & \vdots & \vdots & \ddots & & \vdots\\[0.1cm]
-\vdots & \vdots & \vdots & & \ddots & -1\\[0.1cm]
-0 & 0 & 0 & \dots & -1 & 2
+\vdots & \vdots & \vdots & & \ddots & 1\\[0.1cm]
+0 & 0 & 0 & \dots & 1 & -2
 \end{bmatrix}
 \end{equation}
 $$
@@ -126,12 +126,12 @@ $$
 \begin{equation}
 \hat{K} = -\frac{\hbar^2}{2m\ell^2}
 \begin{bmatrix}
-2 & -1 & 0 & \dots & \dots & -1\\[0.1cm]
--1 & 2 & -1 & \dots & \dots & 0\\[0.1cm]
-0 & -1 & 2 & \dots & \dots & 0\\[0.1cm]
+-2 & 1 & 0 & \dots & \dots & 1\\[0.1cm]
+1 & -2 & 1 & \dots & \dots & 0\\[0.1cm]
+0 & 1 & -2 & \dots & \dots & 0\\[0.1cm]
 \vdots & \vdots & \vdots & \ddots & & \vdots\\[0.1cm]
-\vdots & \vdots & \vdots & & \ddots & -1\\[0.1cm]
--1 & 0 & 0 & \dots & -1 & 2
+\vdots & \vdots & \vdots & & \ddots & 1\\[0.1cm]
+1 & 0 & 0 & \dots & 1 & -2
 \end{bmatrix}
 \end{equation}
 $$

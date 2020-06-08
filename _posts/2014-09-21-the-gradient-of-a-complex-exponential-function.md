@@ -8,7 +8,7 @@ tags: [Common Homework Problem]
 description: I spend some time commenting on one of the major difficulties that I had when I was learning undergraduate-level physics.  Then, I give an example of a derivation that seems simple to upper-level students, but can be difficult for younger students to grasp if notation is not well-defined.
 ---
 
-###A Few Thoughts on Consistent Notation
+### A Few Thoughts on Consistent Notation
 
 Over that past few years studying physics, I have learned that the evolution of our mathematical notation has paved the way for much of the progress that has been made.  This should not come as a surprise; it is well known that language affects the way people think in their day to day lives.  Numerous social scientists have studied what is called [linguistic relativity](http://en.wikipedia.org/wiki/Linguistic_relativity), the idea that language influences the way we perceive the world.  Thus, it makes sense that the language of physics (mathematics) affects the way that we think about it.  When our notation is verbose or messy, concepts seem confusing.  However, when our notation is succinct and descriptive, complex problems suddenly reveal hidden symmetries.
 
@@ -24,7 +24,7 @@ As an example, I want to consider a problem that gave me a bit of trouble when I
 
 ### Gradient of a Complex Exponential Function
 
-####3D Space
+#### 3D Space
 
 We are interested in taking the gradient of a complex exponential function.  This expression pops up all over the place in physics; for example, we see it in Maxwell's equations and the momentum operator in quantum mechanics.
 

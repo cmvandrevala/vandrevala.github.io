@@ -127,37 +127,36 @@
 
 <p>Let’s start off with electric flux.  The electric flux is simply the amount of electric field passing through a surface.  The expression for electric flux is:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \Phi_E = \int \vec{E} \cdot \hat{n} dA
-\end{equation}</script>
+\end{equation}\]
 
-<p>where <script type="math/tex">\vec{E}</script> is the electric field vector, <script type="math/tex">dA</script> is a small amount of area, and <script type="math/tex">\hat{n}</script> is a unit vector perpendicular to the surface <script type="math/tex">dA</script>.  The integral tells us that we are adding up the contributions of flux from each tiny area <script type="math/tex">dA</script>.</p>
+<p>where \(\vec{E}\) is the electric field vector, \(dA\) is a small amount of area, and \(\hat{n}\) is a unit vector perpendicular to the surface \(dA\).  The integral tells us that we are adding up the contributions of flux from each tiny area \(dA\).</p>
 
-<p>Normally in my classes, we work with a simplified form of the flux.  If the electric field is constant in magnitude and direction and the entire surface is flat, then we notice that the vector <script type="math/tex">\vec{E}</script> is at some constant angle with respect to vector <script type="math/tex">\hat{n}</script> (let’s call this angle <script type="math/tex">\theta</script>).  Thus, the expression for electric flux can be simplified.  Let <script type="math/tex">E</script> be the magnitude of <script type="math/tex">\vec{E}</script>.  The magnitude of <script type="math/tex">\hat{n}</script> is one since it is a unit vector.  Then using the following property of the dot product:</p>
+<p>Normally in my classes, we work with a simplified form of the flux.  If the electric field is constant in magnitude and direction and the entire surface is flat, then we notice that the vector \(\vec{E}\) is at some constant angle with respect to vector \(\hat{n}\) (let’s call this angle \(\theta\)).  Thus, the expression for electric flux can be simplified.  Let \(E\) be the magnitude of \(\vec{E}\).  The magnitude of \(\hat{n}\) is one since it is a unit vector.  Then using the following property of the dot product:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{A} \cdot \vec{B} = |\vec{A}||\vec{B}|cos\theta
-\end{equation}</script>
+\end{equation}\]
 
 <p>we can simplify the expression for flux.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\Phi_E &= \int | \vec{E} | |\hat{n}| dA cos \theta \\[0.1cm]
-&= \int E dA cos\theta \\[0.1cm]
-&= E cos\theta \int dA \\[0.1cm]
-&= EAcos\theta
-\end{align} %]]></script>
+\[\begin{align}
+\Phi_E &amp;= \int | \vec{E} | |\hat{n}| dA cos \theta \\[0.1cm]
+&amp;= \int E dA cos\theta \\[0.1cm]
+&amp;= E cos\theta \int dA \\[0.1cm]
+&amp;= EAcos\theta
+\end{align}\]
 
-<p>where <script type="math/tex">A</script> is the total area of the surface.  Gauss’s Law tells us that the net flux over a closed surface is simply equal to the amount of charge contained within the surface divided by some constant:</p>
+<p>where \(A\) is the total area of the surface.  Gauss’s Law tells us that the net flux over a closed surface is simply equal to the amount of charge contained within the surface divided by some constant:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \oint_S \vec{E} \cdot \hat{n} dA = \frac{Q_{enc}}{\epsilon_o}
-\end{equation}</script>
+\end{equation}\]
 
 <h3 id="net-flux-over-the-entire-surface">Net Flux Over the Entire Surface</h3>
 
-<p>Just looking at the expression for Gauss’s law, we can actually say quite a bit about the flux (and field) over the entire surface.  We know that the net flux is given by <script type="math/tex">Q_{enc}/\epsilon_o</script>.  By convention, the vector <script type="math/tex">\hat{n}</script> points outwards for a closed surface.  Thus, if the flux is positive, then more electric field lines point out from the surface than point in.  If the flux is negative, then more electric field lines point inwards than point out.  Finally, if the flux is zero, then an equal number of electric field lines point in and out.</p>
+<p>Just looking at the expression for Gauss’s law, we can actually say quite a bit about the flux (and field) over the entire surface.  We know that the net flux is given by \(Q_{enc}/\epsilon_o\).  By convention, the vector \(\hat{n}\) points outwards for a closed surface.  Thus, if the flux is positive, then more electric field lines point out from the surface than point in.  If the flux is negative, then more electric field lines point inwards than point out.  Finally, if the flux is zero, then an equal number of electric field lines point in and out.</p>
 
 <h3 id="flux-at-each-point-on-the-surface">Flux at Each Point on the Surface</h3>
 
@@ -171,17 +170,17 @@
 
 <p>In my classes I take the time to derive the expressions for Gauss’s law after we have exploited spherical and cylindrical symmetry.  For spherical symmetry, we get:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 E(4\pi r^2) = \frac{Q_{enc}}{\epsilon_o}
-\end{equation}</script>
+\end{equation}\]
 
-<p>where <script type="math/tex">r</script> is the radius of the spherical Gaussian surface and <script type="math/tex">4\pi r^2</script> is the surface area of Gaussian surface.  For cylindrical symmetry, we get:</p>
+<p>where \(r\) is the radius of the spherical Gaussian surface and \(4\pi r^2\) is the surface area of Gaussian surface.  For cylindrical symmetry, we get:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 E_{top} A_{top} + E_{bottom} A_{bottom} + E_{side} A_{side} = \frac{Q_{enc}}{\epsilon_o}
-\end{equation}</script>
+\end{equation}\]
 
-<p>where each <script type="math/tex">A</script> gives the area of the top, bottom, and side of the cylindrical Gaussian surface.</p>
+<p>where each \(A\) gives the area of the top, bottom, and side of the cylindrical Gaussian surface.</p>
 
 <p>There are, of course, many other symmetries out there.  You generally see them in a more advanced course on electricity and magnetism.</p>
 

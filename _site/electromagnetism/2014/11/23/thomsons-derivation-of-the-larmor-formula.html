@@ -132,7 +132,7 @@
   <p><img src="http://localhost:4000/assets/images/2014-11-23/field_lines.png" alt="Purcell_Diagram_" /></p>
 </div>
 
-<p>Now suppose that the point charge initially moves in the <script type="math/tex">+\hat{x}</script>-direction with a speed of <script type="math/tex">v_o</script>. When it passes the origin of our coordinate system, it decelerates to a halt over a short amount of time <script type="math/tex">\tau</script>. We then measure the electric field lines at some time <script type="math/tex">T</script> in the future where <script type="math/tex">T \gg \tau</script>.</p>
+<p>Now suppose that the point charge initially moves in the \(+\hat{x}\)-direction with a speed of \(v_o\). When it passes the origin of our coordinate system, it decelerates to a halt over a short amount of time \(\tau\). We then measure the electric field lines at some time \(T\) in the future where \(T \gg \tau\).</p>
 
 <p>We can visualize the shape of the electric field lines using the diagram below:</p>
 
@@ -142,91 +142,85 @@
 
 <p>Let’s go through this picture in a bit more detail. The speed of light in a vacuum is the universal “speed limit”. No information can travel faster than the speed of light. Thus, the electric field lines cannot instantly change in all regions of space - instead, the information about the acceleration of the particle propagates through these field lines with speed c.</p>
 
-<p>The expression <script type="math/tex">R = cT</script> is the distance that a pulse of light would travel from the origin in a time <script type="math/tex">T</script>. The expression <script type="math/tex">R = c(T-\tau)</script> is the distance that a pulse of light would travel when the particle moves from the origin to point A and then emits light. Notice that the difference between these two pulses creates a tiny shell in space. This shell divides space into two regions.</p>
+<p>The expression \(R = cT\) is the distance that a pulse of light would travel from the origin in a time \(T\). The expression \(R = c(T-\tau)\) is the distance that a pulse of light would travel when the particle moves from the origin to point A and then emits light. Notice that the difference between these two pulses creates a tiny shell in space. This shell divides space into two regions.</p>
 
-<p>In Region I the electric field lines have not yet recieved the information about the deceleration, so they will look as if the particle is still traveling with speed <script type="math/tex">v_o</script> and nothing has changed. However, the field lines in Region II have received the information that the particle has decelerated, so they will match up to the final position of the particle (point A).  The position of point A comes from kinematics. Solving for the acceleration yields:</p>
+<p>In Region I the electric field lines have not yet recieved the information about the deceleration, so they will look as if the particle is still traveling with speed \(v_o\) and nothing has changed. However, the field lines in Region II have received the information that the particle has decelerated, so they will match up to the final position of the particle (point A).  The position of point A comes from kinematics. Solving for the acceleration yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\vec{v}_f &= \vec{v}_i + \vec{a}t\\[0.1cm]
-0 &= v_o \hat{x} + \vec{a}\tau\\[0.1cm]
-\vec{a} &= -\frac{v_o}{\tau} \hat{x}
-\end{align} %]]></script>
+\[\begin{align}
+\vec{v}_f &amp;= \vec{v}_i + \vec{a}t\\[0.1cm]
+0 &amp;= v_o \hat{x} + \vec{a}\tau\\[0.1cm]
+\vec{a} &amp;= -\frac{v_o}{\tau} \hat{x}
+\end{align}\]
 
 <p>And then using that to find the final position:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\vec{x}_f &= \vec{x}_i + \vec{v}_i t + \frac{1}{2}\vec{a}t^2\\[0.1cm]
-&= 0 + v_o \tau \hat{x} - \frac{1}{2}\frac{v_o}{\tau}\tau^2 \hat{x}\\[0.1cm]
-&= v_o t \hat{x} - \frac{1}{2}v_o \tau \hat{x}\\[0.1cm]
-&= \frac{1}{2}v_o \tau \hat{x}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+\vec{x}_f &amp;= \vec{x}_i + \vec{v}_i t + \frac{1}{2}\vec{a}t^2\\[0.1cm]
+&amp;= 0 + v_o \tau \hat{x} - \frac{1}{2}\frac{v_o}{\tau}\tau^2 \hat{x}\\[0.1cm]
+&amp;= v_o t \hat{x} - \frac{1}{2}v_o \tau \hat{x}\\[0.1cm]
+&amp;= \frac{1}{2}v_o \tau \hat{x}\\[0.1cm]
+\end{align}\]
 
-<p>The angle between AB and the x-axis is the same as the angle between CD and the x-axis - let’s call it <script type="math/tex">\theta</script>. Since the particle would have traveled to a final position <script type="math/tex">x = v_o T</script> had it not decelerated, the perpendicular distance between AB and CD is <script type="math/tex">v_oT sin\theta</script>.</p>
+<p>The angle between AB and the x-axis is the same as the angle between CD and the x-axis - let’s call it \(\theta\). Since the particle would have traveled to a final position \(x = v_o T\) had it not decelerated, the perpendicular distance between AB and CD is \(v_oT sin\theta\).</p>
 
 <p>The electric field lines need to be continuous, so their final shape is given by the series of segmets ABCD. This “kink” in the field lines is the electromagnetic wave that propagates through space.</p>
 
 <p>We can find the radial and angular components of the “kink” in the field. The radial component of the electric field simply comes from Coulomb’s law:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 E_r = \frac{kq}{R^2} \approx \left ( \frac{1}{cT} \right ) \frac{kq}{R}
-\end{equation}</script>
+\end{equation}\]
 
-<p>I expanded the expression using <script type="math/tex">R = cT</script> just to make future math a bit easier. Remember, <script type="math/tex">T \gg \tau</script>, so <script type="math/tex">(T - \tau) \approx T</script>. The angular component of the electric field can be found using the ratio of the two electric field components. These components are proportional to the lengths that we calculated in the diagram above:</p>
+<p>I expanded the expression using \(R = cT\) just to make future math a bit easier. Remember, \(T \gg \tau\), so \((T - \tau) \approx T\). The angular component of the electric field can be found using the ratio of the two electric field components. These components are proportional to the lengths that we calculated in the diagram above:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{E_\theta}{E_r} &= \frac{v_o T sin\theta}{c\tau}\\[0.1cm]
-&= \frac{\frac{v_o}{\tau} T sin\theta}{c}\\[0.1cm]
-&= \frac{|a| T sin\theta}{c}
-\end{align} %]]></script>
+\[\begin{align}
+\frac{E_\theta}{E_r} &amp;= \frac{v_o T sin\theta}{c\tau}\\[0.1cm]
+&amp;= \frac{\frac{v_o}{\tau} T sin\theta}{c}\\[0.1cm]
+&amp;= \frac{|a| T sin\theta}{c}
+\end{align}\]
 
 <p>Then:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-E_\theta &= \left [ \frac{|a| Tsin\theta}{c} \right ] E_r\\[0.1cm]
-&= \left [ \frac{|a| Tsin\theta}{c} \right ] \left [ \frac{1}{cT} \frac{kq}{R} \right ]\\[0.1cm]
-&= \frac{kq|a| sin\theta}{c^2 R}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+E_\theta &amp;= \left [ \frac{|a| Tsin\theta}{c} \right ] E_r\\[0.1cm]
+&amp;= \left [ \frac{|a| Tsin\theta}{c} \right ] \left [ \frac{1}{cT} \frac{kq}{R} \right ]\\[0.1cm]
+&amp;= \frac{kq|a| sin\theta}{c^2 R}\\[0.1cm]
+\end{align}\]
 
 <p>###The Larmor Formula</p>
 
-<p>Now that we have <script type="math/tex">E_\theta</script>, the derivation of the Larmor formula is straightforward. First, we can use the angular electric field to find the Poynting vector around the point charge:</p>
+<p>Now that we have \(E_\theta\), the derivation of the Larmor formula is straightforward. First, we can use the angular electric field to find the Poynting vector around the point charge:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-|\vec{S}| &= \frac{1}{\mu_o} \left | \vec{E} \times \vec{B} \right |\\[0.1cm]
-&= \frac{1}{\mu_o} \left | |\vec{E}| |\vec{B}| sin(90^\circ) \right | \\[0.1cm]
-&= \frac{1}{\mu_o} \left ( EB \right )\\[0.1cm]
-&= \frac{1}{\mu_o} \left ( \frac{E^2}{c} \right )\\[0.1cm]
-&= \epsilon_o c E^2\\[0.1cm]
-&= \epsilon_o c \left [ \frac{kq|a| sin\theta}{c^2 R} \right ]^2\\[0.1cm]
-&= \frac{\epsilon_o k^2 q^2 a^2 sin^2\theta}{c^3 R^2}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+|\vec{S}| &amp;= \frac{1}{\mu_o} \left | \vec{E} \times \vec{B} \right |\\[0.1cm]
+&amp;= \frac{1}{\mu_o} \left | |\vec{E}| |\vec{B}| sin(90^\circ) \right | \\[0.1cm]
+&amp;= \frac{1}{\mu_o} \left ( EB \right )\\[0.1cm]
+&amp;= \frac{1}{\mu_o} \left ( \frac{E^2}{c} \right )\\[0.1cm]
+&amp;= \epsilon_o c E^2\\[0.1cm]
+&amp;= \epsilon_o c \left [ \frac{kq|a| sin\theta}{c^2 R} \right ]^2\\[0.1cm]
+&amp;= \frac{\epsilon_o k^2 q^2 a^2 sin^2\theta}{c^3 R^2}\\[0.1cm]
+\end{align}\]
 
 <p>We can integrate this expression over all angles in order to get the total power dissipated:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-P &= \int |\vec{S}| R^2 d\Omega\\[0.1cm]
-&= \int_0^{2\pi} \int_0^\pi |\vec{S}| R^2 sin\theta d\theta d\phi\\[0.1cm]
-&= \int_0^{2\pi} \int_0^\pi \frac{\epsilon_o k^2 q^2 a^2 sin^2\theta}{c^3 R^2} R^2 sin\theta d\theta d\phi\\[0.1cm]
-&= \frac{\epsilon_o k^2 q^2 a^2}{c^3} \int_0^{2\pi} \int_0^\pi sin^3\theta d\theta d\phi\\[0.1cm]
-&= \frac{2\pi \epsilon_o k^2 q^2 a^2}{c^3} \int_0^\pi sin^3\theta d\theta\\[0.1cm]
-&= \frac{8\pi \epsilon_o k^2 q^2 a^2}{3c^3}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+P &amp;= \int |\vec{S}| R^2 d\Omega\\[0.1cm]
+&amp;= \int_0^{2\pi} \int_0^\pi |\vec{S}| R^2 sin\theta d\theta d\phi\\[0.1cm]
+&amp;= \int_0^{2\pi} \int_0^\pi \frac{\epsilon_o k^2 q^2 a^2 sin^2\theta}{c^3 R^2} R^2 sin\theta d\theta d\phi\\[0.1cm]
+&amp;= \frac{\epsilon_o k^2 q^2 a^2}{c^3} \int_0^{2\pi} \int_0^\pi sin^3\theta d\theta d\phi\\[0.1cm]
+&amp;= \frac{2\pi \epsilon_o k^2 q^2 a^2}{c^3} \int_0^\pi sin^3\theta d\theta\\[0.1cm]
+&amp;= \frac{8\pi \epsilon_o k^2 q^2 a^2}{3c^3}\\[0.1cm]
+\end{align}\]
 
-<p>Expanding <script type="math/tex">k = (4\pi\epsilon_o)^{-1}</script> yields:</p>
+<p>Expanding \(k = (4\pi\epsilon_o)^{-1}\) yields:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 P = \frac{8\pi \epsilon_o q^2 a^2}{48 \pi^2 \epsilon_o^2 c^3}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 P = \frac{q^2 a^2}{6 \pi \epsilon_o c^3}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Thus, we have an expression for the power dissipated by a particle as it accelerates.</p>
 

@@ -118,11 +118,11 @@
     <div class="body">
       <h3 id="introduction">Introduction</h3>
 
-<p><a href="http://blog.cupcakephysics.com/electromagnetism/2015/06/21/an-oscillating-electron-around-a-ring-of-charge-part-1.html">Last week</a> we studied the motion of an electron (mass <script type="math/tex">m</script> and charge <script type="math/tex">e</script>) as it oscillates about the center of a ring with charge <script type="math/tex">Q</script> and radius <script type="math/tex">R</script>. We found that the path of the electron is a simple sinusoidal wave with a constant angular frequency:</p>
+<p><a href="http://blog.cupcakephysics.com/electromagnetism/2015/06/21/an-oscillating-electron-around-a-ring-of-charge-part-1.html">Last week</a> we studied the motion of an electron (mass \(m\) and charge \(e\)) as it oscillates about the center of a ring with charge \(Q\) and radius \(R\). We found that the path of the electron is a simple sinusoidal wave with a constant angular frequency:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 z(t) = Asin \left (\sqrt{\frac{k Qe }{mR^3}} t \right ) + Bcos \left (\sqrt{\frac{k Qe }{mR^3}} t \right )
-\end{equation}</script>
+\end{equation}\]
 
 <p>However, this isn’t the full story. We learned in an <a href="http://blog.cupcakephysics.com/electromagnetism/2014/11/23/thomsons-derivation-of-the-larmor-formula.html">earlier blog post</a> that an accelerating charged particle radiates according to the <a href="https://en.wikipedia.org/wiki/Larmor_formula">Larmor formula</a>. Thus, we need to expand this solution to include the effect of the recoil force on the accelerating electron due to the emission of electromagnetic radiation. This force has many names - the radiation reaction force, the self force, and the Abraham-Lorentz force.</p>
 
@@ -130,92 +130,90 @@ z(t) = Asin \left (\sqrt{\frac{k Qe }{mR^3}} t \right ) + Bcos \left (\sqrt{\fra
 
 <p>Let’s start our derivation of the Abraham-Lorentz force by writing the expression that we derived for the Larmor formula (again, see my <a href="http://blog.cupcakephysics.com/electromagnetism/2014/11/23/thomsons-derivation-of-the-larmor-formula.html">earlier post</a>).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 P = \frac{e^2 a^2}{6 \pi \epsilon_o c^3}
-\end{equation}</script>
+\end{equation}\]
 
 <p>We know that the work done on the electron by its radiation force is defined to be the negative integral of power with respect to time:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\int P dt = -\int \frac{e^2 a^2}{6 \pi \epsilon_o c^3} dt
-\end{equation}</script>
+\end{equation}\]
 
-<p>Let’s integrate this expression over one period (starting at <script type="math/tex">t_0</script> and ending at <script type="math/tex">t_1</script>).</p>
+<p>Let’s integrate this expression over one period (starting at \(t_0\) and ending at \(t_1\)).</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
--\int_{t_0}^{t_1} P dt &= -\int_{t_0}^{t_1} \frac{e^2 a^2}{6 \pi \epsilon_o c^3} dt\\[0.1cm]
-&= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1}  a^2 dt\\[0.1cm]
-&= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \left ( \frac{d\vec{v}}{dt} \right ) \cdot \left ( \frac{d\vec{v}}{dt} \right ) dt
-\end{align} %]]></script>
+\[\begin{align}
+-\int_{t_0}^{t_1} P dt &amp;= -\int_{t_0}^{t_1} \frac{e^2 a^2}{6 \pi \epsilon_o c^3} dt\\[0.1cm]
+&amp;= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1}  a^2 dt\\[0.1cm]
+&amp;= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \left ( \frac{d\vec{v}}{dt} \right ) \cdot \left ( \frac{d\vec{v}}{dt} \right ) dt
+\end{align}\]
 
-<p>We can solve this expression further by using <a href="http://tutorial.math.lamar.edu/Classes/CalcII/IntegrationByParts.aspx">integration by parts</a>. Let <script type="math/tex">u = dv/dt</script> and <script type="math/tex">dy = (dv/dt) dt</script>. Then:</p>
+<p>We can solve this expression further by using <a href="http://tutorial.math.lamar.edu/Classes/CalcII/IntegrationByParts.aspx">integration by parts</a>. Let \(u = dv/dt\) and \(dy = (dv/dt) dt\). Then:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \int u dy = uy - \int y du
-\end{equation}</script>
+\end{equation}\]
 
 <p>We can rewrite our integral as:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
--\int_{t_0}^{t_1} P dt &= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \left ( \frac{d\vec{v}}{dt} \right ) \cdot \left ( \frac{d\vec{v}}{dt} \right ) dt\\[0.1cm]
-&= - \frac{e^2}{6 \pi \epsilon_o c^3} \left [ \left ( \frac{d\vec{v}}{dt} \right ) \cdot \vec{v} \right ]_{t_0}^{t_1} + \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d^2 \vec{v}}{dt^2} dt
-\end{align} %]]></script>
+\[\begin{align}
+-\int_{t_0}^{t_1} P dt &amp;= - \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \left ( \frac{d\vec{v}}{dt} \right ) \cdot \left ( \frac{d\vec{v}}{dt} \right ) dt\\[0.1cm]
+&amp;= - \frac{e^2}{6 \pi \epsilon_o c^3} \left [ \left ( \frac{d\vec{v}}{dt} \right ) \cdot \vec{v} \right ]_{t_0}^{t_1} + \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d^2 \vec{v}}{dt^2} dt
+\end{align}\]
 
-<p>This integral is over one period of motion. Thus, the first term in the expression above is zero because the velocity of the electron (<script type="math/tex">\vec{v}</script>) and the acceleration of the electron (<script type="math/tex">d\vec{v}/dt</script>) are the same at times <script type="math/tex">t_0</script> and <script type="math/tex">t_1</script>.</p>
+<p>This integral is over one period of motion. Thus, the first term in the expression above is zero because the velocity of the electron (\(\vec{v}\)) and the acceleration of the electron (\(d\vec{v}/dt\)) are the same at times \(t_0\) and \(t_1\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\int_{t_0}^{t_1} P dt = \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d^2 \vec{v}}{dt^2} dt
-\end{equation}</script>
+\end{equation}\]
 
 <p>We note that the second derivative of velocity is just the first derivative of acceleration.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\int_{t_0}^{t_1} P dt = \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d\vec{a}}{dt} dt
-\end{equation}</script>
+\end{equation}\]
 
 <p>At this point, let’s look at work through a different lens. Instead of writing the integral for work using power and time, we can write an equivalent integral using force, velocity, and time. We will define this force to be our Abraham-Lorentz force.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\int P dt = \int \vec{F}_{AL} \cdot \vec{v} dt
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\int_{t_0}^{t_1} P dt = \int_{t_0}^{t_1} \vec{F}_{AL} \cdot \vec{v} dt = \frac{e^2}{6 \pi \epsilon_o c^3} \int_{t_0}^{t_1} \vec{v} \cdot \frac{d\vec{a}}{dt} dt
-\end{equation}</script>
+\end{equation}\]
 
 <p>Thus, the expression for the Abraham-Lorentz force falls right out of the integral:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_{AL} = \frac{e^2}{6 \pi \epsilon_o c^3} \frac{d\vec{a}}{dt}
-\end{equation}</script>
+\end{equation}\]
 
 <p>This force is really quite strange. It is one of the few times that we see the use of jerk in physics (the third derivative of position).</p>
 
 <h3 id="oscillatory-motion-with-radiation">Oscillatory Motion With Radiation</h3>
 
-<p>In our analysis last week, we said that the net force on the electron was simply the electric force due to the charged ring. Now, our analysis is a bit more sophisticated - the net force <script type="math/tex">\vec{F}_{net}</script> is the sum of the electric force <script type="math/tex">\vec{F}_E</script> and the Abraham-Lorentz force <script type="math/tex">\vec{F}_{AL}</script>.</p>
+<p>In our analysis last week, we said that the net force on the electron was simply the electric force due to the charged ring. Now, our analysis is a bit more sophisticated - the net force \(\vec{F}_{net}\) is the sum of the electric force \(\vec{F}_E\) and the Abraham-Lorentz force \(\vec{F}_{AL}\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_{net} = \vec{F}_E + \vec{F}_{AL}
-\end{equation}</script>
+\end{equation}\]
 
 <p>We can plug in the appropriate expressions for each of the forces. Like last week, I will use dot notation to keep everything nice and neat.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 m \ddot{z} = - \frac{kQez}{\left [ z^2 + R^2 \right ]^{3/2}} + \frac{e^2}{6 \pi \epsilon_o c^3} \dddot{z}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Moving everything to one side and simplifying the first coefficient yields:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{e^2}{6 \pi \epsilon_o c^3} \dddot{z} - m \ddot{z} - \frac{kQe z}{\left [ z^2 + R^2 \right ]^{3/2}} = 0
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \dddot{z} - \left ( \frac{6 m \pi \epsilon_o c^3}{e^2} \right ) \ddot{z} - \left ( \frac{6 kQ \pi \epsilon_o c^3}{e} \right ) \left ( \frac{z}{\left [ z^2 + R^2 \right ]^{3/2}} \right ) = 0
-\end{equation}</script>
+\end{equation}\]
 
 <p>This new differential equation takes the self-force of the electron into account. Notice how it is not just a simple oscillatory problem anymore!</p>
 

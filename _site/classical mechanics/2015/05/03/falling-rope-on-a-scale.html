@@ -126,7 +126,7 @@
 
 <h3 id="the-problem-statement">The Problem Statement</h3>
 
-<p>A flexible rope with a length <script type="math/tex">L</script> and total mass <script type="math/tex">M</script> hangs vertically just above a scale. The rope is released at time <script type="math/tex">t = 0</script>. What is the reading on the scale as a function of time?</p>
+<p>A flexible rope with a length \(L\) and total mass \(M\) hangs vertically just above a scale. The rope is released at time \(t = 0\). What is the reading on the scale as a function of time?</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-05-03/setup.png" alt="Force vs. Time" /></p>
@@ -134,7 +134,7 @@
 
 <h3 id="the-solution">The Solution</h3>
 
-<p>The force of the rope on the scale is equal and opposite to the force of the scale on the rope. Thus, rather than analyzing the scale, let’s analyze the rope. We will define the height of the top of the rope as it falls as <script type="math/tex">h</script> and the mass density of the rope as <script type="math/tex">\lambda = M/L</script>. Everything will be measured along the <script type="math/tex">z</script>-direction.</p>
+<p>The force of the rope on the scale is equal and opposite to the force of the scale on the rope. Thus, rather than analyzing the scale, let’s analyze the rope. We will define the height of the top of the rope as it falls as \(h\) and the mass density of the rope as \(\lambda = M/L\). Everything will be measured along the \(z\)-direction.</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-05-03/fallen_rope.png" alt="Force vs. Time" /></p>
@@ -142,95 +142,87 @@
 
 <p>The total force on the entire piece of rope is equal to the force of the scale upwards minus the force of gravity downwards:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\vec{F}_{tot} &= F_{scale} \hat{z} - Mg \hat{z} \\[0.1cm]
-&= F_{scale} \hat{z} - \lambda L g \hat{z}
-\end{align} %]]></script>
+\[\begin{align}
+\vec{F}_{tot} &amp;= F_{scale} \hat{z} - Mg \hat{z} \\[0.1cm]
+&amp;= F_{scale} \hat{z} - \lambda L g \hat{z}
+\end{align}\]
 
-<p>We know that the total force on the rope is equal to the change in momentum of the rope with respect to time (Newton’s Second Law). The total momentum of the rope at any given height <script type="math/tex">h</script> is just the mass of the remaining section of the falling rope (<script type="math/tex">\lambda h</script>) times the speed of the falling rope (<script type="math/tex">dh/dt</script>).</p>
+<p>We know that the total force on the rope is equal to the change in momentum of the rope with respect to time (Newton’s Second Law). The total momentum of the rope at any given height \(h\) is just the mass of the remaining section of the falling rope (\(\lambda h\)) times the speed of the falling rope (\(dh/dt\)).</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\vec{p} &= m \vec{v}\\[0.1cm]
-&= \lambda h \frac{dh}{dt} \hat{z}
-\end{align} %]]></script>
+\[\begin{align}
+\vec{p} &amp;= m \vec{v}\\[0.1cm]
+&amp;= \lambda h \frac{dh}{dt} \hat{z}
+\end{align}\]
 
-<p>Note that <script type="math/tex">\vec{p}</script> is negative becuase <script type="math/tex">dh/dt</script> is negative.</p>
+<p>Note that \(\vec{p}\) is negative becuase \(dh/dt\) is negative.</p>
 
-<p>Let’s plug the expression for momentum into Newton’s Second Law and turn the crank. We will use dot notation (<script type="math/tex">\dot{h} \equiv dh/dt</script>) just to keep the equations clean-looking:</p>
+<p>Let’s plug the expression for momentum into Newton’s Second Law and turn the crank. We will use dot notation (\(\dot{h} \equiv dh/dt\)) just to keep the equations clean-looking:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_{tot} = \frac{d\vec{p}}{dt}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F_{scale} - \lambda L g &= \frac{d}{dt} \left ( \lambda h \dot{h} \right )\\[0.1cm]
-&= \lambda \dot{h}^2 + \lambda h \ddot{h}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+F_{scale} - \lambda L g &amp;= \frac{d}{dt} \left ( \lambda h \dot{h} \right )\\[0.1cm]
+&amp;= \lambda \dot{h}^2 + \lambda h \ddot{h}\\[0.1cm]
+\end{align}\]
 
-<p>We can solve for the speed of the rope (<script type="math/tex">\dot{h}</script>) by considering energy conservation. All of the potential energy of the rope is turning into kinetic energy when the top of the rope falls from its initial height (L) to some height (h). For a section of rope with height <script type="math/tex">h</script> and mass <script type="math/tex">m</script>:</p>
+<p>We can solve for the speed of the rope (\(\dot{h}\)) by considering energy conservation. All of the potential energy of the rope is turning into kinetic energy when the top of the rope falls from its initial height (L) to some height (h). For a section of rope with height \(h\) and mass \(m\):</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 K = \frac{1}{2} m \dot{h}^2
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 U = m g \left ( L - h \right )
-\end{equation}</script>
+\end{equation}\]
 
 <p>Setting them equal yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-K &= U\\[0.1cm]
-\frac{1}{2} m \dot{h}^2 &= m g \left ( L - h \right )\\[0.1cm]
-\dot{h} &= \sqrt{2 g \left ( L - h \right ) }
-\end{align} %]]></script>
+\[\begin{align}
+K &amp;= U\\[0.1cm]
+\frac{1}{2} m \dot{h}^2 &amp;= m g \left ( L - h \right )\\[0.1cm]
+\dot{h} &amp;= \sqrt{2 g \left ( L - h \right ) }
+\end{align}\]
 
 <p>Then, we can continue simplifying the expression for force:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F_{scale} - \lambda L g &= \lambda \dot{h}^2 + \lambda h \ddot{h}\\[0.1cm]
-&= \lambda \left [ 2g \left ( L - h \right ) \right ] + \lambda h \ddot{h}\\[0.1cm]
-&= 2g\lambda L - 2g\lambda h + \lambda h \ddot{h}
-\end{align} %]]></script>
+\[\begin{align}
+F_{scale} - \lambda L g &amp;= \lambda \dot{h}^2 + \lambda h \ddot{h}\\[0.1cm]
+&amp;= \lambda \left [ 2g \left ( L - h \right ) \right ] + \lambda h \ddot{h}\\[0.1cm]
+&amp;= 2g\lambda L - 2g\lambda h + \lambda h \ddot{h}
+\end{align}\]
 
-<p>The acceleration of the top of the rope (<script type="math/tex">\ddot{h}</script> is just the acceleration due to gravity. Remember, we are dealing with vectors, so <script type="math/tex">\ddot{h} = -g</script>.</p>
+<p>The acceleration of the top of the rope (\(\ddot{h}\) is just the acceleration due to gravity. Remember, we are dealing with vectors, so \(\ddot{h} = -g\).</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F_{scale} - \lambda L g &= 2g\lambda L - 2g\lambda h - \lambda h g\\[0.1cm]
-&= 2g\lambda L - 3 \lambda h g
-\end{align} %]]></script>
+\[\begin{align}
+F_{scale} - \lambda L g &amp;= 2g\lambda L - 2g\lambda h - \lambda h g\\[0.1cm]
+&amp;= 2g\lambda L - 3 \lambda h g
+\end{align}\]
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F_{scale} &= g\lambda L + 2g\lambda L - 3 \lambda h g\\[0.1cm]
-&= 3g\lambda L - 3 g \lambda h\\[0.1cm]
-&= 3g\lambda \left ( L - h \right )
-\end{align} %]]></script>
+\[\begin{align}
+F_{scale} &amp;= g\lambda L + 2g\lambda L - 3 \lambda h g\\[0.1cm]
+&amp;= 3g\lambda L - 3 g \lambda h\\[0.1cm]
+&amp;= 3g\lambda \left ( L - h \right )
+\end{align}\]
 
-<p>We have reached an important intermediate step. We now have the force measured by the scale as a function of rope height <script type="math/tex">h</script>. Remember, this equation is only valid while the rope is falling. After it comes to rest on the scale, the scale will simply read the weight of the rope (<script type="math/tex">Mg</script>).</p>
+<p>We have reached an important intermediate step. We now have the force measured by the scale as a function of rope height \(h\). Remember, this equation is only valid while the rope is falling. After it comes to rest on the scale, the scale will simply read the weight of the rope (\(Mg\)).</p>
 
-<p>We can now solve for the force read by the scale as a function of time. At some time <script type="math/tex">t</script>, the top of the rope has fallen an amount <script type="math/tex">gt^2/2</script> (from the kinematics of a falling particle). Thus, the height (<script type="math/tex">h</script>) of the rope is equal to:</p>
+<p>We can now solve for the force read by the scale as a function of time. At some time \(t\), the top of the rope has fallen an amount \(gt^2/2\) (from the kinematics of a falling particle). Thus, the height (\(h\)) of the rope is equal to:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 h = L - \frac{1}{2} g t^2
-\end{equation}</script>
+\end{equation}\]
 
 <p>Plugging the height into the expression for force gives:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F_{scale} &= 3 \lambda g \left [ L - h \right ]\\[0.1cm]
-&= 3 \lambda g \left [ L - \left ( L - \frac{1}{2} g t^2 \right ) \right ]\\[0.1cm]
-&= \frac{3}{2} \lambda g^2 t^2\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+F_{scale} &amp;= 3 \lambda g \left [ L - h \right ]\\[0.1cm]
+&amp;= 3 \lambda g \left [ L - \left ( L - \frac{1}{2} g t^2 \right ) \right ]\\[0.1cm]
+&amp;= \frac{3}{2} \lambda g^2 t^2\\[0.1cm]
+\end{align}\]
 
-<p>While the rope is falling, the weight on the scale will increase proportional to <script type="math/tex">t^2</script>. Then, when the rope stops falling, the weight will suddenly drop down to <script type="math/tex">Mg</script>. I have plotted the force read by the scale as a function of time for a rope that is one meter long and weighs one kilogram. The red dots represent the weight read by the scale as a function of time. The green line is drawn at <script type="math/tex">3Mg</script> for reference.</p>
+<p>While the rope is falling, the weight on the scale will increase proportional to \(t^2\). Then, when the rope stops falling, the weight will suddenly drop down to \(Mg\). I have plotted the force read by the scale as a function of time for a rope that is one meter long and weighs one kilogram. The red dots represent the weight read by the scale as a function of time. The green line is drawn at \(3Mg\) for reference.</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-05-03/scale_graph.png" alt="Force vs. Time" /></p>
@@ -238,9 +230,9 @@ F_{scale} &= 3 \lambda g \left [ L - h \right ]\\[0.1cm]
 
 <h3 id="conclusions">Conclusions</h3>
 
-<p>Interestingly, when the last bit of the chain hits the scale, the scale reads <script type="math/tex">3Mg</script> rather than just <script type="math/tex">Mg</script>. This is because we have to take the momentum of the falling chain into account as well as its weight.</p>
+<p>Interestingly, when the last bit of the chain hits the scale, the scale reads \(3Mg\) rather than just \(Mg\). This is because we have to take the momentum of the falling chain into account as well as its weight.</p>
 
-<p>Dr. Alex Dzierba performed an example of this experiment in his class (see <a href="http://www.dzre.com/alex/hp221_f03/notes/chain.pdf">his writeup of the data</a>). Notice that the chain is generally proportional to <script type="math/tex">t^2</script> with a few bumps along the way. The bumps in the graph come from the fact that a real chain is not perfectly uniform.</p>
+<p>Dr. Alex Dzierba performed an example of this experiment in his class (see <a href="http://www.dzre.com/alex/hp221_f03/notes/chain.pdf">his writeup of the data</a>). Notice that the chain is generally proportional to \(t^2\) with a few bumps along the way. The bumps in the graph come from the fact that a real chain is not perfectly uniform.</p>
 
     </div>
 

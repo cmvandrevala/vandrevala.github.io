@@ -120,31 +120,31 @@
 
 <p>It’s been a few weeks since we started this problem, but we are finally in the home stretch! Let’s go over some of the major equations that we ran into over the last couple of posts. First, we derived the electric field from a ring of charge using Coulomb’s law.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 E_z = \frac{k Q z} {\left (z^2 + R^2 \right )^{3/2}}
-\end{equation}</script>
+\end{equation}\]
 
-<p>We then analyzed the oscillatory motion of an electron in this electric field. Recall that we used the assumption that <script type="math/tex">R \gg z</script> in order to derive an analytic solution.</p>
+<p>We then analyzed the oscillatory motion of an electron in this electric field. Recall that we used the assumption that \(R \gg z\) in order to derive an analytic solution.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \ddot{z} + \frac{k Qe }{mR^3}z = 0
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 z(t) = Asin \left (\sqrt{\frac{k Qe }{mR^3}} t \right ) + Bcos \left (\sqrt{\frac{k Qe }{mR^3}} t \right )
-\end{equation}</script>
+\end{equation}\]
 
 <p>The solution above does not take into account any sort of radiation from the accelerating electron. In order to fix that problem, we found an expression for the self force on a charged particle - the recoil force that it feels when it radiates energy.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_{AL} = \frac{e^2}{6 \pi \epsilon_o c^3} \frac{d\vec{a}}{dt}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Then, we included the self force in the differential equation for the motion of the electron. We noted that it was one of the few times that the jerk of a particle came into play.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \dddot{z} - \left ( \frac{6 m \pi \epsilon_o c^3}{e^2} \right ) \ddot{z} - \left ( \frac{6 kQ \pi \epsilon_o c^3}{e} \right ) \left ( \frac{z}{\left [ z^2 + R^2 \right ]^{3/2}} \right ) = 0
-\end{equation}</script>
+\end{equation}\]
 
 <p>It seems like we are ready to solve this differential equation. However, there is one last snaffoo that we will run into if we are not careful. Let’s take a look.</p>
 
@@ -164,177 +164,170 @@ z(t) = Asin \left (\sqrt{\frac{k Qe }{mR^3}} t \right ) + Bcos \left (\sqrt{\fra
 
 <h3 id="the-periodic-driver">The Periodic Driver</h3>
 
-<p>Let’s change the problem slightly; we will enforce periodic motion on the electron by adding in a driving force with a frequency <script type="math/tex">\omega</script> and amplitude <script type="math/tex">F_o</script>.</p>
+<p>Let’s change the problem slightly; we will enforce periodic motion on the electron by adding in a driving force with a frequency \(\omega\) and amplitude \(F_o\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 F_{driving} = F_o cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
 <p>Now, the differential equation describing the motion of the electron becomes:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_{total} = \vec{F}_E + \vec{F}_{AL} + \vec{F}_{driving}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 m \ddot{z} = - \frac{kQez}{\left [ z^2 + R^2 \right ]^{3/2}} + \frac{e^2}{6 \pi \epsilon_o c^3} \dddot{z} + F_o cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
-<p>The electron will be forced to oscillate with a frequency of <script type="math/tex">\omega</script> due to <script type="math/tex">F_{driving}</script>. This is great for us - we can assume a sinusoidal solution with an amplitude of <script type="math/tex">z_o</script>, a frequency of <script type="math/tex">\omega</script>, and a phase delay of <script type="math/tex">\delta</script>.</p>
+<p>The electron will be forced to oscillate with a frequency of \(\omega\) due to \(F_{driving}\). This is great for us - we can assume a sinusoidal solution with an amplitude of \(z_o\), a frequency of \(\omega\), and a phase delay of \(\delta\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 z(t) = z_o cos(\omega t - \delta)
-\end{equation}</script>
+\end{equation}\]
 
 <p>Let’s take time derivatives of this solution so that we can plug them back into the differential equation above.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 z = z_o cos(\omega t - \delta)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \dot{z} = -\omega z_o sin(\omega t - \delta)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \ddot{z} = -\omega^2 z_o cos(\omega t - \delta)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \dddot{z} = \omega^3 z_o cos(\omega t - \delta) = -\omega^2 \dot{z}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Notice how the third derivative of position can be rewritten in terms of the first derivative of position. Thus, we can rewrite the third order differential equation as a second order differential equation.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 m \ddot{z} = - \frac{kQez}{\left [ z^2 + R^2 \right ]^{3/2}} - \frac{e^2 \omega^2}{6 \pi \epsilon_o c^3} \dot{z} + F_o cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 m \ddot{z} + \frac{kQez}{\left [ z^2 + R^2 \right ]^{3/2}} + \frac{e^2 \omega^2}{6 \pi \epsilon_o c^3} \dot{z} = F_o cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
-<p>At this point we could solve the equation numerically using Matlab or some other program. However, let’s try to get an analytic solution to this problem so that we can really get a sense of its motion. Like we did before, take the limit of <script type="math/tex">R \gg z</script>.</p>
+<p>At this point we could solve the equation numerically using Matlab or some other program. However, let’s try to get an analytic solution to this problem so that we can really get a sense of its motion. Like we did before, take the limit of \(R \gg z\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 m \ddot{z} + \frac{e^2 \omega^2}{6 \pi \epsilon_o c^3} \dot{z} + \frac{kQe}{R^3} z = F_o cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \ddot{z} + \frac{e^2 \omega^2}{6 \pi \epsilon_o m c^3} \dot{z} + \frac{kQe}{mR^3} z = \frac{F_o}{m} cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
-<p>That’s interesting. The coefficient in front of z is exactly the frequency we calculated in the case with no driving force and no radiation reaction. Just to keep our notation clear, we will call this the natural frequency of the system (<script type="math/tex">\omega_o^2 = kQe/mR^3</script>). Additionally, we will call the coefficient in front of <script type="math/tex">\dot{z}</script> the damping coefficient of the system (<script type="math/tex">\gamma</script>). Thus, we can rewrite the differential equation in a compact form.</p>
+<p>That’s interesting. The coefficient in front of z is exactly the frequency we calculated in the case with no driving force and no radiation reaction. Just to keep our notation clear, we will call this the natural frequency of the system (\(\omega_o^2 = kQe/mR^3\)). Additionally, we will call the coefficient in front of \(\dot{z}\) the damping coefficient of the system (\(\gamma\)). Thus, we can rewrite the differential equation in a compact form.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \ddot{z} + \gamma \dot{z} + \omega_o^2 z = \frac{F_o}{m} cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-07-19/chalkboard.png" alt="What?" style="width: 400px;" /></p>
 </div>
 
-<p>So it is! Let’s go through the solution of this equation. Anybody who has taken an intermediate mechanics course should be very familiar with this solution. First, I will plug in the expressions for <script type="math/tex">z</script>, <script type="math/tex">\dot{z}</script>, and <script type="math/tex">\ddot{z}</script>.</p>
+<p>So it is! Let’s go through the solution of this equation. Anybody who has taken an intermediate mechanics course should be very familiar with this solution. First, I will plug in the expressions for \(z\), \(\dot{z}\), and \(\ddot{z}\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\omega^2 z_o cos(\omega t - \delta) - \gamma \omega z_o sin(\omega t - \delta) + \omega_o^2 z_o cos(\omega t - \delta) = \frac{F_o}{m} cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \left ( \omega_o^2 - \omega^2 \right ) z_o cos(\omega t - \delta) - \gamma \omega z_o sin(\omega t - \delta) = \frac{F_o}{m} cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
 <p>We can simplify this expression further. I refer to <a href="http://www.sosmath.com/trig/Trig5/trig5/trig5.html">this table of trig identities</a> to break up the sine and cosine terms.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \left ( \omega_o^2 - \omega^2 \right ) z_o \left [ cos(\omega t)cos(\delta) + sin(\omega t)sin(\delta) \right ] - \gamma \omega z_o \left [ sin(\omega t)cos(\delta) - cos(\omega t)sin(\delta) \right ] = \frac{F_o}{m} cos(\omega t)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \left [ \left ( \omega_o^2 - \omega^2 \right ) z_o cos(\delta) + \gamma \omega z_o sin(\delta) - \frac{F_o}{m} \right ] cos(\omega t) + \left [ \left ( \omega_o^2 - \omega^2 \right ) z_o sin(\delta) - \gamma \omega z_o cos(\delta) \right ] sin(\omega t) = 0
-\end{equation}</script>
+\end{equation}\]
 
-<p>In order for the equation above to equal zero, the sine and cosine pieces of the expression must each equal zero separately since they are <a href="http://mathworld.wolfram.com/OrthogonalFunctions.html">orthogonal functions</a>. We will start with the sine expression and solve for the phase (<script type="math/tex">\delta</script>).</p>
+<p>In order for the equation above to equal zero, the sine and cosine pieces of the expression must each equal zero separately since they are <a href="http://mathworld.wolfram.com/OrthogonalFunctions.html">orthogonal functions</a>. We will start with the sine expression and solve for the phase (\(\delta\)).</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\left [ \left ( \omega_o^2 - \omega^2 \right ) z_o sin(\delta) - \gamma \omega z_o cos(\delta) \right ] sin(\omega t) &= 0\\[0.1cm]
-\left ( \omega_o^2 - \omega^2 \right ) z_o sin(\delta) - \gamma \omega z_o cos(\delta) &= 0\\[0.1cm]
-\left ( \omega_o^2 - \omega^2 \right ) sin(\delta) - \gamma \omega cos(\delta) &= 0\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+\left [ \left ( \omega_o^2 - \omega^2 \right ) z_o sin(\delta) - \gamma \omega z_o cos(\delta) \right ] sin(\omega t) &amp;= 0\\[0.1cm]
+\left ( \omega_o^2 - \omega^2 \right ) z_o sin(\delta) - \gamma \omega z_o cos(\delta) &amp;= 0\\[0.1cm]
+\left ( \omega_o^2 - \omega^2 \right ) sin(\delta) - \gamma \omega cos(\delta) &amp;= 0\\[0.1cm]
+\end{align}\]
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\left ( \omega_o^2 - \omega^2 \right ) sin(\delta) &= \gamma \omega cos(\delta)\\[0.1cm]
-tan(\delta) &= \frac{\gamma \omega}{\omega_o^2 - \omega^2}\\[0.1cm]
-\delta &= tan^{-1} \left ( \frac{\gamma \omega}{\omega_o^2 - \omega^2} \right )
-\end{align} %]]></script>
+\[\begin{align}
+\left ( \omega_o^2 - \omega^2 \right ) sin(\delta) &amp;= \gamma \omega cos(\delta)\\[0.1cm]
+tan(\delta) &amp;= \frac{\gamma \omega}{\omega_o^2 - \omega^2}\\[0.1cm]
+\delta &amp;= tan^{-1} \left ( \frac{\gamma \omega}{\omega_o^2 - \omega^2} \right )
+\end{align}\]
 
-<p>We can now analyze the cosine term in the expression to solve for the amplitude <script type="math/tex">z_o</script>.</p>
+<p>We can now analyze the cosine term in the expression to solve for the amplitude \(z_o\).</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\left [ \left ( \omega_o^2 - \omega^2 \right ) z_o cos(\delta) + \gamma \omega z_o sin(\delta) - \frac{F_o}{m} \right ] cos(\omega t) &= 0\\[0.1cm]
-\left ( \omega_o^2 - \omega^2 \right ) z_o cos(\delta) + \gamma \omega z_o sin(\delta) - \frac{F_o}{m} &= 0
-\end{align} %]]></script>
+\[\begin{align}
+\left [ \left ( \omega_o^2 - \omega^2 \right ) z_o cos(\delta) + \gamma \omega z_o sin(\delta) - \frac{F_o}{m} \right ] cos(\omega t) &amp;= 0\\[0.1cm]
+\left ( \omega_o^2 - \omega^2 \right ) z_o cos(\delta) + \gamma \omega z_o sin(\delta) - \frac{F_o}{m} &amp;= 0
+\end{align}\]
 
-<p>We can rewrite the sine and cosine functions in terms of tangent in order to eliminate the dependence on <script type="math/tex">\delta</script>. The cosine function becomes:</p>
+<p>We can rewrite the sine and cosine functions in terms of tangent in order to eliminate the dependence on \(\delta\). The cosine function becomes:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-cos(\delta) &= \frac{1}{\sqrt{1 + tan^2(\delta)}}\\[0.1cm]
-&= \frac{1}{\sqrt{1 + \left ( \frac{\gamma \omega}{\omega_o^2 - \omega^2} \right )^2}}\\[0.1cm]
-&= \frac{1}{\sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2} + \frac{ \left ( \gamma \omega \right )^2}{ \left ( \omega_o^2 - \omega^2 \right )^2}}}\\[0.1cm]
-&= \frac{1}{\sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2}}}\\[0.1cm]
-&= \sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
-&= \frac{\omega_o^2 - \omega^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+cos(\delta) &amp;= \frac{1}{\sqrt{1 + tan^2(\delta)}}\\[0.1cm]
+&amp;= \frac{1}{\sqrt{1 + \left ( \frac{\gamma \omega}{\omega_o^2 - \omega^2} \right )^2}}\\[0.1cm]
+&amp;= \frac{1}{\sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2} + \frac{ \left ( \gamma \omega \right )^2}{ \left ( \omega_o^2 - \omega^2 \right )^2}}}\\[0.1cm]
+&amp;= \frac{1}{\sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2}}}\\[0.1cm]
+&amp;= \sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
+&amp;= \frac{\omega_o^2 - \omega^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
+\end{align}\]
 
 <p>And the sine function becomes:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-sin(\delta) &= \frac{tan(\delta)}{\sqrt{1 + tan^2(\delta)}}\\[0.1cm]
-&= \frac{\frac{\gamma \omega}{\omega_o^2 - \omega^2}}{\sqrt{1 + \left ( \frac{\gamma \omega}{\omega_o^2 - \omega^2} \right )^2}}\\[0.1cm]
-&= \frac{\frac{\gamma \omega}{\omega_o^2 - \omega^2}}{\sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2} + \frac{ \left ( \gamma \omega \right )^2}{ \left ( \omega_o^2 - \omega^2 \right )^2}}}\\[0.1cm]
-&= \frac{\frac{\gamma \omega}{\omega_o^2 - \omega^2}}{\sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2}}}\\[0.1cm]
-&= \frac{\gamma \omega}{\omega_o^2 - \omega^2} \sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
-&= \frac{\gamma \omega}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+sin(\delta) &amp;= \frac{tan(\delta)}{\sqrt{1 + tan^2(\delta)}}\\[0.1cm]
+&amp;= \frac{\frac{\gamma \omega}{\omega_o^2 - \omega^2}}{\sqrt{1 + \left ( \frac{\gamma \omega}{\omega_o^2 - \omega^2} \right )^2}}\\[0.1cm]
+&amp;= \frac{\frac{\gamma \omega}{\omega_o^2 - \omega^2}}{\sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2} + \frac{ \left ( \gamma \omega \right )^2}{ \left ( \omega_o^2 - \omega^2 \right )^2}}}\\[0.1cm]
+&amp;= \frac{\frac{\gamma \omega}{\omega_o^2 - \omega^2}}{\sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2}}}\\[0.1cm]
+&amp;= \frac{\gamma \omega}{\omega_o^2 - \omega^2} \sqrt{\frac{\left ( \omega_o^2 - \omega^2 \right )^2}{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
+&amp;= \frac{\gamma \omega}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
+\end{align}\]
 
 <p>Let’s plug these expressions for sine and cosine into our original expression.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\left ( \omega_o^2 - \omega^2 \right ) z_o cos(\delta) + \gamma \omega z_o sin(\delta) - \frac{F_o}{m} &= 0\\[0.1cm]
-\frac{z_o \left (\omega_o^2 - \omega^2 \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} + \frac{z_o \left ( \gamma \omega \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} - \frac{F_o}{m} &= 0\\[0.1cm]
-z_o \left [ \frac{\left (\omega_o^2 - \omega^2 \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} + \frac{\left ( \gamma \omega \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} \right ] &= \frac{F_o}{m}
-\end{align} %]]></script>
+\[\begin{align}
+\left ( \omega_o^2 - \omega^2 \right ) z_o cos(\delta) + \gamma \omega z_o sin(\delta) - \frac{F_o}{m} &amp;= 0\\[0.1cm]
+\frac{z_o \left (\omega_o^2 - \omega^2 \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} + \frac{z_o \left ( \gamma \omega \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} - \frac{F_o}{m} &amp;= 0\\[0.1cm]
+z_o \left [ \frac{\left (\omega_o^2 - \omega^2 \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} + \frac{\left ( \gamma \omega \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} \right ] &amp;= \frac{F_o}{m}
+\end{align}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 z_o \left [ \frac{\left (\omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} \right ] = \frac{F_o}{m}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 z_o \sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2} = \frac{F_o}{m}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 z_o = \frac{F_o/m}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}}\\[0.1cm]
-\end{equation}</script>
+\end{equation}\]
 
 <p>Alright, let’s put everything together and get our final answer!</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-z(t) &= z_o cos(\omega t - \delta)\\[0.1cm]
-&= \frac{F_o/m}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} cos \left ( \omega t - \delta \right )\\[0.1cm]
-&= \frac{F_o/m}{\sqrt{\left ( \frac{k Qe }{mR^3} - \omega^2 \right )^2 + \left ( \frac{e^2 \omega^3}{6 \pi \epsilon_o m c^3} \right )^2}} cos \left [ \omega t - tan^{-1} \left ( \frac{\frac{e^2 \omega^3}{6 \pi \epsilon_o m c^3}}{\frac{kQe}{mR^3} - \omega^2} \right ) \right ]
-\end{align} %]]></script>
+\[\begin{align}
+z(t) &amp;= z_o cos(\omega t - \delta)\\[0.1cm]
+&amp;= \frac{F_o/m}{\sqrt{\left ( \omega_o^2 - \omega^2 \right )^2 + \left ( \gamma \omega \right )^2}} cos \left ( \omega t - \delta \right )\\[0.1cm]
+&amp;= \frac{F_o/m}{\sqrt{\left ( \frac{k Qe }{mR^3} - \omega^2 \right )^2 + \left ( \frac{e^2 \omega^3}{6 \pi \epsilon_o m c^3} \right )^2}} cos \left [ \omega t - tan^{-1} \left ( \frac{\frac{e^2 \omega^3}{6 \pi \epsilon_o m c^3}}{\frac{kQe}{mR^3} - \omega^2} \right ) \right ]
+\end{align}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 z(t) = \frac{F_o/m}{\sqrt{\left ( \frac{k Qe }{mR^3} - \omega^2 \right )^2 + \left ( \frac{e^2 \omega^3}{6 \pi \epsilon_o m c^3} \right )^2}} cos \left [ \omega t - tan^{-1} \left ( \frac{e^2 \omega^3 R^3}{6 \pi \epsilon_o c^3 \left ( kQe - m \omega^2 R^3 \right )} \right ) \right ]
-\end{equation}</script>
+\end{equation}\]
 
 <h3 id="conclusions">Conclusions</h3>
 

@@ -120,7 +120,7 @@
 
 <p>Source Code: <a href="https://github.com/CupcakePhysics/projectile_range/releases/tag/v1.0.0">https://github.com/CupcakePhysics/projectile_range/releases/tag/v1.0.0</a></p>
 
-<p>In introductory mechanics courses, we learn that we need to launch a projectile at an angle of <script type="math/tex">45^\circ</script> for maximum range. However, this derivation only works when we are studying the kinematics of a projectile on flat ground. What would happen if we launched the projectile off of a cliff? Does the maximum range still correspond to <script type="math/tex">45^\circ</script>? Does it depend on the height of the cliff?</p>
+<p>In introductory mechanics courses, we learn that we need to launch a projectile at an angle of \(45^\circ\) for maximum range. However, this derivation only works when we are studying the kinematics of a projectile on flat ground. What would happen if we launched the projectile off of a cliff? Does the maximum range still correspond to \(45^\circ\)? Does it depend on the height of the cliff?</p>
 
 <h3 id="range-on-flat-surface">Range on Flat Surface</h3>
 
@@ -130,59 +130,53 @@
   <p><img src="http://localhost:4000/assets/images/2015-04-25/parabola_flat.png" alt="Parabolic Motion" /></p>
 </div>
 
-<p>We launch a projectile with an initial speed <script type="math/tex">v</script> at an angle <script type="math/tex">\theta</script> with respect to the horizontal axis. It makes a parabolic arc through the air due to the acceleration due to gravity (<script type="math/tex">g</script>) and then lands some distance <script type="math/tex">x_f</script> away. I will use the <a href="http://www.physicsclassroom.com/class/1DKin/Lesson-6/Kinematic-Equations">kinematics equations</a> to analyze this problem.</p>
+<p>We launch a projectile with an initial speed \(v\) at an angle \(\theta\) with respect to the horizontal axis. It makes a parabolic arc through the air due to the acceleration due to gravity (\(g\)) and then lands some distance \(x_f\) away. I will use the <a href="http://www.physicsclassroom.com/class/1DKin/Lesson-6/Kinematic-Equations">kinematics equations</a> to analyze this problem.</p>
 
 <p>First, we can solve for the time of flight by analyzing motion in the vertical (y) direction.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-y_f &= y_i + v_{iy} t + \frac{1}{2} a_y t^2\\[0.1cm]
-0 &= 0 + v sin\theta t - \frac{1}{2} g t^2
-\end{align} %]]></script>
+\[\begin{align}
+y_f &amp;= y_i + v_{iy} t + \frac{1}{2} a_y t^2\\[0.1cm]
+0 &amp;= 0 + v sin\theta t - \frac{1}{2} g t^2
+\end{align}\]
 
-<p>Solving for the time <script type="math/tex">t</script> yields:</p>
+<p>Solving for the time \(t\) yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-v sin\theta t &= \frac{1}{2} g t^2\\[0.1cm]
-v sin\theta &= \frac{1}{2} g t\\[0.1cm]
-\frac{2 v sin\theta}{g} &= t\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+v sin\theta t &amp;= \frac{1}{2} g t^2\\[0.1cm]
+v sin\theta &amp;= \frac{1}{2} g t\\[0.1cm]
+\frac{2 v sin\theta}{g} &amp;= t\\[0.1cm]
+\end{align}\]
 
 <p>Next, we can analyze the motion along the horizontal (x) direction.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-x_f &= x_i + v_{ix} t + \frac{1}{2} a_x t^2\\[0.1cm]
-x_f &= 0 + v cos\theta t + 0\\[0.1cm]
-x_f &= v cos\theta t
-\end{align} %]]></script>
+\[\begin{align}
+x_f &amp;= x_i + v_{ix} t + \frac{1}{2} a_x t^2\\[0.1cm]
+x_f &amp;= 0 + v cos\theta t + 0\\[0.1cm]
+x_f &amp;= v cos\theta t
+\end{align}\]
 
-<p>Substituting the expression for <script type="math/tex">t</script> into the expression for <script type="math/tex">x_f</script> yields:</p>
+<p>Substituting the expression for \(t\) into the expression for \(x_f\) yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-x_f &= v cos\theta t\\[0.1cm]
-x_f &= \frac{2 v^2 cos\theta sin\theta}{g}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+x_f &amp;= v cos\theta t\\[0.1cm]
+x_f &amp;= \frac{2 v^2 cos\theta sin\theta}{g}\\[0.1cm]
+\end{align}\]
 
-<p>If we want to find the maximum range of the projectile, we take the derivative of <script type="math/tex">x_f</script> with respect to <script type="math/tex">\theta</script> and set it equal to zero:</p>
+<p>If we want to find the maximum range of the projectile, we take the derivative of \(x_f\) with respect to \(\theta\) and set it equal to zero:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{d x_f}{d\theta} &= \frac{2 v^2}{g} \frac{d}{d\theta} \left [ cos\theta sin\theta \right ]\\[0.1cm]
-&= \frac{2 v^2}{g} \left [ cos^2 \theta - sin^2\theta \right ]\\[0.1cm]
-&= \frac{2 v^2}{g} cos\left ( 2\theta \right )
-\end{align} %]]></script>
+\[\begin{align}
+\frac{d x_f}{d\theta} &amp;= \frac{2 v^2}{g} \frac{d}{d\theta} \left [ cos\theta sin\theta \right ]\\[0.1cm]
+&amp;= \frac{2 v^2}{g} \left [ cos^2 \theta - sin^2\theta \right ]\\[0.1cm]
+&amp;= \frac{2 v^2}{g} cos\left ( 2\theta \right )
+\end{align}\]
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-0 &= \frac{2 v^2}{g} cos\left ( 2\theta \right )\\[0.1cm]
-0 &= cos\left ( 2\theta \right )\\[0.1cm]
-\theta &= 45^\circ
-\end{align} %]]></script>
+\[\begin{align}
+0 &amp;= \frac{2 v^2}{g} cos\left ( 2\theta \right )\\[0.1cm]
+0 &amp;= cos\left ( 2\theta \right )\\[0.1cm]
+\theta &amp;= 45^\circ
+\end{align}\]
 
-<p>As we expect, the maximum range of the projectile occurs when <script type="math/tex">\theta = 45^\circ</script>.</p>
+<p>As we expect, the maximum range of the projectile occurs when \(\theta = 45^\circ\).</p>
 
 <h3 id="range-off-cliff">Range Off Cliff</h3>
 
@@ -194,67 +188,62 @@ x_f &= \frac{2 v^2 cos\theta sin\theta}{g}\\[0.1cm]
 
 <p>Everything is the same as before, except now, the starting position is (0,h) rather than (0,0). At what angle do we see a maximum?</p>
 
-<p>We can start our analysis just like before. First, we will analyze the motion along the vertical (y) direction. This time, the initial y position <script type="math/tex">y_i</script> does not equal zero.</p>
+<p>We can start our analysis just like before. First, we will analyze the motion along the vertical (y) direction. This time, the initial y position \(y_i\) does not equal zero.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-y_f &= y_i + v_{iy} t + \frac{1}{2} a_y t^2\\[0.1cm]
-0 &= h + v sin\theta t - \frac{1}{2} g t^2\\[0.1cm]
-0 &= g t^2 - 2v sin\theta t - 2h\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+y_f &amp;= y_i + v_{iy} t + \frac{1}{2} a_y t^2\\[0.1cm]
+0 &amp;= h + v sin\theta t - \frac{1}{2} g t^2\\[0.1cm]
+0 &amp;= g t^2 - 2v sin\theta t - 2h\\[0.1cm]
+\end{align}\]
 
 <p>Solving for t using the quadratic formula yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-t &= \frac{2vsin\theta \pm \sqrt{4v^2 sin^2\theta - 4g(-2h)}}{2g}\\[0.1cm]
-&= \frac{2vsin\theta \pm \sqrt{4v^2 sin^2\theta + 8gh}}{2g}\\[0.1cm]
-&= \frac{vsin\theta}{g} \pm \frac{\sqrt{v^2 sin^2\theta + 2gh}}{g}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+t &amp;= \frac{2vsin\theta \pm \sqrt{4v^2 sin^2\theta - 4g(-2h)}}{2g}\\[0.1cm]
+&amp;= \frac{2vsin\theta \pm \sqrt{4v^2 sin^2\theta + 8gh}}{2g}\\[0.1cm]
+&amp;= \frac{vsin\theta}{g} \pm \frac{\sqrt{v^2 sin^2\theta + 2gh}}{g}\\[0.1cm]
+\end{align}\]
 
 <p>We note that the minus solution will give us a negative time. This is not a physically real solution, so we will only focus on the positive one.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 t = \frac{vsin\theta}{g} + \frac{\sqrt{v^2 sin^2\theta + 2gh}}{g}
-\end{equation}</script>
+\end{equation}\]
 
-<p>Now, once again we can analyze the motion in the horizontal (x) direction. Solving for <script type="math/tex">x_f</script> yields:</p>
+<p>Now, once again we can analyze the motion in the horizontal (x) direction. Solving for \(x_f\) yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-x_f &= x_i + v_{ix} t + \frac{1}{2} a_x t^2\\[0.1cm]
-x_f &= 0 + v cos\theta t + 0\\[0.1cm]
-x_f &= v cos\theta t
-\end{align} %]]></script>
+\[\begin{align}
+x_f &amp;= x_i + v_{ix} t + \frac{1}{2} a_x t^2\\[0.1cm]
+x_f &amp;= 0 + v cos\theta t + 0\\[0.1cm]
+x_f &amp;= v cos\theta t
+\end{align}\]
 
-<p>Substituting in the expression for <script type="math/tex">t</script> into the expression for <script type="math/tex">x_f</script> yields:</p>
+<p>Substituting in the expression for \(t\) into the expression for \(x_f\) yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-x_f &= v cos\theta t\\[0.1cm]
-&= v cos\theta \left [ \frac{vsin\theta}{g} + \frac{\sqrt{v^2 sin^2\theta + 2gh}}{g} \right ]\\[0.1cm]
-&= \frac{v^2 cos\theta sin\theta}{g} + \frac{v cos\theta \sqrt{v^2 sin^2\theta + 2gh}}{g}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+x_f &amp;= v cos\theta t\\[0.1cm]
+&amp;= v cos\theta \left [ \frac{vsin\theta}{g} + \frac{\sqrt{v^2 sin^2\theta + 2gh}}{g} \right ]\\[0.1cm]
+&amp;= \frac{v^2 cos\theta sin\theta}{g} + \frac{v cos\theta \sqrt{v^2 sin^2\theta + 2gh}}{g}\\[0.1cm]
+\end{align}\]
 
 <p>That looks a lot more complicated than the expression we got in the case of flat ground…</p>
 
 <p>We could proceed as we did above, taking the derivative and setting it equal to zero. However, I really wouldn’t recommend it. The derivative itself is messy, but doable:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{d x_f}{d\theta} &= \frac{v^2}{g}\frac{d}{d\theta}\left [ cos\theta sin\theta \right ] + \frac{v}{g} \frac{d}{d\theta} \left [ cos\theta \sqrt{v^2 sin^2\theta + 2gh} \right ]\\[0.1cm]
-&= \frac{v^2}{g} \left [ cos^2\theta - sin^2\theta \right ] + \frac{v}{g} \left [ cos\theta \left (v^2 sin^2\theta + 2gh\right )^{-1/2} \left ( 2 v^2 sin\theta cos\theta \right ) - sin\theta \sqrt{v^2 sin^2\theta + 2gh} \right ]\\[0.1cm]
-&= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta}{\sqrt{v^2 sin^2\theta + 2gh}} - \frac{ sin\theta \left (v^2 sin^2\theta + 2gh \right )}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
-&= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta}{\sqrt{v^2 sin^2\theta + 2gh}} - \frac{ v^2 sin^3\theta + 2gh sin\theta}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
-&= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta - v^2 sin^3\theta + 2gh sin\theta}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
-&= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v sin\theta}{g} \left [ \frac{ 2 v^2 cos^2\theta - v^2 sin^2\theta + 2gh}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+\frac{d x_f}{d\theta} &amp;= \frac{v^2}{g}\frac{d}{d\theta}\left [ cos\theta sin\theta \right ] + \frac{v}{g} \frac{d}{d\theta} \left [ cos\theta \sqrt{v^2 sin^2\theta + 2gh} \right ]\\[0.1cm]
+&amp;= \frac{v^2}{g} \left [ cos^2\theta - sin^2\theta \right ] + \frac{v}{g} \left [ cos\theta \left (v^2 sin^2\theta + 2gh\right )^{-1/2} \left ( 2 v^2 sin\theta cos\theta \right ) - sin\theta \sqrt{v^2 sin^2\theta + 2gh} \right ]\\[0.1cm]
+&amp;= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta}{\sqrt{v^2 sin^2\theta + 2gh}} - \frac{ sin\theta \left (v^2 sin^2\theta + 2gh \right )}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
+&amp;= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta}{\sqrt{v^2 sin^2\theta + 2gh}} - \frac{ v^2 sin^3\theta + 2gh sin\theta}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
+&amp;= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v}{g} \left [ \frac{ 2 v^2 sin\theta cos^2\theta - v^2 sin^3\theta + 2gh sin\theta}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
+&amp;= \frac{v^2}{g} cos \left (2\theta \right) + \frac{v sin\theta}{g} \left [ \frac{ 2 v^2 cos^2\theta - v^2 sin^2\theta + 2gh}{\sqrt{v^2 sin^2\theta + 2gh}} \right ]\\[0.1cm]
+\end{align}\]
 
-<p>But solving the final equation for <script type="math/tex">\theta</script> is a nightmare:</p>
+<p>But solving the final equation for \(\theta\) is a nightmare:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 0 = \frac{v^2}{g} cos \left (2\theta \right) + \frac{v sin\theta}{g} \left [ \frac{ 2 v^2 cos^2\theta - v^2 sin^2\theta + 2gh}{\sqrt{v^2 sin^2\theta + 2gh}} \right ] \hspace{7mm} :(
-\end{equation}</script>
+\end{equation}\]
 
 <p>Don’t believe me? Here is the <a href="https://www.wolframalpha.com/input/?i=Solve+0+%3D+v*cos%282*Theta%29+%2B+sin%28Theta%29*%282*v^2*cos%28Theta%29^2+-+v^2*sin%28Theta%29^2+%2B+2*g*h%29%2Fsqrt%28v^2*sin%28Theta%29^2+%2B+2*g*h%29+for+Theta">solution in Wolfram Alpha</a>. If you have a Wolfram account, feel free to run the problem with more computing time and see what you get!</p>
 
@@ -280,9 +269,9 @@ x_f &= v cos\theta t\\[0.1cm]
   <p><img src="http://localhost:4000/assets/images/2015-04-25/matlab.png" alt="Matlab Plot" /></p>
 </div>
 
-<p>Notice that the distance traveled is negative when the angle is greater than <script type="math/tex">\pi/2</script> radians. This is because we are effectively launching the projectile “backwards”. In any case, we see that as the height increases, the maximum range increases as well. Additionally, as the height increases, the maximum range occurs at smaller and smaller angles.</p>
+<p>Notice that the distance traveled is negative when the angle is greater than \(\pi/2\) radians. This is because we are effectively launching the projectile “backwards”. In any case, we see that as the height increases, the maximum range increases as well. Additionally, as the height increases, the maximum range occurs at smaller and smaller angles.</p>
 
-<p>Thus, we finally get to our result. If we are on a flat surface, the angle of maximum range is <script type="math/tex">45^\circ</script>. However, as we increase the initial height (h) of the projectile, we need to throw it at a shallower angle in order to get maximum distance (less than <script type="math/tex">45^\circ</script>).</p>
+<p>Thus, we finally get to our result. If we are on a flat surface, the angle of maximum range is \(45^\circ\). However, as we increase the initial height (h) of the projectile, we need to throw it at a shallower angle in order to get maximum distance (less than \(45^\circ\)).</p>
 
     </div>
 

@@ -130,57 +130,54 @@
 
 <p>If we want to study the thermodynamic properties of the quantum harmonic oscillator, then it makes sense to start our analysis with the derivation of the <a href="https://en.wikipedia.org/wiki/Partition_function_(statistical_mechanics)">partition function</a>. This is a quantum mechanical system with discrete energy levels; thus, the partition function has the form:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 Z = Tr \left ( e^{-\beta \hat{H}}\right )
-\end{equation}</script>
+\end{equation}\]
 
-<p>In the expression above, <script type="math/tex">\hat{H}</script> is the Hamiltonian of the system while <script type="math/tex">\beta</script> is the <a href="https://en.wikipedia.org/wiki/Thermodynamic_beta">thermodynamic beta</a>. Normally, taking the trace of a <a href="https://en.wikipedia.org/wiki/Matrix_exponential">matrix exponential</a> is a long and painful process. However, we can easily calculate this sum if we choose eigenvectors in the energy basis. The quantum harmonic oscillator has an infinite number of energy levels, indexed by the letter n.</p>
+<p>In the expression above, \(\hat{H}\) is the Hamiltonian of the system while \(\beta\) is the <a href="https://en.wikipedia.org/wiki/Thermodynamic_beta">thermodynamic beta</a>. Normally, taking the trace of a <a href="https://en.wikipedia.org/wiki/Matrix_exponential">matrix exponential</a> is a long and painful process. However, we can easily calculate this sum if we choose eigenvectors in the energy basis. The quantum harmonic oscillator has an infinite number of energy levels, indexed by the letter n.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-Z &= Tr \left ( e^{-\beta \hat{H}} \right )\\[0.1cm]
-&= \sum_{n=0}^\infty \left \langle n \right | e^{-\beta \hat{H}} \left | n \right \rangle\\[0.1cm]
-&= \sum_{n=0}^\infty e^{-\beta E_n}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+Z &amp;= Tr \left ( e^{-\beta \hat{H}} \right )\\[0.1cm]
+&amp;= \sum_{n=0}^\infty \left \langle n \right | e^{-\beta \hat{H}} \left | n \right \rangle\\[0.1cm]
+&amp;= \sum_{n=0}^\infty e^{-\beta E_n}\\[0.1cm]
+\end{align}\]
 
 <p>Students of quantum mechanics will recognize the familiar formula for the energy eigenvalues of the quantum harmonic oscillator.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 E_n = \left ( n + \frac{1}{2} \right ) \hbar \omega
-\end{equation}</script>
+\end{equation}\]
 
 <p>Plugging this expression for energy into the partition function yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-Z &= \sum_{n=0}^\infty e^{-\beta \left ( n + \frac{1}{2} \right ) \hbar \omega}\\[0.1cm]
-&= \sum_{n=0}^\infty e^{-\beta n \hbar \omega}e^{-\beta\hbar\omega/2}\\[0.1cm]
-&= e^{-\beta\hbar\omega/2} \sum_{n=0}^\infty e^{-\beta n \hbar \omega}\\[0.1cm]
-&= e^{-\beta\hbar\omega/2} \sum_{n=0}^\infty \left ( e^{-\beta \hbar \omega} \right )^n
-\end{align} %]]></script>
+\[\begin{align}
+Z &amp;= \sum_{n=0}^\infty e^{-\beta \left ( n + \frac{1}{2} \right ) \hbar \omega}\\[0.1cm]
+&amp;= \sum_{n=0}^\infty e^{-\beta n \hbar \omega}e^{-\beta\hbar\omega/2}\\[0.1cm]
+&amp;= e^{-\beta\hbar\omega/2} \sum_{n=0}^\infty e^{-\beta n \hbar \omega}\\[0.1cm]
+&amp;= e^{-\beta\hbar\omega/2} \sum_{n=0}^\infty \left ( e^{-\beta \hbar \omega} \right )^n
+\end{align}\]
 
-<p>The product <script type="math/tex">\beta \hbar \omega</script> is always positive, so the exponent in the sum is always going to be less than one. Thus, we can sum this exponent using a geometric series:</p>
+<p>The product \(\beta \hbar \omega\) is always positive, so the exponent in the sum is always going to be less than one. Thus, we can sum this exponent using a geometric series:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \sum_{n=0}^\infty x^n = \frac{1}{1 - x}
-\end{equation}</script>
+\end{equation}\]
 
 <p>The partition function becomes:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-Z &= e^{-\beta \hbar \omega/2} \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right )\\[0.1cm]
-&= \left ( \frac{1}{e^{\beta \hbar \omega/2}} \right ) \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right )\\[0.1cm]
-&= \frac{1}{e^{\beta \hbar \omega/2} - e^{-\beta \hbar \omega/2}}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+Z &amp;= e^{-\beta \hbar \omega/2} \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right )\\[0.1cm]
+&amp;= \left ( \frac{1}{e^{\beta \hbar \omega/2}} \right ) \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right )\\[0.1cm]
+&amp;= \frac{1}{e^{\beta \hbar \omega/2} - e^{-\beta \hbar \omega/2}}\\[0.1cm]
+\end{align}\]
 
 <p>If you want to be really fancy, you can write the partition function in terms of a <a href="http://www.nyu.edu/classes/tuckerman/stat.mech/lectures/lecture_13/node8.html">hyperbolic cosecant</a>.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 Z = \frac{1}{e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2}} = \frac{1}{2} csch \left ( \frac{\beta \hbar \omega}{2} \right )
-\end{equation}</script>
+\end{equation}\]
 
-<p>For me personally, a hyperbolic cosecant is all flash and no substance. We need to take derivatives and logorithms of the partition function in order to find the different thermodynamic properties. It is much easier to do that when the partition function is in terms of exponents instead of inverse hyperbolic functions! Shown below is a plot of the partition function versus temperature (T). I set <script type="math/tex">\hbar \omega = 1 \times 10^{-20}</script> J, corresponding to oscillations (<script type="math/tex">\omega</script>) in the infrared light frequency.</p>
+<p>For me personally, a hyperbolic cosecant is all flash and no substance. We need to take derivatives and logorithms of the partition function in order to find the different thermodynamic properties. It is much easier to do that when the partition function is in terms of exponents instead of inverse hyperbolic functions! Shown below is a plot of the partition function versus temperature (T). I set \(\hbar \omega = 1 \times 10^{-20}\) J, corresponding to oscillations (\(\omega\)) in the infrared light frequency.</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-10-04/partition_function.png" alt="Partition Function vs. Temperature" /></p>
@@ -190,27 +187,26 @@ Z = \frac{1}{e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2}} = \frac{1}{2} csc
 
 <p>Once I get the partition function for a system, I like to calculate the <a href="https://en.wikipedia.org/wiki/Helmholtz_free_energy">Helmholtz free energy</a> next. It usually is a pretty quick calculation, and it can be used as a stepping stone for future thermodynamic quantities. The definition of the Helmholtz free energy is:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 F = -\frac{1}{\beta} ln(Z)
-\end{equation}</script>
+\end{equation}\]
 
 <p>Since products can be separated within logarithms, I will use this slight raw form of the partition function rather than the final expression we got above:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 Z = e^{-\beta \hbar \omega/2} \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right )
-\end{equation}</script>
+\end{equation}\]
 
-<p>This will make the final expression look much nicer. Plugging in the expression for <script type="math/tex">Z</script> and simplifying yields:</p>
+<p>This will make the final expression look much nicer. Plugging in the expression for \(Z\) and simplifying yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F &= -\frac{1}{\beta} ln \left [ e^{-\beta \hbar \omega/2} \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right ) \right ]\\[0.1cm]
-&= -\frac{1}{\beta} ln \left ( e^{-\beta \hbar \omega/2} \right ) -\frac{1}{\beta} ln \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right )\\[0.1cm]
-&= -\frac{1}{\beta} \left (-\frac{\beta \hbar \omega}{2} \right ) + \frac{1}{\beta} ln \left ( 1 - e^{-\beta \hbar \omega} \right )\\[0.1cm]
-&= \frac{\hbar \omega}{2} + \frac{1}{\beta} ln \left ( 1 - e^{-\beta \hbar \omega} \right )
-\end{align} %]]></script>
+\[\begin{align}
+F &amp;= -\frac{1}{\beta} ln \left [ e^{-\beta \hbar \omega/2} \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right ) \right ]\\[0.1cm]
+&amp;= -\frac{1}{\beta} ln \left ( e^{-\beta \hbar \omega/2} \right ) -\frac{1}{\beta} ln \left ( \frac{1}{1 - e^{-\beta \hbar \omega}} \right )\\[0.1cm]
+&amp;= -\frac{1}{\beta} \left (-\frac{\beta \hbar \omega}{2} \right ) + \frac{1}{\beta} ln \left ( 1 - e^{-\beta \hbar \omega} \right )\\[0.1cm]
+&amp;= \frac{\hbar \omega}{2} + \frac{1}{\beta} ln \left ( 1 - e^{-\beta \hbar \omega} \right )
+\end{align}\]
 
-<p>Shown below is a plot of the Helmholtz free energy versus temperature (T). Once again, I set <script type="math/tex">\hbar \omega = 1 \times 10^{-20}</script> J, corresponding to oscillations (<script type="math/tex">\omega</script>) in the infrared light frequency. Notice how the x-axis (temperature) is extended to larger values in this plot.</p>
+<p>Shown below is a plot of the Helmholtz free energy versus temperature (T). Once again, I set \(\hbar \omega = 1 \times 10^{-20}\) J, corresponding to oscillations (\(\omega\)) in the infrared light frequency. Notice how the x-axis (temperature) is extended to larger values in this plot.</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-10-04/helmholtz_free_energy.png" alt="Helmholtz Free Energy vs. Temperature" /></p>
@@ -220,22 +216,21 @@ F &= -\frac{1}{\beta} ln \left [ e^{-\beta \hbar \omega/2} \left ( \frac{1}{1 - 
 
 <p>The <a href="https://en.wikipedia.org/wiki/Entropy">entropy</a> of the quantum harmonic oscillator is very straightforward to calculate once you have the Helmholtz free energy. Recall that the expression for entropy is:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 S = -\left ( \frac{\partial F}{\partial T} \right )_{V,N}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Let’s plug in the Helmholtz free energy and turn the crank!</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-S &= -\frac{\partial}{\partial T} \left [ \frac{\hbar \omega}{2} + \frac{1}{\beta} ln \left ( 1 - e^{-\beta \hbar \omega} \right ) \right ]\\[0.1cm]
-&= -\frac{\partial}{\partial T} \left [ kT ln \left ( 1 - e^{-\hbar \omega/(kT)} \right ) \right ]\\[0.1cm]
-&= -k ln \left ( 1 - e^{-\hbar \omega/(kT)} \right ) - \left (  \frac{kT}{1 - e^{-\hbar \omega/(kT)}} \right ) \left ( -\frac{\hbar\omega}{kT^2} e^{-\hbar\omega/(kT)} \right )\\[0.1cm]
-&= -k ln \left ( 1 - e^{-\hbar \omega/(kT)} \right ) + \left ( \frac{\hbar\omega}{T} \right ) \left (  \frac{e^{-\hbar\omega/(kT)}}{1 - e^{-\hbar \omega/(kT)}} \right )\\[0.1cm]
-&= -k ln \left ( 1 - e^{-\beta \hbar \omega} \right ) + \left ( \frac{\hbar\omega}{T} \right ) \left (  \frac{e^{-\beta \hbar\omega}}{1 - e^{-\beta \hbar \omega}} \right )
-\end{align} %]]></script>
+\[\begin{align}
+S &amp;= -\frac{\partial}{\partial T} \left [ \frac{\hbar \omega}{2} + \frac{1}{\beta} ln \left ( 1 - e^{-\beta \hbar \omega} \right ) \right ]\\[0.1cm]
+&amp;= -\frac{\partial}{\partial T} \left [ kT ln \left ( 1 - e^{-\hbar \omega/(kT)} \right ) \right ]\\[0.1cm]
+&amp;= -k ln \left ( 1 - e^{-\hbar \omega/(kT)} \right ) - \left (  \frac{kT}{1 - e^{-\hbar \omega/(kT)}} \right ) \left ( -\frac{\hbar\omega}{kT^2} e^{-\hbar\omega/(kT)} \right )\\[0.1cm]
+&amp;= -k ln \left ( 1 - e^{-\hbar \omega/(kT)} \right ) + \left ( \frac{\hbar\omega}{T} \right ) \left (  \frac{e^{-\hbar\omega/(kT)}}{1 - e^{-\hbar \omega/(kT)}} \right )\\[0.1cm]
+&amp;= -k ln \left ( 1 - e^{-\beta \hbar \omega} \right ) + \left ( \frac{\hbar\omega}{T} \right ) \left (  \frac{e^{-\beta \hbar\omega}}{1 - e^{-\beta \hbar \omega}} \right )
+\end{align}\]
 
-<p>Shown below is a plot of the entropy versus temperature (T). I set <script type="math/tex">\hbar \omega = 1 \times 10^{-20}</script> J, corresponding to oscillations (<script type="math/tex">\omega</script>) in the infrared light frequency.</p>
+<p>Shown below is a plot of the entropy versus temperature (T). I set \(\hbar \omega = 1 \times 10^{-20}\) J, corresponding to oscillations (\(\omega\)) in the infrared light frequency.</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-10-04/entropy.png" alt="Entropy vs. Temperature" /></p>
@@ -245,33 +240,31 @@ S &= -\frac{\partial}{\partial T} \left [ \frac{\hbar \omega}{2} + \frac{1}{\bet
 
 <p>Finally, we can calculate the average energy of the quantum harmonic oscillator.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \langle E \rangle = -\frac{\partial ln(Z)}{\partial \beta}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Plug the partition function into the formula above and work through the exponentials.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\langle E \rangle &= -\frac{\partial ln(Z)}{\partial \beta}\\[0.1cm]
-&= -\frac{\partial}{\partial \beta} \left [ ln \left ( \frac{1}{e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2}} \right ) \right ]\\[0.1cm]
-&= \frac{\partial}{\partial \beta} \left [ ln \left ( e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2} \right ) \right ]\\[0.1cm]
-&= \frac{\frac{\hbar\omega}{2} e^{\beta\hbar\omega/2} + \frac{\hbar\omega}{2} e^{-\beta\hbar\omega/2}}{e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2}}\\[0.1cm]
-&= \frac{\hbar\omega}{2} \frac{e^{\beta\hbar\omega/2} + e^{-\beta\hbar\omega/2}}{e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2}}\\[0.1cm]
-&= \frac{\hbar\omega}{2} \frac{1 + e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}
-\end{align} %]]></script>
+\[\begin{align}
+\langle E \rangle &amp;= -\frac{\partial ln(Z)}{\partial \beta}\\[0.1cm]
+&amp;= -\frac{\partial}{\partial \beta} \left [ ln \left ( \frac{1}{e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2}} \right ) \right ]\\[0.1cm]
+&amp;= \frac{\partial}{\partial \beta} \left [ ln \left ( e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2} \right ) \right ]\\[0.1cm]
+&amp;= \frac{\frac{\hbar\omega}{2} e^{\beta\hbar\omega/2} + \frac{\hbar\omega}{2} e^{-\beta\hbar\omega/2}}{e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2}}\\[0.1cm]
+&amp;= \frac{\hbar\omega}{2} \frac{e^{\beta\hbar\omega/2} + e^{-\beta\hbar\omega/2}}{e^{\beta\hbar\omega/2} - e^{-\beta\hbar\omega/2}}\\[0.1cm]
+&amp;= \frac{\hbar\omega}{2} \frac{1 + e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}
+\end{align}\]
 
 <p>We can simplify this problem further by adding and subtracting an exponential in the numerator.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\langle E \rangle &= \frac{\hbar\omega}{2} \frac{1 + e^{-\beta\hbar\omega} + e^{-\beta\hbar\omega} - e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}\\[0.1cm]
-&= \frac{\hbar\omega}{2} \frac{\left ( 1 - e^{-\beta\hbar\omega} \right ) + 2e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}\\[0.1cm]
-&= \frac{\hbar\omega}{2} \frac{1 - e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}} + \frac{\hbar\omega}{2} \frac{2e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}\\[0.1cm]
-&= \frac{\hbar\omega}{2} + \frac{\hbar\omega e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}
-\end{align} %]]></script>
+\[\begin{align}
+\langle E \rangle &amp;= \frac{\hbar\omega}{2} \frac{1 + e^{-\beta\hbar\omega} + e^{-\beta\hbar\omega} - e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}\\[0.1cm]
+&amp;= \frac{\hbar\omega}{2} \frac{\left ( 1 - e^{-\beta\hbar\omega} \right ) + 2e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}\\[0.1cm]
+&amp;= \frac{\hbar\omega}{2} \frac{1 - e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}} + \frac{\hbar\omega}{2} \frac{2e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}\\[0.1cm]
+&amp;= \frac{\hbar\omega}{2} + \frac{\hbar\omega e^{-\beta\hbar\omega}}{1 - e^{-\beta\hbar\omega}}
+\end{align}\]
 
-<p>The graph below shows the average energy of the system as a function of temperature. I set <script type="math/tex">\hbar \omega = 1 \times 10^{-20}</script> J, corresponding to oscillations (<script type="math/tex">\omega</script>) in the infrared light frequency.</p>
+<p>The graph below shows the average energy of the system as a function of temperature. I set \(\hbar \omega = 1 \times 10^{-20}\) J, corresponding to oscillations (\(\omega\)) in the infrared light frequency.</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-10-04/average_energy.png" alt="Average Energy vs. Temperature" /></p>
@@ -279,7 +272,7 @@ S &= -\frac{\partial}{\partial T} \left [ \frac{\hbar \omega}{2} + \frac{1}{\bet
 
 <h3 id="conclusions">Conclusions</h3>
 
-<p>And there we have it! We calculated and plotted some of the thermodynamic quantities corresponding to the quantum harmonic oscillator. Take a close look at the graphs for Helmholtz free energy and average energy. As the temperature approaches absolute zero, the energy does not go down to zero. Instead, it approaches <script type="math/tex">\hbar \omega/2</script>. This is the famous <a href="https://en.wikipedia.org/wiki/Zero-point_energy">zero-point energy</a> that physicists love to talk about so much!</p>
+<p>And there we have it! We calculated and plotted some of the thermodynamic quantities corresponding to the quantum harmonic oscillator. Take a close look at the graphs for Helmholtz free energy and average energy. As the temperature approaches absolute zero, the energy does not go down to zero. Instead, it approaches \(\hbar \omega/2\). This is the famous <a href="https://en.wikipedia.org/wiki/Zero-point_energy">zero-point energy</a> that physicists love to talk about so much!</p>
 
 <p>By the way, you might be wondering why I stopped with the thermodynamic quantities above. Why not calculate the chemical potential or the specific heat or any number of other quantities? Well, many of the other quantities only make sense if you have a collection of particles. With only one oscillator, chemical potential does not mean much.</p>
 

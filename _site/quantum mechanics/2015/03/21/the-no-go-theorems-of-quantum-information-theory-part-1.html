@@ -126,34 +126,32 @@
 
 <h3 id="the-no-cloning-theorem">The No-Cloning Theorem</h3>
 
-<p>This is a major theorem that most scientists learn early in their quantum computing career. The no-cloning theorem states that there is no unitary operator that can clone an arbitrary quantum state. The proof is pretty straightforward. Suppose there does exist some operator <script type="math/tex">U</script> that could clone an arbitrary quantum state:</p>
+<p>This is a major theorem that most scientists learn early in their quantum computing career. The no-cloning theorem states that there is no unitary operator that can clone an arbitrary quantum state. The proof is pretty straightforward. Suppose there does exist some operator \(U\) that could clone an arbitrary quantum state:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 | \psi \rangle = a |0 \rangle + b |1 \rangle
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 U \left [ | \psi \rangle | 0 \rangle \right ] = | \psi \rangle | \psi \rangle
-\end{equation}</script>
+\end{equation}\]
 
 <p>We will run into a contradiction. On the one hand:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-U \left [ | \psi \rangle | 0 \rangle \right ] &= U \left [ \left ( a |0 \rangle + b |1 \rangle \right ) | 0 \rangle \right ]\\[0.1cm]
-&= U \left [ a |00 \rangle + b |10 \rangle \right ]\\[0.1cm]
-&= a U |00 \rangle + b U |10 \rangle\\[0.1cm]
-&= a |00 \rangle + b |11 \rangle\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+U \left [ | \psi \rangle | 0 \rangle \right ] &amp;= U \left [ \left ( a |0 \rangle + b |1 \rangle \right ) | 0 \rangle \right ]\\[0.1cm]
+&amp;= U \left [ a |00 \rangle + b |10 \rangle \right ]\\[0.1cm]
+&amp;= a U |00 \rangle + b U |10 \rangle\\[0.1cm]
+&amp;= a |00 \rangle + b |11 \rangle\\[0.1cm]
+\end{align}\]
 
 <p>But on the other hand:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-U \left [ | \psi \rangle | 0 \rangle \right ] &= | \psi \rangle | \psi \rangle\\[0.1cm]
-&= \left [ a |0 \rangle + b |1 \rangle \right ] \left [ a |0 \rangle + b |1 \rangle \right ]\\[0.1cm]
-&= |a|^2 |0 \rangle |0 \rangle + |b|^2 |1 \rangle |1 \rangle + ab \left [ |01 \rangle + |10 \rangle \right ]\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+U \left [ | \psi \rangle | 0 \rangle \right ] &amp;= | \psi \rangle | \psi \rangle\\[0.1cm]
+&amp;= \left [ a |0 \rangle + b |1 \rangle \right ] \left [ a |0 \rangle + b |1 \rangle \right ]\\[0.1cm]
+&amp;= |a|^2 |0 \rangle |0 \rangle + |b|^2 |1 \rangle |1 \rangle + ab \left [ |01 \rangle + |10 \rangle \right ]\\[0.1cm]
+\end{align}\]
 
 <p>In general, these expressions are not equal, so U cannot exist (proof by contradiction).</p>
 

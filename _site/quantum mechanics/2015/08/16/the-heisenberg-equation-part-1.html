@@ -120,9 +120,9 @@
 
 <p>Most students of quantum mechanics are familiar with the <a href="http://scienceworld.wolfram.com/physics/SchroedingerEquation.html">Schrodinger equation</a>:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 i\hbar \frac{d \psi (t)}{dt} = H \psi (t)
-\end{equation}</script>
+\end{equation}\]
 
 <p>It is the starting point for a huge number of derivations and solutions in the quantum world. Arguably, it is the most important equation in non-relativistic quantum mechanics. However, the Schrodinger equation has an often neglected twin brother - the Heisenberg equation. If we simply shift our focus from <a href="https://en.wikipedia.org/wiki/Wave_function">wavefunctions</a> to <a href="https://en.wikipedia.org/wiki/Operator_(physics)">operators</a>, we find that the quantum world is much deeper than we once thought.</p>
 
@@ -134,156 +134,148 @@ i\hbar \frac{d \psi (t)}{dt} = H \psi (t)
 
 <h3 id="the-time-evolution-of-an-expectation-value">The Time Evolution of an Expectation Value</h3>
 
-<p>Suppose I have some operator <script type="math/tex">Q</script> with an expectation value given by:</p>
+<p>Suppose I have some operator \(Q\) with an expectation value given by:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \left \langle Q \right \rangle = \left \langle \psi (t) \right | Q \left | \psi (t) \right \rangle \equiv \left \langle \psi \right | Q \left | \psi \right \rangle
-\end{equation}</script>
+\end{equation}\]
 
-<p>I want to calculate how <script type="math/tex">\left \langle Q \right \rangle</script> evolves as a function of time. To start off I can take a time derivative of the expression above and expand it using the <a href="https://en.wikipedia.org/wiki/Product_rule">product rule</a>.</p>
+<p>I want to calculate how \(\left \langle Q \right \rangle\) evolves as a function of time. To start off I can take a time derivative of the expression above and expand it using the <a href="https://en.wikipedia.org/wiki/Product_rule">product rule</a>.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{d}{dt} \left \langle Q \right \rangle &= \frac{d}{dt} \left [ \left \langle \psi \right | Q \left | \psi \right \rangle \right ]\\[0.1cm]
-&= \left \langle \frac{d \psi}{dt} \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \frac{d \psi}{dt} \right \rangle
-\end{align} %]]></script>
+\[\begin{align}
+\frac{d}{dt} \left \langle Q \right \rangle &amp;= \frac{d}{dt} \left [ \left \langle \psi \right | Q \left | \psi \right \rangle \right ]\\[0.1cm]
+&amp;= \left \langle \frac{d \psi}{dt} \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \frac{d \psi}{dt} \right \rangle
+\end{align}\]
 
 <p>The Schrodinger equation tells us how the time derivative of the wavefunction is related to the Hamiltonian of the system. Thus, we can substitute the expression for the Hamiltonian in for the time derivatives. Remember, we do have to take into account the fact that the bra and ket terms differ by a minus sign:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
  \left | \frac{d\psi}{dt} \right \rangle =  \left | \frac{1}{i\hbar} H \psi \right \rangle
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \left \langle \frac{d\psi}{dt} \right | = \left \langle -\frac{1}{i\hbar} H \psi \right |
-\end{equation}</script>
+\end{equation}\]
 
 <p>Then:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{d}{dt} \left \langle Q \right \rangle &= \left \langle \frac{d \psi}{dt} \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \frac{d \psi}{dt} \right \rangle\\[0.1cm]
-&= \left \langle \left ( -\frac{1}{i\hbar}H\psi \right ) \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \left ( \frac{1}{i\hbar}H\psi \right ) \right \rangle\\[0.1cm]
-&= \left \langle \left ( -\frac{1}{i\hbar}H\psi \right ) \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \left ( \frac{1}{i\hbar}H\psi \right ) \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle
-\end{align} %]]></script>
+\[\begin{align}
+\frac{d}{dt} \left \langle Q \right \rangle &amp;= \left \langle \frac{d \psi}{dt} \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \frac{d \psi}{dt} \right \rangle\\[0.1cm]
+&amp;= \left \langle \left ( -\frac{1}{i\hbar}H\psi \right ) \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \left ( \frac{1}{i\hbar}H\psi \right ) \right \rangle\\[0.1cm]
+&amp;= \left \langle \left ( -\frac{1}{i\hbar}H\psi \right ) \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \psi \right \rangle + \left \langle \psi \bigg | \hspace{0.5mm} Q \hspace{0.5mm} \bigg | \left ( \frac{1}{i\hbar}H\psi \right ) \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle
+\end{align}\]
 
-<p>Factoring out the <script type="math/tex">-(i\hbar)^{-1}</script> term yields:</p>
+<p>Factoring out the \(-(i\hbar)^{-1}\) term yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{d}{dt} \left \langle Q \right \rangle &= -\frac{1}{i\hbar} \left [ \left \langle H \psi \right | Q \left | \psi \right \rangle - \left \langle \psi \right | Q \left | H \psi \right \rangle \right ] + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle\\[0.1cm]
-&= -\frac{1}{i\hbar} \left [ \left \langle \psi \right | HQ \left | \psi \right \rangle - \left \langle \psi \right | QH \left | \psi \right \rangle \right ] + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle\\[0.1cm]
-&= -\frac{1}{i\hbar} \left \langle \psi \right | HQ - QH \left | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle\\[0.1cm]
-&= -\frac{1}{i\hbar} \left \langle \psi \right | [H,Q] \left | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+\frac{d}{dt} \left \langle Q \right \rangle &amp;= -\frac{1}{i\hbar} \left [ \left \langle H \psi \right | Q \left | \psi \right \rangle - \left \langle \psi \right | Q \left | H \psi \right \rangle \right ] + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle\\[0.1cm]
+&amp;= -\frac{1}{i\hbar} \left [ \left \langle \psi \right | HQ \left | \psi \right \rangle - \left \langle \psi \right | QH \left | \psi \right \rangle \right ] + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle\\[0.1cm]
+&amp;= -\frac{1}{i\hbar} \left \langle \psi \right | HQ - QH \left | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle\\[0.1cm]
+&amp;= -\frac{1}{i\hbar} \left \langle \psi \right | [H,Q] \left | \psi \right \rangle + \left \langle \psi \bigg | \frac{dQ}{dt} \bigg | \psi \right \rangle\\[0.1cm]
+\end{align}\]
 
 <p>Now we can write out the final expression for the time evolution of the expectation value:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{d\left \langle Q \right \rangle}{dt} = \frac{i}{\hbar} \left \langle [H,Q] \right \rangle + \left \langle \frac{dQ}{dt} \right \rangle
-\end{equation}</script>
+\end{equation}\]
 
-<p>This is a neat result! It gives a simple expression for the time evolution of the expectation value of <script type="math/tex">Q</script>.</p>
+<p>This is a neat result! It gives a simple expression for the time evolution of the expectation value of \(Q\).</p>
 
 <h3 id="the-heisenberg-equation">The Heisenberg Equation</h3>
 
 <p>Let’s take a step back and approach quantum mechanics in a slightly different way. In the last section we assumed that the operators were constant in time and the wavefunction had some time dependence. Now, we will assume that the wavefunction is constant in time and move the time dependence to the operators.</p>
 
-<p>The wavefunction of a particle at some final time <script type="math/tex">t</script> is equal to the wavefunction of the particle at some initial time <script type="math/tex">t_o</script> multiplied by a <a href="https://en.wikipedia.org/wiki/Unitary_operator">unitary operator</a>.</p>
+<p>The wavefunction of a particle at some final time \(t\) is equal to the wavefunction of the particle at some initial time \(t_o\) multiplied by a <a href="https://en.wikipedia.org/wiki/Unitary_operator">unitary operator</a>.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \psi (t) = U(t,t_o) \psi (t_o)
-\end{equation}</script>
+\end{equation}\]
 
-<p>In the expression above, <script type="math/tex">\psi(t_o)</script> is a constant wavefunction and the unitary operator <script type="math/tex">U</script> carries all of the time dependence of the system. We can substitute the expression for <script type="math/tex">\psi(t)</script> into the Schrodinger equation and solve for <script type="math/tex">U</script>:</p>
+<p>In the expression above, \(\psi(t_o)\) is a constant wavefunction and the unitary operator \(U\) carries all of the time dependence of the system. We can substitute the expression for \(\psi(t)\) into the Schrodinger equation and solve for \(U\):</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 i\hbar \frac{d\psi(t)}{dt} = H \psi(t)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 i\hbar \frac{d}{dt} \left [ U(t,t_o) \psi (t_o) \right ] = H U(t,t_o) \psi (t_o)
-\end{equation}</script>
+\end{equation}\]
 
-<p>The unitary operator <script type="math/tex">U</script> is a function of time <script type="math/tex">t</script>. However, the wavefunction <script type="math/tex">\psi(t_o)</script> is not a function of <script type="math/tex">t</script>. Thus, we can pull <script type="math/tex">\psi(t_o)</script> out of the time derivative.</p>
+<p>The unitary operator \(U\) is a function of time \(t\). However, the wavefunction \(\psi(t_o)\) is not a function of \(t\). Thus, we can pull \(\psi(t_o)\) out of the time derivative.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 i\hbar \frac{dU(t,t_o)}{dt} \psi (t_o) = H U(t,t_o) \psi (t_o)
-\end{equation}</script>
+\end{equation}\]
 
-<p>This expression needs to be true for any initial condition <script type="math/tex">\psi(t_o)</script>. Thus, we will cancel <script type="math/tex">\psi(t_o)</script> on each side of the expression.</p>
+<p>This expression needs to be true for any initial condition \(\psi(t_o)\). Thus, we will cancel \(\psi(t_o)\) on each side of the expression.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 i\hbar \frac{dU(t,t_o)}{dt} = H U(t,t_o)
-\end{equation}</script>
+\end{equation}\]
 
-<p>Just to simplify our notation, we will let <script type="math/tex">U(t,t_o) \equiv U</script>.</p>
+<p>Just to simplify our notation, we will let \(U(t,t_o) \equiv U\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 i\hbar \frac{dU}{dt} = HU
-\end{equation}</script>
+\end{equation}\]
 
-<p>That is pretty neat. The expression for <script type="math/tex">U</script> above is almost identical to the expression for <script type="math/tex">\psi(t)</script> in the previous section. Let’s solve for the expectation value of some operator <script type="math/tex">Q</script> like we did in the previous section. Starting with the definition of an expectation value, we get:</p>
+<p>That is pretty neat. The expression for \(U\) above is almost identical to the expression for \(\psi(t)\) in the previous section. Let’s solve for the expectation value of some operator \(Q\) like we did in the previous section. Starting with the definition of an expectation value, we get:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\left \langle Q \right \rangle &= \left \langle \psi (t) \right | Q \left | \psi (t) \right \rangle\\[0.1cm]
-&= \left \langle \psi (t_o) U^\dagger \right | Q \left | U \psi (t_o) \right \rangle\\[0.1cm]
-&= \left \langle \psi (t_o) \right | U^\dagger Q U \left | \psi (t_o) \right \rangle\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+\left \langle Q \right \rangle &amp;= \left \langle \psi (t) \right | Q \left | \psi (t) \right \rangle\\[0.1cm]
+&amp;= \left \langle \psi (t_o) U^\dagger \right | Q \left | U \psi (t_o) \right \rangle\\[0.1cm]
+&amp;= \left \langle \psi (t_o) \right | U^\dagger Q U \left | \psi (t_o) \right \rangle\\[0.1cm]
+\end{align}\]
 
-<p>We can rewrite the time-dependent operator in terms of the time-independent operator and a unitary operator. To keep our notation clear, I will call <script type="math/tex">Q_H</script> the time-dependent operator and <script type="math/tex">Q_S \equiv Q</script> the time-independent operator. Those of you who have taken an advanced course in quantum mechanics might recognize these as the Heisenberg and Schrodinger pictures of the operator.</p>
+<p>We can rewrite the time-dependent operator in terms of the time-independent operator and a unitary operator. To keep our notation clear, I will call \(Q_H\) the time-dependent operator and \(Q_S \equiv Q\) the time-independent operator. Those of you who have taken an advanced course in quantum mechanics might recognize these as the Heisenberg and Schrodinger pictures of the operator.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 Q_H = U^\dagger Q_S U \equiv U^\dagger Q U
-\end{equation}</script>
+\end{equation}\]
 
 <p>We can now solve for the time evolution of the Heisenberg operator.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{dQ_H}{dt} &= \frac{d}{dt} \left [ U^\dagger Q U \right ]\\[0.1cm]
-&= \frac{d U^\dagger}{dt} QU + U^\dagger \frac{dQ}{dt} U + U^\dagger Q \frac{d U}{dt}
-\end{align} %]]></script>
+\[\begin{align}
+\frac{dQ_H}{dt} &amp;= \frac{d}{dt} \left [ U^\dagger Q U \right ]\\[0.1cm]
+&amp;= \frac{d U^\dagger}{dt} QU + U^\dagger \frac{dQ}{dt} U + U^\dagger Q \frac{d U}{dt}
+\end{align}\]
 
-<p>Similar to section one, we can expand <script type="math/tex">dU/dt</script> using the Hamiltonian.</p>
+<p>Similar to section one, we can expand \(dU/dt\) using the Hamiltonian.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{dU}{dt} = \frac{1}{i\hbar} HU
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{dU^\dagger}{dt} = -\frac{1}{i\hbar} U^\dagger H
-\end{equation}</script>
+\end{equation}\]
 
 <p>Then:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{dQ_H}{dt} &= \left ( -\frac{1}{i\hbar} U^\dagger H \right ) QU + U^\dagger \frac{dQ}{dt} U + U^\dagger Q \left ( \frac{1}{i\hbar} HU \right )\\[0.1cm]
-&= -\frac{1}{i\hbar} U^\dagger HQU + \frac{1}{i\hbar} U^\dagger Q HU + U^\dagger \frac{dQ}{dt} U
-\end{align} %]]></script>
+\[\begin{align}
+\frac{dQ_H}{dt} &amp;= \left ( -\frac{1}{i\hbar} U^\dagger H \right ) QU + U^\dagger \frac{dQ}{dt} U + U^\dagger Q \left ( \frac{1}{i\hbar} HU \right )\\[0.1cm]
+&amp;= -\frac{1}{i\hbar} U^\dagger HQU + \frac{1}{i\hbar} U^\dagger Q HU + U^\dagger \frac{dQ}{dt} U
+\end{align}\]
 
-<p>Recall that <script type="math/tex">U^\dagger U = U U^\dagger = 1</script> for a unitary operator. Then:</p>
+<p>Recall that \(U^\dagger U = U U^\dagger = 1\) for a unitary operator. Then:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{dQ_H}{dt} &= -\frac{1}{i\hbar} U^\dagger HQU + \frac{1}{i\hbar} U^\dagger Q HU + U^\dagger \frac{dQ}{dt} U\\[0.1cm]
-&= -\frac{1}{i\hbar} U^\dagger HU U^\dagger QU + \frac{1}{i\hbar} U^\dagger QU U^\dagger HU + U^\dagger \frac{dQ}{dt} U\\[0.1cm]
-&= -\frac{1}{i\hbar} H Q_H + \frac{1}{i\hbar} Q_H H + U^\dagger \frac{dQ}{dt} U
-\end{align} %]]></script>
+\[\begin{align}
+\frac{dQ_H}{dt} &amp;= -\frac{1}{i\hbar} U^\dagger HQU + \frac{1}{i\hbar} U^\dagger Q HU + U^\dagger \frac{dQ}{dt} U\\[0.1cm]
+&amp;= -\frac{1}{i\hbar} U^\dagger HU U^\dagger QU + \frac{1}{i\hbar} U^\dagger QU U^\dagger HU + U^\dagger \frac{dQ}{dt} U\\[0.1cm]
+&amp;= -\frac{1}{i\hbar} H Q_H + \frac{1}{i\hbar} Q_H H + U^\dagger \frac{dQ}{dt} U
+\end{align}\]
 
-<p>Factoring out the <script type="math/tex">-(i\hbar)^{-1}</script> term yields:</p>
+<p>Factoring out the \(-(i\hbar)^{-1}\) term yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{dQ_H}{dt} &= -\frac{1}{i\hbar} H Q_H + \frac{1}{i\hbar} Q_H H + U^\dagger \frac{dQ}{dt} U\\[0.1cm]
-&= -\frac{1}{i\hbar} \left [ H Q_H - Q_H H \right ] + U^\dagger \frac{dQ}{dt} U
-\end{align} %]]></script>
+\[\begin{align}
+\frac{dQ_H}{dt} &amp;= -\frac{1}{i\hbar} H Q_H + \frac{1}{i\hbar} Q_H H + U^\dagger \frac{dQ}{dt} U\\[0.1cm]
+&amp;= -\frac{1}{i\hbar} \left [ H Q_H - Q_H H \right ] + U^\dagger \frac{dQ}{dt} U
+\end{align}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{dQ_H}{dt} = \frac{i}{\hbar} \left [H, Q_H \right ] + \left ( \frac{dQ}{dt} \right )_H
-\end{equation}</script>
+\end{equation}\]
 
 <h3 id="arent-those-answers-exactly-the-same">Aren’t Those Answers Exactly the Same?</h3>
 

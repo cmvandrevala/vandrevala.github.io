@@ -118,37 +118,36 @@
     <div class="body">
       <h3 id="tying-up-loose-ends">Tying Up Loose Ends</h3>
 
-<p>Last week I derived two equations that describe the motion of a pair of orbiting bodies. The first equation gives the time rate of change of the angle <script type="math/tex">\theta</script>.</p>
+<p>Last week I derived two equations that describe the motion of a pair of orbiting bodies. The first equation gives the time rate of change of the angle \(\theta\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 r^2 \dot{\theta} = C
-\end{equation}</script>
+\end{equation}\]
 
-<p>The second equation relates the radius of the orbit to the angle <script type="math/tex">\theta</script>.</p>
+<p>The second equation relates the radius of the orbit to the angle \(\theta\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 r(\theta) = \frac{C^2}{GM \left [1 - ecos\theta \right ]}
-\end{equation}</script>
+\end{equation}\]
 
-<p>Recall that <script type="math/tex">\vec{r} = \vec{r}_2 - \vec{r}_1</script> where <script type="math/tex">\vec{r}_2</script> and <script type="math/tex">\vec{r}_1</script> are the positions of the two bodies and <script type="math/tex">\theta</script> is the angle measured from the x-axis in the xy plane (see <a href="http://mathworld.wolfram.com/SphericalCoordinates.html">Wolfram Mathworld</a> for a diagram). When we did the calculation we defined two constants, e and C, without going into much detail about what they actually represent. Let’s take a closer look at them now.</p>
+<p>Recall that \(\vec{r} = \vec{r}_2 - \vec{r}_1\) where \(\vec{r}_2\) and \(\vec{r}_1\) are the positions of the two bodies and \(\theta\) is the angle measured from the x-axis in the xy plane (see <a href="http://mathworld.wolfram.com/SphericalCoordinates.html">Wolfram Mathworld</a> for a diagram). When we did the calculation we defined two constants, e and C, without going into much detail about what they actually represent. Let’s take a closer look at them now.</p>
 
 <h3 id="keplers-second-law">Kepler’s Second Law</h3>
 
 <p>I am going to do things just a bit out of order; let’s analyze Kepler’s second law before the first law. We start off with the expression:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 C = r^2 \dot{\theta}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Let’s expand the right hand side of the expression:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-C &= r^2 \dot{\theta}\\[0.1cm]
-&= r (r \dot{\theta})\\[0.1cm]
-&= r v_\perp\\[0.1cm]
-&= \vec{r} \times \vec{v}
-\end{align} %]]></script>
+\[\begin{align}
+C &amp;= r^2 \dot{\theta}\\[0.1cm]
+&amp;= r (r \dot{\theta})\\[0.1cm]
+&amp;= r v_\perp\\[0.1cm]
+&amp;= \vec{r} \times \vec{v}
+\end{align}\]
 
 <p>The variable C is simply the angular momentum of the system. Since there are no external forces or torques acting on the orbiting bodies, this quantity is conserved.</p>
 
@@ -160,20 +159,19 @@ C &= r^2 \dot{\theta}\\[0.1cm]
 
 <p>We can approximate the area traced out as the area of a triangle:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 dA = \frac{1}{2} r (r d\theta)
-\end{equation}</script>
+\end{equation}\]
 
 <p>Now we can take a time derivative of the expression above:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{dA}{dt} &= \frac{\frac{1}{2} r (r d\theta)}{dt}\\[0.1cm]
-&= \frac{r^2}{2} \frac{d\theta}{dt}\\[0.1cm]
-&= \frac{r^2}{2} \dot{\theta}\\[0.1cm]
-&= \frac{r^2}{2} \frac{C}{r^2}\\[0.1cm]
-&= \frac{C}{2}
-\end{align} %]]></script>
+\[\begin{align}
+\frac{dA}{dt} &amp;= \frac{\frac{1}{2} r (r d\theta)}{dt}\\[0.1cm]
+&amp;= \frac{r^2}{2} \frac{d\theta}{dt}\\[0.1cm]
+&amp;= \frac{r^2}{2} \dot{\theta}\\[0.1cm]
+&amp;= \frac{r^2}{2} \frac{C}{r^2}\\[0.1cm]
+&amp;= \frac{C}{2}
+\end{align}\]
 
 <p>Thus, we have derived Kepler’s second law. The motion of the orbit traces out equal areas in equal times (since C is a constant).</p>
 
@@ -181,74 +179,72 @@ dA = \frac{1}{2} r (r d\theta)
 
 <p>Now that we know that C is the constant angular momentum of the system, we can take a closer look at the radial equation from above:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 r(\theta) = \frac{C^2}{GM \left [1 - ecos\theta \right ]}
-\end{equation}</script>
+\end{equation}\]
 
-<p>Just to simplify the expression, let <script type="math/tex">p \equiv C^2/GM</script>. Then the equation becomes:</p>
+<p>Just to simplify the expression, let \(p \equiv C^2/GM\). Then the equation becomes:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 r(\theta) = \frac{p}{1 - ecos\theta}
-\end{equation}</script>
+\end{equation}\]
 
-<p>But this is simply the equation for a conic section in polar form! The constant e defines the shape of the conic section. If <script type="math/tex">e = 0</script>, the equation becomes:</p>
+<p>But this is simply the equation for a conic section in polar form! The constant e defines the shape of the conic section. If \(e = 0\), the equation becomes:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 r(\theta) = \frac{p}{1} = p
-\end{equation}</script>
+\end{equation}\]
 
-<p>This means that the radius of the orbit is a constant value at every angle. In other words, the orbit is circular. If <script type="math/tex">% <![CDATA[
-0 < e < 1 %]]></script>, then the shape of the orbit is an ellipse. The constant e represents the eccentricity of the orbit (i.e. how circular it is). If the eccentricity of the orbit is close to zero, the orbit is relatively circular. If the eccentricity of the orbit is close to one, the orbit traces out a very skinny ellipse. Thus, we see that the orbits are ellipses or circles (Kepler’s second law).</p>
+<p>This means that the radius of the orbit is a constant value at every angle. In other words, the orbit is circular. If \(0 &lt; e &lt; 1\), then the shape of the orbit is an ellipse. The constant e represents the eccentricity of the orbit (i.e. how circular it is). If the eccentricity of the orbit is close to zero, the orbit is relatively circular. If the eccentricity of the orbit is close to one, the orbit traces out a very skinny ellipse. Thus, we see that the orbits are ellipses or circles (Kepler’s second law).</p>
 
-<p>Remember, when <script type="math/tex">e \ge 1</script> the orbit traces out either a parabolic or hyperbolic arc. These are not bound orbits, so we will not focus on them here.</p>
+<p>Remember, when \(e \ge 1\) the orbit traces out either a parabolic or hyperbolic arc. These are not bound orbits, so we will not focus on them here.</p>
 
 <h3 id="keplers-third-law">Kepler’s Third Law</h3>
 
 <p>We can use the information above to derive Kepler’s third law. First, we remember that the time derivative of the area traced out by an orbiting body is a constant:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{dA}{dt} = \frac{C}{2}
-\end{equation}</script>
+\end{equation}\]
 
 <p>We know that the period of the orbit is given by the total area traced out by the orbit (i.e. the area of an ellipse) divided by the time rate of change of the area:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 T = \frac{A}{\frac{dA}{dt}}
-\end{equation}</script>
+\end{equation}\]
 
-<p>The area of an ellipse is given by <script type="math/tex">\pi a b</script> where a and b are the <a href="http://mathworld.wolfram.com/Ellipse.html">major and minor radii of the ellipse</a>. Then:</p>
+<p>The area of an ellipse is given by \(\pi a b\) where a and b are the <a href="http://mathworld.wolfram.com/Ellipse.html">major and minor radii of the ellipse</a>. Then:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 T = \frac{2 \pi a b}{C}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Then we can use the <a href="http://mathworld.wolfram.com/Ellipse.html">properties of an ellipse</a> to simplify the expression:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 a = \frac{p}{1 - e^2}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 b = \sqrt{1 - e^2} a
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 C = \sqrt{GMp}
-\end{equation}</script>
+\end{equation}\]
 
 <p>We will square the expression for the orbital period and plug in the equations above:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-T^2 &= \frac{4 \pi^2 a^2 b^2}{C^2}\\[0.1cm]
-&= \frac{4 \pi^2 a^2 (1 - e^2) a^2}{GMp}\\[0.1cm]
-&= \frac{4 \pi^2 a^4 (1 - e^2)}{GM[a(1-e^2)]}\\[0.1cm]
-&= \frac{4 \pi^2 a^3}{GM}\\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+T^2 &amp;= \frac{4 \pi^2 a^2 b^2}{C^2}\\[0.1cm]
+&amp;= \frac{4 \pi^2 a^2 (1 - e^2) a^2}{GMp}\\[0.1cm]
+&amp;= \frac{4 \pi^2 a^4 (1 - e^2)}{GM[a(1-e^2)]}\\[0.1cm]
+&amp;= \frac{4 \pi^2 a^3}{GM}\\[0.1cm]
+\end{align}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 T^2 = \frac{4 \pi^2 a^3}{GM}
-\end{equation}</script>
+\end{equation}\]
 
 <p>And this is Kepler’s Third Law. The period of the orbit squared is proportional to the major radius of the orbit cubed.</p>
 

@@ -124,133 +124,125 @@
 
 <p>Consider a classical Hamiltonian for a single particle:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \mathcal{H} = \frac{\vec{p}^2}{2m} + U(\vec{x},t)
-\end{equation}</script>
+\end{equation}\]
 
 <p>The first term represents the total kinetic energy of the particle, and the second term represents the total potential energy of the particle. We want to update this Hamiltonian to include the effects of an external electromagnetic field. Although we do not know the exact form of the Hamiltonian just yet, we do know a few properties that must be satisfied:</p>
 
 <ol>
   <li>The Hamiltonian should be reasonably simple since Maxwell’s equations are all linear.</li>
-  <li>Electromagnetic fields can be expressed in terms of a scalar and vector potentials (<script type="math/tex">\phi</script> and <script type="math/tex">\vec{A}</script>). Thus, our Hamiltonian should have additional <script type="math/tex">\phi</script> and <script type="math/tex">\vec{A}</script> terms.</li>
-  <li>Electromagnetic fields have momentum and energy. Thus, we have to alter both <script type="math/tex">\vec{p}</script> and <script type="math/tex">U</script> in the expression above.</li>
+  <li>Electromagnetic fields can be expressed in terms of a scalar and vector potentials (\(\phi\) and \(\vec{A}\)). Thus, our Hamiltonian should have additional \(\phi\) and \(\vec{A}\) terms.</li>
+  <li>Electromagnetic fields have momentum and energy. Thus, we have to alter both \(\vec{p}\) and \(U\) in the expression above.</li>
 </ol>
 
 <p>Let’s try something simple; we will insert the scalar and vector potential into the expression by making the following changes:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{p} \rightarrow \vec{p} - e\vec{A}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 U = e\phi
-\end{equation}</script>
+\end{equation}\]
 
-<p>In the first expression, we subtract the momentum of the electromagnetic field from the momentum of the particle to get the total momentum of the system. In the second expression, we state that the total potential energy of the system is equal to the charge on the particle times the scalar potential. In both expressions, the charge on the particle is <script type="math/tex">e</script>. Note that this is a general expression - the variable <script type="math/tex">e</script> is not necessarily the negative charge on an electron. Then, the Hamiltonian becomes:</p>
+<p>In the first expression, we subtract the momentum of the electromagnetic field from the momentum of the particle to get the total momentum of the system. In the second expression, we state that the total potential energy of the system is equal to the charge on the particle times the scalar potential. In both expressions, the charge on the particle is \(e\). Note that this is a general expression - the variable \(e\) is not necessarily the negative charge on an electron. Then, the Hamiltonian becomes:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \mathcal{H} = \frac{\left ( \vec{p} - e\vec{A} \right )^2}{2m} + e\phi
-\end{equation}</script>
+\end{equation}\]
 
 <p>How do we know that this Hamiltonian is correct? Well, if we analyze it using Hamilton’s equations, we had better recover the classical equations of motion for a charged particle in an electromagnetic field.</p>
 
-<p>Let’s start with the time derivative of canonical position. In this case, the canonical position <script type="math/tex">q_i</script> is equal to the coordinate position <script type="math/tex">x_i</script>. Taking the derivative with respect to momentum yields:</p>
+<p>Let’s start with the time derivative of canonical position. In this case, the canonical position \(q_i\) is equal to the coordinate position \(x_i\). Taking the derivative with respect to momentum yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\dot{q_i} &= \frac{d\mathcal{H}}{dp_i} \\[0.1cm]
-&= \frac{d}{dp_i} \left [ \frac{\left ( p_i - eA_i \right )^2}{2m} + e\phi \right ] \\[0.1cm]
-&= \frac{2 \left ( p_i - eA_i \right ) }{2m} \\[0.1cm]
-&= \frac{1}{m} \left ( p_i - eA_i \right )
-\end{align} %]]></script>
+\[\begin{align}
+\dot{q_i} &amp;= \frac{d\mathcal{H}}{dp_i} \\[0.1cm]
+&amp;= \frac{d}{dp_i} \left [ \frac{\left ( p_i - eA_i \right )^2}{2m} + e\phi \right ] \\[0.1cm]
+&amp;= \frac{2 \left ( p_i - eA_i \right ) }{2m} \\[0.1cm]
+&amp;= \frac{1}{m} \left ( p_i - eA_i \right )
+\end{align}\]
 
 <p>Multiplying each side by the mass of the particle and solving for the particle momentum gives:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-m \dot{q_i} &= p_i - eA_i \\[0.1cm]
-m \dot{x_i} &= p_i - eA_i \\[0.1cm]
-p_i &= m\dot{x}_i + eA_i
-\end{align} %]]></script>
+\[\begin{align}
+m \dot{q_i} &amp;= p_i - eA_i \\[0.1cm]
+m \dot{x_i} &amp;= p_i - eA_i \\[0.1cm]
+p_i &amp;= m\dot{x}_i + eA_i
+\end{align}\]
 
 <p>Now we can compute the time derivative of the momentum of the particle.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\dot{p}_i &= -\frac{d\mathcal{H}}{dq_i} \\[0.1cm]
-&= -\frac{d\mathcal{H}}{dx_i} \\[0.1cm]
-&= -\frac{d}{dx_i} \left [ \frac{\left ( p_i - eA_i \right )^2}{2m} + e\phi \right ] \\[0.1cm]
-&= - \frac{2 \left ( p_i - eA_i \right ) \frac{d}{dx_i} \left [ p_i - eA_i \right ] }{2m} - e\frac{d\phi}{dx_i} \\[0.1cm]
-&= - \frac{1}{m} \left ( p_i - eA_i \right ) \left ( \frac{dp_i}{dx_i} - e\frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i}
-\end{align} %]]></script>
+\[\begin{align}
+\dot{p}_i &amp;= -\frac{d\mathcal{H}}{dq_i} \\[0.1cm]
+&amp;= -\frac{d\mathcal{H}}{dx_i} \\[0.1cm]
+&amp;= -\frac{d}{dx_i} \left [ \frac{\left ( p_i - eA_i \right )^2}{2m} + e\phi \right ] \\[0.1cm]
+&amp;= - \frac{2 \left ( p_i - eA_i \right ) \frac{d}{dx_i} \left [ p_i - eA_i \right ] }{2m} - e\frac{d\phi}{dx_i} \\[0.1cm]
+&amp;= - \frac{1}{m} \left ( p_i - eA_i \right ) \left ( \frac{dp_i}{dx_i} - e\frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i}
+\end{align}\]
 
-<p>In our system, we will assume that the momentum <script type="math/tex">\vec{p}</script> does not directly depend on the position (translational invariance). Thus, the derivative of momentum with respect to position is zero.</p>
+<p>In our system, we will assume that the momentum \(\vec{p}\) does not directly depend on the position (translational invariance). Thus, the derivative of momentum with respect to position is zero.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\dot{p}_i &= - \frac{1}{m} \left ( p_i - eA_i \right ) \left ( - e \frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i} \\[0.1cm]
-&= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i}
-\end{align} %]]></script>
+\[\begin{align}
+\dot{p}_i &amp;= - \frac{1}{m} \left ( p_i - eA_i \right ) \left ( - e \frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i} \\[0.1cm]
+&amp;= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i}
+\end{align}\]
 
-<p>We can now substitute <script type="math/tex">p_i = m\dot{x}_i + eA_i</script> into this expression. First, we substitute it on the left side of the equation:</p>
+<p>We can now substitute \(p_i = m\dot{x}_i + eA_i\) into this expression. First, we substitute it on the left side of the equation:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{d}{dt} \left [ m\dot{x}_i + eA_i \right ] &= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i} \\[0.1cm]
-m\ddot{x}_i + e \frac{dA_i}{dt} &= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i} \\[0.1cm]
-m\ddot{x}_i &= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
-F_i &= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+\frac{d}{dt} \left [ m\dot{x}_i + eA_i \right ] &amp;= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i} \\[0.1cm]
+m\ddot{x}_i + e \frac{dA_i}{dt} &amp;= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e\frac{d\phi}{dx_i} \\[0.1cm]
+m\ddot{x}_i &amp;= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
+F_i &amp;= \frac{e}{m} \left ( p_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
+\end{align}\]
 
-<p>In the last line, we replace <script type="math/tex">m\ddot{x}_i</script> with the force <script type="math/tex">F_i</script>. Now we can replace <script type="math/tex">p_i</script> on the right side of the equation.</p>
+<p>In the last line, we replace \(m\ddot{x}_i\) with the force \(F_i\). Now we can replace \(p_i\) on the right side of the equation.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F_i &= \frac{e}{m} \left ( m\dot{x}_i + eA_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
-&= \frac{e}{m} \left ( m\dot{x}_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
-&= e v_i \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+F_i &amp;= \frac{e}{m} \left ( m\dot{x}_i + eA_i - eA_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
+&amp;= \frac{e}{m} \left ( m\dot{x}_i \right ) \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
+&amp;= e v_i \left ( \frac{dA_i}{dx_i} \right ) - e \frac{dA_i}{dt} - e\frac{d\phi}{dx_i} \\[0.1cm]
+\end{align}\]
 
 <p>Remember, the derivative of the vector potential with respect to time is a <a href="http://en.wikipedia.org/wiki/Gauge_covariant_derivative">gauge covariant derivative</a>:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F_i &= e v_i \left ( \frac{dA_i}{dx_i} \right ) - e \left [ \frac{\partial \vec{A}}{\partial t} + e \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i - e\frac{d\phi}{dx_i} \\[0.1cm]
-&= e v_i \frac{dA_i}{dx_i} - e \frac{\partial A_i}{\partial t} -  \left [ e \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i - e\frac{d\phi}{dx_i} \\[0.1cm]
-&= e \frac{d(v_i A_i)}{dx_i} - e \frac{\partial A_i}{\partial t} -  \left [ e \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i - e\frac{d\phi}{dx_i} \\[0.1cm]
-&= e \frac{d \left ( \vec{v} \cdot \vec{A} \right )_i }{dx_i} -  \left [ e \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i - e \frac{\partial A_i}{\partial t} - e\frac{d\phi}{dx_i} \\[0.1cm]
-&= e \left [ \vec{\nabla} \left ( \vec{v} \cdot \vec{A} \right ) - \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i + e \left [ - \frac{\partial \vec{A}}{\partial t} - \vec{\nabla} \phi \right ]_i \\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+F_i &amp;= e v_i \left ( \frac{dA_i}{dx_i} \right ) - e \left [ \frac{\partial \vec{A}}{\partial t} + e \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i - e\frac{d\phi}{dx_i} \\[0.1cm]
+&amp;= e v_i \frac{dA_i}{dx_i} - e \frac{\partial A_i}{\partial t} -  \left [ e \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i - e\frac{d\phi}{dx_i} \\[0.1cm]
+&amp;= e \frac{d(v_i A_i)}{dx_i} - e \frac{\partial A_i}{\partial t} -  \left [ e \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i - e\frac{d\phi}{dx_i} \\[0.1cm]
+&amp;= e \frac{d \left ( \vec{v} \cdot \vec{A} \right )_i }{dx_i} -  \left [ e \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i - e \frac{\partial A_i}{\partial t} - e\frac{d\phi}{dx_i} \\[0.1cm]
+&amp;= e \left [ \vec{\nabla} \left ( \vec{v} \cdot \vec{A} \right ) - \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i + e \left [ - \frac{\partial \vec{A}}{\partial t} - \vec{\nabla} \phi \right ]_i \\[0.1cm]
+\end{align}\]
 
 <p>We recognize the second term in the brackets on the right hand side of the equation as the electric field:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 F_i = e \left [ \vec{\nabla} \left ( \vec{v} \cdot \vec{A} \right ) - \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A} \right ]_i + e E_i
-\end{equation}</script>
+\end{equation}\]
 
 <p>And we also notice that the other term in brackets can be simplified by using a property of the triple cross product and a property of the magnetic field:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{v} \times \left ( \vec{\nabla} \times \vec{A} \right ) = \vec{\nabla} \left ( \vec{v} \cdot \vec{A} \right ) - \left ( \vec{v} \cdot \vec{\nabla} \right ) \vec{A}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{B} = \vec{\nabla} \times \vec{A}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Plugging this in yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F_i &= e \left [ \vec{v} \times \left ( \vec{\nabla} \times \vec{A} \right ) \right ]_i + eE_i \\[0.1cm]
-&= e \left [ \vec{v} \times \vec{B} \right ]_i + eE_i \\[0.1cm]
-\end{align} %]]></script>
+\[\begin{align}
+F_i &amp;= e \left [ \vec{v} \times \left ( \vec{\nabla} \times \vec{A} \right ) \right ]_i + eE_i \\[0.1cm]
+&amp;= e \left [ \vec{v} \times \vec{B} \right ]_i + eE_i \\[0.1cm]
+\end{align}\]
 
 <p>Writing the final vector expression yields:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F} = e \left [ \vec{E} + \vec{v} \times \vec{B} \right ]
-\end{equation}</script>
+\end{equation}\]
 
 <p>As we see here, we have derived the Lorentz force using Hamilton’s equations of motion.</p>
 

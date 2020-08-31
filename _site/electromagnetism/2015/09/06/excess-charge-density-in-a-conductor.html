@@ -128,109 +128,107 @@
 
 <h3 id="a-couple-of-derivations">A Couple of Derivations</h3>
 
-<p>There are lots of ways to derive the time evolution of the charge density within a conductor. Below, I demonstrate two ways to do it - one using the continuity equation for charge and the other starting from Ampere’s law with displacement current. In each of the derivations, the time dependent charge density is given by <script type="math/tex">\rho(\vec{x},t) \equiv \rho</script>.</p>
+<p>There are lots of ways to derive the time evolution of the charge density within a conductor. Below, I demonstrate two ways to do it - one using the continuity equation for charge and the other starting from Ampere’s law with displacement current. In each of the derivations, the time dependent charge density is given by \(\rho(\vec{x},t) \equiv \rho\).</p>
 
 <h4 id="continuity-equation">Continuity Equation</h4>
 
 <p>Let’s start off by writing out the <a href="https://en.wikipedia.org/wiki/Continuity_equation">continuity equation</a> for charge.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{\partial \rho}{\partial t} + \nabla \cdot \vec{j} = 0
-\end{equation}</script>
+\end{equation}\]
 
-<p>The current density (<script type="math/tex">\vec{j}</script>) at a point inside of a conductor is equal to the product of the conductivity (<script type="math/tex">\sigma</script>) of the conductor and the electric field (<script type="math/tex">\vec{E}</script>) at that point. The conductivity is constant for each specific conductor.</p>
+<p>The current density (\(\vec{j}\)) at a point inside of a conductor is equal to the product of the conductivity (\(\sigma\)) of the conductor and the electric field (\(\vec{E}\)) at that point. The conductivity is constant for each specific conductor.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{j} = \sigma \vec{E}
-\end{equation}</script>
+\end{equation}\]
 
-<p>Plug in <script type="math/tex">\vec{j}</script> and simplify.</p>
+<p>Plug in \(\vec{j}\) and simplify.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{\partial \rho}{\partial t} + \nabla \cdot \left ( \sigma \vec{E} \right ) &= 0\\[0.1cm]
-\frac{\partial \rho}{\partial t} + \sigma \left ( \nabla \cdot \vec{E} \right ) &= 0
-\end{align} %]]></script>
+\[\begin{align}
+\frac{\partial \rho}{\partial t} + \nabla \cdot \left ( \sigma \vec{E} \right ) &amp;= 0\\[0.1cm]
+\frac{\partial \rho}{\partial t} + \sigma \left ( \nabla \cdot \vec{E} \right ) &amp;= 0
+\end{align}\]
 
 <p>We know from Maxwell’s equations that the divergence of the electric field is related to the charge density.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \nabla \cdot \vec{E} = \frac{\rho}{\epsilon_o}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Thus, we end up with the following differential equation.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{\partial \rho}{\partial t} + \sigma \left ( \frac{\rho}{\epsilon_o} \right ) = 0
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{\partial \rho}{\partial t} + \left ( \frac{\sigma}{\epsilon_o} \right ) \rho = 0
-\end{equation}</script>
+\end{equation}\]
 
 <p>This particular differential equation has a simple solution.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \rho(\vec{x}, t) = \rho_o e^{-\sigma t / \epsilon_o}
-\end{equation}</script>
+\end{equation}\]
 
-<p>In the expression above, <script type="math/tex">\rho_o</script> is a constant that can be solved for by plugging in the initial conditions of the system. We will say that <script type="math/tex">\rho(\vec{x},t) = \rho(\vec{x},0)</script> when <script type="math/tex">t=0</script>. Then:</p>
+<p>In the expression above, \(\rho_o\) is a constant that can be solved for by plugging in the initial conditions of the system. We will say that \(\rho(\vec{x},t) = \rho(\vec{x},0)\) when \(t=0\). Then:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \rho(\vec{x}, t) = \rho(\vec{x},0) e^{-\sigma t / \epsilon_o}
-\end{equation}</script>
+\end{equation}\]
 
 <h4 id="amperes-law">Ampere’s Law</h4>
 
 <p>Let’s redo the derivation with Ampere’s law. Notice that we include the displacement current term.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \nabla \times \vec{B} = \mu_o \vec{j} + \mu_o \epsilon_o \frac{\partial \vec{E}}{\partial t}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Once again, the current density is related to conductivity and electric field.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{j} = \sigma \vec{E}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Plug the expression for current density into Ampere’s law in order to put everything in terms of electric field.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \nabla \times \vec{B} = \mu_o \sigma \vec{E} + \mu_o \epsilon_o \frac{\partial \vec{E}}{\partial t}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Now, let’s do something neat. Take the divergence of each side of the equation above. The left hand side will equal zero since the divergence of a curl is zero. However, the right hand side will simplify nicely.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \nabla \cdot \left ( \nabla \times \vec{B} \right ) = \nabla \cdot \left ( \mu_o \sigma \vec{E} + \mu_o \epsilon_o \frac{\partial \vec{E}}{\partial t} \right )
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-0 &= \mu_o \sigma \left ( \nabla \cdot \vec{E} \right ) + \mu_o \epsilon_o \left ( \nabla \cdot \frac{\partial \vec{E}}{\partial t} \right )\\[0.1cm]
-&= \mu_o \sigma \left ( \nabla \cdot \vec{E} \right ) + \mu_o \epsilon_o \frac{\partial}{\partial t} \left ( \nabla \cdot \vec{E} \right )
-\end{align} %]]></script>
+\[\begin{align}
+0 &amp;= \mu_o \sigma \left ( \nabla \cdot \vec{E} \right ) + \mu_o \epsilon_o \left ( \nabla \cdot \frac{\partial \vec{E}}{\partial t} \right )\\[0.1cm]
+&amp;= \mu_o \sigma \left ( \nabla \cdot \vec{E} \right ) + \mu_o \epsilon_o \frac{\partial}{\partial t} \left ( \nabla \cdot \vec{E} \right )
+\end{align}\]
 
 <p>Once again, we see the divergence of electric field. We know how to handle that!</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 0 = \sigma \left ( \frac{\rho}{\epsilon_o} \right ) + \epsilon_o \frac{\partial}{\partial t} \left ( \frac{\rho}{\epsilon_o} \right )
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{\partial \rho}{\partial t} + \left ( \frac{\sigma}{\epsilon_o} \right ) \rho = 0
-\end{equation}</script>
+\end{equation}\]
 
 <p>This leads to the same final answer as above when we use the same initial conditions.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \rho(\vec{x}, t) = \rho(\vec{x},0) e^{-\sigma t / \epsilon_o}
-\end{equation}</script>
+\end{equation}\]
 
 <h3 id="how-fast-is-it">How Fast Is It?</h3>
 
-<p>In the table below, I list the conductivity, the <a href="https://en.wikipedia.org/wiki/Time_constant">time constant</a> of the density equation (<script type="math/tex">\epsilon_o/\sigma</script>), and the time it takes for 99% of the charge to dissipate from the bulk of a conductor. Notice that my units for time are attoseconds (<script type="math/tex">10^{-18}</script> s).</p>
+<p>In the table below, I list the conductivity, the <a href="https://en.wikipedia.org/wiki/Time_constant">time constant</a> of the density equation (\(\epsilon_o/\sigma\)), and the time it takes for 99% of the charge to dissipate from the bulk of a conductor. Notice that my units for time are attoseconds (\(10^{-18}\) s).</p>
 
 <p>So how fast is it? Really fast. See you next week!</p>
 

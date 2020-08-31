@@ -126,104 +126,100 @@
 
 <p>The Gaussian integral is given by:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \int_{-\infty}^\infty e^{-x^2/2} dx = \sqrt{2\pi}
-\end{equation}</script>
+\end{equation}\]
 
 <p>If we try to integrate the Gaussian function using traditional methods, we quickly find that the integral does not have a neat solution. However, we can use a little trick to make short work of the integral.</p>
 
-<p>Suppose I have two bell curves, one a function of <script type="math/tex">x</script> and the other a function of <script type="math/tex">y</script>. We can multiply these two integrals together to get:</p>
+<p>Suppose I have two bell curves, one a function of \(x\) and the other a function of \(y\). We can multiply these two integrals together to get:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
+\[\begin{align}
 \left [ \int_{-\infty}^\infty e^{-x^2/2} dx \right ] \left [ \int_{-\infty}^\infty e^{-y^2/2} dy \right ]
-&= \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-x^2/2} e^{-y^2/2} dx dy\\[0.1cm]
-&= \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-(x^2 + y^2)/2} dx dy
-\end{align} %]]></script>
+&amp;= \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-x^2/2} e^{-y^2/2} dx dy\\[0.1cm]
+&amp;= \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-(x^2 + y^2)/2} dx dy
+\end{align}\]
 
-<p>Since we are analyzing a function in the xy-plane, let’s switch over to polar coordinates. Then, <script type="math/tex">r^2 = x^2 + y^2</script> and <script type="math/tex">dx dy = r dr d\theta</script>. The limits of integration also change to <script type="math/tex">r</script> and <script type="math/tex">\theta</script> rather than <script type="math/tex">x</script> and <script type="math/tex">y</script>. Now we integrate over all <script type="math/tex">r</script> values and all <script type="math/tex">\theta</script> values.</p>
+<p>Since we are analyzing a function in the xy-plane, let’s switch over to polar coordinates. Then, \(r^2 = x^2 + y^2\) and \(dx dy = r dr d\theta\). The limits of integration also change to \(r\) and \(\theta\) rather than \(x\) and \(y\). Now we integrate over all \(r\) values and all \(\theta\) values.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
+\[\begin{align}
 \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-(x^2 + y^2)/2} dx dy
-&= \int_0^{2\pi} \int_0^\infty e^{-r^2/2} r dr d\theta\\[0.1cm]
-&= 2\pi \int_0^\infty r e^{-r^2/2} dr\\[0.1cm]
-\end{align} %]]></script>
+&amp;= \int_0^{2\pi} \int_0^\infty e^{-r^2/2} r dr d\theta\\[0.1cm]
+&amp;= 2\pi \int_0^\infty r e^{-r^2/2} dr\\[0.1cm]
+\end{align}\]
 
-<p>Now we can use u-substitution to solve this integral. Let <script type="math/tex">u = r^2/2</script> and <script type="math/tex">du = r dr</script>. Then:</p>
+<p>Now we can use u-substitution to solve this integral. Let \(u = r^2/2\) and \(du = r dr\). Then:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
+\[\begin{align}
 \int_{-\infty}^\infty \int_{-\infty}^\infty e^{-(x^2 + y^2)/2} dx dy
-&= 2\pi \int_0^\infty r e^{-r^2/2} dr\\[0.1cm]
-&= 2\pi \int_0^\infty e^{-u} du\\[0.1cm]
-&= 2\pi \left [ -e^{-u} \right ]_0^\infty\\[0.1cm]
-&= 2\pi \left [ -e^{-\infty} + e^0 \right ]\\[0.1cm]
-&= 2\pi
-\end{align} %]]></script>
+&amp;= 2\pi \int_0^\infty r e^{-r^2/2} dr\\[0.1cm]
+&amp;= 2\pi \int_0^\infty e^{-u} du\\[0.1cm]
+&amp;= 2\pi \left [ -e^{-u} \right ]_0^\infty\\[0.1cm]
+&amp;= 2\pi \left [ -e^{-\infty} + e^0 \right ]\\[0.1cm]
+&amp;= 2\pi
+\end{align}\]
 
-<p>Here’s the cool part. Remember, <script type="math/tex">x</script> and <script type="math/tex">y</script> are just variable names. It does not matter if we call each variable <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, or cupcake. All that matters is the integral is equal to <script type="math/tex">2\pi</script>. Let’s just rename variable <script type="math/tex">y</script> to <script type="math/tex">x</script>. Then:</p>
+<p>Here’s the cool part. Remember, \(x\) and \(y\) are just variable names. It does not matter if we call each variable \(x\), \(y\), \(z\), or cupcake. All that matters is the integral is equal to \(2\pi\). Let’s just rename variable \(y\) to \(x\). Then:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \left [ \int_{-\infty}^\infty e^{-x^2/2} dx \right ] \left [ \int_{-\infty}^\infty e^{-y^2/2} dy \right ] \Rightarrow \left [ \int_{-\infty}^\infty e^{-x^2/2} dx \right ]^2 = 2\pi
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \int_{-\infty}^\infty e^{-x^2/2} dx = \sqrt{2\pi}
-\end{equation}</script>
+\end{equation}\]
 
 <p>There we go! We have solved for the total area under a Gaussian curve. Admittedly, I skipped over some of the nuances of why this procedure works, so if you want to know all of the nitty gritty details, read up on <a href="http://mathworld.wolfram.com/FubiniTheorem.html">Fubini’s theorem</a>.</p>
 
 <h3 id="the-box-muller-algorithm">The Box-Muller Algorithm</h3>
 
-<p>Now that we have solved the Gaussian integral, the Box-Muller algorithm is pretty straightforward. Suppose I want to create two sets of random numbers (<script type="math/tex">X</script> and <script type="math/tex">Y</script>), each with a <a href="http://mathworld.wolfram.com/ProbabilityDensityFunction.html">probability density function</a> given by a Gaussian integral (<script type="math/tex">p(X)</script> and <script type="math/tex">p(Y)</script>). We can use the result above to get expressions for <script type="math/tex">p(X)</script> and <script type="math/tex">p(Y)</script>:</p>
+<p>Now that we have solved the Gaussian integral, the Box-Muller algorithm is pretty straightforward. Suppose I want to create two sets of random numbers (\(X\) and \(Y\)), each with a <a href="http://mathworld.wolfram.com/ProbabilityDensityFunction.html">probability density function</a> given by a Gaussian integral (\(p(X)\) and \(p(Y)\)). We can use the result above to get expressions for \(p(X)\) and \(p(Y)\):</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 p(X) = \frac{1}{\sqrt{2\pi}} e^{- X^2 /2 }
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 p(Y) = \frac{1}{\sqrt{2\pi}} e^{- Y^2 /2 }
-\end{equation}</script>
+\end{equation}\]
 
-<p>We can call the total probability density function <script type="math/tex">p(X,Y)</script>. Since <script type="math/tex">X</script> and <script type="math/tex">Y</script> are independent sets of numbers:</p>
+<p>We can call the total probability density function \(p(X,Y)\). Since \(X\) and \(Y\) are independent sets of numbers:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-p(X,Y) &= p(X)p(Y)\\[0.1cm]
-&= \left [ \frac{1}{\sqrt{2\pi}} e^{- X^2 /2 } \right ] \left [ \frac{1}{\sqrt{2\pi}} e^{- Y^2 /2 } \right ]\\[0.1cm]
-&= \frac{1}{2\pi} e^{- (X^2+Y^2) /2 }
-\end{align} %]]></script>
+\[\begin{align}
+p(X,Y) &amp;= p(X)p(Y)\\[0.1cm]
+&amp;= \left [ \frac{1}{\sqrt{2\pi}} e^{- X^2 /2 } \right ] \left [ \frac{1}{\sqrt{2\pi}} e^{- Y^2 /2 } \right ]\\[0.1cm]
+&amp;= \frac{1}{2\pi} e^{- (X^2+Y^2) /2 }
+\end{align}\]
 
-<p>This looks really familiar. Letting <script type="math/tex">R^2 = X^2 + Y^2</script> gives:</p>
+<p>This looks really familiar. Letting \(R^2 = X^2 + Y^2\) gives:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 p(X,Y) \Rightarrow p(R,\Theta) = \frac{1}{2\pi} e^{- R^2 /2 }
-\end{equation}</script>
+\end{equation}\]
 
-<p>And now the interesting part. Suppose I can generate two uniformly distributed sets of numbers between zero and one, not including zero. Call them <script type="math/tex">U_1</script> and <script type="math/tex">U_2</script>. First, I can transform <script type="math/tex">U_1</script> and <script type="math/tex">U_2</script> into two new sets, <script type="math/tex">\Theta</script> and <script type="math/tex">R</script> based on the expression above:</p>
+<p>And now the interesting part. Suppose I can generate two uniformly distributed sets of numbers between zero and one, not including zero. Call them \(U_1\) and \(U_2\). First, I can transform \(U_1\) and \(U_2\) into two new sets, \(\Theta\) and \(R\) based on the expression above:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 U_1 = \frac{\Theta}{2\pi} \Rightarrow \Theta = 2\pi U_1
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 U_2 = e^{-R^2/2} \Rightarrow R = \sqrt{-2ln(U_2)}
-\end{equation}</script>
+\end{equation}\]
 
-<p>The first expression for <script type="math/tex">\Theta</script> represents a uniform distribution of numbers over all values from zero to <script type="math/tex">2\pi</script> (i.e. over all angles). The second expression for <script type="math/tex">R</script> represents a Gaussian distribution. We can now convert these polar coordinates to cartesian coordinates using <script type="math/tex">X = Rcos(\Theta)</script>, and <script type="math/tex">Y = Rsin(\Theta)</script>:</p>
+<p>The first expression for \(\Theta\) represents a uniform distribution of numbers over all values from zero to \(2\pi\) (i.e. over all angles). The second expression for \(R\) represents a Gaussian distribution. We can now convert these polar coordinates to cartesian coordinates using \(X = Rcos(\Theta)\), and \(Y = Rsin(\Theta)\):</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 X = Rcos(\Theta) = \sqrt{-2ln(U_2)} cos(2\pi U_1)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 Y = Rsin(\Theta) = \sqrt{-2ln(U_2)} sin(2\pi U_1)
-\end{equation}</script>
+\end{equation}\]
 
-<p>As weird as it sounds, <script type="math/tex">X</script> and <script type="math/tex">Y</script> both have Gaussian distributions because <script type="math/tex">R</script> and <script type="math/tex">\Theta</script> had Gaussian distributions!</p>
+<p>As weird as it sounds, \(X\) and \(Y\) both have Gaussian distributions because \(R\) and \(\Theta\) had Gaussian distributions!</p>
 
-<p>We can see the transform in action below. I first genrate 500 pairs of random numbers that are uniformly distributed between zero and one. These 500 points look like a little <script type="math/tex">1\times 1</script> box in the center of the plot. Then, when you click on the graph, the points change according to the Box-Muller transformation.</p>
+<p>We can see the transform in action below. I first genrate 500 pairs of random numbers that are uniformly distributed between zero and one. These 500 points look like a little \(1\times 1\) box in the center of the plot. Then, when you click on the graph, the points change according to the Box-Muller transformation.</p>
 
 <div style="text-align:center">
   <div id="scatterplot"></div>
@@ -233,7 +229,7 @@ Y = Rsin(\Theta) = \sqrt{-2ln(U_2)} sin(2\pi U_1)
 
 <p>Pretty neat!</p>
 
-<p>We can also verify that the transformations produce Gaussian distributions. Below I have plotted four graphs. The one in the upper left shows pairs of uniformly distributed random numbers. The graph in the upper right corner shows the Box-Muller transformation of these points. The two graphs on the bottom show the probability density functions of the original dataset and the transformed dataset. For simplicity, I only show the probability density function along the horizontal axis (<script type="math/tex">U_1</script>), but the graphs look similar along the vertical axis. You can see that the graph in the upper left hand corner follows a uniform distribution, while the graph in the upper right hand corner follows a Gaussian distribution.</p>
+<p>We can also verify that the transformations produce Gaussian distributions. Below I have plotted four graphs. The one in the upper left shows pairs of uniformly distributed random numbers. The graph in the upper right corner shows the Box-Muller transformation of these points. The two graphs on the bottom show the probability density functions of the original dataset and the transformed dataset. For simplicity, I only show the probability density function along the horizontal axis (\(U_1\)), but the graphs look similar along the vertical axis. You can see that the graph in the upper left hand corner follows a uniform distribution, while the graph in the upper right hand corner follows a Gaussian distribution.</p>
 
 <p>Click the graphs to redraw the points.</p>
 

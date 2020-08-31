@@ -130,87 +130,84 @@
 
 <h3 id="angles-and-arcs">Angles and Arcs</h3>
 
-<p>We are analyzing a particle moving around a circle with a constant speed, so it might be helpful to identify some relationships between arc length (<script type="math/tex">s</script>), radius (<script type="math/tex">r</script>), central angle (<script type="math/tex">\theta</script>), and speed (<script type="math/tex">v</script>). From introductory geometry:</p>
+<p>We are analyzing a particle moving around a circle with a constant speed, so it might be helpful to identify some relationships between arc length (\(s\)), radius (\(r\)), central angle (\(\theta\)), and speed (\(v\)). From introductory geometry:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \Delta s = r \Delta \theta
-\end{equation}</script>
+\end{equation}\]
 
 <p>I am going to rearrange the expression above so that we can use it in the final derivation:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{1}{r} = \frac{\Delta \theta}{\Delta s}
-\end{equation}</script>
+\end{equation}\]
 
-<p>Additionally, we know that the particle covers a certain arc length (<script type="math/tex">\Delta s</script>) per unit time (<script type="math/tex">\Delta t</script>):</p>
+<p>Additionally, we know that the particle covers a certain arc length (\(\Delta s\)) per unit time (\(\Delta t\)):</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 v = \frac{\Delta s}{\Delta t}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Multiplying the two expressions above yields:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{\Delta \theta}{\Delta t} = \frac{\Delta \theta}{\Delta s}\frac{\Delta s}{\Delta t} = \frac{v}{r}
-\end{equation}</script>
+\end{equation}\]
 
 <h3 id="changing-momentum">Changing Momentum</h3>
 
-<p>Let’s draw a diagram of the particle moving along the circle. At some initial time, suppose that it has a momentum directed in some initial direction (<script type="math/tex">\vec{p}_i</script>). At some time <script type="math/tex">\Delta t</script> in the future, the momentum has the same magnitude but a different direction (<script type="math/tex">\vec{p}_f</script>). This is because the particle has the same mass and speed, but it has moved along the circle.</p>
+<p>Let’s draw a diagram of the particle moving along the circle. At some initial time, suppose that it has a momentum directed in some initial direction (\(\vec{p}_i\)). At some time \(\Delta t\) in the future, the momentum has the same magnitude but a different direction (\(\vec{p}_f\)). This is because the particle has the same mass and speed, but it has moved along the circle.</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-03-15/ucm_momentum.png" alt="Uniform Circular Motion" /></p>
 </div>
 
-<p>In the image above on the right, we let the magnitudes of <script type="math/tex">\vec{p}_i</script> and <script type="math/tex">\vec{p}_f</script> equal <script type="math/tex">p</script>. We can find the difference in momentum by subtracting the two vectors and doing some trig:</p>
+<p>In the image above on the right, we let the magnitudes of \(\vec{p}_i\) and \(\vec{p}_f\) equal \(p\). We can find the difference in momentum by subtracting the two vectors and doing some trig:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 sin \left ( \frac{\Delta \theta}{2} \right) = \frac{\Delta p/2}{p}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \Delta p = 2 p sin \left ( \frac{\Delta \theta}{2} \right)
-\end{equation}</script>
+\end{equation}\]
 
-<p>Dividing each side by <script type="math/tex">\Delta \theta</script> yields:</p>
+<p>Dividing each side by \(\Delta \theta\) yields:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\frac{\Delta p}{\Delta \theta} &= \frac{2 p sin \left ( \frac{\Delta \theta}{2} \right)}{\Delta \theta}\\[0.1cm]
-&= p \frac{sin \left ( \frac{\Delta \theta}{2} \right)}{\frac{\Delta \theta}{2}}\\[0.1cm]
-&= p \hspace{1mm} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right)\\[0.1cm]
-&= mv \hspace{1mm} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right)
-\end{align} %]]></script>
+\[\begin{align}
+\frac{\Delta p}{\Delta \theta} &amp;= \frac{2 p sin \left ( \frac{\Delta \theta}{2} \right)}{\Delta \theta}\\[0.1cm]
+&amp;= p \frac{sin \left ( \frac{\Delta \theta}{2} \right)}{\frac{\Delta \theta}{2}}\\[0.1cm]
+&amp;= p \hspace{1mm} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right)\\[0.1cm]
+&amp;= mv \hspace{1mm} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right)
+\end{align}\]
 
-<p>Where the <script type="math/tex">sinc</script> function is <script type="math/tex">sinx/x</script>.</p>
+<p>Where the \(sinc\) function is \(sinx/x\).</p>
 
 <h3 id="the-derivation">The Derivation</h3>
 
 <p>Now that we have all of the pieces of the problem, the derivation is really straightforward.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-F &= \frac{\Delta p}{\Delta t}\\[0.1cm]
-&= \left ( \frac{\Delta p}{\Delta \theta} \right ) \left ( \frac{\Delta \theta}{\Delta t} \right )\\[0.1cm]
-&= \left [ mv \hspace{1mm} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right) \right ] \left ( \frac{v}{r} \right )\\[0.1cm]
-&= \frac{mv^2}{r} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right)
-\end{align} %]]></script>
+\[\begin{align}
+F &amp;= \frac{\Delta p}{\Delta t}\\[0.1cm]
+&amp;= \left ( \frac{\Delta p}{\Delta \theta} \right ) \left ( \frac{\Delta \theta}{\Delta t} \right )\\[0.1cm]
+&amp;= \left [ mv \hspace{1mm} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right) \right ] \left ( \frac{v}{r} \right )\\[0.1cm]
+&amp;= \frac{mv^2}{r} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right)
+\end{align}\]
 
-<p>Finally, if we take the limit as <script type="math/tex">\Delta \theta \rightarrow 0</script>, we get the instantaneous centripetal force at some point on the circular path. The limit can be found using <a href="http://mathworld.wolfram.com/LHospitalsRule.html">L’Hospital’s Rule</a>:</p>
+<p>Finally, if we take the limit as \(\Delta \theta \rightarrow 0\), we get the instantaneous centripetal force at some point on the circular path. The limit can be found using <a href="http://mathworld.wolfram.com/LHospitalsRule.html">L’Hospital’s Rule</a>:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-\lim_{\Delta \theta \rightarrow 0} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right ) &= \lim_{\Delta \theta \rightarrow 0} \frac{sin \left ( \frac{\Delta \theta}{2} \right )}{\frac{\Delta \theta}{2}}\\[0.1cm]
-&= \lim_{\Delta \theta \rightarrow 0} \frac{\frac{1}{2}cos \left ( \frac{\Delta \theta}{2} \right )}{\frac{1}{2}}\\[0.1cm]
-&= cos(0)\\[0.1cm]
-&= 1
-\end{align} %]]></script>
+\[\begin{align}
+\lim_{\Delta \theta \rightarrow 0} {\rm sinc} \left ( \frac{\Delta \theta}{2} \right ) &amp;= \lim_{\Delta \theta \rightarrow 0} \frac{sin \left ( \frac{\Delta \theta}{2} \right )}{\frac{\Delta \theta}{2}}\\[0.1cm]
+&amp;= \lim_{\Delta \theta \rightarrow 0} \frac{\frac{1}{2}cos \left ( \frac{\Delta \theta}{2} \right )}{\frac{1}{2}}\\[0.1cm]
+&amp;= cos(0)\\[0.1cm]
+&amp;= 1
+\end{align}\]
 
 <p>Thus, we get the final expression for centripetal force:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 F = \frac{mv^2}{r}
-\end{equation}</script>
+\end{equation}\]
 
     </div>
 

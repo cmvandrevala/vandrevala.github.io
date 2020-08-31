@@ -124,59 +124,56 @@
 
 <p>###The No-Deletion Theorem</p>
 
-<p>The no-deletion theorem in quantum information theory states given two copies of some arbitrary quantum state, it is impossible to delete one of the copies against the other. In other words, there is no unitary operator <script type="math/tex">U</script> such that:</p>
+<p>The no-deletion theorem in quantum information theory states given two copies of some arbitrary quantum state, it is impossible to delete one of the copies against the other. In other words, there is no unitary operator \(U\) such that:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 U \left ( | \psi \rangle | \psi \rangle | \phi \rangle \right )= | \psi \rangle | 0 \rangle | \phi' \rangle
-\end{equation}</script>
+\end{equation}\]
 
-<p>In the expression above, <script type="math/tex">\phi</script> and <script type="math/tex">\phi'</script> are two general strings of qubits before and after the operation. They are simply written above for completeness.</p>
+<p>In the expression above, \(\phi\) and \(\phi'\) are two general strings of qubits before and after the operation. They are simply written above for completeness.</p>
 
-<p>The proof of this theorem is straightforward and similar to that of the no-cloning theorem. Suppose there did exist a unitary operator <script type="math/tex">U</script> that could be used to perform a deletion as stated above. Then:</p>
+<p>The proof of this theorem is straightforward and similar to that of the no-cloning theorem. Suppose there did exist a unitary operator \(U\) that could be used to perform a deletion as stated above. Then:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 U \left ( | 0 \rangle | 0 \rangle | \phi \rangle \right )= | 0 \rangle | 0 \rangle | \phi' \rangle
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 U \left ( | 1 \rangle | 1 \rangle | \phi \rangle \right )= | 1 \rangle | 0 \rangle | \phi' \rangle
-\end{equation}</script>
+\end{equation}\]
 
-<p>We can define an arbitrary state <script type="math/tex">\psi</script> as:</p>
+<p>We can define an arbitrary state \(\psi\) as:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 | \psi \rangle = a |0\rangle + b|1\rangle
-\end{equation}</script>
+\end{equation}\]
 
 <p>On the one hand:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
+\[\begin{align}
 U \left ( | \psi \rangle | \psi \rangle | \phi \rangle \right )
-&= | \psi \rangle | 0 \rangle | \phi' \rangle\\[0.1cm]
-&= a | 0 \rangle | 0 \rangle | \phi' \rangle + b | 1 \rangle | 0 \rangle | \phi' \rangle
-\end{align} %]]></script>
+&amp;= | \psi \rangle | 0 \rangle | \phi' \rangle\\[0.1cm]
+&amp;= a | 0 \rangle | 0 \rangle | \phi' \rangle + b | 1 \rangle | 0 \rangle | \phi' \rangle
+\end{align}\]
 
 <p>But on the other hand:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
+\[\begin{align}
 U \left ( | \psi \rangle | \psi \rangle | \phi \rangle \right )
-&= U \left [ \left ( a | 0 \rangle + b | 1 \rangle \right ) \left ( a | 0 \rangle + b | 1 \rangle \right ) | \phi \rangle \right ]\\[0.1cm]
-&= U \left [ a^2 | 0 \rangle | 0 \rangle + b^2 | 1 \rangle | 1 \rangle + ab | 0 \rangle | 1 \rangle + ba | 1 \rangle | 0 \rangle \right ] | \phi \rangle\\[0.1cm]
-&= a^2 U| 0 \rangle | 0 \rangle | \phi \rangle + b^2 U| 1 \rangle | 1 \rangle | \phi \rangle + ab U| 0 \rangle | 1 \rangle | \phi \rangle + ba U| 1 \rangle | 0 \rangle | \phi \rangle\\[0.1cm]
-&= a^2 | 0 \rangle | 0 \rangle | \phi' \rangle + b^2 | 1 \rangle | 0 \rangle | \phi' \rangle + ab U \left ( | 0 \rangle | 1 \rangle + | 1 \rangle | 0 \rangle \right ) | \phi \rangle\\[0.1cm]
-\end{align} %]]></script>
+&amp;= U \left [ \left ( a | 0 \rangle + b | 1 \rangle \right ) \left ( a | 0 \rangle + b | 1 \rangle \right ) | \phi \rangle \right ]\\[0.1cm]
+&amp;= U \left [ a^2 | 0 \rangle | 0 \rangle + b^2 | 1 \rangle | 1 \rangle + ab | 0 \rangle | 1 \rangle + ba | 1 \rangle | 0 \rangle \right ] | \phi \rangle\\[0.1cm]
+&amp;= a^2 U| 0 \rangle | 0 \rangle | \phi \rangle + b^2 U| 1 \rangle | 1 \rangle | \phi \rangle + ab U| 0 \rangle | 1 \rangle | \phi \rangle + ba U| 1 \rangle | 0 \rangle | \phi \rangle\\[0.1cm]
+&amp;= a^2 | 0 \rangle | 0 \rangle | \phi' \rangle + b^2 | 1 \rangle | 0 \rangle | \phi' \rangle + ab U \left ( | 0 \rangle | 1 \rangle + | 1 \rangle | 0 \rangle \right ) | \phi \rangle\\[0.1cm]
+\end{align}\]
 
-<p>The last part of the expression is an entangled state. We can define it as <script type="math/tex">\Phi</script>:</p>
+<p>The last part of the expression is an entangled state. We can define it as \(\Phi\):</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
+\[\begin{align}
 U \left ( | \psi \rangle | \psi \rangle | \phi \rangle \right )
-&= a^2 | 0 \rangle | 0 \rangle | \phi' \rangle + b^2 | 1 \rangle | 0 \rangle | \phi' \rangle + ab U | \Phi \rangle | \phi \rangle\\[0.1cm]
-\end{align} %]]></script>
+&amp;= a^2 | 0 \rangle | 0 \rangle | \phi' \rangle + b^2 | 1 \rangle | 0 \rangle | \phi' \rangle + ab U | \Phi \rangle | \phi \rangle\\[0.1cm]
+\end{align}\]
 
-<p>Thus, we see a contradiction. In the first calculation, the final state is defined in terms of a, b, 0, 1, and <script type="math/tex">\phi'</script>. But in the other calculation, we see an additional entangled state in the final expression. The two calculations are not equal in general, and <script type="math/tex">U</script> cannot exist (proof by contradiction).</p>
+<p>Thus, we see a contradiction. In the first calculation, the final state is defined in terms of a, b, 0, 1, and \(\phi'\). But in the other calculation, we see an additional entangled state in the final expression. The two calculations are not equal in general, and \(U\) cannot exist (proof by contradiction).</p>
 
 <p>This theorem is important because it shows how quantum states are not as fragile as they seem. In general, we think about how quantum states can lose coherence due to even minor environmental interference. But here, we see that quantum states might be able to last in certain circumstances.</p>
 

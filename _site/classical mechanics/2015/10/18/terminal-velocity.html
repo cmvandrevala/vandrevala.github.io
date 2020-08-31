@@ -134,13 +134,13 @@
 
 <p>We are going to use a simplified model of drag in our derivations; the drag force is going to be equal to:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_D = - C_d v^n \hat{v}
-\end{equation}</script>
+\end{equation}\]
 
-<p>In the equation above <script type="math/tex">v^n</script> tells us that the magnitude of the drag force is equal to the speed of the object (<script type="math/tex">v</script>) to some power (<script type="math/tex">n</script>). The <script type="math/tex">-\hat{v}</script> tells us that the drag force is opposite to the object’s direction of motion. All of the complicated details involving shape, fluid properties, orientation, etc. are included in that <script type="math/tex">C_d</script> coefficient. Yeah, if you are an engineer, that <script type="math/tex">C_d</script> is extremely important. But that is a job for a different blog (maybe Muffin Engineering?).</p>
+<p>In the equation above \(v^n\) tells us that the magnitude of the drag force is equal to the speed of the object (\(v\)) to some power (\(n\)). The \(-\hat{v}\) tells us that the drag force is opposite to the object’s direction of motion. All of the complicated details involving shape, fluid properties, orientation, etc. are included in that \(C_d\) coefficient. Yeah, if you are an engineer, that \(C_d\) is extremely important. But that is a job for a different blog (maybe Muffin Engineering?).</p>
 
-<p>The falling object that we are going to analyze has only two forces acting on it - a gravitational force (<script type="math/tex">F_G</script>) and a drag force (<script type="math/tex">F_D</script>). The free-body diagram for the falling object is given in the picture below. I will set the upward direction as positive and the downward direction as negative.</p>
+<p>The falling object that we are going to analyze has only two forces acting on it - a gravitational force (\(F_G\)) and a drag force (\(F_D\)). The free-body diagram for the falling object is given in the picture below. I will set the upward direction as positive and the downward direction as negative.</p>
 
 <div style="text-align:center">
   <p><img src="http://localhost:4000/assets/images/2015-10-18/fbd.png" alt="Free Body Diagram" /></p>
@@ -148,237 +148,237 @@
 
 <h3 id="stokes-drag">Stokes’ Drag</h3>
 
-<p>In Stokes’ drag the resistive force is proportional to the velocity of the moving object (i.e. <script type="math/tex">n=1</script>). Thus, the drag force is equal to the drag coefficient multiplied by the negative of the velocity of the moving object.</p>
+<p>In Stokes’ drag the resistive force is proportional to the velocity of the moving object (i.e. \(n=1\)). Thus, the drag force is equal to the drag coefficient multiplied by the negative of the velocity of the moving object.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_D = -C_d \vec{v}
-\end{equation}</script>
+\end{equation}\]
 
 <p>We can use <a href="http://www.physicsclassroom.com/class/newtlaws/Lesson-3/Newton-s-Second-Law">Newton’s second law</a> to solve for the acceleration of the object.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_D + \vec{F}_G = \vec{F}_{net}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 - C_d \vec{v} + m\vec{g} = m\vec{a}
-\end{equation}</script>
+\end{equation}\]
 
 <p>The acceleration is just the time derivative of velocity.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 - C_d \vec{v} + m\vec{g} = m \frac{d\vec{v}}{dt}
-\end{equation}</script>
+\end{equation}\]
 
-<p>I can rewrite the force equation in terms of the speed (<script type="math/tex">v</script>) rather than velocity (<script type="math/tex">\vec{v}</script>). In order to do this, I have to add in the appropriate negative signs to each term.</p>
+<p>I can rewrite the force equation in terms of the speed (\(v\)) rather than velocity (\(\vec{v}\)). In order to do this, I have to add in the appropriate negative signs to each term.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 C_d v - mg = - m \frac{dv}{dt}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 g - \frac{C_d}{m} v = \frac{dv}{dt}
-\end{equation}</script>
+\end{equation}\]
 
-<p>I will also let <script type="math/tex">\gamma \equiv C_d/m</script>, just to tidy up our equation.</p>
+<p>I will also let \(\gamma \equiv C_d/m\), just to tidy up our equation.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 g - \gamma v = \frac{dv}{dt}
-\end{equation}</script>
+\end{equation}\]
 
 <p>This is a <a href="http://tutorial.math.lamar.edu/Classes/DE/Separable.aspx">separable differential equation</a> that we can solve pretty easily! Move all of the v’s to one side of the equals sign and move all of the t’s to the other. You get:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 dt = \frac{dv}{g - \gamma v}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Now take the integral of each side.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \int dt = \int \frac{dv}{g - \gamma v}
-\end{equation}</script>
+\end{equation}\]
 
-<p>The left-hand side of this equation is easy to solve; it simply equals <script type="math/tex">t</script>. We can use <a href="http://tutorial.math.lamar.edu/Classes/CalcI/SubstitutionRuleIndefinite.aspx">u-substitution</a> for the right-hand side of the equation. Let <script type="math/tex">u = g - \gamma v</script> and <script type="math/tex">du = -\gamma dv</script>. Then:</p>
+<p>The left-hand side of this equation is easy to solve; it simply equals \(t\). We can use <a href="http://tutorial.math.lamar.edu/Classes/CalcI/SubstitutionRuleIndefinite.aspx">u-substitution</a> for the right-hand side of the equation. Let \(u = g - \gamma v\) and \(du = -\gamma dv\). Then:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 t = -\frac{1}{\gamma} \int \frac{du}{u}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\gamma t = \int \frac{du}{u}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\gamma t = ln \left | u \right | + C
-\end{equation}</script>
+\end{equation}\]
 
 <p>Remember, since this is an <a href="https://en.wikipedia.org/wiki/Improper_integral">improper integral</a>, we need to include the constant C. It is usually easier to work with exponential terms than logarithmic terms. Thus, I will rewrite the expression as:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 e^{-\gamma t} = e^{ln \left | u \right | + C}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 e^{-\gamma t} = e^{ln \left | u \right |} e^C
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 e^{-\gamma t} = u C^*
-\end{equation}</script>
+\end{equation}\]
 
-<p><script type="math/tex">C^* = e^C</script> is just a constant that we can solve for using initial conditions. Plugging in the expression for u yields:</p>
+<p>\(C^* = e^C\) is just a constant that we can solve for using initial conditions. Plugging in the expression for u yields:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 e^{-\gamma t} = C^* (g - \gamma v)
-\end{equation}</script>
+\end{equation}\]
 
-<p>We will assume that at time <script type="math/tex">t = 0</script>, the initial speed is <script type="math/tex">v = v_o</script>.</p>
+<p>We will assume that at time \(t = 0\), the initial speed is \(v = v_o\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 e^0 = 1 = C^* (g - \gamma v_o)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 C^* = (g - \gamma v_o)^{-1}
-\end{equation}</script>
+\end{equation}\]
 
 <p>The final expression for the speed of the object as a function of time is:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 e^{-\gamma t} = C^* (g - \gamma v)
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 e^{-\gamma t} = \frac{g - \gamma v}{g - \gamma v_o}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \left (g - \gamma v_o \right ) e^{-\gamma t} = g - \gamma v
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \left (g - \gamma v_o \right ) e^{-\gamma t} - g = - \gamma v
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 -\frac{1}{\gamma}\left (g - \gamma v_o \right ) e^{-\gamma t} + \frac{g}{\gamma} = v
-\end{equation}</script>
+\end{equation}\]
 
 <p>Let’s just tidy up this final expression a little bit:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 v(t) = \frac{g}{\gamma} - \frac{1}{\gamma}\left (g - \gamma v_o \right ) e^{-\gamma t}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 v(t) = \frac{g}{\gamma} \left ( 1 - e^{-\gamma t} \right ) + v_o e^{-\gamma t}
-\end{equation}</script>
+\end{equation}\]
 
 <p>You might notice that my final expression does not exactly match what you see on many other sites; I have that extra exponential decay term that takes the initial speed of the object into account. Don’t worry - if the initial speed of the object is equal to zero, we recover the “traditional” expression for the velocity.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 v(t) = \frac{g}{\gamma} \left ( 1 - e^{-\gamma t} \right )
-\end{equation}</script>
+\end{equation}\]
 
 <p>From here, you can take the integral of velocity to get the position as a function of time. Or you can take the derivative of velocity to get the acceleration as a function of time.</p>
 
 <h3 id="turbulent-drag">Turbulent Drag</h3>
 
-<p>In turbulent drag the resistive force is proportional to the speed squared of the moving object (i.e. <script type="math/tex">n=2</script>).</p>
+<p>In turbulent drag the resistive force is proportional to the speed squared of the moving object (i.e. \(n=2\)).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_D = -C_d v^2 \hat{v}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Otherwise, our analysis is pretty much identical to what we did in the previous section. First, we will use Newton’s second law to solve for the acceleration.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \vec{F}_D + \vec{F}_G = \vec{F}_{net}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 - C_d v^2 \hat{v} + m\vec{g} = m\vec{a}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 - C_d v^2 \hat{v} + m\vec{g} = m \frac{d\vec{v}}{dt}
-\end{equation}</script>
+\end{equation}\]
 
-<p>Once again, I can rewrite the force equation in terms of the speed (<script type="math/tex">v</script>).</p>
+<p>Once again, I can rewrite the force equation in terms of the speed (\(v\)).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 C_d v^2 - mg = - m \frac{dv}{dt}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 g - \frac{C_d}{m} v^2 = \frac{dv}{dt}
-\end{equation}</script>
+\end{equation}\]
 
-<p>I will let <script type="math/tex">\gamma \equiv C_d/m</script>.</p>
+<p>I will let \(\gamma \equiv C_d/m\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 g - \gamma v^2 = \frac{dv}{dt}
-\end{equation}</script>
+\end{equation}\]
 
 <p>This is another <a href="http://tutorial.math.lamar.edu/Classes/DE/Separable.aspx">separable differential equation</a>:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 dt = \frac{dv}{g - \gamma v^2}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \int dt = \int \frac{dv}{g - \gamma v^2}
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 t = \int \frac{dv}{g - \gamma v^2}
-\end{equation}</script>
+\end{equation}\]
 
 <p>I will admit, the right hand side of this equation is more difficult to solve than the one in the previous section. I just used a table of integrals to look up the answer. It turned out to be an inverse <a href="http://mathworld.wolfram.com/HyperbolicTangent.html">hyperbolic tangent function</a>.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 t = \frac{1}{\sqrt{g\gamma}} tanh^{-1} \left ( \sqrt{\frac{\gamma}{g}} v \right ) + C
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \sqrt{g\gamma} t = tanh^{-1} \left ( \sqrt{\frac{\gamma}{g}} v \right ) + C^*
-\end{equation}</script>
+\end{equation}\]
 
-<p>Once again, when <script type="math/tex">t = 0</script>, the speed equals <script type="math/tex">v = v_o</script>.</p>
+<p>Once again, when \(t = 0\), the speed equals \(v = v_o\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 0 = tanh^{-1} \left ( \sqrt{\frac{\gamma}{g}} v_o \right ) + C^*
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 C^* = -tanh^{-1} \left ( \sqrt{\frac{\gamma}{g}} v_o \right )
-\end{equation}</script>
+\end{equation}\]
 
 <p>Then:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \sqrt{g\gamma} t = tanh^{-1} \left ( \sqrt{\frac{\gamma}{g}} v \right ) - tanh^{-1} \left ( \sqrt{\frac{\gamma}{g}} v_o \right )
-\end{equation}</script>
+\end{equation}\]
 
-<p>Yuck… You can simplify that general answer if you so wish. However, if <script type="math/tex">v_o = 0</script>, the answer is actually not too bad.</p>
+<p>Yuck… You can simplify that general answer if you so wish. However, if \(v_o = 0\), the answer is actually not too bad.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \sqrt{g\gamma} t = tanh^{-1} \left ( \sqrt{\frac{\gamma}{g}} v \right )
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 tanh \left ( \sqrt{g\gamma} t \right )= \sqrt{\frac{\gamma}{g}} v
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 v(t) = \sqrt{\frac{g}{\gamma}} tanh \left ( \sqrt{g\gamma} t \right )
-\end{equation}</script>
+\end{equation}\]
 
 <p>Again, you can take a <a href="http://www.wolframalpha.com/input/?i=derivative+tanh%28x%29">derivative</a> to find acceleration and an <a href="http://www.wolframalpha.com/input/?i=integral+tanh%28x%29">integral</a> to find position. Doing this is not so bad - hyperbolic trig functions actually behave rather well.</p>
 
 <h3 id="other-drags">Other Drags</h3>
 
-<p>Every once in awhile, the drag force in your problem is particularly weird. Maybe <script type="math/tex">n</script> is larger than two. Maybe <script type="math/tex">n</script> is not an <a href="https://en.wikipedia.org/wiki/Integer">integer</a>, but instead some general <a href="https://en.wikipedia.org/wiki/Real_number">real number</a>. Maybe the general form of the drag force that I gave above just does not work at all, and you need to express <script type="math/tex">F_D</script> as some complicated function of velocity.</p>
+<p>Every once in awhile, the drag force in your problem is particularly weird. Maybe \(n\) is larger than two. Maybe \(n\) is not an <a href="https://en.wikipedia.org/wiki/Integer">integer</a>, but instead some general <a href="https://en.wikipedia.org/wiki/Real_number">real number</a>. Maybe the general form of the drag force that I gave above just does not work at all, and you need to express \(F_D\) as some complicated function of velocity.</p>
 
 <p>At that point, you are better off using Matlab or some other program to solve the differential equation numerically. Could you get a general analytic form for the solution? Yeah, but it will only make sense if you love using <a href="https://en.wikipedia.org/wiki/Hypergeometric_function">hypergeometric functions</a>.</p>
 

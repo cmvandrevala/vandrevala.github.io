@@ -158,4 +158,4 @@ The Hamiltonian is then the sum of the kinetic and potential energies. Once we h
 
 I created a short Matlab script to calculate the three lowest energy states of the Schrodinger equation given some potential energy distribution. It plots the wavefunction onto the potential energy distribution so that we can see how the changing potential affects the probability of finding the particle at a certain position.
 
-The [source code](https://github.com/cmvandrevala/finite_difference_schrodinger/releases/tag/2.0.0) can be found on the Cupcake Physics GitHub page. All of the instructions for changing the parameters of the simulation are included in the script. Feel free to play around with the code and create your own custom potentials!
+The [source code](https://github.com/cmvandrevala/finite_difference_schrodinger/releases/tag/v1.0.0) can be found on the Cupcake Physics GitHub page. All of the instructions for changing the parameters of the simulation are included in the script. Feel free to play around with the code and create your own custom potentials!

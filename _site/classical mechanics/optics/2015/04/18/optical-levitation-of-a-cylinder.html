@@ -122,7 +122,7 @@
     <div class="body">
       <h3 id="introduction">Introduction</h3>
 
-<p>Last week in our introductory electricity and magnetism class, we calculated the properties of a cylinder with mass <script type="math/tex">m</script> that levitates due to the balance between an upward radiation force and a downward gravitational force. This effect, called <a href="http://en.wikipedia.org/wiki/Optical_levitation">optical levitation</a>, was studied in depth by Arthur Ashkin of Bell Laboratories. Our simple model of uniform, cylindrical laser beams and uniform, cylindrical masses left out a lot of the subtleties of Ashkin’s work. However, it did give us a sense of how powerful laser light could be. In this post I want to review that simple calculation of the mass that we did in class.</p>
+<p>Last week in our introductory electricity and magnetism class, we calculated the properties of a cylinder with mass \(m\) that levitates due to the balance between an upward radiation force and a downward gravitational force. This effect, called <a href="http://en.wikipedia.org/wiki/Optical_levitation">optical levitation</a>, was studied in depth by Arthur Ashkin of Bell Laboratories. Our simple model of uniform, cylindrical laser beams and uniform, cylindrical masses left out a lot of the subtleties of Ashkin’s work. However, it did give us a sense of how powerful laser light could be. In this post I want to review that simple calculation of the mass that we did in class.</p>
 
 <h3 id="the-set-up">The Set Up</h3>
 
@@ -131,70 +131,69 @@
 <img src="http://localhost:4000/assets/images/2015-04-18/cylinder_fbd.png" alt="Free Body Diagram of Cylinder" /></p>
 </div>
 
-<p>A laser beam with power <script type="math/tex">P</script> is modeled as a cylinder with diameter <script type="math/tex">D</script>. The beam is directed upward (in the <script type="math/tex">+\hat{z}</script> direction) onto one circular face of a cylindrical mass with diameter <script type="math/tex">d</script>, height <script type="math/tex">H</script>, and mass <script type="math/tex">m</script>.</p>
+<p>A laser beam with power \(P\) is modeled as a cylinder with diameter \(D\). The beam is directed upward (in the \(+\hat{z}\) direction) onto one circular face of a cylindrical mass with diameter \(d\), height \(H\), and mass \(m\).</p>
 
 <h3 id="the-calculation">The Calculation</h3>
 
 <p>As we noted above, the cylinder levitates due to the balance between the upward radiation force and the downward gravitational force. Thus, the upward force from the laser must be equal to the downward force from gravity.</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{align}
-&\sum \vec{F} = 0\\[0.1cm]
-&\vec{F}_{radiation} + \vec{F}_g = 0\\[0.1cm]
-&F_{radiation} (+\hat{z}) + F_g (-\hat{z}) = 0
-\end{align} %]]></script>
+\[\begin{align}
+&amp;\sum \vec{F} = 0\\[0.1cm]
+&amp;\vec{F}_{radiation} + \vec{F}_g = 0\\[0.1cm]
+&amp;F_{radiation} (+\hat{z}) + F_g (-\hat{z}) = 0
+\end{align}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 F_{radiation} = F_g
-\end{equation}</script>
+\end{equation}\]
 
-<p>We know from mechanics that the gravitational force on a massive object is <script type="math/tex">F_g = mg</script>.</p>
+<p>We know from mechanics that the gravitational force on a massive object is \(F_g = mg\).</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 F_{radiation} = mg
-\end{equation}</script>
+\end{equation}\]
 
 <p>We also know that a light wave exerts a radiation pressure on the surface that it strikes. Thus, we can define the total force from the laser as the radiation pressure from the laser multiplied by the area of one face of the cylinder.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 P_{radiation} \left [ \pi \left ( \frac{d}{2} \right )^2 \right ] = mg
-\end{equation}</script>
+\end{equation}\]
 
-<p>We know that we can relate the radiation pressure to the intensity (<script type="math/tex">I</script>) of the laser beam; we have to be careful though. If the laser beam is completely absorbed by the face of the cylinder, the pressure is:</p>
+<p>We know that we can relate the radiation pressure to the intensity (\(I\)) of the laser beam; we have to be careful though. If the laser beam is completely absorbed by the face of the cylinder, the pressure is:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 P_{radiation} = \frac{I}{c}
-\end{equation}</script>
+\end{equation}\]
 
 <p>On the other hand, if the laser beam is completely reflected by the face of the cylinder, the pressure is:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 P_{radiation} = \frac{2I}{c}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Let us assume that the laser beam is perfectly reflected at the face of the cylinder in this case.</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{2I}{c} \left [ \pi \left ( \frac{d}{2} \right )^2 \right ] = mg
-\end{equation}</script>
+\end{equation}\]
 
 <p>Finally, we can convert intensity to power. Remember, intensity is just power per unit area. In this case, we are using the area of the laser beam:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 I = \frac{P}{A_{laser}} = \frac{P}{\pi \left ( \frac{D}{2} \right )^2}
-\end{equation}</script>
+\end{equation}\]
 
 <p>Substituting the expression for intensity into the expression for power and solving for the mass yields:</p>
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 \frac{2P}{c \pi \left ( \frac{D}{2} \right )^2} \left [ \pi \left ( \frac{d}{2} \right )^2 \right ] = mg
-\end{equation}</script>
+\end{equation}\]
 
-<script type="math/tex; mode=display">\begin{equation}
+\[\begin{equation}
 m = \frac{2Pd^2}{cg D^2}
-\end{equation}</script>
+\end{equation}\]
 
-<p>We know from this result that the mass of the cylinder must be very small due to the <script type="math/tex">cg</script> term in the denominator. Thus, optical levitation really only works for objects that have a mass of fractions of a gram.</p>
+<p>We know from this result that the mass of the cylinder must be very small due to the \(cg\) term in the denominator. Thus, optical levitation really only works for objects that have a mass of fractions of a gram.</p>
 
     </div>
 

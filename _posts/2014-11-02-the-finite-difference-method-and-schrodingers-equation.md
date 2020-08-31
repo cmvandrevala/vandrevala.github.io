@@ -10,8 +10,6 @@ description: I derive the methodology behind the finite difference method and th
 
 ### Introduction
 
-Source Code: [https://github.com/CupcakePhysics/finite_difference_schrodinger/releases](https://github.com/CupcakePhysics/finite_difference_schrodinger/releases)
-
 The [Schrodinger equation](http://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation) gives the time-evolution of some wavefunction due to some [Hamiltonian](http://en.wikipedia.org/wiki/Hamiltonian_(quantum_mechanics)):
 
 $$

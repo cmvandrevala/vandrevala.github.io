@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Normal Modes of the Double Pendulum Using Newton's Laws
+title: Small Angle Oscillations of the Double Pendulum
 difficulty: medium
 category: [Classical Mechanics]
 tags: [Common Homework Problem, Derivation]

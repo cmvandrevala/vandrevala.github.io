@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: Small Angle Oscillations of the Double Pendulum
+title: Normal Modes of the Double Pendulum Using Newton's Laws
 difficulty: medium
 category: [Classical Mechanics]
 tags: [Common Homework Problem, Derivation]
@@ -10,7 +10,9 @@ description: I go through the derivation of the normal modes of a double pendulu
 
 ### Background
 
-When physicists study the double pendulum, they often do so in the context of [chaos theory](https://en.wikipedia.org/wiki/Chaos_theory). It is one of the simplest dynamical systems that has chaotic solutions. However, under the right conditions, even the double pendulum simplifies down to a simple series of oscillators with well-defined normal modes. Let's take a look.
+When physicists study the double pendulum, they often do so in the context of [chaos theory](https://en.wikipedia.org/wiki/Chaos_theory). It is one of the simplest dynamical systems that has chaotic solutions. However, under the right conditions, even the double pendulum simplifies down to a simple series of oscillators with well-defined normal modes.
+
+Most derivations of the normal modes that I see online use Lagrangians or Hamiltonians to get to the final answer. These derivations are great, but we can also solve for the modes of the double pendulum using Newton's laws. Let's take a look.
 
 ### The Double Pendulum
 
@@ -20,7 +22,7 @@ We will start off with a diagram of the double pendulum. Suppose two point masse
 ![Double Pendulum Setup]({{ site.url }}/assets/images/2015-08-09/setup.png)
 </div>
 
-We can calculate the $$x$$ and $$y$$ positions of each mass using some simple trigonometry. Let $$x_1$$ and $$y_1$$ be the $$x$$ and $$y$$ positions of the upper mass. Let $$x_2$$ and $$y_2$$ be the $$x$$ and $$y$$ positions of the lower mass. We will set the origin of the system to be the point where the double pendulum is connected to the ceiling. The positive $$y$$-direction will be measured downwards.
+We can calculate the $$x$$ and $$y$$ positions of each mass using some simple trigonometry. Let $$x_1$$ and $$y_1$$ be the $$x$$ and $$y$$ positions of the upper mass. Let $$x_2$$ and $$y_2$$ be the $$x$$ and $$y$$ positions of the lower mass. We will set the origin of the system to be the point where the double pendulum is connected to the ceiling.
 
 <div style="text-align:center" markdown="1">
 ![Double Pendulum Positions]({{ site.url }}/assets/images/2015-08-09/double-pendulum.png)
@@ -34,8 +36,7 @@ $$
 
 $$
 \begin{align}
-y_1 &= \ell - \ell cos\theta_1\\[0.1cm]
-&= \ell \left ( 1 - cos\theta \right )
+y_1 = - \ell cos\theta_1\\[0.1cm]
 \end{align}
 $$
 
@@ -49,9 +50,9 @@ $$
 
 $$
 \begin{align}
-y_2 &= y_1 + \ell - \ell cos\theta_2\\[0.1cm]
-&= 2\ell - \ell cos\theta_1 - \ell cos\theta_2\\[0.1cm]
-&= \ell \left (2 - cos\theta_1 - cos\theta_2 \right )\\[0.1cm]
+y_2 &= y_1 - \ell cos\theta_2\\[0.1cm]
+&= - \ell cos\theta_1 - \ell cos\theta_2\\[0.1cm]
+&= - \ell \left (cos\theta_1 + cos\theta_2 \right )\\[0.1cm]
 \end{align}
 $$
 
@@ -65,7 +66,7 @@ $$
 
 $$
 \begin{equation}
-y_1 \approx 0
+y_1 \approx - \ell
 \end{equation}
 $$
 
@@ -77,11 +78,11 @@ $$
 
 $$
 \begin{equation}
-y_2 \approx 0
+y_2 \approx -2 \ell
 \end{equation}
 $$
 
-Notice how $$y_1$$ and $$y_2$$ are equal to zero under the small angle approximation. Thus, the masses have negligible motion in the vertical direction, and we can ignore the $$y$$-component of acceleration. Let's set up Newton's laws for each mass along the horizontal ($$x$$) direction. Let $$T_1$$ and $$T_2$$ be the tensions in the upper and lower strings respectively.
+Notice how $$y_1$$ and $$y_2$$ are constant under the small angle approximation - the masses have a tiny movement horizontally and have negligible motion in the vertical direction. Thus, we can ignore the $$y$$-component of acceleration. Let's set up Newton's laws for each mass along the horizontal ($$x$$) direction. Let $$T_1$$ and $$T_2$$ be the tensions in the upper and lower strings respectively.
 
 $$
 \begin{align}
@@ -171,7 +172,7 @@ x_2
 \end{equation}
 $$
 
-Let's assume that the oscillations have a form $$x(t) = A cos(\omega t + \delta)$$. Then:
+Let's assume that the oscillations have a form $$x(t) = C cos(\omega t + \delta)$$ where $$C$$ and $$\delta$$ are constants. Then we can write out $$x_1(t)$$ in the same form:
 
 $$
 \begin{equation}
@@ -181,9 +182,17 @@ $$
 
 $$
 \begin{equation}
-\ddot{x}_1(t) = -\omega^2 c_1 cos(\omega t + \delta_1)
+\dot{x}_1(t) = -\omega c_1 sin(\omega t + \delta_1)
 \end{equation}
 $$
+
+$$
+\begin{equation}
+\ddot{x}_1(t) = -\omega^2 c_1 cos(\omega t + \delta_1) = -\omega^2 x_1
+\end{equation}
+$$
+
+And we can do the same for $$x_2(t)$$:
 
 $$
 \begin{equation}
@@ -193,7 +202,13 @@ $$
 
 $$
 \begin{equation}
-\ddot{x}_2(t) = -\omega^2 c_2 cos(\omega t + \delta_2)
+\dot{x}_2(t) = -\omega c_2 sin(\omega t + \delta_2)
+\end{equation}
+$$
+
+$$
+\begin{equation}
+\ddot{x}_2(t) = -\omega^2 c_2 cos(\omega t + \delta_2) = -\omega^2 x_2
 \end{equation}
 $$
 
@@ -255,6 +270,8 @@ x_2
 \end{equation}
 $$
 
+We can solve for $$\omega$$ by taking the determinant.
+
 $$
 \begin{equation}
 det
@@ -292,135 +309,15 @@ $$
 \end{align}
 $$
 
+Substituting $$\omega^2$$ into $$\xi$$ yields:
+
 $$
 \begin{equation}
 \omega^2 = \omega_o^2 \left ( 2 \pm \sqrt{2} \right )
 \end{equation}
 $$
 
-Now we can solve for the corresponding eigenvector for each eigenvalue. First we can solve for the eigenvector corresponding to $$\omega^2 = \omega_o^2 \left ( 2 + \sqrt{2} \right )$$:
-
-$$
-\begin{equation}
-\begin{bmatrix}
-3\omega_o^2 - \omega_o^2 \left ( 2 + \sqrt{2} \right ) & -\omega_o^2\\[0.1cm]
--\omega_o^2 & \omega_o^2 - \omega_o^2 \left ( 2 + \sqrt{2} \right )
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\[0.1cm]
-x_2
-\end{bmatrix}
-= 0
-\end{equation}
-$$
-
-$$
-\begin{equation}
-\begin{bmatrix}
-\omega_o^2 - \omega_o^2 \sqrt{2} & -\omega_o^2\\[0.1cm]
--\omega_o^2 & -\omega_o^2 - \omega_o^2 \sqrt{2}
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\[0.1cm]
-x_2
-\end{bmatrix}
-= 0
-\end{equation}
-$$
-
-$$
-\begin{equation}
-\begin{bmatrix}
-1 - \sqrt{2} & -1\\[0.1cm]
--1 & -1 - \sqrt{2}
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\[0.1cm]
-x_2
-\end{bmatrix}
-= 0
-\end{equation}
-$$
-
-$$
-\begin{equation}
-\left ( 1 - \sqrt{2} \right ) x_1 = x_2
-\end{equation}
-$$
-
-Now we can solve for the eigenvector corresponding to $$\omega^2 = \omega_o^2 \left ( 2 - \sqrt{2} \right )$$:
-
-$$
-\begin{equation}
-\begin{bmatrix}
-3\omega_o^2 - \omega_o^2 \left ( 2 - \sqrt{2} \right ) & -\omega_o^2\\[0.1cm]
--\omega_o^2 & \omega_o^2 - \omega_o^2 \left ( 2 - \sqrt{2} \right )
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\[0.1cm]
-x_2
-\end{bmatrix}
-= 0
-\end{equation}
-$$
-
-$$
-\begin{equation}
-\begin{bmatrix}
-\omega_o^2 + \omega_o^2 \sqrt{2} & -\omega_o^2\\[0.1cm]
--\omega_o^2 & -\omega_o^2 + \omega_o^2 \sqrt{2}
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\[0.1cm]
-x_2
-\end{bmatrix}
-= 0
-\end{equation}
-$$
-
-$$
-\begin{equation}
-\begin{bmatrix}
-1 + \sqrt{2} & -1\\[0.1cm]
--1 & -1 + \sqrt{2}
-\end{bmatrix}
-\begin{bmatrix}
-x_1\\[0.1cm]
-x_2
-\end{bmatrix}
-= 0
-\end{equation}
-$$
-
-$$
-\begin{equation}
-\left (1 + \sqrt{2} \right ) x_1 = x_2
-\end{equation}
-$$
-
-Thus, the two normal modes for the double pendulum at small angle amplitude are:
-
-$$
-\begin{equation}
-\eta_1(t) = c_1
-\begin{bmatrix}
-1\\[0.1cm]
-1 - \sqrt{2}
-\end{bmatrix}
-cos(\sqrt{2 + \sqrt{2}}\omega_o t + \delta_1)
-\end{equation}
-$$
-
-$$
-\begin{equation}
-\eta_2(t) = c_2
-\begin{bmatrix}
-1\\[0.1cm]
-1 + \sqrt{2}
-\end{bmatrix}
-cos(\sqrt{2 - \sqrt{2}}\omega_o t + \delta_2)
-\end{equation}
-$$
+And there we have it! These are the normal modes for the double pendulum, derived from forces and Newton's laws. Admittedly, the calculation of the displacements of each normal mode is a little bit more complicated and is better handled with the mathematics of Lagrangians and Hamiltonians.
 
 <div style="text-align:center" markdown="1">
 ![Till Next Week!]({{ site.url }}/assets/images/2015-08-09/next-week.png)

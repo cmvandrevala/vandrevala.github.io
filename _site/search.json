@@ -1,6 +1,20 @@
 [
     
     {
+      "title"      : "The Pauli Vector and Lie Groups - Part 1",
+	  "tags"       : "Common Homework Problem",
+	  "category"   : "Math MethodsQuantum Field Theory",
+	  "difficulty" : "hard",
+      "href"     : "/math%20methods/quantum%20field%20theory/2020/11/16/perturbation-theory-and-the-pauli-z-matrix.html",
+      "date"     : {
+         "day"   : "16",
+         "month" : "November",
+         "year"  : "2020"
+      }
+    }
+    ,
+    
+    {
       "title"      : "Learner Centered, Performance Based",
 	  "tags"       : "Cupcake Physics News",
 	  "category"   : "Cupcake Physics",
@@ -379,7 +393,7 @@
     ,
     
     {
-      "title"      : "Small Angle Oscillations of the Double Pendulum",
+      "title"      : "Normal Modes of the Double Pendulum Using Newton's Laws",
 	  "tags"       : "Common Homework ProblemDerivation",
 	  "category"   : "Classical Mechanics",
 	  "difficulty" : "medium",

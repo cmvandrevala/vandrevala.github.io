@@ -17,11 +17,11 @@ Many researchers and educators are hard at work trying to answer these questions
 
 ### Learner Centered
 
-Learner centered instruction means that the lesson at hand should be tailored to the knowledge and skills of the learner. This is not a new concept; educators have applied models like the Zone of Proximal Development to their lesson planning strategies for decades. However, I wanted to think about how I can implement learner-centered lessons to Cupcake Physics. 
+Learner centered instruction means that the lesson at hand should be tailored to the knowledge and skills of the learner. This is not a new concept; educators have applied models like the Zone of Proximal Development to their lesson planning strategies for decades. However, I wanted to think about how I can implement learner-centered lessons to Cupcake Physics.
 
 #### Keep the Lessons Small
 
-It can be difficult to pay attention to a long lecture when you are sitting in a classroom. It can be near impossible to stay interested in the same lecture if it is recorded and played back on a computer. Unfortunately, there are too many distractions that can tear you away from a lesson online - even I find myself drifting away from online physics lectures when I am sitting at a computer, and I have spent a good part of my life focused on the subject! Thus, one of the ways that we keep the lesson learner-centered is to respect the fact that the online learning environment is fundamentally different than that of a classroom. Instruction must be focused and relevant in order to keep the learner interested when it is so easy to find another source online. 
+It can be difficult to pay attention to a long lecture when you are sitting in a classroom. It can be near impossible to stay interested in the same lecture if it is recorded and played back on a computer. Unfortunately, there are too many distractions that can tear you away from a lesson online - even I find myself drifting away from online physics lectures when I am sitting at a computer, and I have spent a good part of my life focused on the subject! Thus, one of the ways that we keep the lesson learner-centered is to respect the fact that the online learning environment is fundamentally different than that of a classroom. Instruction must be focused and relevant in order to keep the learner interested when it is so easy to find another source online.
 
 #### Do Less
 
@@ -33,11 +33,11 @@ Performance based instruction means that we want students to be able to apply th
 
 #### Constantly Collect User Input
 
-Creating small chunks of instruction is only part of the story. Watching ten short videos back-to-back is not that different from watching one long one. There needs to be user input between each of those lessons to ensure that the lesson is still calibrated to the user's skill level. This input can serve additional purposes. It might be a gateway to ensure that the student understands the preceding section before moving onto the next one. It might be a crossroad where the lesson goes in different directions, depending on the previous answer. Engagement is not a direct indicator of a learner-centered lesson, but it does imply that the lesson is within the skillset of the student. 
+Creating small chunks of instruction is only part of the story. Watching ten short videos back-to-back is not that different from watching one long one. There needs to be user input between each of those lessons to ensure that the lesson is still calibrated to the user's skill level. This input can serve additional purposes. It might be a gateway to ensure that the student understands the preceding section before moving onto the next one. It might be a crossroad where the lesson goes in different directions, depending on the previous answer. Engagement is not a direct indicator of a learner-centered lesson, but it does imply that the lesson is within the skillset of the student.
 
 #### Keep the Feedback Cycle Tight
 
-Last but not least, the idea of tight feedback loops ties all of these ideas together. A tight feedback loop will (ideally) keep a student engaged in the lesson at hand because he or she will receive constant feedback on how much progress has been made. Additionally, it will give the program an opportunity to pivot and offer a new piece of content based on the answers given before. The classic idea of "questions at the end of the chapter" is not engaging in an online environment, nor does it does assess performance in an effective way. In a world where the answers to questions can be looked up on a whim, end of lesson questions no longer provide accurate feedback on the skillset of a student. 
+Last but not least, the idea of tight feedback loops ties all of these ideas together. A tight feedback loop will (ideally) keep a student engaged in the lesson at hand because he or she will receive constant feedback on how much progress has been made. Additionally, it will give the program an opportunity to pivot and offer a new piece of content based on the answers given before. The classic idea of "questions at the end of the chapter" is not engaging in an online environment, nor does it does assess performance in an effective way. In a world where the answers to questions can be looked up on a whim, end of lesson questions no longer provide accurate feedback on the skillset of a student.
 
 ### Closing Thoughts
 

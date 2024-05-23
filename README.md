@@ -6,19 +6,19 @@ This repo contains the blog for Cupcake Physics. It is hosted on [GitHub Pages](
 
 Clone the site using:
 
-```
+```bash
 git clone git@github.com:vandrevala/vandrevala.github.io.git
 ```
 
 The following command will build the website and put the files in the `_site` directory.
 
-```
+```bash
 bundle exec jekyll build
 ```
 
 Alternatively, the following command will start a server that will hot-reload any changes that you make to the project:
 
-```
+```bash
 bundle exec jekyll serve
 ```
 

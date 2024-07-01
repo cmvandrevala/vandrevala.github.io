@@ -8,7 +8,7 @@ tags: [Derivation]
 description: I review J.J. Thomson's derivation of the Larmor formula.
 ---
 
-###Background
+### Background
 
 The [Larmor formula](http://en.wikipedia.org/wiki/Larmor_formula) is a neat little expression that is used to calculate the total power radiated by an accelerating point charge in the non-relativistic regime. I have seen this formula derived in a couple of different ways: first using Maxwell's equations coupled with advanced/retarded potentials ([Griffiths Chapter 11](http://www.amazon.com/Introduction-Electrodynamics-3rd-David-Griffiths/dp/013805326X/ref=sr_1_1?s=books&ie=UTF8&qid=1416763802&sr=1-1&keywords=griffiths+electrodynamics+3rd+edition)) and second using the Lienard-Wiechert potential ([Jackson Chapter 9](http://www.amazon.com/Classical-Electrodynamics-Third-Edition-Jackson/dp/047130932X)). Yes, to be fair, these are almost the same method; we just like to use the term "Lienard-Wiechert potential" in graduate school in order to impress people.
 
@@ -16,7 +16,7 @@ Yesterday, I had the pleasure of meeting up for coffee with one of my students. 
 
 When I looked at some of the resources online, I found that a lot of instructors posted slightly abridged diagrams with their derivations. This can make it difficult to see where each variable comes from. I am going to go through the derivation in detail, refering to Purcell's original diagram in Appendix B of his book. And Chaitanya, if you are reading this, thanks for the idea for the post!
 
-###Purcell's Diagram
+### Purcell's Diagram
 
 Consider a point charge q at rest. The electric field lines from the point charge have a simple radial configuration shown in the figure below.
 
@@ -89,7 +89,7 @@ E_\theta &= \left [ \frac{|a| Tsin\theta}{c} \right ] E_r\\[0.1cm]
 \end{align}
 $$
 
-###The Larmor Formula
+### The Larmor Formula
 
 Now that we have $$E_\theta$$, the derivation of the Larmor formula is straightforward. First, we can use the angular electric field to find the Poynting vector around the point charge:
 
